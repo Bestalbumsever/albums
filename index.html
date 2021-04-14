@@ -14,21 +14,22 @@ height:100%;
 body {
 background-color: black;
 }
-table {
-margin-left: auto;
-margin-right: auto;
+#divTable {
+width:75%;
+display:inline-block;
+overflow:hidden;
+float:right;
 }
 #divInfo {
 margin-left: 15%;
 width:70%;
+display:inline-block;
+float:left;
 }
 #hInfo {
 text-align:center;
 }
-#divRandom {
-margin-left: 25%;
-width:50%;
-}
+
 button {
 font-family:courier;
 background:none;
@@ -37,13 +38,49 @@ margin-left: 40%;
 width:20%;
 border: 1px solid white;
 }
+#divLeft {
+width: 24%;
+display:inline-block;
+margin-left: 1%;
+}
+#divLeft p {
+color: white;
+font-family: courier;
+width: 85%;
+margin-left: 5%;
+}
+#btnRandom {
+float:left;
+width: 85%;
+margin-left:5%;
+}
+td {
+padding:0px !important;
+margin:0px !important;
+border:2px solid black;
+}
 </style>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
 </head>
 <body>
 
-<div id="main">
+<div id="divMain">
 
-<table>
+<div id="divLeft">
+
+<p>TESTING DON'T TELL ME IT DOESN'T WORK</p>
+
+<p id="pListenCount">You have listened to 0/116 albums!</p>
+
+<button id="btnRandom" onclick="random()">Random</button>
+
+</div>
+
+<div id="divTable">
+<table id="tblAlbums">
 <tr>
 <td id="A1"><image alt="Linkin Park - Hybrid Theory" src="https://lastfm.freetls.fastly.net/i/u/174s/b88840f7d608082a85588b2efbbd2d21.png" onmouseover="reveal(this.alt)" /></td>
 <td id="A2"><image alt="Nas - Illmatic" src="https://lastfm.freetls.fastly.net/i/u/174s/8dce63c224a643b78b39caeb27aadf8b.png" onmouseover="reveal(this.alt)" /></td>
@@ -147,7 +184,7 @@ border: 1px solid white;
 <td id="H3"><image alt="Neutral Milk Hotel - In the Aeroplane Over the Sea" src="https://lastfm.freetls.fastly.net/i/u/174s/d95051e07a714889c8f7fbbccf61bf8b.png" onmouseover="reveal(this.alt)" /></td>
 <td id="H4"><image alt="De La Soul - Three Feet High and Rising" src="https://lastfm.freetls.fastly.net/i/u/174s/415acc90e5364817c80c7eb2c84c22f8.png" onmouseover="reveal(this.alt)" /></td>
 <td id="H5"><image alt="System of a Down - Steal This Album!" src="https://lastfm.freetls.fastly.net/i/u/174s/719beff37975817f159399ba0c624a56.png" onmouseover="reveal(this.alt)" /></td>
-<td id="H6"><image alt="Dummy - Portishead" src="https://lastfm.freetls.fastly.net/i/u/174s/29f72d0333df4193981b5ff16dd37df6.png" onmouseover="reveal(this.alt)" /></td>
+<td id="H6"><image alt="Portishead - Dummy" src="https://lastfm.freetls.fastly.net/i/u/174s/29f72d0333df4193981b5ff16dd37df6.png" onmouseover="reveal(this.alt)" /></td>
 <td id="H7"><image alt="The Fratellis - Costello Music" src="https://lastfm.freetls.fastly.net/i/u/174s/8ea4dad3c3614770bca41a29c2e53b3d.png" onmouseover="reveal(this.alt)" /></td>
 <td id="H8"><image alt="Boom Boom Satellites - On" src="https://lastfm.freetls.fastly.net/i/u/174s/09771c0b3afd4bf2b7c865821ccdc884.png" onmouseover="reveal(this.alt)" /></td>
 <td id="H9"><image alt="Runescape - Original Soundtrack" src="https://lastfm.freetls.fastly.net/i/u/174s/c14b6e2cdece45eac5e7b5f6028d98b0.png" onmouseover="reveal(this.alt)" /></td>
@@ -181,19 +218,83 @@ border: 1px solid white;
 <td id="K10"><image alt="Sonata Arctica - Ecliptica" src="https://lastfm.freetls.fastly.net/i/u/174s/50e7869d254771f32f4fe626be24e110.png" onmouseover="reveal(this.alt)" /></td>
 </tr>
 </table>
+</div>
 
 <div id="divInfo">
 <h3 id="hInfo" style="color:white; font-family: courier;"></h3>
 </div>
 
-<div id="divRandom">
-<button onclick="random()">Hit Me</button>
-</div>
+
 
 </div>
 </body>
 
 <script type="text/javascript">
+
+var arrAlbums = [];
+
+
+
+$( document ).ready(function() {
+
+try {
+var json_str = getCookie('albums');
+arrAlbums = JSON.parse(json_str);
+}catch(ex) {
+console.log("failed to get album cookie: " + ex.toString());
+}
+    
+loadCheckedAlbums();
+	
+$(document).find('td').each (function() {
+    $(this).on("click", function(){  
+	   toggleAlbum($(this).attr("id"))
+    });
+});
+	
+});	
+
+
+function toggleAlbum(ID) {
+
+ if (arrAlbums.includes(ID) ) { //uncheck
+ 
+  for( var i = 0; i < arrAlbums.length; i++){     
+        if ( arrAlbums[i] === ID) {     
+            arrAlbums.splice(i, 1); 
+			document.getElementById(ID).style.border = "2px solid black"			
+        }    
+    }
+ 
+ } else { // check
+ 
+ arrAlbums.push(ID);
+ document.getElementById(ID).style.border = "2px solid lightgreen"
+ 
+ }
+ 
+updateAlbumCount();
+
+}
+
+function loadCheckedAlbums() {
+
+for( var i = 0; i < arrAlbums.length; i++){     
+        if ( arrAlbums[i] === ID) {     
+           document.getElementById(ID).style.border = "2px solid lightgreen"			
+        }    
+    }
+
+}
+
+function updateAlbumCount() {
+
+var json_str = JSON.stringify(arrAlbums);
+createCookie('albums', json_str);
+
+$("#pListenCount").text("You have listened to " + arrAlbums.length + "/116 albums!");
+
+}
 
 function reveal(strData) {
 
@@ -216,6 +317,34 @@ function random() {
 function random_item(items)
 {  
 return items[Math.floor(Math.random()*items.length)];     
+}
+
+function createCookie(name, value, days) {
+    var expires;
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toGMTString();
+    }
+    else {
+        expires = "";
+    }
+    document.cookie = name + "=" + value + expires + "; path=/";
+}
+
+function getCookie(c_name) {
+    if (document.cookie.length > 0) {
+        c_start = document.cookie.indexOf(c_name + "=");
+        if (c_start != -1) {
+            c_start = c_start + c_name.length + 1;
+            c_end = document.cookie.indexOf(";", c_start);
+            if (c_end == -1) {
+                c_end = document.cookie.length;
+            }
+            return unescape(document.cookie.substring(c_start, c_end));
+        }
+    }
+    return "";
 }
 
 
