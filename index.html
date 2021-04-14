@@ -324,11 +324,12 @@ updateAlbumCount();
 
 function loadCheckedAlbums() {
 
-for( var i = 0; i < arrAlbums.length; i++){     
-        if ( arrAlbums[i] === ID) {     
-           document.getElementById(ID).style.border = "2px solid lightgreen"			
-        }    
-    }
+for( var i = 0; i < arrAlbums.length; i++){    
+document.getElementById(arrAlbums[i]).style.border = "2px solid lightgreen" 
+      //  if ( arrAlbums[i] === ID) {     
+         //  document.getElementById(ID).style.border = "2px solid lightgreen"			
+       // }    
+    //}
 
 }
 
