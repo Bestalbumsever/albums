@@ -23,6 +23,18 @@ margin-left: auto;
 margin-right: auto;
 width:50%;
 }
+#divRandom {
+margin-left: 25%;
+width:50%;
+}
+button {
+font-family:courier;
+background:none;
+color: white;
+margin-left: 40%;
+width:20%;
+border: 1px solid white;
+}
 </style>
 </head>
 <body>
@@ -156,6 +168,10 @@ width:50%;
 <h3 id="hInfo" style="color:white; font-family: courier;"></h3>
 </div>
 
+<div id="divRandom">
+<button onclick="random()">Hit Me</button>
+</div>
+
 </div>
 </body>
 
@@ -165,6 +181,23 @@ function reveal(strData) {
 
 document.getElementById("hInfo").innerText = strData;
 
+}
+
+function random() {
+
+	var imgs = document.getElementsByTagName("img");
+    var imgSrcs = [];
+    for (var i = 0; i < imgs.length; i++) {
+        imgSrcs.push(imgs[i].alt);
+    }
+    
+	document.getElementById("hInfo").innerText = "You should listen to " + random_item(imgSrcs) + "!";
+	
+}
+
+function random_item(items)
+{  
+return items[Math.floor(Math.random()*items.length)];     
 }
 
 
