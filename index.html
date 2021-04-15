@@ -49,10 +49,11 @@ font-family: courier;
 width: 85%;
 margin-left: 5%;
 }
-#btnRandom {
+#btnRandom, #btnRandomUnlistened {
 float:left;
 width: 85%;
 margin-left:5%;
+margin-bottom: 5px;
 }
 td {
 padding:0px !important;
@@ -75,7 +76,8 @@ border:2px solid black;
 
 <p id="pListenCount">You have listened to 0/161 albums!</p>
 
-<button id="btnRandom" onclick="random()">Random</button>
+<button id="btnRandom" onclick="random(false)">Random</button>
+<button id="btnRandomUnlistened" onclick="random(true)">Random Unlistened</button>
 
 </div>
 
@@ -307,7 +309,8 @@ function toggleAlbum(ID) {
   for( var i = 0; i < arrAlbums.length; i++){     
         if ( arrAlbums[i] === ID) {     
             arrAlbums.splice(i, 1); 
-			document.getElementById(ID).style.border = "2px solid black"			
+			document.getElementById(ID).style.border = "2px solid black"	
+			document.getElementById(ID).childNodes[0].classList.remove("listened")	;		
         }    
     }
  
@@ -315,6 +318,7 @@ function toggleAlbum(ID) {
  
  arrAlbums.push(ID);
  document.getElementById(ID).style.border = "2px solid lightgreen"
+ document.getElementById(ID).childNodes[0].classList.add("listened");
  
  }
  
@@ -326,11 +330,8 @@ function loadCheckedAlbums() {
 
 for( var i = 0; i < arrAlbums.length; i++){    
 document.getElementById(arrAlbums[i]).style.border = "2px solid lightgreen" 
-//arrAlbums.push(arrAlbums[i]);
+document.getElementById(arrAlbums[i]).childNodes[0].classList.add("listened");
 updateAlbumCount();
-      //  if ( arrAlbums[i] === ID) {     
-         //  document.getElementById(ID).style.border = "2px solid lightgreen"			
-       // }    
     }
 
 }
@@ -339,7 +340,6 @@ function updateAlbumCount() {
 
 var json_str = JSON.stringify(arrAlbums);
 createCookie('albums', json_str);
-
 $("#pListenCount").text("You have listened to " + arrAlbums.length + "/161 albums!");
 
 }
@@ -350,16 +350,26 @@ document.getElementById("hInfo").innerText = strData;
 
 }
 
-function random() {
+function random(unlistened) {
 
-	var imgs = document.getElementsByTagName("img");
+	var imgs = document.getElementsByTagName("img");	
     var imgSrcs = [];
     for (var i = 0; i < imgs.length; i++) {
-        imgSrcs.push(imgs[i].alt);
+		if (unlistened == true) {
+			if (imgs[i].classList.contains("listened")) {				
+			} else {
+				imgSrcs.push(imgs[i].alt);
+			}
+		} else {
+			imgSrcs.push(imgs[i].alt);
+		}        
     }
     
-	document.getElementById("hInfo").innerText = "You should listen to " + random_item(imgSrcs) + "!";
-	
+	if (imgSrcs.length == 0) {
+		document.getElementById("hInfo").innerText = "You should go outside now!";
+	} else {
+		document.getElementById("hInfo").innerText = "You should listen to " + random_item(imgSrcs) + "!";
+	}	
 }
 
 function random_item(items)
