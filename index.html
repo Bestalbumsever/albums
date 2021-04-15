@@ -106,7 +106,7 @@ margin-bottom:5px;
 <button id="btnRandomUnlistened" onclick="random(true)">Random Unlistened</button>
 
 <div style="height:100px">
-<p id="pRandom"></p>
+<p id="pRandom" onmouseover="highlight(this.textContent)" onmouseout="unhighlight(this.textContent)"></p>
 </div>
 
 
@@ -503,9 +503,29 @@ switch(genre) {
 	}	 
     }      
 }
-
 }
 
+function highlight(txt) {
+txt = txt.substring(0, txt.length - 1);
+alb = txt.split("You should listen to ")[1]
+var allImages = document.getElementsByTagName("img");
+    for (var i = 0, len = allImages.length; i < len; ++i) {
+        if (allImages[i].alt == alb) {		
+            allImages[i].style.transform = 'rotate(' + 180 + 'deg)';
+        }
+    }
+}
+
+function unhighlight(txt) {
+txt = txt.substring(0, txt.length - 1);
+alb = txt.split("You should listen to ")[1]
+var allImages = document.getElementsByTagName("img");
+    for (var i = 0, len = allImages.length; i < len; ++i) {
+        if (allImages[i].alt == alb) {		
+            allImages[i].style.transform = 'rotate(' + 0 + 'deg)';
+        }
+    }
+}
 
 </script>
 
