@@ -88,14 +88,27 @@ margin-bottom:5px;
 
 <div id="divLeft">
 
+<div>
 <p>Hello, friend</p>
 
 <p id="pListenCount">You have listened to 0/161 albums! (0%)</p>
 
+<img id="bronze" style=" width:20px; height:20px; margin-left:5%; margin-bottom:2%; visibility: hidden;" src="bronze.png" />
+<img id="silver" style=" width:20px; height:20px; margin-left:5%; margin-bottom:2%; visibility: hidden;" src="silver.png" />
+<img id="gold" style=" width:20px; height:20px; margin-left:5%; margin-bottom:2%; visibility: hidden;" src="gold.png" />
+</div>
+
+
+
+
+
 <button id="btnRandom" onclick="random(false)">Random</button>
 <button id="btnRandomUnlistened" onclick="random(true)">Random Unlistened</button>
 
-<div style="height:100px"></div>
+<div style="height:100px">
+<p id="pRandom"></p>
+</div>
+
 
 <div id="divFilters">
 	<button id="btnShowAll" style="width:41%; color:white;" onclick="filter('all')">Show All</button>
@@ -377,6 +390,11 @@ var json_str = JSON.stringify(arrAlbums);
 createCookie('albums', json_str);
 var percent = (100 * arrAlbums.length) / 161;
 percent = percent.toFixed(2);
+
+if (percent > 39.9) { document.getElementById("bronze").style.visibility = "" } else { document.getElementById("bronze").style.visibility = "hidden" };
+if (percent > 59.9) { document.getElementById("silver").style.visibility = "" } else { document.getElementById("silver").style.visibility = "hidden" };
+if (percent > 79.9) { document.getElementById("gold").style.visibility = "" } else { document.getElementById("gold").style.visibility = "hidden" };
+
 $("#pListenCount").text("You have listened to " + arrAlbums.length + "/161 albums! (" + percent + "%)");
 if (arrAlbums.length == 69) {
 document.getElementById("divNice").style.display = "inline";
@@ -408,9 +426,9 @@ function random(unlistened) {
     }
     
 	if (imgSrcs.length == 0) {
-		document.getElementById("hInfo").innerText = "You should go outside now!";
+		document.getElementById("pRandom").innerText = "You should go outside now!";
 	} else {
-		document.getElementById("hInfo").innerText = "You should listen to " + random_item(imgSrcs) + "!";
+		document.getElementById("pRandom").innerText = "You should listen to " + random_item(imgSrcs) + "!";
 	}	
 }
 
