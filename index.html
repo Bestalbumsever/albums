@@ -100,6 +100,7 @@ font-size:12px;
 <img id="bronze" style=" width:20px; height:20px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="bronze.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
 <img id="silver" style=" width:20px; height:20px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="silver.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
 <img id="gold" style=" width:20px; height:20px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="gold.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
+<img id="sudafed" style=" width:20px; height:20px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="sudafed.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
 <img id="rock" style=" width:20px; height:20px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="rock.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
 <img id="electronic" style=" width:20px; height:20px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="electronic.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
 <img id="metal" style=" width:20px; height:20px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="metal.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
@@ -351,6 +352,7 @@ var globRockCount = 0;
 var globPopCount = 0;
 var globElectronicCount = 0;
 var globMetalCount = 0;
+var globTool = false;
 
 $( document ).ready(function() {
 
@@ -376,6 +378,8 @@ function toggleAlbum(ID) {
 
  if (arrAlbums.includes(ID) ) { //uncheck
  
+ if (ID == "H2") { globTool = false; }
+ 
   for( var i = 0; i < arrAlbums.length; i++){     
         if ( arrAlbums[i] === ID) {     
             arrAlbums.splice(i, 1); 
@@ -395,6 +399,8 @@ globElectronicCount -= 1;
 }
  
  } else { // check
+ 
+  if (ID == "H2") { globTool = true; }
  
  arrAlbums.push(ID);
  document.getElementById(ID).style.border = "2px solid lightgreen"
@@ -422,6 +428,9 @@ for( var i = 0; i < arrAlbums.length; i++){
 document.getElementById(arrAlbums[i]).style.border = "2px solid lightgreen" 
 document.getElementById(arrAlbums[i]).childNodes[0].classList.add("listened");
 
+if (arrAlbums[i] == "H2") {
+globTool = true;
+}
 
 if (document.getElementById(arrAlbums[i]).classList.contains("rock")) {
 globRockCount += 1;
@@ -450,13 +459,14 @@ if (percent > 9.99) { document.getElementById("spoon").style.visibility = "" } e
 if (percent > 39.9) { document.getElementById("bronze").style.visibility = "" } else { document.getElementById("bronze").style.visibility = "hidden" };
 if (percent > 59.9) { document.getElementById("silver").style.visibility = "" } else { document.getElementById("silver").style.visibility = "hidden" };
 if (percent > 79.9) { document.getElementById("gold").style.visibility = "" } else { document.getElementById("gold").style.visibility = "hidden" };
-
+if (globTool == true ) { document.getElementById("sudafed").style.visibility = "" } else { document.getElementById("sudafed").style.visibility = "hidden" };
 if (globRockCount > 24) { document.getElementById("rock").style.visibility = "" } else { document.getElementById("rock").style.visibility = "hidden" };
 if (globElectronicCount > 14) { document.getElementById("electronic").style.visibility = "" } else { document.getElementById("electronic").style.visibility = "hidden" };
 if (globMetalCount > 14) { document.getElementById("metal").style.visibility = "" } else { document.getElementById("metal").style.visibility = "hidden" };
 if (globPopCount > 4) { document.getElementById("pop").style.visibility = "" } else { document.getElementById("pop").style.visibility = "hidden" };
 
 $("#pListenCount").text("You have listened to " + arrAlbums.length + "/170 albums! (" + percent + "%)");
+
 if (arrAlbums.length == 69) {
 document.getElementById("divNice").style.display = "inline";
 } else {
@@ -613,6 +623,9 @@ case "spoon":
     break;
 	case "pop":
 	$("#pAward").text("Pop: listened to all 5 pop albums");
+    break;
+	case "sudafed":
+	$("#pAward").text("Sudafed: listened to the developer's favourite album");
     break;
 }
 }
