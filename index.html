@@ -76,6 +76,9 @@ float:left;
 margin-left:4%;
 margin-bottom:5px;
 }
+#pAward {
+font-size:12px;
+}
 </style>
 <script
   src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -93,9 +96,17 @@ margin-bottom:5px;
 
 <p id="pListenCount">You have listened to 0/170 albums! (0%)</p>
 
-<img id="bronze" style=" width:20px; height:20px; margin-left:5%; margin-bottom:2%; visibility: hidden;" src="bronze.png" />
-<img id="silver" style=" width:20px; height:20px; margin-left:5%; margin-bottom:2%; visibility: hidden;" src="silver.png" />
-<img id="gold" style=" width:20px; height:20px; margin-left:5%; margin-bottom:2%; visibility: hidden;" src="gold.png" />
+<img id="spoon" style=" width:20px; height:20px; margin-left:5%; margin-bottom:2%; visibility: hidden;" src="spoon.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
+<img id="bronze" style=" width:20px; height:20px; margin-left:5%; margin-bottom:2%; visibility: hidden;" src="bronze.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
+<img id="silver" style=" width:20px; height:20px; margin-left:5%; margin-bottom:2%; visibility: hidden;" src="silver.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
+<img id="gold" style=" width:20px; height:20px; margin-left:5%; margin-bottom:2%; visibility: hidden;" src="gold.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
+<img id="rock" style=" width:20px; height:20px; margin-left:5%; margin-bottom:2%; visibility: hidden;" src="rock.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
+<img id="electronic" style=" width:20px; height:20px; margin-left:5%; margin-bottom:2%; visibility: hidden;" src="electronic.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
+<img id="metal" style=" width:20px; height:20px; margin-left:5%; margin-bottom:2%; visibility: hidden;" src="metal.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
+<img id="pop" style=" width:20px; height:20px; margin-left:5%; margin-bottom:2%; visibility: hidden;" src="pop.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
+
+<p id="pAward">&nbsp;‎</p>
+
 </div>
 
 
@@ -336,8 +347,10 @@ margin-bottom:5px;
 <script type="text/javascript">
 
 var arrAlbums = [];
-
-
+var globRockCount = 0;
+var globPopCount = 0;
+var globElectronicCount = 0;
+var globMetalCount = 0;
 
 $( document ).ready(function() {
 
@@ -367,15 +380,35 @@ function toggleAlbum(ID) {
         if ( arrAlbums[i] === ID) {     
             arrAlbums.splice(i, 1); 
 			document.getElementById(ID).style.border = "2px solid black"	
-			document.getElementById(ID).childNodes[0].classList.remove("listened")	;		
+			document.getElementById(ID).childNodes[0].classList.remove("listened");			
         }    
     }
+	
+if (document.getElementById(ID).classList.contains("rock")) {
+globRockCount -= 1;
+} else if (document.getElementById(ID).classList.contains("pop")) {
+globPopCount -= 1;
+} else if (document.getElementById(ID).classList.contains("metal")) {
+globMetalCount -= 1;
+} else if (document.getElementById(ID).classList.contains("electronic")) {
+globElectronicCount -= 1;
+}
  
  } else { // check
  
  arrAlbums.push(ID);
  document.getElementById(ID).style.border = "2px solid lightgreen"
  document.getElementById(ID).childNodes[0].classList.add("listened");
+ 
+if (document.getElementById(ID).classList.contains("rock")) {
+globRockCount += 1;
+} else if (document.getElementById(ID).classList.contains("pop")) {
+globPopCount += 1;
+} else if (document.getElementById(ID).classList.contains("metal")) {
+globMetalCount += 1;
+} else if (document.getElementById(ID).classList.contains("electronic")) {
+globElectronicCount += 1;
+}
  
  }
  
@@ -388,8 +421,21 @@ function loadCheckedAlbums() {
 for( var i = 0; i < arrAlbums.length; i++){    
 document.getElementById(arrAlbums[i]).style.border = "2px solid lightgreen" 
 document.getElementById(arrAlbums[i]).childNodes[0].classList.add("listened");
+
+
+if (document.getElementById(arrAlbums[i]).classList.contains("rock")) {
+globRockCount += 1;
+} else if (document.getElementById(arrAlbums[i]).classList.contains("pop")) {
+globPopCount += 1;
+} else if (document.getElementById(arrAlbums[i]).classList.contains("electronic")) {
+globElectronicCount += 1;
+} else if (document.getElementById(arrAlbums[i]).classList.contains("metal")) {
+globMetalCount += 1;
+}
+
 updateAlbumCount();
-    }
+
+}
 
 }
 
@@ -400,9 +446,15 @@ createCookie('albums', json_str);
 var percent = (100 * arrAlbums.length) / 170;
 percent = percent.toFixed(2);
 
+if (percent > 9.99) { document.getElementById("spoon").style.visibility = "" } else { document.getElementById("spoon").style.visibility = "hidden" };
 if (percent > 39.9) { document.getElementById("bronze").style.visibility = "" } else { document.getElementById("bronze").style.visibility = "hidden" };
 if (percent > 59.9) { document.getElementById("silver").style.visibility = "" } else { document.getElementById("silver").style.visibility = "hidden" };
 if (percent > 79.9) { document.getElementById("gold").style.visibility = "" } else { document.getElementById("gold").style.visibility = "hidden" };
+
+if (globRockCount > 24) { document.getElementById("rock").style.visibility = "" } else { document.getElementById("rock").style.visibility = "hidden" };
+if (globElectronicCount > 14) { document.getElementById("electronic").style.visibility = "" } else { document.getElementById("electronic").style.visibility = "hidden" };
+if (globMetalCount > 14) { document.getElementById("metal").style.visibility = "" } else { document.getElementById("metal").style.visibility = "hidden" };
+if (globPopCount > 4) { document.getElementById("pop").style.visibility = "" } else { document.getElementById("pop").style.visibility = "hidden" };
 
 $("#pListenCount").text("You have listened to " + arrAlbums.length + "/170 albums! (" + percent + "%)");
 if (arrAlbums.length == 69) {
@@ -534,6 +586,39 @@ var allImages = document.getElementsByTagName("img");
             allImages[i].style.transform = 'rotate(' + 0 + 'deg)';
         }
     }
+}
+
+function showAward(award) {
+switch(award) {
+case "spoon":
+	$("#pAward").text("Spoon: listened to 10% of all albums");
+    break;
+  case "bronze":
+	$("#pAward").text("Bronze: listened to 40% of all albums");
+    break;
+	case "silver":
+	$("#pAward").text("Silver: listened to 60% of all albums");
+    break;
+	case "gold":
+	$("#pAward").text("Gold: listened to 80% of all albums");
+    break;
+	case "rock":
+	$("#pAward").text("Gold: listened to 25 rock albums");
+    break;
+	case "metal":
+	$("#pAward").text("Gold: listened to 15 metal albums");
+    break;
+	case "electronic":
+	$("#pAward").text("Gold: listened to 15 electronic albums");
+    break;
+	case "pop":
+	$("#pAward").text("Gold: listened to all 5 pop albums");
+    break;
+}
+}
+
+function hideAward() {
+$("#pAward").html("&nbsp;");
 }
 
 </script>
