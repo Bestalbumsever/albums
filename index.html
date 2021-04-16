@@ -387,6 +387,7 @@ height: 40px;
 </div>
 
 <div onclick="clippy()" style="width:100px;height:100px;bottom:0;right:0;position:absolute;">
+<p id="hint" style="color: white;font-family: courier; bottom:100px;right:5px;position:absolute;visibility:hidden;" >might add trophy hints here later idk</p>
 <img id="clippy" src="clippy.png" style="visibility:hidden;"  />
 </div>
 
@@ -756,8 +757,10 @@ case "spoon":
 function clippy() {
 if (document.getElementById("clippy").style.visibility == "hidden") {
 document.getElementById("clippy").style.visibility = ""
+document.getElementById("hint").style.visibility = ""
 } else {
 document.getElementById("clippy").style.visibility = "hidden"
+document.getElementById("hint").style.visibility = "hidden"
 }
 }
 
