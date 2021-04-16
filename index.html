@@ -101,6 +101,7 @@ height: 40px;
 <p id="pListenCount">You have listened to 0/191 albums! (0%)</p>
 
 <img class="award" id="spoon" style=" width:25px; height:25px; margin-left:5%; margin-bottom:2%; visibility: hidden;" src="spoon.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
+<img class="award" id="nice" style=" width:25px; height:25px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="nicesmall.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
 <img class="award" id="bronze" style=" width:25px; height:25px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="bronze.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
 <img class="award" id="silver" style=" width:25px; height:25px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="silver.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
 <img class="award" id="gold" style=" width:25px; height:25px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="gold.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
@@ -551,6 +552,7 @@ if (percent > 9.99) { document.getElementById("spoon").style.visibility = "" } e
 if (percent > 39.9) { document.getElementById("bronze").style.visibility = "" } else { document.getElementById("bronze").style.visibility = "hidden" };
 if (percent > 59.9) { document.getElementById("silver").style.visibility = "" } else { document.getElementById("silver").style.visibility = "hidden" };
 if (percent > 79.9) { document.getElementById("gold").style.visibility = "" } else { document.getElementById("gold").style.visibility = "hidden" };
+if (arrAlbums.length > 68) { document.getElementById("nice").style.visibility = "" } else { document.getElementById("nice").style.visibility = "hidden" };
 if (globTool == true ) { document.getElementById("sudafed").style.visibility = "" } else { document.getElementById("sudafed").style.visibility = "hidden" };
 if (globRockCount > 19) { document.getElementById("rock").style.visibility = "" } else { document.getElementById("rock").style.visibility = "hidden" };
 if (globupperCount > 9) { document.getElementById("upper").style.visibility = "" } else { document.getElementById("upper").style.visibility = "hidden" };
@@ -744,6 +746,9 @@ case "spoon":
     break;
 	case "indie":
 	$("#pAward").text("Snowflake: listened to 12 indie/alternative albums");
+    break;
+	case "nice":
+	$("#pAward").text("Nice: listened to 69 albums");
     break;
 }
 }
