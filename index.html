@@ -106,6 +106,7 @@ height: 40px;
 <img class="award" id="silver" style=" width:25px; height:25px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="silver.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
 <img class="award" id="gold" style=" width:25px; height:25px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="gold.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
 <img class="award" id="sudafed" style=" width:25px; height:25px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="sudafed.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
+<img class="award" id="god" style=" width:25px; height:25px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="god.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
 <img class="award" id="rock" style=" width:25px; height:25px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="rock.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
 <img class="award" id="upper" style=" width:25px; height:25px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="upper.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
 <img class="award" id="downer" style=" width:25px; height:25px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="downer.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
@@ -566,6 +567,11 @@ if (globHardRockCount > 7) { document.getElementById("hardrock").style.visibilit
 if (globPunkCount > 9) { document.getElementById("punk").style.visibility = "" } else { document.getElementById("punk").style.visibility = "hidden" };
 if (globOSTCount > 2) { document.getElementById("ost").style.visibility = "" } else { document.getElementById("ost").style.visibility = "hidden" };
 if (globIndieCount > 11) { document.getElementById("indie").style.visibility = "" } else { document.getElementById("indie").style.visibility = "hidden" };
+if (arrAlbums.includes("H1") && arrAlbums.includes("H2") && arrAlbums.includes("H3") && arrAlbums.includes("I2") && arrAlbums.includes("I1") && arrAlbums.includes("A3") && arrAlbums.includes("J1") && arrAlbums.includes("B1") && arrAlbums.includes("G3")) {
+document.getElementById("god").style.visibility = ""
+} else {
+document.getElementById("god").style.visibility = "hidden"
+}
 
 if (globRockCount > 16 && globRockCount < 20) { globHint = "rock" } else 
 if (globupperCount > 7 && globupperCount < 10) { globHint = "upper electronic" }else 
@@ -763,6 +769,9 @@ case "spoon":
 	case "nice":
 	$("#pAward").text("Nice: listened to 69 albums");
     break;
+	case "god":
+	$("#pAward").text("Teacher's Pet: listened to the developer's 3x3");
+    break;
 }
 }
 
@@ -770,7 +779,7 @@ function clippy() {
 if (document.getElementById("clippy").style.visibility == "hidden") {
 document.getElementById("clippy").style.visibility = ""
 document.getElementById("hint").style.visibility = ""
-$('#hint').text("Want an achievement? You should listen to " + globHint + "!");
+$('#hint').text("Want an achievement? You should listen to more " + globHint + "!");
 } else {
 document.getElementById("clippy").style.visibility = "hidden"
 document.getElementById("hint").style.visibility = "hidden"
