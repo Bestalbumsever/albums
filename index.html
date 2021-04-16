@@ -107,6 +107,7 @@ height: 40px;
 <img class="award" id="sudafed" style=" width:20px; height:20px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="sudafed.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
 <img class="award" id="rock" style=" width:20px; height:20px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="rock.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
 <img class="award" id="upper" style=" width:20px; height:20px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="upper.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
+<img class="award" id="downer" style=" width:20px; height:20px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="downer.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
 <img class="award" id="metal" style=" width:20px; height:20px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="metal.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
 <img class="award" id="pop" style=" width:20px; height:20px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="pop.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
 <img class="award" id="rap" style=" width:20px; height:20px; margin-left:5%; margin-bottom:2%; visibility: hidden;" src="chronic.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
@@ -395,6 +396,7 @@ var arrAlbums = [];
 var globRockCount = 0;
 var globPopCount = 0;
 var globupperCount = 0;
+var globdownerCount = 0;
 var globMetalCount = 0;
 var globRapCount = 0;
 var globHardRockCount = 0;
@@ -449,6 +451,8 @@ globRapCount -= 1;
 globHardRockCount -= 1;
 }else if (document.getElementById(ID).classList.contains("punk")) {
 globPunkCount -= 1;
+}else if (document.getElementById(ID).classList.contains("downer")) {
+globdownerCount -= 1;
 }
  
  } else { // check
@@ -473,6 +477,8 @@ globRapCount += 1;
 globHardRockCount += 1;
 }else if (document.getElementById(ID).classList.contains("punk")) {
 globPunkCount += 1;
+}else if (document.getElementById(ID).classList.contains("downer")) {
+globdownerCount += 1;
 }
  
  }
@@ -505,6 +511,8 @@ globRapCount += 1;
 globHardRockCount += 1;
 }else if (document.getElementById(arrAlbums[i]).classList.contains("punk")) {
 globPunkCount += 1;
+}else if (document.getElementById(arrAlbums[i]).classList.contains("downer")) {
+globdownerCount += 1;
 }
 
 updateAlbumCount();
@@ -527,6 +535,7 @@ if (percent > 79.9) { document.getElementById("gold").style.visibility = "" } el
 if (globTool == true ) { document.getElementById("sudafed").style.visibility = "" } else { document.getElementById("sudafed").style.visibility = "hidden" };
 if (globRockCount > 24) { document.getElementById("rock").style.visibility = "" } else { document.getElementById("rock").style.visibility = "hidden" };
 if (globupperCount > 9) { document.getElementById("upper").style.visibility = "" } else { document.getElementById("upper").style.visibility = "hidden" };
+if (globdownerCount > 7) { document.getElementById("downer").style.visibility = "" } else { document.getElementById("downer").style.visibility = "hidden" };
 if (globMetalCount > 14) { document.getElementById("metal").style.visibility = "" } else { document.getElementById("metal").style.visibility = "hidden" };
 if (globPopCount > 4) { document.getElementById("pop").style.visibility = "" } else { document.getElementById("pop").style.visibility = "hidden" };
 if (globRapCount > 24) { document.getElementById("rap").style.visibility = "" } else { document.getElementById("rap").style.visibility = "hidden" };
@@ -689,7 +698,7 @@ case "spoon":
 	$("#pAward").text("Through The Fire: listened to 15 metal albums");
     break;
 	case "upper":
-	$("#pAward").text("Ecstasy: listened to 10 upper albums");
+	$("#pAward").text("Ecstasy: listened to 10 upper electronic albums");
     break;
 	case "pop":
 	$("#pAward").text("Technicolour Dream: listened to all 5 pop albums");
@@ -698,13 +707,16 @@ case "spoon":
 	$("#pAward").text("Cough Medicine: listened to the developer's favourite album");
     break;
 	case "rap":
-	$("#pAward").text("The Chronic: listened to 25 rap albums");
+	$("#pAward").text("The Chronic: listened to 25 rap/rnb albums");
     break;
 	case "hardrock":
 	$("#pAward").text("Diamond Hands: listened to all 8 hard rock albums");
     break;
 	case "punk":
-	$("#pAward").text("Not Dead: listened to 10 punk albums");
+	$("#pAward").text("Not Dead: listened to 10 punk/ska albums");
+    break;
+	case "downer":
+	$("#pAward").text("Ambien: listened to 8 downer electronic albums");
     break;
 }
 }
