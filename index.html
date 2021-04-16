@@ -385,7 +385,9 @@ height: 40px;
 </table>
 </div>
 
-
+<div onclick="clippy()" style="width:100px;height:100px;bottom:0;right:0;position:absolute;">
+<img id="clippy" src="clippy.png" style="visibility:hidden;"  />
+</div>
 
 
 
@@ -743,6 +745,14 @@ case "spoon":
 	case "indie":
 	$("#pAward").text("Snowflake: listened to 12 indie/alternative albums");
     break;
+}
+}
+
+function clippy() {
+if (document.getElementById("clippy").style.visibility == "hidden") {
+document.getElementById("clippy").style.visibility = ""
+} else {
+document.getElementById("clippy").style.visibility = "hidden"
 }
 }
 
