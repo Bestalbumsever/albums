@@ -573,19 +573,6 @@ document.getElementById("god").style.visibility = ""
 document.getElementById("god").style.visibility = "hidden"
 }
 
-console.log("bentest" + globRapCount)
-
-if (globRockCount > 16 && globRockCount < 20) { globHint = "rock" } else 
-if (globupperCount > 7 && globupperCount < 10) { globHint = "upper electronic" }else 
-if (globdownerCount > 5 && globdownerCount < 8) { globHint = "downer electronic" }else 
-if (globMetalCount > 21 && globMetalCount < 25) { globHint = "metal" }else 
-if (globPopCount == 4) { globHint = "pop" }else 
-if (globRapCount > 21 && globRapCount < 25) { globHint = "rap/rnb" }else 
-if (globHardRockCount > 6 && globHardRockCount < 9) { globHint = "hard rock" }else 
-if (globPunkCount > 7 && globPunkCount < 10) { globHint = "punk/ska" }else 
-if (globIndieCount > 9 && globIndieCount < 12) { globHint = "indie/alternative" }else 
-{globHint == "everything"}
-
 $("#pListenCount").text("You have listened to " + arrAlbums.length + "/192 albums! (" + percent + "%)");
 
 if (arrAlbums.length == 69) {
@@ -781,6 +768,16 @@ function clippy() {
 if (document.getElementById("clippy").style.visibility == "hidden") {
 document.getElementById("clippy").style.visibility = ""
 document.getElementById("hint").style.visibility = ""
+if (globRockCount > 16 && globRockCount < 20) { globHint = "rock" } else 
+if (globupperCount > 7 && globupperCount < 10) { globHint = "upper electronic" }else 
+if (globdownerCount > 5 && globdownerCount < 8) { globHint = "downer electronic" }else 
+if (globMetalCount > 21 && globMetalCount < 25) { globHint = "metal" }else 
+if (globPopCount == 4) { globHint = "pop" }else 
+if (globRapCount > 21 && globRapCount < 25) { globHint = "rap/rnb" }else 
+if (globHardRockCount > 6 && globHardRockCount < 9) { globHint = "hard rock" }else 
+if (globPunkCount > 7 && globPunkCount < 10) { globHint = "punk/ska" }else 
+if (globIndieCount > 9 && globIndieCount < 12) { globHint = "indie/alternative" }else 
+{globHint == "everything"}
 $('#hint').text("Want an achievement? You should listen to more " + globHint + "!");
 } else {
 document.getElementById("clippy").style.visibility = "hidden"
