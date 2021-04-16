@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+td {
+width:60px;
+height:60px;
+}
+img {
+width: 100%;
+height:100%;
+}
+body {
+background-color: black;
+}
+#divTable {
+width:75%;
+display:inline-block;
+overflow:hidden;
+float:right;
+}
+#divInfo {
+margin-left: 5%;
+width:85%;
+display:inline-block;
+float:left;
+}
+#hInfo {
+text-align:center;
+}
+
+button {
+font-family:courier;
+background:none;
+color: white;
+margin-left: 40%;
+width:20%;
+border: 1px solid white;
+}
+#divLeft {
+width: 20%;
+display:inline-block;
+margin-left: 1%;
+position: absolute;
+bottom:0;
+top:0;
+}
+#divLeft p {
+color: white;
+font-family: courier;
+width: 85%;
+margin-left: 5%;
+
+}
+#btnRandom, #btnRandomUnlistened {
+float:left;
+width: 85%;
+margin-left:5%;
+margin-bottom: 5px;
+}
+td {
+padding:0px !important;
+margin:0px !important;
+border:2px solid black;
+}
+#divFilters {
+width: 100%;
+display:inline-block;
+margin-left: 1%;
+bottom:0;
+top:0;
+}
+#divFilters button {
+float:left;
+margin-left:4%;
+margin-bottom:5px;
+}
+#pAward {
+font-size:12px;
+}
+.genrebtn {
+height: 40px;
+}
+.td1 {
+width:150px;
+height:150px;
+}
+.td2 {
+width:100px;
+height:100px;
+}
+.td3 {
+width:50px;
+height:50px;
+}
+</style>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+
+<div id="divMain">
+
+<div id="divLeft">
+
+<div>
+<p>Hello!</p>
+
+<p id="pListenCount">You have listened to 0/191 albums! (0%)</p>
+
+<img class="award" id="spoon" style=" width:25px; height:25px; margin-left:5%; margin-bottom:2%; visibility: hidden;" src="spoon.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
+<img class="award" id="bronze" style=" width:25px; height:25px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="bronze.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
+<img class="award" id="silver" style=" width:25px; height:25px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="silver.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
+<img class="award" id="gold" style=" width:25px; height:25px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="gold.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
+<div style="height:40px">
+<p id="pAward">&nbsp;‎</p>
+</div>
+
+</div>
+
+<button id="btnRandom" onclick="random(false)">Random</button>
+<button id="btnRandomUnlistened" onclick="random(true)">Random Unlistened</button>
+
+<div style="height:100px">
+<p id="pRandom" onmouseover="highlight(this.textContent)" onmouseout="unhighlight(this.textContent)"></p>
+</div>
+
+<div id="divInfo">
+<h3 id="hInfo" style="color:white; font-family: courier;"></h3>
+</div>
+
+
+</div>
+
+<div id="divTable">
+<table id="tblAlbums">
+<tr>
+<td id="A1" class="td1"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+<td id="A2" class="td1"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+<td id="A3" class="td1"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+<td id="A4" class="td1"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+</tr>
+<tr>
+<td id="B1" class="td2"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+<td id="B2" class="td2"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+<td id="B3" class="td2"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+<td id="B4" class="td2"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+<td id="B5" class="td2"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+<td id="B6" class="td2"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+</tr>
+<tr>
+<td id="C1" class="td3"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+<td id="C2" class="td3"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+<td id="C3" class="td3"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+<td id="C4" class="td3"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+<td id="C5" class="td3"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+<td id="C6" class="td3"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+<td id="C7" class="td3"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+<td id="C8" class="td3"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+</tr>
+<tr>
+<td id="D1" class="td3"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+<td id="D2" class="td3"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+<td id="D3" class="td3"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+<td id="D4" class="td3"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+<td id="D5" class="td3"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+<td id="D6" class="td3"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+<td id="D7" class="td3"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+<td id="D8" class="td3"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+</tr>
+<tr>
+<td id="E1" class="td3"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+<td id="E2" class="td3"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+<td id="E3" class="td3"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+<td id="E4" class="td3"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+<td id="E5" class="td3"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+<td id="E6" class="td3"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+<td id="E7" class="td3"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+<td id="E8" class="td3"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+</tr>
+<tr>
+<td id="F1" class="td3"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+<td id="F2" class="td3"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+<td id="F3" class="td3"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+<td id="F4" class="td3"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+<td id="F5" class="td3"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+<td id="F6" class="td3"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+<td id="F7" class="td3"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+<td id="F8" class="td3"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+</tr>
+<tr>
+<td id="D1" class="td3"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+<td id="G2" class="td3"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+<td id="G3" class="td3"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+<td id="G4" class="td3"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+<td id="G5" class="td3"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+<td id="G6" class="td3"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+<td id="G7" class="td3"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+<td id="G8" class="td3"><image alt="" src="white.png" onmouseover="reveal(this.alt)" /></td>
+</tr>
+</table>
+</div>
+
+</div>
+</body>
+
+<script type="text/javascript">
+
+var arrAlbums = [];
+
+$( document ).ready(function() {
+
+try {
+var json_str = getCookie('50albums');
+arrAlbums = JSON.parse(json_str);
+}catch(ex) {
+console.log("failed to get album cookie: " + ex.toString());
+}
+    
+loadCheckedAlbums();
+	
+$(document).find('td').each (function() {
+    $(this).on("click", function(){  
+	   toggleAlbum($(this).attr("id"))
+    });
+});
+	
+});	
+
+
+function toggleAlbum(ID) {
+
+ if (arrAlbums.includes(ID) ) { //uncheck
+  
+  for( var i = 0; i < arrAlbums.length; i++){     
+        if ( arrAlbums[i] === ID) {     
+            arrAlbums.splice(i, 1); 
+			document.getElementById(ID).style.border = "2px solid black"	
+			document.getElementById(ID).childNodes[0].classList.remove("listened");			
+        }    
+    }
+	
+ 
+ } else { // check
+  
+ arrAlbums.push(ID);
+ document.getElementById(ID).style.border = "2px solid lightgreen"
+ document.getElementById(ID).childNodes[0].classList.add("listened");
+  
+ }
+ 
+updateAlbumCount();
+
+}
+
+function loadCheckedAlbums() {
+
+for( var i = 0; i < arrAlbums.length; i++){    
+document.getElementById(arrAlbums[i]).style.border = "2px solid lightgreen" 
+document.getElementById(arrAlbums[i]).childNodes[0].classList.add("listened");
+
+if (arrAlbums[i] == "H2") {
+globTool = true;
+}
+
+updateAlbumCount();
+
+}
+
+}
+
+function updateAlbumCount() {
+
+var json_str = JSON.stringify(arrAlbums);
+createCookie('50albums', json_str);
+var percent = (100 * arrAlbums.length) / 50;
+percent = percent.toFixed(2);
+
+if (percent > 9.99) { document.getElementById("spoon").style.visibility = "" } else { document.getElementById("spoon").style.visibility = "hidden" };
+if (percent > 39.9) { document.getElementById("bronze").style.visibility = "" } else { document.getElementById("bronze").style.visibility = "hidden" };
+if (percent > 59.9) { document.getElementById("silver").style.visibility = "" } else { document.getElementById("silver").style.visibility = "hidden" };
+if (percent > 79.9) { document.getElementById("gold").style.visibility = "" } else { document.getElementById("gold").style.visibility = "hidden" };
+
+$("#pListenCount").text("You have listened to " + arrAlbums.length + "/50 albums! (" + percent + "%)");
+
+}
+
+function reveal(strData) {
+
+document.getElementById("hInfo").innerText = strData;
+
+}
+
+function random(unlistened) {
+
+	var imgs = document.getElementsByTagName("img");	
+    var imgSrcs = [];
+    for (var i = 0; i < imgs.length; i++) {
+		if (!imgs[i].classList.contains("award")) {
+		if (unlistened == true) {
+			if (imgs[i].classList.contains("listened")) {				
+			} else {
+				imgSrcs.push(imgs[i].alt);
+			}
+		} else {
+			imgSrcs.push(imgs[i].alt);
+		}    
+		}		    
+    }
+    
+	if (imgSrcs.length == 0) {
+		document.getElementById("pRandom").innerText = "You should go outside now!";
+	} else {
+		document.getElementById("pRandom").innerText = "You should listen to " + random_item(imgSrcs) + "!";
+	}	
+}
+
+function random_item(items)
+{  
+return items[Math.floor(Math.random()*items.length)];     
+}
+
+function createCookie(name, value, days) {
+    var expires;
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toGMTString();
+    }
+    else {
+        expires = "";
+    }
+    document.cookie = name + "=" + value + expires + "; path=/";
+}
+
+function getCookie(c_name) {
+    if (document.cookie.length > 0) {
+        c_start = document.cookie.indexOf(c_name + "=");
+        if (c_start != -1) {
+            c_start = c_start + c_name.length + 1;
+            c_end = document.cookie.indexOf(";", c_start);
+            if (c_end == -1) {
+                c_end = document.cookie.length;
+            }
+            return unescape(document.cookie.substring(c_start, c_end));
+        }
+    }
+    return "";
+}
+
+
+function highlight(txt) {
+txt = txt.substring(0, txt.length - 1);
+alb = txt.split("You should listen to ")[1]
+var allImages = document.getElementsByTagName("img");
+    for (var i = 0, len = allImages.length; i < len; ++i) {
+        if (allImages[i].alt == alb) {		
+            allImages[i].style.transform = 'rotate(' + 180 + 'deg)';
+        }
+    }
+}
+
+function unhighlight(txt) {
+txt = txt.substring(0, txt.length - 1);
+alb = txt.split("You should listen to ")[1]
+var allImages = document.getElementsByTagName("img");
+    for (var i = 0, len = allImages.length; i < len; ++i) {
+        if (allImages[i].alt == alb) {		
+            allImages[i].style.transform = 'rotate(' + 0 + 'deg)';
+        }
+    }
+}
+
+function showAward(award) {
+switch(award) {
+case "spoon":
+	$("#pAward").text("Spoon: listened to 10% of all albums");
+    break;
+  case "bronze":
+	$("#pAward").text("Bronze: listened to 40% of all albums");
+    break;
+	case "silver":
+	$("#pAward").text("Silver: listened to 60% of all albums");
+    break;
+	case "gold":
+	$("#pAward").text("Gold: listened to 80% of all albums");
+    break;
+}
+}
+
+function hideAward() {
+$("#pAward").html("&nbsp;");
+}
+
+</script>
+
+</html>

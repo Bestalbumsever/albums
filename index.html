@@ -98,7 +98,7 @@ height: 40px;
 <div>
 <p>Please PM Ben genre corrections, there will be a few</p>
 
-<p id="pListenCount">You have listened to 0/191 albums! (0%)</p>
+<p id="pListenCount">You have listened to 0/192 albums! (0%)</p>
 
 <img class="award" id="spoon" style=" width:25px; height:25px; margin-left:5%; margin-bottom:2%; visibility: hidden;" src="spoon.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
 <img class="award" id="nice" style=" width:25px; height:25px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="nicesmall.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
@@ -377,7 +377,7 @@ height: 40px;
 <td id="K9" class="metal"><image alt="Apocalyptica - 7th Symphony" src="https://lastfm.freetls.fastly.net/i/u/174s/f6163add16ca4e89a3149ab82f391949.png" onmouseover="reveal(this.alt)" /></td>
 <td id="K10" class="metal"><image alt="Deathstars - Termination Bliss" src="https://lastfm.freetls.fastly.net/i/u/174s/397925c1b2af4d168a2ad789f897becf.png" onmouseover="reveal(this.alt)" /></td>
 <td id="K11" class="downer"><image alt="Celldweller - Celldweller" src="https://lastfm.freetls.fastly.net/i/u/174s/cb68297c220a46ffa676e9a265b01c62.png" onmouseover="reveal(this.alt)" /></td>
-<td id="K12" class=""><image alt="" src="black.png" onmouseover="reveal(this.alt)" /></td>
+<td id="K12" class="rock"><image alt="Alkaline Trio - From Here to the Infirmary" src="https://lastfm.freetls.fastly.net/i/u/174s/69adf8dc5bd6466183e06b9415269d77.png" onmouseover="reveal(this.alt)" /></td>
 <td id="K13" class=""><image alt="" src="black.png" onmouseover="reveal(this.alt)" /></td>
 <td id="K14" class=""><image alt="" src="black.png" onmouseover="reveal(this.alt)" /></td>
 <td id="K15" class=""><image alt="" src="black.png" onmouseover="reveal(this.alt)" /></td>
@@ -548,7 +548,7 @@ function updateAlbumCount() {
 
 var json_str = JSON.stringify(arrAlbums);
 createCookie('albums', json_str);
-var percent = (100 * arrAlbums.length) / 191;
+var percent = (100 * arrAlbums.length) / 192;
 percent = percent.toFixed(2);
 
 if (percent > 9.99) { document.getElementById("spoon").style.visibility = "" } else { document.getElementById("spoon").style.visibility = "hidden" };
@@ -584,7 +584,7 @@ if (globPunkCount > 7 && globPunkCount < 10) { globHint = "punk/ska" }else
 if (globIndieCount > 9 && globIndieCount < 12) { globHint = "indie/alternative" }else 
 {globHint == "everything"}
 
-$("#pListenCount").text("You have listened to " + arrAlbums.length + "/191 albums! (" + percent + "%)");
+$("#pListenCount").text("You have listened to " + arrAlbums.length + "/192 albums! (" + percent + "%)");
 
 if (arrAlbums.length == 69) {
 document.getElementById("divNice").style.display = "inline";
