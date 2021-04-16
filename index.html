@@ -387,7 +387,7 @@ height: 40px;
 </div>
 
 <div onclick="clippy()" style="width:100px;height:100px;bottom:0;right:0;position:absolute;">
-<p id="hint" style="color: white;font-family: courier; bottom:100px;right:5px;position:absolute;visibility:hidden;" >might add trophy hints here later idk</p>
+<p id="hint" style="color: white;font-family: courier; bottom:100px;right:5px;position:absolute;visibility:hidden;" ></p>
 <img id="clippy" src="clippy.png" style="visibility:hidden;"  />
 </div>
 
@@ -410,6 +410,7 @@ var globPunkCount = 0;
 var globOSTCount = 0;
 var globIndieCount = 0;
 var globTool = false;
+var globHint = "everything";
 
 $( document ).ready(function() {
 
@@ -558,13 +559,24 @@ if (globTool == true ) { document.getElementById("sudafed").style.visibility = "
 if (globRockCount > 19) { document.getElementById("rock").style.visibility = "" } else { document.getElementById("rock").style.visibility = "hidden" };
 if (globupperCount > 9) { document.getElementById("upper").style.visibility = "" } else { document.getElementById("upper").style.visibility = "hidden" };
 if (globdownerCount > 7) { document.getElementById("downer").style.visibility = "" } else { document.getElementById("downer").style.visibility = "hidden" };
-if (globMetalCount > 14) { document.getElementById("metal").style.visibility = "" } else { document.getElementById("metal").style.visibility = "hidden" };
+if (globMetalCount > 24) { document.getElementById("metal").style.visibility = "" } else { document.getElementById("metal").style.visibility = "hidden" };
 if (globPopCount > 4) { document.getElementById("pop").style.visibility = "" } else { document.getElementById("pop").style.visibility = "hidden" };
 if (globRapCount > 24) { document.getElementById("rap").style.visibility = "" } else { document.getElementById("rap").style.visibility = "hidden" };
 if (globHardRockCount > 7) { document.getElementById("hardrock").style.visibility = "" } else { document.getElementById("hardrock").style.visibility = "hidden" };
 if (globPunkCount > 9) { document.getElementById("punk").style.visibility = "" } else { document.getElementById("punk").style.visibility = "hidden" };
 if (globOSTCount > 2) { document.getElementById("ost").style.visibility = "" } else { document.getElementById("ost").style.visibility = "hidden" };
 if (globIndieCount > 11) { document.getElementById("indie").style.visibility = "" } else { document.getElementById("indie").style.visibility = "hidden" };
+
+if (globRockCount > 16 && globRockCount < 20) { globHint = "rock" } else 
+if (globupperCount > 7 && globupperCount < 10) { globHint = "upper electronic" }else 
+if (globdownerCount > 5 && globdownerCount < 8) { globHint = "downer electronic" }else 
+if (globMetalCount > 21 && globMetalCount < 25) { globHint = "metal" }else 
+if (globPopCount == 4) { globHint = "pop" }else 
+if (globRapCount > 21 && globRapCount < 25) { globHint = "rap/rnb" }else 
+if (globHardRockCount > 5 && globHardRockCount < 8) { globHint = "hard rock" }else 
+if (globPunkCount > 7 && globPunkCount < 10) { globHint = "punk/ska" }else 
+if (globIndieCount > 9 && globIndieCount < 12) { globHint = "indie/alternative" }else 
+{globHint == "everything"}
 
 $("#pListenCount").text("You have listened to " + arrAlbums.length + "/191 albums! (" + percent + "%)");
 
@@ -719,7 +731,7 @@ case "spoon":
 	$("#pAward").text("Solid: listened to 20 rock albums");
     break;
 	case "metal":
-	$("#pAward").text("Through The Fire: listened to 15 metal albums");
+	$("#pAward").text("Through The Fire: listened to 25 metal albums");
     break;
 	case "upper":
 	$("#pAward").text("Ecstasy: listened to 10 upper electronic albums");
@@ -758,6 +770,7 @@ function clippy() {
 if (document.getElementById("clippy").style.visibility == "hidden") {
 document.getElementById("clippy").style.visibility = ""
 document.getElementById("hint").style.visibility = ""
+$('#hint').text("Want an achievement? You should listen to " + globHint + "!");
 } else {
 document.getElementById("clippy").style.visibility = "hidden"
 document.getElementById("hint").style.visibility = "hidden"
