@@ -79,6 +79,9 @@ margin-bottom:5px;
 #pAward {
 font-size:12px;
 }
+.genrebtn {
+height: 40px;
+}
 </style>
 <script
   src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -103,7 +106,7 @@ font-size:12px;
 <img class="award" id="gold" style=" width:20px; height:20px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="gold.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
 <img class="award" id="sudafed" style=" width:20px; height:20px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="sudafed.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
 <img class="award" id="rock" style=" width:20px; height:20px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="rock.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
-<img class="award" id="electronic" style=" width:20px; height:20px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="electronic.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
+<img class="award" id="upper" style=" width:20px; height:20px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="upper.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
 <img class="award" id="metal" style=" width:20px; height:20px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="metal.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
 <img class="award" id="pop" style=" width:20px; height:20px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="pop.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
 <img class="award" id="rap" style=" width:20px; height:20px; margin-left:5%; margin-bottom:2%; visibility: hidden;" src="chronic.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
@@ -131,14 +134,16 @@ font-size:12px;
 <div id="divFilters">
 	<button id="btnShowAll" style="width:41%; color:white;" onclick="filter('all')">Show All</button>
 	<button id="btnHideAll" style="width:40%; color:white;" onclick="filter('none')">Hide All</button>
-	<button id="btnrap" class="genrebtn" style="width:41%; color:white;" onclick="filter('rap')">Rap</button>
+	<button id="btnrap" class="genrebtn" style="width:41%; color:white;" onclick="filter('rap')">Rap & RNB</button>
 	<button id="btnrock" class="genrebtn" style="width:40%; color:white;" onclick="filter('rock')">Rock</button>
 	<button id="btnhardrock" class="genrebtn" style="width:41%; color:white;" onclick="filter('hardrock')">Hard Rock</button>
-	<button id="btnelectronic" class="genrebtn" style="width:40%; color:white;" onclick="filter('electronic')">Electronic</button>
-	<button id="btnmetal" class="genrebtn" style="width:41%; color:white;" onclick="filter('metal')">Metal</button>
-	<button id="btnost" class="genrebtn" style="width:40%; color:white;" onclick="filter('ost')">OST</button>
-	<button id="btnpop" class="genrebtn" style="width:41%; color:white;" onclick="filter('pop')">Pop</button>
-	<button id="btnpunk" class="genrebtn" style="width:40%; color:white;" onclick="filter('punk')">Punk</button>
+	<button id="btnupper" class="genrebtn" style="width:40%; color:white;" onclick="filter('upper')">Electronic Uppers</button>
+	<button id="btndowner" class="genrebtn" style="width:41%; color:white;" onclick="filter('downer')">Electronic Downers</button>
+	<button id="btnmetal" class="genrebtn" style="width:40%; color:white;" onclick="filter('metal')">Metal</button>
+	<button id="btnost" class="genrebtn" style="width:41%; color:white;" onclick="filter('ost')">OST</button>
+	<button id="btnpop" class="genrebtn" style="width:40%; color:white;" onclick="filter('pop')">Pop</button>
+	<button id="btnpunk" class="genrebtn" style="width:41%; color:white;" onclick="filter('punk')">Punk & Ska</button>
+	<button id="btnfolk" class="genrebtn" style="width:40%; color:white;" onclick="filter('folk')">Folk & Indie</button>
 </div>
 
 <div id="divInfo">
@@ -164,16 +169,16 @@ font-size:12px;
 <td id="A6" class="rock"><image alt="E.L.O. - Out of the Blue" src="https://lastfm.freetls.fastly.net/i/u/174s/999f26234f9c4e0db4997363bdf60087.png" onmouseover="reveal(this.alt)" /></td>
 <td id="A7" class="rock"><image alt="Incubus - S.C.I.E.N.C.E." src="https://lastfm.freetls.fastly.net/i/u/174s/ba6c123ae250f2edfc15e927e7837343.png" onmouseover="reveal(this.alt)" /></td>
 <td id="A8" class="rock"><image alt="The Mars Volta -  De-Loused in the Comatorium" src="https://lastfm.freetls.fastly.net/i/u/174s/bd757ae20efd45dfb68d8303646afa7d.png" onmouseover="reveal(this.alt)" /></td>
-<td id="A9" class="electronic"><image alt="Jamie XX - In Colour" src="https://lastfm.freetls.fastly.net/i/u/174s/83e49ea6cea3d9418ab3368af6052097.png" onmouseover="reveal(this.alt)" /></td>
+<td id="A9" class="upper"><image alt="Jamie XX - In Colour" src="https://lastfm.freetls.fastly.net/i/u/174s/83e49ea6cea3d9418ab3368af6052097.png" onmouseover="reveal(this.alt)" /></td>
 <td id="A10" class="rock"><image alt="Fightstar - Grand Unification" src="https://lastfm.freetls.fastly.net/i/u/174s/22970eb4d075934412208ee450a0aa6b.png" onmouseover="reveal(this.alt)" /></td>
 <td id="A11" class="rap"><image alt="Mac Miller - Blue Slide Park" src="https://lastfm.freetls.fastly.net/i/u/174s/b81f7e61a32a4492a4233bd2f79ed279.png" onmouseover="reveal(this.alt)" /></td>
 <td id="A12" class="metal"><image alt="Kamelot - The Black Halo" src="https://lastfm.freetls.fastly.net/i/u/174s/70cef178824a4e9bb0bd8b9cb41a7b39.png" onmouseover="reveal(this.alt)" /></td>
 <td id="A13" class="rap"><image alt="Binary Star - Masters of the Universe" src="https://lastfm.freetls.fastly.net/i/u/174s/7fb72b3c3a8632226d51528e52ef7827.png" onmouseover="reveal(this.alt)" /></td>
-<td id="A14" class="electronic"><image alt="Dance With the Dead - B Sides" src="https://lastfm.freetls.fastly.net/i/u/174s/72ac18d5e5975c94b14d5bf180209fb5.png" onmouseover="reveal(this.alt)" /></td>
+<td id="A14" class="upper"><image alt="Dance With the Dead - B Sides" src="https://lastfm.freetls.fastly.net/i/u/174s/72ac18d5e5975c94b14d5bf180209fb5.png" onmouseover="reveal(this.alt)" /></td>
 <td id="A15" class="metal"><image alt="Gloryhammer - Legends from Beyond the Galactic Terrorvortex" src="https://lastfm.freetls.fastly.net/i/u/174s/150902db111d4958fe1174b340b5a4de.png" onmouseover="reveal(this.alt)" /></td>
 <td id="A16" class="rock"><image alt="The National - High Violet" src="https://lastfm.freetls.fastly.net/i/u/174s/7a169e3ee765486688f6c65d2c37cb41.png" onmouseover="reveal(this.alt)" /></td>
 <td id="A17" class="rock"><image alt="Thom Yorke - Eraser" src="https://lastfm.freetls.fastly.net/i/u/174s/9f673501a07748d391fa5791e25b4504.png" onmouseover="reveal(this.alt)" /></td>
-<td id="A18" class="electronic"><image alt="Corbin - Mourn" src="https://lastfm.freetls.fastly.net/i/u/174s/75e75a4244ff8bd66078bc335298ddc1.png" onmouseover="reveal(this.alt)" /></td>
+<td id="A18" class="upper"><image alt="Corbin - Mourn" src="https://lastfm.freetls.fastly.net/i/u/174s/75e75a4244ff8bd66078bc335298ddc1.png" onmouseover="reveal(this.alt)" /></td>
 </tr>
 <tr>
 <td id="B1" class="rap"><image alt="Kanye West - My Beautiful Dark Twisted Fantasy" src="https://lastfm.freetls.fastly.net/i/u/174s/2adfa022aa7db053a2961b6948adc8ac.png" onmouseover="reveal(this.alt)" /></td>
@@ -189,11 +194,11 @@ font-size:12px;
 <td id="B11" class="rap"><image alt="Kanye West - Graduation" src="https://lastfm.freetls.fastly.net/i/u/174s/3b96418b0b1321fc83a25ce14eea0643.png" onmouseover="reveal(this.alt)" /></td>
 <td id="B12" class="metal"><image alt="Wintersun - Wintersun" src="https://lastfm.freetls.fastly.net/i/u/174s/56f55532e59a46f5a49a0536000672e7.png" onmouseover="reveal(this.alt)" /></td>
 <td id="B13" class="rock"><image alt="Jimmy Eat World - Futures" src="https://lastfm.freetls.fastly.net/i/u/174s/c095d73521e18dfdef3538e83dd37cda.png" onmouseover="reveal(this.alt)" /></td>
-<td id="B14" class="electronic"><image alt="Tycho - Awake" src="https://lastfm.freetls.fastly.net/i/u/174s/1b321dda0064f33d510aa718130a61f8.png" onmouseover="reveal(this.alt)" /></td>
+<td id="B14" class="upper"><image alt="Tycho - Awake" src="https://lastfm.freetls.fastly.net/i/u/174s/1b321dda0064f33d510aa718130a61f8.png" onmouseover="reveal(this.alt)" /></td>
 <td id="B15" class="metal"><image alt="Architects - Hollow Crown" src="https://lastfm.freetls.fastly.net/i/u/174s/f5dae9e9587f49c7aa85121a148efb47.png" onmouseover="reveal(this.alt)" /></td>
 <td id="B16" class="rap"><image alt="Redman - Muddy Waters" src="https://lastfm.freetls.fastly.net/i/u/174s/12af690a2fc905f6cc095d7266bf0efd.png" onmouseover="reveal(this.alt)" /></td>
 <td id="B17" class="metal"><image alt="Isis - Panopticon" src="https://lastfm.freetls.fastly.net/i/u/174s/873b160afb6e58ac03f56a70f677230f.png" onmouseover="reveal(this.alt)" /></td>
-<td id="B18" class="electronic"><image alt="Chase & Status - More Than Alot" src="https://lastfm.freetls.fastly.net/i/u/174s/c5b94da0daeb475c803566852aa6ce8e.png" onmouseover="reveal(this.alt)" /></td>
+<td id="B18" class="upper"><image alt="Chase & Status - More Than Alot" src="https://lastfm.freetls.fastly.net/i/u/174s/c5b94da0daeb475c803566852aa6ce8e.png" onmouseover="reveal(this.alt)" /></td>
 </tr>
 <tr>
 <td id="C1" class="rap"><image alt="Tech N9ne - Something Else" src="https://lastfm.freetls.fastly.net/i/u/174s/5f30ce93b4184e1d9d401abd581adb31.png" onmouseover="reveal(this.alt)" /></td>
@@ -220,11 +225,11 @@ font-size:12px;
 <td id="D2" class="punk"><image alt="Dead Kennedys - Fresh Fruit for Rotting Vegetables" src="https://lastfm.freetls.fastly.net/i/u/174s/89327a3809f40598d468347943da054d.png" onmouseover="reveal(this.alt)" /></td>
 <td id="D3" class="punk"><image alt="Dead Kennedys - Plastic Surgery Disasters" src="https://lastfm.freetls.fastly.net/i/u/174s/5fd6ead77cb746d8c643f3d01fab9274.png" onmouseover="reveal(this.alt)" /></td>
 <td id="D4" class="metal"><image alt="Architects - Daybreaker" src="https://lastfm.freetls.fastly.net/i/u/174s/8f94c044ec4c4fec8bc5c5bf05a69e38.png" onmouseover="reveal(this.alt)" /></td>
-<td id="D5" class="electronic"><image alt="Enter Shikari - Take to the Skies" src="https://lastfm.freetls.fastly.net/i/u/174s/5d2155a39f5548ef610f6af18a6fabbc.png" onmouseover="reveal(this.alt)" /></td>
+<td id="D5" class="upper"><image alt="Enter Shikari - Take to the Skies" src="https://lastfm.freetls.fastly.net/i/u/174s/5d2155a39f5548ef610f6af18a6fabbc.png" onmouseover="reveal(this.alt)" /></td>
 <td id="D6" class="metal"><image alt="Slipknot - Slipknot" src="https://lastfm.freetls.fastly.net/i/u/174s/9274398d6314cb5882bf4fe8dfd084f8.png" onmouseover="reveal(this.alt)" /></td>
-<td id="D7" class="electronic"><image alt="LCD Soundsystem - Sound of Silver" src="https://lastfm.freetls.fastly.net/i/u/174s/62e79d7331b34ea9ced494570a2fe797.png" onmouseover="reveal(this.alt)" /></td>
+<td id="D7" class="upper"><image alt="LCD Soundsystem - Sound of Silver" src="https://lastfm.freetls.fastly.net/i/u/174s/62e79d7331b34ea9ced494570a2fe797.png" onmouseover="reveal(this.alt)" /></td>
 <td id="D8" class="rock"><image alt="Fleetwood Mac - Rumours" src="https://lastfm.freetls.fastly.net/i/u/174s/0b4716b42466ffa893ad3e3ab824318b.png" onmouseover="reveal(this.alt)" /></td>
-<td id="D9" class="electronic"><image alt="Lorn - Vessel" src="https://lastfm.freetls.fastly.net/i/u/174s/97e540829fc31c91b1d3949d23bcea4f.png" onmouseover="reveal(this.alt)" /></td>
+<td id="D9" class="upper"><image alt="Lorn - Vessel" src="https://lastfm.freetls.fastly.net/i/u/174s/97e540829fc31c91b1d3949d23bcea4f.png" onmouseover="reveal(this.alt)" /></td>
 <td id="D10" class="rock"><image alt="The Beatles - Magical Mystery Tour" src="https://lastfm.freetls.fastly.net/i/u/174s/3947ccc7613d4555ad120bf8b5c68e59.png" onmouseover="reveal(this.alt)" /></td>
 <td id="D11" class="rap"><image alt="J. Cole - Cole World: The Sideline Story" src="https://lastfm.freetls.fastly.net/i/u/174s/497628c9108d44a0c4905c0f3bc7d162.png" onmouseover="reveal(this.alt)" /></td>
 <td id="D12" class="punk"><image alt="Days N' Daze - Rogue Taxidermy" src="https://lastfm.freetls.fastly.net/i/u/174s/4377c51d94cab00896d4f79c6f45861f.png" onmouseover="reveal(this.alt)" /></td>
@@ -242,13 +247,13 @@ font-size:12px;
 <td id="E4" class="rap"><image alt="Plan B - Who Needs Actions When You Got Words" src="https://lastfm.freetls.fastly.net/i/u/174s/7c21b4a6cb8b42e1a9b8e54b4fa2a292.png" onmouseover="reveal(this.alt)" /></td>
 <td id="E5" class="metal"><image alt="Bury Tomorrow - Portraits" src="https://lastfm.freetls.fastly.net/i/u/174s/598bed42a2cb4a729576d67f67cabf0b.png" onmouseover="reveal(this.alt)" /></td>
 <td id="E6" class="rap"><image alt="The Streets - Original Pirate Material" src="https://lastfm.freetls.fastly.net/i/u/174s/95ec108587524b32bb0bfa59c6015488.png" onmouseover="reveal(this.alt)" /></td>
-<td id="E7" class="electronic"><image alt="Burial - Untrue" src="https://lastfm.freetls.fastly.net/i/u/174s/2c7332bc861d406a80c13f0e69d4ba7f.png" onmouseover="reveal(this.alt)" /></td>
+<td id="E7" class="upper"><image alt="Burial - Untrue" src="https://lastfm.freetls.fastly.net/i/u/174s/2c7332bc861d406a80c13f0e69d4ba7f.png" onmouseover="reveal(this.alt)" /></td>
 <td id="E8" class="rock"><image alt="Radiohead - Amnesiac" src="https://lastfm.freetls.fastly.net/i/u/174s/d59fb77b86ba4dd5d7f99c34564a56ce.png" onmouseover="reveal(this.alt)" /></td>
-<td id="E9" class="electronic"><image alt="The Flashbulb - Arboreal" src="https://lastfm.freetls.fastly.net/i/u/174s/13b027387a8d473f94d42ea5357ee8db.png" onmouseover="reveal(this.alt)" /></td>
+<td id="E9" class="upper"><image alt="The Flashbulb - Arboreal" src="https://lastfm.freetls.fastly.net/i/u/174s/13b027387a8d473f94d42ea5357ee8db.png" onmouseover="reveal(this.alt)" /></td>
 <td id="E10" class="metal"><image alt="System of a Down - Mesmerize" src="https://lastfm.freetls.fastly.net/i/u/174s/db1feeb564594828b91612933572d7a6.png" onmouseover="reveal(this.alt)" /></td>
 <td id="E11" class="rap"><image alt="J. Cole - Friday Night Lights" src="https://lastfm.freetls.fastly.net/i/u/174s/2eabdcc1d72a4a18b1aa1ddc04669525.png" onmouseover="reveal(this.alt)" /></td>
 <td id="E12" class="metal"><image alt="Blind Guardian - A Night at the Opera" src="https://lastfm.freetls.fastly.net/i/u/174s/e1a0d59047f6ebcc79e1a80f900aa5a7.png" onmouseover="reveal(this.alt)" /></td>
-<td id="E13" class="electronic"><image alt="Nujabes - Modal Soul" src="https://lastfm.freetls.fastly.net/i/u/174s/e605e0031a208775b7ac76f8c34290e3.png" onmouseover="reveal(this.alt)" /></td>
+<td id="E13" class="upper"><image alt="Nujabes - Modal Soul" src="https://lastfm.freetls.fastly.net/i/u/174s/e605e0031a208775b7ac76f8c34290e3.png" onmouseover="reveal(this.alt)" /></td>
 <td id="E14" class="ost"><image alt="Persona 5 - Original Soundtrack" src="https://lastfm.freetls.fastly.net/i/u/174s/402c2036009fc7cec8aac6d70b77e8c7.png" onmouseover="reveal(this.alt)" /></td>
 <td id="E15" class="rap"><image alt="Rakim - The Master" src="https://lastfm.freetls.fastly.net/i/u/174s/a55f127460ae429bc2eaf218e1e337bd.png" onmouseover="reveal(this.alt)" /></td>
 <td id="E16" class="rap"><image alt="A Tribe Called Quest - The Low End Theory" src="https://lastfm.freetls.fastly.net/i/u/174s/1ed2a8b06875441f85256b2f162fdf9b.png" onmouseover="reveal(this.alt)" /></td>
@@ -259,14 +264,14 @@ font-size:12px;
 <td id="F1" class="punk"><image alt="Joy Division - Unknown Pleasures" src="https://lastfm.freetls.fastly.net/i/u/174s/0c6c868b77a4417f937cf09506099081.png" onmouseover="reveal(this.alt)" /></td>
 <td id="F2" class="rock"><image alt="The Paper Chase - Now You Are One Of Us" src="https://lastfm.freetls.fastly.net/i/u/174s/60bb0afee6d054e49d365558916512fd.png" onmouseover="reveal(this.alt)" /></td>
 <td id="F3" class="pop"><image alt="Perfume Genius - Put Your Back N 2 It" src="https://lastfm.freetls.fastly.net/i/u/174s/66433507e701de96a3f23dde262dbea6.png" onmouseover="reveal(this.alt)" /></td>
-<td id="F4" class="electronic"><image alt="Pendulum - Hold Your Colour" src="https://lastfm.freetls.fastly.net/i/u/174s/93511cb725464fd2a5a07dc0ce4b836a.png" onmouseover="reveal(this.alt)" /></td>
+<td id="F4" class="upper"><image alt="Pendulum - Hold Your Colour" src="https://lastfm.freetls.fastly.net/i/u/174s/93511cb725464fd2a5a07dc0ce4b836a.png" onmouseover="reveal(this.alt)" /></td>
 <td id="F5" class="rap"><image alt="Kid Cudi - Man on the Moon" src="https://lastfm.freetls.fastly.net/i/u/174s/8ca0fd6e84a14317a7d21eaebc81320a.png" onmouseover="reveal(this.alt)" /></td>
 <td id="F6" class="metal"><image alt="Sonic Syndicate - Only Inhuman" src="https://lastfm.freetls.fastly.net/i/u/174s/beb35d9bf8dc59037da0c8b27c6c3a20.png" onmouseover="reveal(this.alt)" /></td>
-<td id="F7" class="electronic"><image alt="Moderat - II" src="https://lastfm.freetls.fastly.net/i/u/174s/73d59ac1474c4eef8de77a6c28b09298.png" onmouseover="reveal(this.alt)" /></td>
-<td id="F8" class="electronic"><image alt="Aphex Twin - Drukqs" src="https://lastfm.freetls.fastly.net/i/u/174s/4c66b692b26c4fb3be2da6dda2fc9bb7.png" onmouseover="reveal(this.alt)" /></td>
+<td id="F7" class="upper"><image alt="Moderat - II" src="https://lastfm.freetls.fastly.net/i/u/174s/73d59ac1474c4eef8de77a6c28b09298.png" onmouseover="reveal(this.alt)" /></td>
+<td id="F8" class="upper"><image alt="Aphex Twin - Drukqs" src="https://lastfm.freetls.fastly.net/i/u/174s/4c66b692b26c4fb3be2da6dda2fc9bb7.png" onmouseover="reveal(this.alt)" /></td>
 <td id="F9" class="rock"><image alt="Paul Simon - Graceland" src="https://lastfm.freetls.fastly.net/i/u/174s/6dcd4921856a43fec390a969e8346838.png" onmouseover="reveal(this.alt)" /></td>
 <td id="F10" class="punk"><image alt="Blink 182 - Enema of the State" src="https://lastfm.freetls.fastly.net/i/u/174s/9f84a1b9b2634750bdd014c2bb646d96.png" onmouseover="reveal(this.alt)" /></td>
-<td id="F11" class="pop"><image alt="The Weeknd - Trilogy" src="https://lastfm.freetls.fastly.net/i/u/174s/f8734234a60a41dfc1cac33b47efd840.png" onmouseover="reveal(this.alt)" /></td>
+<td id="F11" class="rap"><image alt="The Weeknd - Trilogy" src="https://lastfm.freetls.fastly.net/i/u/174s/f8734234a60a41dfc1cac33b47efd840.png" onmouseover="reveal(this.alt)" /></td>
 <td id="F12" class="metal"><image alt="Iron Maiden - The Number of the Beast" src="https://lastfm.freetls.fastly.net/i/u/174s/0b05ebbc6af93b2c88a5c9fa476974ca.png" onmouseover="reveal(this.alt)" /></td>
 <td id="F13" class="metal"><image alt="Coheed and Cambria - In Keeping Secrets Of Silent Earth: 3" src="https://lastfm.freetls.fastly.net/i/u/174s/e5f3b2f060dbd946ad78e91b59ba6512.png" onmouseover="reveal(this.alt)" /></td>
 <td id="F14" class="rock"><image alt="Two Door Cinema Club - Tourist History" src="https://lastfm.freetls.fastly.net/i/u/174s/aa9e02325be944cab8e4392f1948f5e0.png" onmouseover="reveal(this.alt)" /></td>
@@ -276,12 +281,12 @@ font-size:12px;
 <td id="F18" class="metal"><image alt="Architects - Ruin" src="https://lastfm.freetls.fastly.net/i/u/174s/5dc11fecdd734edea90a439ff3b963b4.png" onmouseover="reveal(this.alt)" /></td>
 </tr>
 <tr>
-<td id="G1" class="electronic"><image alt="Boards of Canada - Music has the Right to Children" src="https://lastfm.freetls.fastly.net/i/u/174s/0bb566f53e9f4cbfccf926acd7371183.png" onmouseover="reveal(this.alt)" /></td>
+<td id="G1" class="upper"><image alt="Boards of Canada - Music has the Right to Children" src="https://lastfm.freetls.fastly.net/i/u/174s/0bb566f53e9f4cbfccf926acd7371183.png" onmouseover="reveal(this.alt)" /></td>
 <td id="G2" class="rap"><image alt="Death Grips - The Money Store" src="https://lastfm.freetls.fastly.net/i/u/174s/7bc6b40d573c46cec68e9c8429f527dc.png" onmouseover="reveal(this.alt)" /></td>
 <td id="G3" class="rock"><image alt="John Mayer - Where the Light is (Live in L.A.)" src="https://lastfm.freetls.fastly.net/i/u/174s/b50416472e9347aec7b7a875569a1a6e.png" onmouseover="reveal(this.alt)" /></td>
 <td id="G4" class="rap"><image alt="Kanye West - 808s & Heartbreak" src="https://lastfm.freetls.fastly.net/i/u/174s/17b2ceeaabc24e11ba957f7a2fdcfb62.png" onmouseover="reveal(this.alt)" /></td>
 <td id="G5" class="rap"><image alt="Kendrick Lamar - Good Kid, m.A.A.d City" src="https://lastfm.freetls.fastly.net/i/u/174s/3379eed5e5634c42abf6c31a5095c7b8.png" onmouseover="reveal(this.alt)" /></td>
-<td id="G6" class="electronic"><image alt="Neon Indian - Vega Intl. Night School" src="https://lastfm.freetls.fastly.net/i/u/174s/c39bed15da3a6dcd6e9f82f26505cbca.png" onmouseover="reveal(this.alt)" /></td>
+<td id="G6" class="upper"><image alt="Neon Indian - Vega Intl. Night School" src="https://lastfm.freetls.fastly.net/i/u/174s/c39bed15da3a6dcd6e9f82f26505cbca.png" onmouseover="reveal(this.alt)" /></td>
 <td id="G7" class="punk"><image alt="Streetlight Manifesto - The Hands That Thieve" src="https://lastfm.freetls.fastly.net/i/u/174s/305aad1b0a6840a3b326fdfbb1c3b337.png" onmouseover="reveal(this.alt)" /></td>
 <td id="G8" class="rock"><image alt="Asian Kung-Fu Generation - Fanclub" src="https://lastfm.freetls.fastly.net/i/u/174s/ce92d8f6c7074d37bce4efef53a52d5f.png" onmouseover="reveal(this.alt)" /></td>
 <td id="G9" class="ost"><image alt="Ace Combat 7- Original Soundtrack" src="https://lastfm.freetls.fastly.net/i/u/174s/b747f36b407b41c53d7379a6dfe069b6.png" onmouseover="reveal(this.alt)" /></td>
@@ -293,17 +298,17 @@ font-size:12px;
 <td id="G15" class="metal"><image alt="System of a Down - Toxicity" src="https://lastfm.freetls.fastly.net/i/u/174s/6c4ee6a22457448f82af23ef5134cfa6.png" onmouseover="reveal(this.alt)" /></td>
 <td id="G16" class="rock"><image alt="Ben Howard - Noonday Dream" src="https://lastfm.freetls.fastly.net/i/u/174s/5f9f56b4f61a54d637d0f0396c4ea117.png" onmouseover="reveal(this.alt)" /></td>
 <td id="G17" class="rock"><image alt="AFI - Art of Drowning" src="https://lastfm.freetls.fastly.net/i/u/174s/ee87f923ce3740e6939c6020b791fbcb.png" onmouseover="reveal(this.alt)" /></td>
-<td id="G18" class="electronic"><image alt="David Guetta - Nothing But The Beat" src="https://lastfm.freetls.fastly.net/i/u/174s/b7e07075688a4ca6a29d29bd9a78fdce.png" onmouseover="reveal(this.alt)" /></td>
+<td id="G18" class="upper"><image alt="David Guetta - Nothing But The Beat" src="https://lastfm.freetls.fastly.net/i/u/174s/b7e07075688a4ca6a29d29bd9a78fdce.png" onmouseover="reveal(this.alt)" /></td>
 </tr>
 <tr>
 <td id="H1" class="punk"><image alt="Sublime - 40 oz. to Freedom" src="https://lastfm.freetls.fastly.net/i/u/174s/6c0da3a274e9498bc94c07a826662356.png" onmouseover="reveal(this.alt)" /></td>
 <td id="H2" class="hardrock"><image alt="Tool - Lateralus" src="https://lastfm.freetls.fastly.net/i/u/174s/b5a5721a08264207c2df36bf07454005.png" onmouseover="reveal(this.alt)" /></td>
-<td id="H3" class="punk"><image alt="Neutral Milk Hotel - In the Aeroplane Over the Sea" src="https://lastfm.freetls.fastly.net/i/u/174s/d95051e07a714889c8f7fbbccf61bf8b.png" onmouseover="reveal(this.alt)" /></td>
+<td id="H3" class="folk"><image alt="Neutral Milk Hotel - In the Aeroplane Over the Sea" src="https://lastfm.freetls.fastly.net/i/u/174s/d95051e07a714889c8f7fbbccf61bf8b.png" onmouseover="reveal(this.alt)" /></td>
 <td id="H4" class="rap"><image alt="De La Soul - Three Feet High and Rising" src="https://lastfm.freetls.fastly.net/i/u/174s/415acc90e5364817c80c7eb2c84c22f8.png" onmouseover="reveal(this.alt)" /></td>
 <td id="H5" class="metal"><image alt="System of a Down - Steal This Album!" src="https://lastfm.freetls.fastly.net/i/u/174s/719beff37975817f159399ba0c624a56.png" onmouseover="reveal(this.alt)" /></td>
-<td id="H6" class="electronic"><image alt="Portishead - Dummy" src="https://lastfm.freetls.fastly.net/i/u/174s/29f72d0333df4193981b5ff16dd37df6.png" onmouseover="reveal(this.alt)" /></td>
+<td id="H6" class="upper"><image alt="Portishead - Dummy" src="https://lastfm.freetls.fastly.net/i/u/174s/29f72d0333df4193981b5ff16dd37df6.png" onmouseover="reveal(this.alt)" /></td>
 <td id="H7" class="rock"><image alt="The Fratellis - Costello Music" src="https://lastfm.freetls.fastly.net/i/u/174s/8ea4dad3c3614770bca41a29c2e53b3d.png" onmouseover="reveal(this.alt)" /></td>
-<td id="H8" class="electronic"><image alt="Boom Boom Satellites - On" src="https://lastfm.freetls.fastly.net/i/u/174s/09771c0b3afd4bf2b7c865821ccdc884.png" onmouseover="reveal(this.alt)" /></td>
+<td id="H8" class="upper"><image alt="Boom Boom Satellites - On" src="https://lastfm.freetls.fastly.net/i/u/174s/09771c0b3afd4bf2b7c865821ccdc884.png" onmouseover="reveal(this.alt)" /></td>
 <td id="H9" class="ost"><image alt="Runescape - Original Soundtrack" src="https://lastfm.freetls.fastly.net/i/u/174s/c14b6e2cdece45eac5e7b5f6028d98b0.png" onmouseover="reveal(this.alt)" /></td>
 <td id="H10" class="punk"><image alt="Billy Talent - Billy Talent" src="https://lastfm.freetls.fastly.net/i/u/174s/074eddc5049148c08444fe0d78ed28f4.png" onmouseover="reveal(this.alt)" /></td>
 <td id="H11" class="rap"><image alt="Kendrick Lamar - DAMN." src="https://lastfm.freetls.fastly.net/i/u/174s/243a7444e2d59ff9b38e123f7267e3be.png" onmouseover="reveal(this.alt)" /></td>
@@ -313,12 +318,12 @@ font-size:12px;
 <td id="H15" class="pop"><image alt="Alanis Morissette - Jagged Little Pill" src="https://lastfm.freetls.fastly.net/i/u/174s/0d6e35eaf31f4e1db42b2ea247d90bb7.png" onmouseover="reveal(this.alt)" /></td>
 <td id="H16" class="rock"><image alt="Foo Fighters - There Is Nothing Left to Lose" src="https://lastfm.freetls.fastly.net/i/u/174s/5f47acfda92b4ff488a52aee4b80da3f.png" onmouseover="reveal(this.alt)" /></td>
 <td id="H17" class="metal"><image alt="In Flames - Colony" src="https://lastfm.freetls.fastly.net/i/u/174s/89a116e18bde714ed5f7ebbb0f06a65a.png" onmouseover="reveal(this.alt)" /></td>
-<td id="H18" class="electronic"><image alt="Nero - Welcome Reality" src="https://lastfm.freetls.fastly.net/i/u/174s/12e25912ed40dd1a96ceeb280f05e69f.png" onmouseover="reveal(this.alt)" /></td>
+<td id="H18" class="upper"><image alt="Nero - Welcome Reality" src="https://lastfm.freetls.fastly.net/i/u/174s/12e25912ed40dd1a96ceeb280f05e69f.png" onmouseover="reveal(this.alt)" /></td>
 </tr>
 <tr>
-<td id="I1" class="electronic"><image alt="Unkle - Psyence Fiction" src="https://lastfm.freetls.fastly.net/i/u/174s/17cf6e73d91b9b30e9cb806d4ba539ea.png"/ onmouseover="reveal(this.alt)"></td>
+<td id="I1" class="upper"><image alt="Unkle - Psyence Fiction" src="https://lastfm.freetls.fastly.net/i/u/174s/17cf6e73d91b9b30e9cb806d4ba539ea.png"/ onmouseover="reveal(this.alt)"></td>
 <td id="I2" class="punk"><image alt="Slightly Stoopid - Closer to the Sun" src="https://lastfm.freetls.fastly.net/i/u/174s/e185525479b74da3afc406fd3a3a9159.png" onmouseover="reveal(this.alt)" /></td>
-<td id="I3" class="electronic"><image alt="Daft Punk - Discovery" src="https://lastfm.freetls.fastly.net/i/u/174s/54010ae7c4fa4c96a1e1872a051d9ecc.png" onmouseover="reveal(this.alt)" /></td>
+<td id="I3" class="upper"><image alt="Daft Punk - Discovery" src="https://lastfm.freetls.fastly.net/i/u/174s/54010ae7c4fa4c96a1e1872a051d9ecc.png" onmouseover="reveal(this.alt)" /></td>
 <td id="I4" class="rap"><image alt="Denzel Curry - Ta1300" src="https://lastfm.freetls.fastly.net/i/u/174s/eb08998bcef5c46fc1aaec14be568d86.png" onmouseover="reveal(this.alt)" /></td>
 <td id="I5" class="rap"><image alt="Outkast - Stankonia" src="https://lastfm.freetls.fastly.net/i/u/174s/28229f48f77f2c5f648055c3b6273099.png" onmouseover="reveal(this.alt)" /></td>
 <td id="I6" class="rap"><image alt="Tyler, the Creator - Flower Boy" src="https://lastfm.freetls.fastly.net/i/u/174s/52a7f32bdc99238080b0f17e859b3b4d.png" onmouseover="reveal(this.alt)" /></td>
@@ -328,23 +333,23 @@ font-size:12px;
 <td id="I10" class="rap"><image alt="Eminem - The Marshall Mathers LP" src="https://lastfm.freetls.fastly.net/i/u/174s/de87486b44ed660d8bc9b5fa9a416336.png" onmouseover="reveal(this.alt)" /></td>
 <td id="I11" class="rock"><image alt="Gorillaz - Demon Days" src="https://lastfm.freetls.fastly.net/i/u/174s/271483e955d2b255160f3361a7f5fb78.png" onmouseover="reveal(this.alt)" /></td>
 <td id="I12" class="hardrock"><image alt="letlive. - Fake History" src="https://lastfm.freetls.fastly.net/i/u/174s/d4c5246b1ef64dc3bdb01122a30066ee.png" onmouseover="reveal(this.alt)" /></td>
-<td id="I13" class="electronic"><image alt="Savant - Protos" src="https://lastfm.freetls.fastly.net/i/u/174s/e8a254b1917449dcc9f4379272db7255.png" onmouseover="reveal(this.alt)" /></td>
-<td id="I14" class="electronic"><image alt="Prodigy - Music for the Jilted Generation" src="https://lastfm.freetls.fastly.net/i/u/174s/6a768700be35854aa67e37f065b4e94f.png" onmouseover="reveal(this.alt)" /></td>
+<td id="I13" class="upper"><image alt="Savant - Protos" src="https://lastfm.freetls.fastly.net/i/u/174s/e8a254b1917449dcc9f4379272db7255.png" onmouseover="reveal(this.alt)" /></td>
+<td id="I14" class="upper"><image alt="Prodigy - Music for the Jilted Generation" src="https://lastfm.freetls.fastly.net/i/u/174s/6a768700be35854aa67e37f065b4e94f.png" onmouseover="reveal(this.alt)" /></td>
 <td id="I15" class="rock"><image alt="Cage The Elephant - Melophobia" src="https://lastfm.freetls.fastly.net/i/u/174s/d070e505cdab4b27cb39bfe28eb63343.png" onmouseover="reveal(this.alt)" /></td>
 <td id="I16" class="rock"><image alt="Interpol - Turn on the Bright Lights" src="https://lastfm.freetls.fastly.net/i/u/174s/55292eb15e7e442a9f40f09625d6e111.png" onmouseover="reveal(this.alt)" /></td>
 <td id="I17" class="metal"><image alt="Judas Priest - Painkiller" src="https://lastfm.freetls.fastly.net/i/u/174s/287277f0dfd943c78c8cc43c8c0f8148.png" onmouseover="reveal(this.alt)" /></td>
-<td id="I18" class="electronic"><image alt="Sub Focus - Torus" src="https://lastfm.freetls.fastly.net/i/u/174s/f5bbd7a6062e4345c3b8707259e9a9f9.png" onmouseover="reveal(this.alt)" /></td>
+<td id="I18" class="upper"><image alt="Sub Focus - Torus" src="https://lastfm.freetls.fastly.net/i/u/174s/f5bbd7a6062e4345c3b8707259e9a9f9.png" onmouseover="reveal(this.alt)" /></td>
 </tr>
 <tr>
 <td id="J1" class="rock"><image alt="Radiohead - In Rainbows" src="https://lastfm.freetls.fastly.net/i/u/174s/8d91b7dd13084606b99d756175917f7d.png" onmouseover="reveal(this.alt)" /></td>
 <td id="J2" class="punk"><image alt="Comeback Kid - Wake the Dead" src="https://lastfm.freetls.fastly.net/i/u/174s/d755f6635cc407fa4bdf346bbfd535cc.png" onmouseover="reveal(this.alt)" /></td>
-<td id="J3" class="electronic"><image alt="0edit - 0edit" src="https://lastfm.freetls.fastly.net/i/u/174s/21aa57e0bd3615d44c29f7768cc16469.png" onmouseover="reveal(this.alt)" /></td>
+<td id="J3" class="upper"><image alt="0edit - 0edit" src="https://lastfm.freetls.fastly.net/i/u/174s/21aa57e0bd3615d44c29f7768cc16469.png" onmouseover="reveal(this.alt)" /></td>
 <td id="J4" class="rap"><image alt="Frank Ocean - Channel Orange" src="https://lastfm.freetls.fastly.net/i/u/174s/553678d27570452839aec0fd0cdadd63.png" onmouseover="reveal(this.alt)" /></td>
 <td id="J5" class="rap"><image alt="Childish Gambino - Because The Internet" src="https://lastfm.freetls.fastly.net/i/u/174s/8db9e4f1deea5d7354e8e4d1d5178b2c.png" onmouseover="reveal(this.alt)" /></td>
 <td id="J6" class="rock"><image alt="Ogre You Asshole - Ogre You Asshole" src="https://lastfm.freetls.fastly.net/i/u/174s/0720557d2c7d4c06ad0a5802e7c4c4b3.png" onmouseover="reveal(this.alt)" /></td>
 <td id="J7" class="rock"><image alt="Tally Hall - Good & Evil" src="https://lastfm.freetls.fastly.net/i/u/174s/884ac04f86aa450398fb8de2850ba52c.png" onmouseover="reveal(this.alt)" /></td>
-<td id="J8" class="electronic"><image alt="Masayoshi Takanaka - Insatiable High" src="https://lastfm.freetls.fastly.net/i/u/174s/6dc80bb744324f55afa02febd61a464c.png" onmouseover="reveal(this.alt)" /></td>
-<td id="J9" class="electronic"><image alt="Max Richter - The Blue Notebooks" src="https://lastfm.freetls.fastly.net/i/u/174s/b1087ae756ccaa0dda81a218548a1710.png" onmouseover="reveal(this.alt)" /></td>
+<td id="J8" class="upper"><image alt="Masayoshi Takanaka - Insatiable High" src="https://lastfm.freetls.fastly.net/i/u/174s/6dc80bb744324f55afa02febd61a464c.png" onmouseover="reveal(this.alt)" /></td>
+<td id="J9" class="upper"><image alt="Max Richter - The Blue Notebooks" src="https://lastfm.freetls.fastly.net/i/u/174s/b1087ae756ccaa0dda81a218548a1710.png" onmouseover="reveal(this.alt)" /></td>
 <td id="J10" class="punk"><image alt="Yellowcard - Lights and Sounds" src="https://lastfm.freetls.fastly.net/i/u/174s/ca81944b1db74042bd1a3c1ad8c37cd6.png" onmouseover="reveal(this.alt)" /></td>
 <td id="J11" class="metal"><image alt="Sonata Arctica - Ecliptica" src="https://lastfm.freetls.fastly.net/i/u/174s/50e7869d254771f32f4fe626be24e110.png" onmouseover="reveal(this.alt)" /></td>
 <td id="J12" class="metal"><image alt="The Sword - Warp Riders" src="https://lastfm.freetls.fastly.net/i/u/174s/af780b931e427bd29ea3c262705fba9d.png" onmouseover="reveal(this.alt)" /></td>
@@ -353,11 +358,11 @@ font-size:12px;
 <td id="J15" class="rock"><image alt="Simon & Garfunkle - Wednesday Morning, 3 AM" src="https://lastfm.freetls.fastly.net/i/u/174s/430b085f6a4d4139b739b3f6a1face02.png" onmouseover="reveal(this.alt)" /></td>
 <td id="J16" class="rock"><image alt="Bright Eyes - I'm Wide Awake It's Morning" src="https://lastfm.freetls.fastly.net/i/u/174s/5d02e6dfb8e242a1c2a51e3073e9ef06.png" onmouseover="reveal(this.alt)" /></td>
 <td id="J17" class="rock"><image alt="Zwan - Jesus I/Mary Star of the Sea" src="https://lastfm.freetls.fastly.net/i/u/174s/024dc283f04ee3dc9c59f9252cffabaa.png" onmouseover="reveal(this.alt)" /></td>
-<td id="J18" class="electronic"><image alt="The Prodigy - Invaders Must Die" src="https://lastfm.freetls.fastly.net/i/u/174s/781ec2bfcf184077bdcb9318017107fd.png" onmouseover="reveal(this.alt)" /></td>
+<td id="J18" class="upper"><image alt="The Prodigy - Invaders Must Die" src="https://lastfm.freetls.fastly.net/i/u/174s/781ec2bfcf184077bdcb9318017107fd.png" onmouseover="reveal(this.alt)" /></td>
 </tr>
 <tr>
 <td id="K1" class="rap"><image alt="Usher - Confessions" src="https://lastfm.freetls.fastly.net/i/u/174s/fef6b439772044d3c4d46a98cb1620a2.png" onmouseover="reveal(this.alt)" /></td>
-<td id="K2" class="electronic"><image alt="Third Party - Hope" src="https://lastfm.freetls.fastly.net/i/u/174s/a4f16fe3504135cc2518dea390f28a23.png" onmouseover="reveal(this.alt)" /></td>
+<td id="K2" class="upper"><image alt="Third Party - Hope" src="https://lastfm.freetls.fastly.net/i/u/174s/a4f16fe3504135cc2518dea390f28a23.png" onmouseover="reveal(this.alt)" /></td>
 <td id="K3" class="metal"><image alt="Arch Enemy - Will To Power" src="https://lastfm.freetls.fastly.net/i/u/174s/ec5f16dc664a386f44ddd1f475b7f66e.png" onmouseover="reveal(this.alt)" /></td>
 <td id="K4" class="metal"><image alt="Pain - Dancing With The Dead" src="https://lastfm.freetls.fastly.net/i/u/174s/9681f032b79b81e6bf6e6c7deac1b754.png" onmouseover="reveal(this.alt)" /></td>
 <td id="K5" class="metal"><image alt="Children of Bodom - Hate Crew Deathroll" src="https://lastfm.freetls.fastly.net/i/u/174s/81e4903fc66048fcb9d6b1b08b59edfa.png" onmouseover="reveal(this.alt)" /></td>
@@ -366,7 +371,7 @@ font-size:12px;
 <td id="K8" class="pop"><image alt="Sunmi - Singles" src="https://lastfm.freetls.fastly.net/i/u/174s/5a6ccc93fe6dcee16b24e38455701252.png" onmouseover="reveal(this.alt)" /></td>
 <td id="K9" class="metal"><image alt="Apocalyptica - 7th Symphony" src="https://lastfm.freetls.fastly.net/i/u/174s/f6163add16ca4e89a3149ab82f391949.png" onmouseover="reveal(this.alt)" /></td>
 <td id="K10" class="metal"><image alt="Deathstars - Termination Bliss" src="https://lastfm.freetls.fastly.net/i/u/174s/397925c1b2af4d168a2ad789f897becf.png" onmouseover="reveal(this.alt)" /></td>
-<td id="K11" class="electronic"><image alt="Celldweller - Celldweller" src="https://lastfm.freetls.fastly.net/i/u/174s/cb68297c220a46ffa676e9a265b01c62.png" onmouseover="reveal(this.alt)" /></td>
+<td id="K11" class="upper"><image alt="Celldweller - Celldweller" src="https://lastfm.freetls.fastly.net/i/u/174s/cb68297c220a46ffa676e9a265b01c62.png" onmouseover="reveal(this.alt)" /></td>
 <td id="K12" class=""><image alt="" src="black.png" onmouseover="reveal(this.alt)" /></td>
 <td id="K13" class=""><image alt="" src="black.png" onmouseover="reveal(this.alt)" /></td>
 <td id="K14" class=""><image alt="" src="black.png" onmouseover="reveal(this.alt)" /></td>
@@ -389,7 +394,7 @@ font-size:12px;
 var arrAlbums = [];
 var globRockCount = 0;
 var globPopCount = 0;
-var globElectronicCount = 0;
+var globupperCount = 0;
 var globMetalCount = 0;
 var globRapCount = 0;
 var globHardRockCount = 0;
@@ -436,8 +441,8 @@ globRockCount -= 1;
 globPopCount -= 1;
 } else if (document.getElementById(ID).classList.contains("metal")) {
 globMetalCount -= 1;
-} else if (document.getElementById(ID).classList.contains("electronic")) {
-globElectronicCount -= 1;
+} else if (document.getElementById(ID).classList.contains("upper")) {
+globupperCount -= 1;
 }else if (document.getElementById(ID).classList.contains("rap")) {
 globRapCount -= 1;
 }else if (document.getElementById(ID).classList.contains("hardrock")) {
@@ -460,8 +465,8 @@ globRockCount += 1;
 globPopCount += 1;
 } else if (document.getElementById(ID).classList.contains("metal")) {
 globMetalCount += 1;
-} else if (document.getElementById(ID).classList.contains("electronic")) {
-globElectronicCount += 1;
+} else if (document.getElementById(ID).classList.contains("upper")) {
+globupperCount += 1;
 }else if (document.getElementById(ID).classList.contains("rap")) {
 globRapCount += 1;
 }else if (document.getElementById(ID).classList.contains("hardrock")) {
@@ -490,8 +495,8 @@ if (document.getElementById(arrAlbums[i]).classList.contains("rock")) {
 globRockCount += 1;
 } else if (document.getElementById(arrAlbums[i]).classList.contains("pop")) {
 globPopCount += 1;
-} else if (document.getElementById(arrAlbums[i]).classList.contains("electronic")) {
-globElectronicCount += 1;
+} else if (document.getElementById(arrAlbums[i]).classList.contains("upper")) {
+globupperCount += 1;
 } else if (document.getElementById(arrAlbums[i]).classList.contains("metal")) {
 globMetalCount += 1;
 } else if (document.getElementById(arrAlbums[i]).classList.contains("rap")) {
@@ -521,7 +526,7 @@ if (percent > 59.9) { document.getElementById("silver").style.visibility = "" } 
 if (percent > 79.9) { document.getElementById("gold").style.visibility = "" } else { document.getElementById("gold").style.visibility = "hidden" };
 if (globTool == true ) { document.getElementById("sudafed").style.visibility = "" } else { document.getElementById("sudafed").style.visibility = "hidden" };
 if (globRockCount > 24) { document.getElementById("rock").style.visibility = "" } else { document.getElementById("rock").style.visibility = "hidden" };
-if (globElectronicCount > 14) { document.getElementById("electronic").style.visibility = "" } else { document.getElementById("electronic").style.visibility = "hidden" };
+if (globupperCount > 9) { document.getElementById("upper").style.visibility = "" } else { document.getElementById("upper").style.visibility = "hidden" };
 if (globMetalCount > 14) { document.getElementById("metal").style.visibility = "" } else { document.getElementById("metal").style.visibility = "hidden" };
 if (globPopCount > 4) { document.getElementById("pop").style.visibility = "" } else { document.getElementById("pop").style.visibility = "hidden" };
 if (globRapCount > 24) { document.getElementById("rap").style.visibility = "" } else { document.getElementById("rap").style.visibility = "hidden" };
@@ -683,8 +688,8 @@ case "spoon":
 	case "metal":
 	$("#pAward").text("Through The Fire: listened to 15 metal albums");
     break;
-	case "electronic":
-	$("#pAward").text("Digital Love: listened to 15 electronic albums");
+	case "upper":
+	$("#pAward").text("Ecstasy: listened to 10 upper albums");
     break;
 	case "pop":
 	$("#pAward").text("Technicolour Dream: listened to all 5 pop albums");
