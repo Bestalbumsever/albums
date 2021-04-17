@@ -407,10 +407,10 @@ height: 40px;
 </table>
 </div>
 
-<div onclick="clippy()" style="width:100px;height:100px;bottom:0;right:0;position:absolute;">
+<!--<div onclick="clippy()" style="width:100px;height:100px;bottom:0;right:0;position:absolute;">
 <p id="hint" style="color: white;font-family: courier; bottom:100px;right:5px;position:absolute;visibility:hidden;" ></p>
 <img id="clippy" class="meme" src="clippy.png" style="visibility:hidden;"  />
-</div>
+</div>-->
 
 
 
@@ -626,7 +626,7 @@ function random(unlistened) {
 			var btn = document.getElementById("btn" + genre);		
 			if (btn.style.color == "red") { boolOK = false; }
 		}catch(ex) {
-			//console.log("genre filter random bug: " + ex.toString());
+			console.log("genre filter random bug: " + ex.toString());
 		}	
 		if (boolOK == true) {
 			
