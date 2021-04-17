@@ -71,7 +71,18 @@ margin-left: 1%;
 bottom:0;
 top:0;
 }
+#divBackup {
+width: 100%;
+display:inline-block;
+margin-left: 1%;
+bottom:0;
+}
 #divFilters button {
+float:left;
+margin-left:4%;
+margin-bottom:5px;
+}
+#divBackup button {
 float:left;
 margin-left:4%;
 margin-bottom:5px;
@@ -152,12 +163,17 @@ height: 40px;
 	<button id="btnindie" class="genrebtn" style="width:40%; color:white;" onclick="filter('indie')">Indie & Alternative</button>
 </div>
 
-<div id="divInfo">
+<div id="divInfo" style="height:100px;">
 <h3 id="hInfo" style="color:white; font-family: courier;"></h3>
 </div>
 
+<div id="divBackup">
+	<button id="btnSave" style="width:41%; color:white; font-size:12px; " onclick="backup('save')">Backup Checks</button>
+	<button id="btnLoad" style="width:40%; color:white; font-size:12px; " onclick="backup('load')">Import Checks</button>
+</div>
+
 <div style="position: absolute; bottom: 0; right: 0; display:none;" id="divNice" >
-<img src="pitNice.png" style="width:106px; height:215px; float:right;"/>
+<img src="pitNice.png" class="meme" style="width:106px; height:215px; float:right;"/>
 </div>
 
 
@@ -393,7 +409,7 @@ height: 40px;
 
 <div onclick="clippy()" style="width:100px;height:100px;bottom:0;right:0;position:absolute;">
 <p id="hint" style="color: white;font-family: courier; bottom:100px;right:5px;position:absolute;visibility:hidden;" ></p>
-<img id="clippy" src="clippy.png" style="visibility:hidden;"  />
+<img id="clippy" class="meme" src="clippy.png" style="visibility:hidden;"  />
 </div>
 
 
@@ -603,16 +619,27 @@ function random(unlistened) {
 	var imgs = document.getElementsByTagName("img");	
     var imgSrcs = [];
     for (var i = 0; i < imgs.length; i++) {
-		if (!imgs[i].classList.contains("award")) {
-		if (unlistened == true) {
-			if (imgs[i].classList.contains("listened")) {				
+	if (!imgs[i].classList.contains("award") && !imgs[i].classList.contains("meme")) {
+		var boolOK = true;
+		try{
+			var genre = imgs[i].parentNode.classList;
+			var btn = document.getElementById("btn" + genre);		
+			if (btn.style.color == "red") { boolOK = false; }
+		}catch(ex) {
+			//console.log("genre filter random bug: " + ex.toString());
+		}	
+		if (boolOK == true) {
+			
+			if (unlistened == true) {
+				if (imgs[i].classList.contains("listened")) {				
+				} else {
+					imgSrcs.push(imgs[i].alt);
+				}
 			} else {
 				imgSrcs.push(imgs[i].alt);
-			}
-		} else {
-			imgSrcs.push(imgs[i].alt);
-		}    
-		}		    
+			}    
+			}	
+			}			
     }
     
 	if (imgSrcs.length == 0) {
@@ -792,6 +819,24 @@ $('#hint').text("Want an achievement? You should listen to more " + globHint + "
 document.getElementById("clippy").style.visibility = "hidden"
 document.getElementById("hint").style.visibility = "hidden"
 }
+}
+
+function backup(func) {
+ if (func == "save") {
+   var dummy = document.createElement("textarea");
+    document.body.appendChild(dummy);
+    dummy.value =  JSON.stringify(arrAlbums);
+    dummy.select();
+    document.execCommand("copy");
+    document.body.removeChild(dummy);
+	$("#hInfo").text("Album cookie copied to clipboard");
+ } else {
+ var albs = prompt("Paste your cookie value", "");
+ if (albs != null) {
+  arrAlbums = JSON.parse(albs);
+  loadCheckedAlbums();
+}
+ }
 }
 
 function hideAward() {
