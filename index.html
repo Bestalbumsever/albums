@@ -149,19 +149,21 @@ height: 40px;
 
 
 <div id="divFilters">
-	<button id="btnShowAll" style="width:41%; color:white;" onclick="filter('all')">Show All</button>
+	<button id="btnShowAll" style="width:41%; color:white;" onclick="filter('all')" >Show All</button>
 	<button id="btnHideAll" style="width:40%; color:white;" onclick="filter('none')">Hide All</button>
-	<button id="btnrap" class="genrebtn" style="width:41%; color:white;" onclick="filter('rap')">Hip-Hop & RNB</button>
-	<button id="btnrock" class="genrebtn" style="width:40%; color:white;" onclick="filter('rock')">Rock</button>	
-	<button id="btnupper" class="genrebtn" style="width:41%; color:white;" onclick="filter('upper')">Electronic Uppers</button>
-	<button id="btndowner" class="genrebtn" style="width:40%; color:white;" onclick="filter('downer')">Electronic Downers</button>
-	<button id="btnhardrock" class="genrebtn" style="width:41%; color:white;" onclick="filter('hardrock')">Hard Rock</button>
-	<button id="btnmetal" class="genrebtn" style="width:40%; color:white;" onclick="filter('metal')">Metal</button>
-	<button id="btnost" class="genrebtn" style="width:41%; color:white;" onclick="filter('ost')">OST</button>
-	<button id="btnpop" class="genrebtn" style="width:40%; color:white;" onclick="filter('pop')">Pop</button>
-	<button id="btnpunk" class="genrebtn" style="width:41%; color:white;" onclick="filter('punk')">Punk & Ska</button>
-	<button id="btnindie" class="genrebtn" style="width:40%; color:white;" onclick="filter('indie')">Indie & Alternative</button>
+	<button id="btnrap" class="genrebtn" style="width:41%; color:white;" onclick="filter('rap')" onmouseover="genreCount('rap')">Hip-Hop & RNB</button>
+	<button id="btnrock" class="genrebtn" style="width:40%; color:white;" onclick="filter('rock')" onmouseover="genreCount('rock')">Rock</button>	
+	<button id="btnupper" class="genrebtn" style="width:41%; color:white;" onclick="filter('upper')" onmouseover="genreCount('upper')">Electronic Uppers</button>
+	<button id="btndowner" class="genrebtn" style="width:40%; color:white;" onclick="filter('downer')" onmouseover="genreCount('downer')">Electronic Downers</button>
+	<button id="btnhardrock" class="genrebtn" style="width:41%; color:white;" onclick="filter('hardrock')" onmouseover="genreCount('hardrock')">Hard Rock</button>
+	<button id="btnmetal" class="genrebtn" style="width:40%; color:white;" onclick="filter('metal')" onmouseover="genreCount('metal')">Metal</button>
+	<button id="btnost" class="genrebtn" style="width:41%; color:white;" onclick="filter('ost')" onmouseover="genreCount('ost')">OST</button>
+	<button id="btnpop" class="genrebtn" style="width:40%; color:white;" onclick="filter('pop')" onmouseover="genreCount('pop')">Pop</button>
+	<button id="btnpunk" class="genrebtn" style="width:41%; color:white;" onclick="filter('punk')" onmouseover="genreCount('punk')">Punk & Ska</button>
+	<button id="btnindie" class="genrebtn" style="width:40%; color:white;" onclick="filter('indie')" onmouseover="genreCount('indie')">Indie & Alternative</button>
 </div>
+
+
 
 <div id="divInfo" style="height:100px;">
 <h3 id="hInfo" style="color:white; font-family: courier;"></h3>
@@ -423,6 +425,7 @@ height: 40px;
 //edie half of them
 //ry gang starr to binary star
 //jurak soad to beergarden
+//jj yellowcard to DWTD
 
 var arrAlbums = [];
 var globRockCount = 0;
@@ -719,6 +722,42 @@ switch(genre) {
 	tds[i].style.visibility = "hidden";
 	}	 
     }      
+}
+}
+
+function genreCount(genre) {
+
+switch(genre) {
+	case "rock":	
+	$("#hInfo").text(globRockCount + "/35 (" + ((100 * globRockCount) / 35).toFixed(2) + "%)");
+    break;
+	case "metal":
+	$("#hInfo").text(globMetalCount + "/35 (" + ((100 * globMetalCount) / 35).toFixed(2) + "%)");
+    break;
+	case "upper":
+	$("#hInfo").text(globupperCount + "/22 (" + ((100 * globupperCount) / 22).toFixed(2) + "%)");
+    break;
+	case "pop":
+	$("#hInfo").text(globPopCount + "/5 (" + ((100 * globPopCount) / 5).toFixed(2) + "%)");
+    break;
+	case "rap":
+	$("#hInfo").text(globRapCount + "/44 (" + ((100 * globRapCount) / 44).toFixed(2) + "%)");
+    break;
+	case "hardrock":
+	$("#hInfo").text(globHardRockCount + "/10 (" + ((100 * globHardRockCount) / 10).toFixed(2) + "%)");
+    break;
+	case "punk":
+	$("#hInfo").text(globPunkCount + "/15 (" + ((100 * globPunkCount) / 15).toFixed(2) + "%)");
+    break;
+	case "downer":
+	$("#hInfo").text(globdownerCount + "/11 (" + ((100 * globdownerCount) / 11).toFixed(2) + "%)");
+    break;
+	case "ost":
+	$("#hInfo").text(globOSTCount + "/5 (" + ((100 * globOSTCount) / 5).toFixed(2) + "%)");
+    break;
+	case "indie":
+	$("#hInfo").text(globIndieCount + "/19 (" + ((100 * globIndieCount) / 19).toFixed(2) + "%)");
+    break;	
 }
 }
 
