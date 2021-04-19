@@ -153,7 +153,7 @@ function updateAlbumCount() {
 
 var json_str = JSON.stringify(arrAlbums);
 createCookie('albums', json_str);
-var percent = (100 * arrAlbums.length) / 200;
+var percent = (100 * arrAlbums.length) / 209;
 percent = percent.toFixed(2);
 
 if (percent > 9.99) { document.getElementById("spoon").style.visibility = "" } else { document.getElementById("spoon").style.visibility = "hidden" };
@@ -178,7 +178,7 @@ document.getElementById("god").style.visibility = ""
 document.getElementById("god").style.visibility = "hidden"
 }
 
-$("#pListenCount").text("You have listened to " + arrAlbums.length + "/200 albums! (" + percent + "%)");
+$("#pListenCount").text("You have listened to " + arrAlbums.length + "/209 albums! (" + percent + "%)");
 
 if (arrAlbums.length == 69) {
 document.getElementById("divNice").style.display = "inline";
