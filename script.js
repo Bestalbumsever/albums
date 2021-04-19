@@ -157,9 +157,9 @@ var percent = (100 * arrAlbums.length) / 200;
 percent = percent.toFixed(2);
 
 if (percent > 9.99) { document.getElementById("spoon").style.visibility = "" } else { document.getElementById("spoon").style.visibility = "hidden" };
-if (percent > 39.9) { document.getElementById("bronze").style.visibility = "" } else { document.getElementById("bronze").style.visibility = "hidden" };
-if (percent > 59.9) { document.getElementById("silver").style.visibility = "" } else { document.getElementById("silver").style.visibility = "hidden" };
-if (percent > 79.9) { document.getElementById("gold").style.visibility = "" } else { document.getElementById("gold").style.visibility = "hidden" };
+if (percent > 24.99) { document.getElementById("bronze").style.visibility = "" } else { document.getElementById("bronze").style.visibility = "hidden" };
+if (percent > 49.99) { document.getElementById("silver").style.visibility = "" } else { document.getElementById("silver").style.visibility = "hidden" };
+if (percent > 74.99) { document.getElementById("gold").style.visibility = "" } else { document.getElementById("gold").style.visibility = "hidden" };
 if (arrAlbums.length > 68) { document.getElementById("nice").style.visibility = "" } else { document.getElementById("nice").style.visibility = "hidden" };
 if (globTool == true ) { document.getElementById("sudafed").style.visibility = "" } else { document.getElementById("sudafed").style.visibility = "hidden" };
 if (globRockCount > 19) { document.getElementById("rock").style.visibility = "" } else { document.getElementById("rock").style.visibility = "hidden" };
@@ -373,13 +373,13 @@ case "spoon":
 	$("#pAward").text("Spoon: listened to 10% of all albums");
     break;
   case "bronze":
-	$("#pAward").text("Bronze: listened to 40% of all albums");
+	$("#pAward").text("Bronze: listened to 25% of all albums");
     break;
 	case "silver":
-	$("#pAward").text("Silver: listened to 60% of all albums");
+	$("#pAward").text("Silver: listened to 50% of all albums");
     break;
 	case "gold":
-	$("#pAward").text("Gold: listened to 80% of all albums");
+	$("#pAward").text("Gold: listened to 75% of all albums");
     break;
 	case "rock":
 	$("#pAward").text("Solid: listened to 20 rock albums");
