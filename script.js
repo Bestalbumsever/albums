@@ -170,7 +170,7 @@ if (globdownerCount > 9) { document.getElementById("downer").style.visibility = 
 if (globMetalCount > 24) { document.getElementById("metal").style.visibility = "" } else { document.getElementById("metal").style.visibility = "hidden" };
 if (globPopCount > 3) { document.getElementById("pop").style.visibility = "" } else { document.getElementById("pop").style.visibility = "hidden" };
 if (globRapCount > 24) { document.getElementById("rap").style.visibility = "" } else { document.getElementById("rap").style.visibility = "hidden" };
-if (globHardRockCount > 7) { document.getElementById("hardrock").style.visibility = "" } else { document.getElementById("hardrock").style.visibility = "hidden" };
+if (globHardRockCount > 9) { document.getElementById("hardrock").style.visibility = "" } else { document.getElementById("hardrock").style.visibility = "hidden" };
 if (globPunkCount > 9) { document.getElementById("punk").style.visibility = "" } else { document.getElementById("punk").style.visibility = "hidden" };
 if (globOSTCount > 2) { document.getElementById("ost").style.visibility = "" } else { document.getElementById("ost").style.visibility = "hidden" };
 if (globIndieCount > 14) { document.getElementById("indie").style.visibility = "" } else { document.getElementById("indie").style.visibility = "hidden" };
@@ -330,7 +330,7 @@ switch(genre) {
 	$("#hInfo").text(globRapCount + "/44 (" + ((100 * globRapCount) / 44).toFixed(2) + "%)");
     break;
 	case "hardrock":
-	$("#hInfo").text(globHardRockCount + "/9 (" + ((100 * globHardRockCount) / 9).toFixed(2) + "%)");
+	$("#hInfo").text(globHardRockCount + "/10 (" + ((100 * globHardRockCount) / 10).toFixed(2) + "%)");
     break;
 	case "punk":
 	$("#hInfo").text(globPunkCount + "/15 (" + ((100 * globPunkCount) / 15).toFixed(2) + "%)");
@@ -402,7 +402,7 @@ case "spoon":
 	$("#pAward").text("The Chronic: listened to 25 hip-hop/rnb albums");
     break;
 	case "hardrock":
-	$("#pAward").text("Diamond Hands: listened to all 9 hard rock albums");
+	$("#pAward").text("Diamond Hands: listened to all 10 hard rock albums");
     break;
 	case "punk":
 	$("#pAward").text("Not Dead: listened to 10 punk/ska albums");
