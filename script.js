@@ -171,7 +171,7 @@ if (globRapCount > 24) { document.getElementById("rap").style.visibility = "" } 
 if (globHardRockCount > 7) { document.getElementById("hardrock").style.visibility = "" } else { document.getElementById("hardrock").style.visibility = "hidden" };
 if (globPunkCount > 9) { document.getElementById("punk").style.visibility = "" } else { document.getElementById("punk").style.visibility = "hidden" };
 if (globOSTCount > 2) { document.getElementById("ost").style.visibility = "" } else { document.getElementById("ost").style.visibility = "hidden" };
-if (globIndieCount > 11) { document.getElementById("indie").style.visibility = "" } else { document.getElementById("indie").style.visibility = "hidden" };
+if (globIndieCount > 14) { document.getElementById("indie").style.visibility = "" } else { document.getElementById("indie").style.visibility = "hidden" };
 if (arrAlbums.includes("H1") && arrAlbums.includes("H2") && arrAlbums.includes("H3") && arrAlbums.includes("I2") && arrAlbums.includes("I1") && arrAlbums.includes("A3") && arrAlbums.includes("J1") && arrAlbums.includes("B1") && arrAlbums.includes("G3")) {
 document.getElementById("god").style.visibility = ""
 } else {
@@ -340,7 +340,7 @@ switch(genre) {
 	$("#hInfo").text(globOSTCount + "/5 (" + ((100 * globOSTCount) / 5).toFixed(2) + "%)");
     break;
 	case "indie":
-	$("#hInfo").text(globIndieCount + "/19 (" + ((100 * globIndieCount) / 19).toFixed(2) + "%)");
+	$("#hInfo").text(globIndieCount + "/24 (" + ((100 * globIndieCount) / 24).toFixed(2) + "%)");
     break;	
 }
 }
@@ -412,7 +412,7 @@ case "spoon":
 	$("#pAward").text("Long Long Man: listened to 3 soundtracks");
     break;
 	case "indie":
-	$("#pAward").text("Snowflake: listened to 12 indie/alternative albums");
+	$("#pAward").text("Snowflake: listened to 15 indie/alternative albums");
     break;
 	case "nice":
 	$("#pAward").text("Nice: listened to 69 albums");
