@@ -3,6 +3,8 @@
 //ry gang starr to binary star
 //jurak soad to beergarden
 //jj yellowcard to DWTD
+//alfie buster b and thom bresh and put on Idiot Pilot - Strange we should meet here instead
+
 
 var arrAlbums = [];
 var globRockCount = 0;
@@ -166,7 +168,7 @@ if (globRockCount > 19) { document.getElementById("rock").style.visibility = "" 
 if (globupperCount > 9) { document.getElementById("upper").style.visibility = "" } else { document.getElementById("upper").style.visibility = "hidden" };
 if (globdownerCount > 9) { document.getElementById("downer").style.visibility = "" } else { document.getElementById("downer").style.visibility = "hidden" };
 if (globMetalCount > 24) { document.getElementById("metal").style.visibility = "" } else { document.getElementById("metal").style.visibility = "hidden" };
-if (globPopCount > 4) { document.getElementById("pop").style.visibility = "" } else { document.getElementById("pop").style.visibility = "hidden" };
+if (globPopCount > 3) { document.getElementById("pop").style.visibility = "" } else { document.getElementById("pop").style.visibility = "hidden" };
 if (globRapCount > 24) { document.getElementById("rap").style.visibility = "" } else { document.getElementById("rap").style.visibility = "hidden" };
 if (globHardRockCount > 7) { document.getElementById("hardrock").style.visibility = "" } else { document.getElementById("hardrock").style.visibility = "hidden" };
 if (globPunkCount > 9) { document.getElementById("punk").style.visibility = "" } else { document.getElementById("punk").style.visibility = "hidden" };
@@ -322,7 +324,7 @@ switch(genre) {
 	$("#hInfo").text(globupperCount + "/16 (" + ((100 * globupperCount) / 16).toFixed(2) + "%)");
     break;
 	case "pop":
-	$("#hInfo").text(globPopCount + "/5 (" + ((100 * globPopCount) / 5).toFixed(2) + "%)");
+	$("#hInfo").text(globPopCount + "/4 (" + ((100 * globPopCount) / 4).toFixed(2) + "%)");
     break;
 	case "rap":
 	$("#hInfo").text(globRapCount + "/44 (" + ((100 * globRapCount) / 44).toFixed(2) + "%)");
@@ -391,7 +393,7 @@ case "spoon":
 	$("#pAward").text("Ecstasy: listened to 10 upper electronic albums");
     break;
 	case "pop":
-	$("#pAward").text("Technicolour Dream: listened to all 5 pop albums");
+	$("#pAward").text("Technicolour Dream: listened to all 4 pop albums");
     break;
 	case "sudafed":
 	$("#pAward").text("Cough Medicine: listened to the developer's favourite album");
