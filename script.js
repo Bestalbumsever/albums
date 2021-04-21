@@ -339,7 +339,7 @@ switch(genre) {
 	$("#hInfo").text(globdownerCount + "/13 (" + ((100 * globdownerCount) / 13).toFixed(2) + "%)");
     break;
 	case "ost":
-	$("#hInfo").text(globOSTCount + "/5 (" + ((100 * globOSTCount) / 5).toFixed(2) + "%)");
+	$("#hInfo").text(globOSTCount + "/6 (" + ((100 * globOSTCount) / 6).toFixed(2) + "%)");
     break;
 	case "indie":
 	$("#hInfo").text(globIndieCount + "/24 (" + ((100 * globIndieCount) / 24).toFixed(2) + "%)");
