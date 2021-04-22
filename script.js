@@ -155,7 +155,7 @@ function updateAlbumCount() {
 
 var json_str = JSON.stringify(arrAlbums);
 createCookie('albums', json_str);
-var percent = (100 * arrAlbums.length) / 217;
+var percent = (100 * arrAlbums.length) / 224;
 percent = percent.toFixed(2);
 
 if (percent > 9.99) { document.getElementById("spoon").style.visibility = "" } else { document.getElementById("spoon").style.visibility = "hidden" };
@@ -180,7 +180,7 @@ document.getElementById("god").style.visibility = ""
 document.getElementById("god").style.visibility = "hidden"
 }
 
-$("#pListenCount").text("You have listened to " + arrAlbums.length + "/217 albums! (" + percent + "%)");
+$("#pListenCount").text("You have listened to " + arrAlbums.length + "/224 albums! (" + percent + "%)");
 
 if (arrAlbums.length == 69) {
 document.getElementById("divNice").style.display = "inline";
@@ -315,7 +315,7 @@ function genreCount(genre) {
 
 switch(genre) {
 	case "rock":	
-	$("#hInfo").text(globRockCount + "/36 (" + ((100 * globRockCount) / 36).toFixed(2) + "%)");
+	$("#hInfo").text(globRockCount + "/40 (" + ((100 * globRockCount) / 40).toFixed(2) + "%)");
     break;
 	case "metal":
 	$("#hInfo").text(globMetalCount + "/37 (" + ((100 * globMetalCount) / 37).toFixed(2) + "%)");
@@ -336,13 +336,13 @@ switch(genre) {
 	$("#hInfo").text(globPunkCount + "/15 (" + ((100 * globPunkCount) / 15).toFixed(2) + "%)");
     break;
 	case "downer":
-	$("#hInfo").text(globdownerCount + "/13 (" + ((100 * globdownerCount) / 13).toFixed(2) + "%)");
+	$("#hInfo").text(globdownerCount + "/14 (" + ((100 * globdownerCount) / 14).toFixed(2) + "%)");
     break;
 	case "ost":
 	$("#hInfo").text(globOSTCount + "/6 (" + ((100 * globOSTCount) / 6).toFixed(2) + "%)");
     break;
 	case "indie":
-	$("#hInfo").text(globIndieCount + "/24 (" + ((100 * globIndieCount) / 24).toFixed(2) + "%)");
+	$("#hInfo").text(globIndieCount + "/26 (" + ((100 * globIndieCount) / 26).toFixed(2) + "%)");
     break;	
 }
 }
