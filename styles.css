@@ -1,8 +1,12 @@
+
 td {
-width:60px;
-height:60px;
-max-height:60px;
-max-width:60px;
+width:50px;
+height:50px;
+max-height:50px;
+max-width:50px;
+}
+td img {
+	display:block;
 }
 img {
 width: 100%;
