@@ -164,8 +164,8 @@ if (percent > 49.99) { document.getElementById("silver").style.visibility = "" }
 if (percent > 74.99) { document.getElementById("gold").style.visibility = "" } else { document.getElementById("gold").style.visibility = "hidden" };
 if (arrAlbums.length > 68) { document.getElementById("nice").style.visibility = "" } else { document.getElementById("nice").style.visibility = "hidden" };
 if (globTool == true ) { document.getElementById("sudafed").style.visibility = "" } else { document.getElementById("sudafed").style.visibility = "hidden" };
-if (globRockCount > 19) { document.getElementById("rock").style.visibility = "" } else { document.getElementById("rock").style.visibility = "hidden" };
-if (globupperCount > 9) { document.getElementById("upper").style.visibility = "" } else { document.getElementById("upper").style.visibility = "hidden" };
+if (globRockCount > 24) { document.getElementById("rock").style.visibility = "" } else { document.getElementById("rock").style.visibility = "hidden" };
+if (globupperCount > 14) { document.getElementById("upper").style.visibility = "" } else { document.getElementById("upper").style.visibility = "hidden" };
 if (globdownerCount > 9) { document.getElementById("downer").style.visibility = "" } else { document.getElementById("downer").style.visibility = "hidden" };
 if (globMetalCount > 24) { document.getElementById("metal").style.visibility = "" } else { document.getElementById("metal").style.visibility = "hidden" };
 if (globPopCount > 4) { document.getElementById("pop").style.visibility = "" } else { document.getElementById("pop").style.visibility = "hidden" };
@@ -173,7 +173,7 @@ if (globRapCount > 24) { document.getElementById("rap").style.visibility = "" } 
 if (globHardRockCount > 9) { document.getElementById("hardrock").style.visibility = "" } else { document.getElementById("hardrock").style.visibility = "hidden" };
 if (globPunkCount > 9) { document.getElementById("punk").style.visibility = "" } else { document.getElementById("punk").style.visibility = "hidden" };
 if (globOSTCount > 2) { document.getElementById("ost").style.visibility = "" } else { document.getElementById("ost").style.visibility = "hidden" };
-if (globIndieCount > 14) { document.getElementById("indie").style.visibility = "" } else { document.getElementById("indie").style.visibility = "hidden" };
+if (globIndieCount > 19) { document.getElementById("indie").style.visibility = "" } else { document.getElementById("indie").style.visibility = "hidden" };
 if (arrAlbums.includes("H1") && arrAlbums.includes("H2") && arrAlbums.includes("H3") && arrAlbums.includes("I2") && arrAlbums.includes("I1") && arrAlbums.includes("A3") && arrAlbums.includes("J1") && arrAlbums.includes("B1") && arrAlbums.includes("G3")) {
 document.getElementById("god").style.visibility = ""
 } else {
@@ -384,13 +384,13 @@ case "spoon":
 	$("#pAward").text("Gold: listened to 75% of all albums");
     break;
 	case "rock":
-	$("#pAward").text("Solid: listened to 20 rock albums");
+	$("#pAward").text("Solid: listened to 25 rock albums");
     break;
 	case "metal":
 	$("#pAward").text("Through The Fire: listened to 25 metal albums");
     break;
 	case "upper":
-	$("#pAward").text("Ecstasy: listened to 10 upper electronic albums");
+	$("#pAward").text("Ecstasy: listened to 15 upper electronic albums");
     break;
 	case "pop":
 	$("#pAward").text("Technicolour Dream: listened to all 5 pop albums");
@@ -414,7 +414,7 @@ case "spoon":
 	$("#pAward").text("Long Long Man: listened to 3 soundtracks");
     break;
 	case "indie":
-	$("#pAward").text("Snowflake: listened to 15 indie/alternative albums");
+	$("#pAward").text("Snowflake: listened to 20 indie/alternative albums");
     break;
 	case "nice":
 	$("#pAward").text("Nice: listened to 69 albums");
