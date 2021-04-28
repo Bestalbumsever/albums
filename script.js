@@ -168,7 +168,7 @@ if (globRockCount > 24) { document.getElementById("rock").style.visibility = "" 
 if (globupperCount > 14) { document.getElementById("upper").style.visibility = "" } else { document.getElementById("upper").style.visibility = "hidden" };
 if (globdownerCount > 9) { document.getElementById("downer").style.visibility = "" } else { document.getElementById("downer").style.visibility = "hidden" };
 if (globMetalCount > 24) { document.getElementById("metal").style.visibility = "" } else { document.getElementById("metal").style.visibility = "hidden" };
-if (globPopCount > 4) { document.getElementById("pop").style.visibility = "" } else { document.getElementById("pop").style.visibility = "hidden" };
+if (globPopCount > 3) { document.getElementById("pop").style.visibility = "" } else { document.getElementById("pop").style.visibility = "hidden" };
 if (globRapCount > 24) { document.getElementById("rap").style.visibility = "" } else { document.getElementById("rap").style.visibility = "hidden" };
 if (globHardRockCount > 9) { document.getElementById("hardrock").style.visibility = "" } else { document.getElementById("hardrock").style.visibility = "hidden" };
 if (globPunkCount > 9) { document.getElementById("punk").style.visibility = "" } else { document.getElementById("punk").style.visibility = "hidden" };
@@ -315,7 +315,7 @@ function genreCount(genre) {
 
 switch(genre) {
 	case "rock":	
-	$("#hInfo").text(globRockCount + "/40 (" + ((100 * globRockCount) / 40).toFixed(2) + "%)");
+	$("#hInfo").text(globRockCount + "/40 (" + ((100 * globRockCount) / 39).toFixed(2) + "%)");
     break;
 	case "metal":
 	$("#hInfo").text(globMetalCount + "/37 (" + ((100 * globMetalCount) / 37).toFixed(2) + "%)");
@@ -324,13 +324,13 @@ switch(genre) {
 	$("#hInfo").text(globupperCount + "/19 (" + ((100 * globupperCount) / 19).toFixed(2) + "%)");
     break;
 	case "pop":
-	$("#hInfo").text(globPopCount + "/5 (" + ((100 * globPopCount) / 5).toFixed(2) + "%)");
+	$("#hInfo").text(globPopCount + "/4 (" + ((100 * globPopCount) / 4).toFixed(2) + "%)");
     break;
 	case "rap":
 	$("#hInfo").text(globRapCount + "/45 (" + ((100 * globRapCount) / 45).toFixed(2) + "%)");
     break;
 	case "hardrock":
-	$("#hInfo").text(globHardRockCount + "/10 (" + ((100 * globHardRockCount) / 10).toFixed(2) + "%)");
+	$("#hInfo").text(globHardRockCount + "/10 (" + ((100 * globHardRockCount) / 11).toFixed(2) + "%)");
     break;
 	case "punk":
 	$("#hInfo").text(globPunkCount + "/15 (" + ((100 * globPunkCount) / 15).toFixed(2) + "%)");
@@ -342,7 +342,7 @@ switch(genre) {
 	$("#hInfo").text(globOSTCount + "/6 (" + ((100 * globOSTCount) / 6).toFixed(2) + "%)");
     break;
 	case "indie":
-	$("#hInfo").text(globIndieCount + "/26 (" + ((100 * globIndieCount) / 26).toFixed(2) + "%)");
+	$("#hInfo").text(globIndieCount + "/27 (" + ((100 * globIndieCount) / 27).toFixed(2) + "%)");
     break;	
 }
 }
@@ -393,7 +393,7 @@ case "spoon":
 	$("#pAward").text("Ecstasy: listened to 15 upper electronic albums");
     break;
 	case "pop":
-	$("#pAward").text("Technicolour Dream: listened to all 5 pop albums");
+	$("#pAward").text("Technicolour Dream: listened to all 4 pop albums");
     break;
 	case "sudafed":
 	$("#pAward").text("Cough Medicine: listened to the developer's favourite album");
@@ -402,7 +402,7 @@ case "spoon":
 	$("#pAward").text("The Chronic: listened to 25 hip-hop/rnb albums");
     break;
 	case "hardrock":
-	$("#pAward").text("Diamond Hands: listened to all 10 hard rock albums");
+	$("#pAward").text("Diamond Hands: listened to 10 hard rock albums");
     break;
 	case "punk":
 	$("#pAward").text("Not Dead: listened to 10 punk/ska albums");
