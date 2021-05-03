@@ -4,6 +4,7 @@
 //jurak soad to beergarden
 //jj yellowcard to DWTD
 //alfie buster b and thom bresh and put on Idiot Pilot - Strange we should meet here instead
+//noora skipped swapportunity to keep death stars on the list
 
 
 var arrAlbums = [];
@@ -186,6 +187,10 @@ if (arrAlbums.length == 69) {
 document.getElementById("divNice").style.display = "inline";
 } else {
 document.getElementById("divNice").style.display = "none";
+}
+
+if (arrAlbums.length == 224) {
+document.getElementById("solitaire").style.visibility = "";
 }
 
 }
