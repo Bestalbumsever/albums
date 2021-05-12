@@ -335,7 +335,7 @@ switch(genre) {
 	$("#hInfo").text(globRapCount + "/45 (" + ((100 * globRapCount) / 45).toFixed(2) + "%)");
     break;
 	case "hardrock":
-	$("#hInfo").text(globHardRockCount + "/10 (" + ((100 * globHardRockCount) / 11).toFixed(2) + "%)");
+	$("#hInfo").text(globHardRockCount + "/12 (" + ((100 * globHardRockCount) / 12).toFixed(2) + "%)");
     break;
 	case "punk":
 	$("#hInfo").text(globPunkCount + "/15 (" + ((100 * globPunkCount) / 15).toFixed(2) + "%)");
