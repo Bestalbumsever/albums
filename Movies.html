@@ -101,6 +101,17 @@ td img {
 table {
 table-layout: fixed;
 }
+#divTable {
+                margin:4px, 4px;
+                padding:4px;
+              height:700px;
+                overflow-x: hidden;
+                overflow-y: auto;
+                text-align:justify;
+				width:75%;
+display:inline-block;
+float:right;
+            }
 </style>
 <script
   src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -115,10 +126,8 @@ table-layout: fixed;
 <div id="divLeft">
 
 <div>
-<p>notto disu shitto agen</p>
-<p>WORK IN PROGRESS YOU APES</p>
 
-<p id="pWatchCount">You have watched 0/100 movies!</p>
+<p id="pWatchCount">You have watched 0/109 movies!</p>
 
 <img class="award" id="spoon" style=" width:25px; height:25px; margin-left:5%; margin-bottom:2%; visibility: hidden;" src="img/spoon.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
 <img class="award" id="bronze" style=" width:25px; height:25px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="img/bronze.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
@@ -286,6 +295,17 @@ table-layout: fixed;
 <td id="K9" class="animated jj"><image alt="Weathering For You" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/qgrk7r1fV4IjuoeiGS5HOhXNdLJ.jpg" onmouseover="reveal(this.alt)" /></td>
 </tr>
 <tr>
+<td id="L1" class="horror ben"><image alt="The Evil Dead" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/uYxQ6xhP3WjqPZtxyAOnZQWnZqn.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="L2" class="horror ben"><image alt="The Thing (1982)" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/tzGY49kseSE9QAKk47uuDGwnSCu.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="L3" class="horror ben"><image alt="The Shining" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/b6ko0IKC8MdYBBPkkA1aBPLe2yz.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="L4" class="drama ben"><image alt="The Social Network" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/n0ybibhJtQ5icDqTp8eRytcIHJx.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="L5" class="crime ben"><image alt="Goodfellas" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/6QMSLvU5ziIL2T6VrkaKzN2YkxK.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="L6" class="adventure ben"><image alt="Fear & Loathing in Las Vegas" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/jwUnGcLBzKNEIzgUUVWAUSwuuBt.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="L7" class="thriller ben"><image alt="Hackers" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/qfx2EENW1sOpKNVKLzr7VOhlxkt.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="l8" class="horror ben"><image alt="Alien" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/vfrQk5IPloGg1v9Rzbh2Eg3VGyM.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="L9" class="scifi ben"><image alt="The Empire Strikes Back" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/7BuH8itoSrLExs2YZSsM01Qk2no.jpg" onmouseover="reveal(this.alt)" /></td>
+</tr>
+<tr>
 <td id="L1" class="crime jj"><image alt="Pulp Fiction" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/d5iIlFn5s0ImszYzBPb8JPIfbXD.jpg" onmouseover="reveal(this.alt)" /></td>
 </tr>
 </table>
@@ -359,7 +379,7 @@ function updateMovieCount() {
 
 var json_str = JSON.stringify(arrMovies);
 createCookie('bestmovies', json_str);
-var percent = (100 * arrMovies.length) / 100; //todo update
+var percent = (100 * arrMovies.length) / 109; //todo update
 percent = percent.toFixed(2);
 
 if (percent > 19.99) { document.getElementById("spoon").style.visibility = "" } else { document.getElementById("spoon").style.visibility = "hidden" };
@@ -367,7 +387,7 @@ if (percent > 39.99) { document.getElementById("bronze").style.visibility = "" }
 if (percent > 59.99) { document.getElementById("silver").style.visibility = "" } else { document.getElementById("silver").style.visibility = "hidden" };
 if (percent > 79.99) { document.getElementById("gold").style.visibility = "" } else { document.getElementById("gold").style.visibility = "hidden" };
 
-$("#pWatchCount").text("You have watched " + arrMovies.length + "/100 movies!");
+$("#pWatchCount").text("You have watched " + arrMovies.length + "/109 movies!");
 
 }
 
