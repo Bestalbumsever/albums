@@ -355,7 +355,7 @@ function toggleMovie(ID) {
   
  arrMovies.push(ID);
  document.getElementById(ID).style.border = "2px solid lightgreen"
- document.getElementById(ID).childNodes[0].classList.add("listened");
+ document.getElementById(ID).childNodes[0].classList.add("watched");
   
  }
  
@@ -367,7 +367,7 @@ function loadCheckedMovies() {
 
 for( var i = 0; i < arrMovies.length; i++){    
 document.getElementById(arrMovies[i]).style.border = "2px solid lightgreen" 
-document.getElementById(arrMovies[i]).childNodes[0].classList.add("listened");
+document.getElementById(arrMovies[i]).childNodes[0].classList.add("watched");
 
 updateMovieCount();
 
@@ -404,7 +404,7 @@ function random(unwatched) {
     for (var i = 0; i < imgs.length; i++) {
 		if (!imgs[i].classList.contains("award")) {
 		if (unwatched == true) {
-			if (imgs[i].classList.contains("listened")) {				
+			if (imgs[i].classList.contains("watched")) {				
 			} else {
 				imgSrcs.push(imgs[i].alt);
 			}
@@ -480,16 +480,16 @@ var allImages = document.getElementsByTagName("img");
 function showAward(award) {
 switch(award) {
 case "spoon":
-	$("#pAward").text("Spoon: listened to 20% of all movies");
+	$("#pAward").text("Spoon: watched 20% of all movies");
     break;
   case "bronze":
-	$("#pAward").text("Bronze: listened to 40% of all movies");
+	$("#pAward").text("Bronze: watched 40% of all movies");
     break;
 	case "silver":
-	$("#pAward").text("Silver: listened to 60% of all movies");
+	$("#pAward").text("Silver: watched 60% of all movies");
     break;
 	case "gold":
-	$("#pAward").text("Gold: listened to 80% of all movies");
+	$("#pAward").text("Gold: watched 80% of all movies");
     break;
 }
 }
