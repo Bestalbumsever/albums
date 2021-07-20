@@ -156,7 +156,7 @@ float:right;
 
 <div>
 
-<p id="pWatchCount">You have watched 0/133 movies!</p>
+<p id="pWatchCount">You have watched 0/140 movies!</p>
 
 <img class="award" id="spoon" style=" width:25px; height:25px; margin-left:5%; margin-bottom:2%; visibility: hidden;" src="img/spoon.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
 <img class="award" id="bronze" style=" width:25px; height:25px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="img/bronze.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
@@ -481,7 +481,7 @@ function updateMovieCount() {
 
 var json_str = JSON.stringify(arrMovies);
 createCookie('bestmovies', json_str);
-var percent = (100 * arrMovies.length) / 133; //todo update
+var percent = (100 * arrMovies.length) / 140; //todo update
 percent = percent.toFixed(2);
 
 if (percent > 19.99) { document.getElementById("spoon").style.visibility = "" } else { document.getElementById("spoon").style.visibility = "hidden" };
@@ -489,7 +489,7 @@ if (percent > 39.99) { document.getElementById("bronze").style.visibility = "" }
 if (percent > 59.99) { document.getElementById("silver").style.visibility = "" } else { document.getElementById("silver").style.visibility = "hidden" };
 if (percent > 79.99) { document.getElementById("gold").style.visibility = "" } else { document.getElementById("gold").style.visibility = "hidden" };
 
-$("#pWatchCount").text("You have watched " + arrMovies.length + "/133 movies!");
+$("#pWatchCount").text("You have watched " + arrMovies.length + "/140 movies!");
 
 }
 
