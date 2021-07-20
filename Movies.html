@@ -127,7 +127,7 @@ float:right;
 
 <div>
 
-<p id="pWatchCount">You have watched 0/109 movies!</p>
+<p id="pWatchCount">You have watched 0/115 movies!</p>
 
 <img class="award" id="spoon" style=" width:25px; height:25px; margin-left:5%; margin-bottom:2%; visibility: hidden;" src="img/spoon.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
 <img class="award" id="bronze" style=" width:25px; height:25px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="img/bronze.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
@@ -146,6 +146,10 @@ float:right;
 <p id="pRandom" onmouseover="highlight(this.textContent)" onmouseout="unhighlight(this.textContent)"></p>
 </div>
 
+<div id="divInfo">
+<h3 id="hInfo" style="color:white; font-family: courier;"></h3>
+</div>
+
 <p>Genres</p>
 
 <div id="divFilters">
@@ -161,12 +165,33 @@ float:right;
 	<button id="btndrama" class="genrebtn" style="width:40%; color:white;" onclick="filter('drama')" >Drama</button>
 	<button id="btnhorror" class="genrebtn" style="width:41%; color:white;" onclick="filter('horror')" >Horror</button>
 	<button id="btncomedy" class="genrebtn" style="width:40%; color:white;" onclick="filter('comedy')" >Comedy</button>
+	<button id="btndocumentary" class="genrebtn" style="width:40%; color:white;" onclick="filter('comedy')" >Documentary</button>
+</div>
+
+<p>People</p>
+
+<div id="divPeople">
+	<button id="btnShowAll" style="width:41%; color:white;" onclick="filter('all')" >Show All</button>
+	<button id="btnHideAll" style="width:40%; color:white;" onclick="filter('none')">Hide All</button>
+	<button id="btnmickey" class="genrebtn" style="width:41%; color:white;" onclick="filter('mickey')">mickey</button>
+	<button id="btntom" class="genrebtn" style="width:40%; color:white;" onclick="filter('tom')">tom</button>	
+	<button id="btnjj" class="genrebtn" style="width:41%; color:white;" onclick="filter('jj')">jj</button>
+	<button id="btnsenna" class="genrebtn" style="width:40%; color:white;" onclick="filter('senna')">senna</button>
+	<button id="btnsam" class="genrebtn" style="width:41%; color:white;" onclick="filter('sam')" >sam</button>
+	<button id="btncurt" class="genrebtn" style="width:40%; color:white;" onclick="filter('curt')" >curt</button>
+	<button id="btnben" class="genrebtn" style="width:41%; color:white;" onclick="filter('ben')">ben</button>
+	<button id="btndev" class="genrebtn" style="width:40%; color:white;" onclick="filter('dev')" >dev</button>
+	<button id="btnthyz" class="genrebtn" style="width:41%; color:white;" onclick="filter('thyz')" >thyz</button>
+	<button id="btnwill" class="genrebtn" style="width:40%; color:white;" onclick="filter('will')" >will</button>
+	<button id="btndom" class="genrebtn" style="width:40%; color:white;" onclick="filter('dom')" >dom</button>
+	<button id="btnjosh" class="genrebtn" style="width:40%; color:white;" onclick="filter('josh')" >josh</button>
+	<button id="btnliam" class="genrebtn" style="width:40%; color:white;" onclick="filter('liam')" >liam</button>
+	<button id="btnjurak" class="genrebtn" style="width:40%; color:white;" onclick="filter('jurak')" >jurak</button>
+	<button id="btnjon" class="genrebtn" style="width:40%; color:white;" onclick="filter('jon')" >jon</button>
 </div>
 
 
-<div id="divInfo">
-<h3 id="hInfo" style="color:white; font-family: courier;"></h3>
-</div>
+
 <div style="bottom:50px; position:absolute; z-index:0;">
 </div>
 </div>
@@ -207,7 +232,7 @@ float:right;
 <td id="C9" class="scifi curt"><image alt="Starship Troopers" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/cxCmv23O7p3hyHwqoktHYkZcGsY.jpg" onmouseover="reveal(this.alt)" /></td>
 </tr>
 <tr>
-<td id="D1" class="fantasy curt"><image alt="LOTR - Two Towers" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/5VTN0pR8gcqV3EPUHHfMGnJYN9L.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="D1" class="fantasy curt jon"><image alt="LOTR - Two Towers" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/5VTN0pR8gcqV3EPUHHfMGnJYN9L.jpg" onmouseover="reveal(this.alt)" /></td>
 <td id="D2" class="adventure curt"><image alt="The Last Samurai" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/lsasOSgYI85EHygtT5SvcxtZVYT.jpg" onmouseover="reveal(this.alt)" /></td>
 <td id="D3" class="crime curt"><image alt="Léon: The Professional" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/wHqGb8J6tXBVwjqWooGMtNEjs2A.jpg" onmouseover="reveal(this.alt)" /></td>
 <td id="D4" class="animated curt"><image alt="Kung Fu Panda" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/wWt4JYXTg5Wr3xBW2phBrMKgp3x.jpg" onmouseover="reveal(this.alt)" /></td>
@@ -218,10 +243,10 @@ float:right;
 <td id="D9" class="crime sam jj"><image alt="Fight Club" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg" onmouseover="reveal(this.alt)" /></td>
 </tr>
 <tr>
-<td id="E1" class="comedy sam thyz"><image alt="In Bruges" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/jMiBBqk72VRo1Y39x2ZbbenEU3a.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="E1" class="comedy sam thyz jon"><image alt="In Bruges" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/jMiBBqk72VRo1Y39x2ZbbenEU3a.jpg" onmouseover="reveal(this.alt)" /></td>
 <td id="E2" class="comedy jj"><image alt="Dodgeball" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/peHkoE4xe4uXyilavpKLHQG0J61.jpg" onmouseover="reveal(this.alt)" /></td>
 <td id="E3" class="drama sam will"><image alt="Children of Men" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/k9IAS4TehZFcKi4HVByxZNPfqex.jpg" onmouseover="reveal(this.alt)" /></td>
-<td id="E4" class="crime sam"><image alt="The Departed" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/kWWAt2FMRbqLFFy8o5R4Zr8cMAb.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="E4" class="crime sam jon"><image alt="The Departed" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/kWWAt2FMRbqLFFy8o5R4Zr8cMAb.jpg" onmouseover="reveal(this.alt)" /></td>
 <td id="E5" class="crime will"><image alt="Taxi Driver" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/ekstpH614fwDX8DUln1a2Opz0N8.jpg" onmouseover="reveal(this.alt)" /></td>
 <td id="E6" class="horror will"><image alt="The Descent" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/mxFPI4KYBk5ri9cPteIS8jiDFgj.jpg" onmouseover="reveal(this.alt)" /></td>
 <td id="E7" class="horror will"><image alt="Bone Tomahawk" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/rbznBH54z1sAWZx6EKZvK1E3syd.jpg" onmouseover="reveal(this.alt)" /></td>
@@ -307,6 +332,12 @@ float:right;
 </tr>
 <tr>
 <td id="M1" class="crime jj"><image alt="Pulp Fiction" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/d5iIlFn5s0ImszYzBPb8JPIfbXD.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="M2" class="animated jon"><image alt="Treasure Planet" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/qKpxGBkksllc2oe6Y0YDKc1A232.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="M3" class="fantasy jon"><image alt="The Fall" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/jUx4P4Q1VsQ07rLz7sOlSyNm4F3.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="M4" class="thriller jon"><image alt="Tinker, Tailor, Soldier, Spy" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/hkzLFj4u6RLumrkkkWTUrFAupUN.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="M5" class="drama jon"><image alt="12 Years a Slave" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/xdANQijuNrJaw1HA61rDccME4Tm.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="M6" class="comedy jon"><image alt="The Big Short" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/isuQWbJPbjybBEWdcCaBUPmU0XO.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="M7" class="documentary jon"><image alt="Enron: The Smartest Guys in the Room" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/zezeOElCxlPui9SFGj5ToZ4W1Nh.jpg" onmouseover="reveal(this.alt)" /></td>
 </tr>
 </table>
 </div>
@@ -379,7 +410,7 @@ function updateMovieCount() {
 
 var json_str = JSON.stringify(arrMovies);
 createCookie('bestmovies', json_str);
-var percent = (100 * arrMovies.length) / 109; //todo update
+var percent = (100 * arrMovies.length) / 115; //todo update
 percent = percent.toFixed(2);
 
 if (percent > 19.99) { document.getElementById("spoon").style.visibility = "" } else { document.getElementById("spoon").style.visibility = "hidden" };
@@ -387,7 +418,7 @@ if (percent > 39.99) { document.getElementById("bronze").style.visibility = "" }
 if (percent > 59.99) { document.getElementById("silver").style.visibility = "" } else { document.getElementById("silver").style.visibility = "hidden" };
 if (percent > 79.99) { document.getElementById("gold").style.visibility = "" } else { document.getElementById("gold").style.visibility = "hidden" };
 
-$("#pWatchCount").text("You have watched " + arrMovies.length + "/109 movies!");
+$("#pWatchCount").text("You have watched " + arrMovies.length + "/115 movies!");
 
 }
 
@@ -504,7 +535,7 @@ switch(genre) {
     var tds = document.getElementsByTagName("td");
 	for (var i = 0; i < tds.length; i++) {
 	if (!tds[i].classList.contains("guide")) {
-	 tds[i].style.display = "block";
+	 tds[i].style.visibility = "";
 	 }
     }
 	var btns = document.getElementsByTagName("button");
@@ -516,7 +547,7 @@ case "none":
     var tds = document.getElementsByTagName("td");
 	for (var i = 0; i < tds.length; i++) {
 	if (!tds[i].classList.contains("guide")) {
-		 tds[i].style.display = "none";
+		 tds[i].style.visibility = "hidden";
 	}
     }
 		var btns = document.getElementsByClassName("genrebtn");
@@ -535,10 +566,10 @@ case "none":
     var tds = document.getElementsByClassName(genre);
 	for (var i = 0; i < tds.length; i++) {
 	if (!tds[i].classList.contains("guide")) {
-	if (tds[i].style.display == "none") {
-	tds[i].style.display = "block";
+	if (tds[i].style.visibility == "hidden") {
+	tds[i].style.visibility = "";
 	} else {
-	tds[i].style.display = "none";
+	tds[i].style.visibility = "hidden";
 	}	
 	}	
     }      
