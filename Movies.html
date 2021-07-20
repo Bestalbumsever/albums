@@ -41,6 +41,8 @@ margin-left: 1%;
 position: absolute;
 bottom:0;
 top:0;
+overflow-y: auto;
+overflow-x: hidden;
 }
 #divLeft p {
 color: white;
@@ -146,7 +148,7 @@ float:right;
 <p id="pRandom" onmouseover="highlight(this.textContent)" onmouseout="unhighlight(this.textContent)"></p>
 </div>
 
-<div id="divInfo">
+<div id="divInfo" style="height:100px;">
 <h3 id="hInfo" style="color:white; font-family: courier;"></h3>
 </div>
 
@@ -183,11 +185,12 @@ float:right;
 	<button id="btndev" class="genrebtn" style="width:40%; color:white;" onclick="filter('dev')" >dev</button>
 	<button id="btnthyz" class="genrebtn" style="width:41%; color:white;" onclick="filter('thyz')" >thyz</button>
 	<button id="btnwill" class="genrebtn" style="width:40%; color:white;" onclick="filter('will')" >will</button>
-	<button id="btndom" class="genrebtn" style="width:40%; color:white;" onclick="filter('dom')" >dom</button>
+	<button id="btndom" class="genrebtn" style="width:41%; color:white;" onclick="filter('dom')" >dom</button>
 	<button id="btnjosh" class="genrebtn" style="width:40%; color:white;" onclick="filter('josh')" >josh</button>
-	<button id="btnliam" class="genrebtn" style="width:40%; color:white;" onclick="filter('liam')" >liam</button>
+	<button id="btnliam" class="genrebtn" style="width:41%; color:white;" onclick="filter('liam')" >liam</button>
 	<button id="btnjurak" class="genrebtn" style="width:40%; color:white;" onclick="filter('jurak')" >jurak</button>
-	<button id="btnjon" class="genrebtn" style="width:40%; color:white;" onclick="filter('jon')" >jon</button>
+	<button id="btnjon" class="genrebtn" style="width:41%; color:white;" onclick="filter('jon')" >jon</button>
+		<button id="btnoli" class="genrebtn" style="width:40%; color:white;" onclick="filter('oli')" >jon</button>
 </div>
 
 
