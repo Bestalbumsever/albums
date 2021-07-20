@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+img {
+width: 100%;
+height:100%;
+}
+body {
+background-color: black;
+}
+#divTable {
+width:75%;
+display:inline-block;
+overflow:hidden;
+float:right;
+}
+#divInfo {
+margin-left: 5%;
+width:85%;
+display:inline-block;
+float:left;
+}
+#hInfo {
+text-align:center;
+}
+
+button {
+font-family:courier;
+background:none;
+color: white;
+margin-left: 40%;
+width:20%;
+border: 1px solid white;
+}
+#divLeft {
+width: 20%;
+display:inline-block;
+margin-left: 1%;
+position: absolute;
+bottom:0;
+top:0;
+}
+#divLeft p {
+color: white;
+font-family: courier;
+width: 85%;
+margin-left: 5%;
+
+}
+#btnRandom, #btnRandomUnwatched {
+float:left;
+width: 85%;
+margin-left:5%;
+margin-bottom: 5px;
+}
+
+#divFilters {
+width: 100%;
+display:inline-block;
+margin-left: 1%;
+bottom:0;
+top:0;
+}
+#divFilters button {
+float:left;
+margin-left:4%;
+margin-bottom:5px;
+}
+#divPeople {
+width: 100%;
+display:inline-block;
+margin-left: 1%;
+bottom:0;
+top:0;
+}
+#divPeople button {
+float:left;
+margin-left:4%;
+margin-bottom:5px;
+}
+#pAward {
+font-size:12px;
+}
+.genrebtn {
+height: 40px;
+}
+td {
+padding:0px !important;
+margin:0px !important;
+border:2px solid black;
+width:94;
+height:141;
+max-width:94;
+max-height:141;
+}
+td img {
+	display:block;
+}
+table {
+table-layout: fixed;
+}
+</style>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+
+<div id="divMain">
+
+<div id="divLeft">
+
+<div>
+<p>notto disu shitto agen</p>
+<p>WORK IN PROGRESS YOU APES</p>
+
+<p id="pWatchCount">You have watched 0/100 movies!</p>
+
+<img class="award" id="spoon" style=" width:25px; height:25px; margin-left:5%; margin-bottom:2%; visibility: hidden;" src="img/spoon.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
+<img class="award" id="bronze" style=" width:25px; height:25px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="img/bronze.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
+<img class="award" id="silver" style=" width:25px; height:25px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="img/silver.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
+<img class="award" id="gold" style=" width:25px; height:25px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="img/gold.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
+<div style="height:40px">
+<p id="pAward">&nbsp;‎</p>
+</div>
+
+</div>
+
+<button id="btnRandom" onclick="random(false)">Random</button>
+<button id="btnRandomUnwatched" onclick="random(true)">Random Unwatched</button>
+
+<div style="height:100px">
+<p id="pRandom" onmouseover="highlight(this.textContent)" onmouseout="unhighlight(this.textContent)"></p>
+</div>
+
+<p>Genres</p>
+
+<div id="divFilters">
+	<button id="btnShowAll" style="width:41%; color:white;" onclick="filter('all')" >Show All</button>
+	<button id="btnHideAll" style="width:40%; color:white;" onclick="filter('none')">Hide All</button>
+	<button id="btnaction" class="genrebtn" style="width:41%; color:white;" onclick="filter('action')">Action</button>
+	<button id="btnadventure" class="genrebtn" style="width:40%; color:white;" onclick="filter('adventure')">Adventure</button>	
+	<button id="btnanimated" class="genrebtn" style="width:41%; color:white;" onclick="filter('animated')">Animated</button>
+	<button id="btncrime" class="genrebtn" style="width:40%; color:white;" onclick="filter('crime')">Crime</button>
+	<button id="btnfantasy" class="genrebtn" style="width:41%; color:white;" onclick="filter('fantasy')" >Fantasy</button>
+	<button id="btnscifi" class="genrebtn" style="width:40%; color:white;" onclick="filter('scifi')" >Sci-Fi</button>
+	<button id="btnthriller" class="genrebtn" style="width:41%; color:white;" onclick="filter('thriller')">Thriller</button>
+	<button id="btndrama" class="genrebtn" style="width:40%; color:white;" onclick="filter('drama')" >Drama</button>
+	<button id="btnhorror" class="genrebtn" style="width:41%; color:white;" onclick="filter('horror')" >Horror</button>
+	<button id="btncomedy" class="genrebtn" style="width:40%; color:white;" onclick="filter('comedy')" >Comedy</button>
+</div>
+
+
+<div id="divInfo">
+<h3 id="hInfo" style="color:white; font-family: courier;"></h3>
+</div>
+<div style="bottom:50px; position:absolute; z-index:0;">
+</div>
+</div>
+
+<div id="divTable">
+<table>
+<tr>
+<td id="A1" class="action mickey tom"><image alt="Pacific Rim" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/mmznhaQDwlHWpUwKuNxtQiubbmM.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="A2" class="action mickey"><image alt="Fast 5" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/vDztZS30sheoqnJnKyO4QMnf3f8.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="A3" class="animated mickey jj"><image alt="Your Name." src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/q719jXXEzOoYaps6babgKnONONX.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="A4" class="scifi mickey sam senna"><image alt="Interstellar" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="A5" class="action mickey curt"><image alt="300" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/9W49fy5G7v9Ed3CXtvMi41YqZtt.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="A6" class="animated mickey"><image alt="Moana" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/4JeejGugONWpJkbnvL12hVoYEDa.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="A7" class="fantasy mickey sam"><image alt="LOTR - The Return of the King" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="A8" class="action mickey dev sam"><image alt="Saving Private Ryan" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/1wY4psJ5NVEhCuOYROwLH2XExM2.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="A9" class="scifi mickey"><image alt="Inception" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg" onmouseover="reveal(this.alt)" /></td>
+</tr>
+<tr>
+<td id="B1" class="action dev"><image alt="Jarhead" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/4rCzaZy5Qkvxh5xaVpHriXSLTgC.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="B2" class="comedy dev"><image alt="Snatch" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/56mOJth6DJ6JhgoE2jtpilVqJO.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="B3" class="action dev"><image alt="Enemy at the Gates" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/9cSoNnB31hGY2mL78VT8mAbz6nR.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="B4" class="crime dev"><image alt="Legend" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/4shf5Alq4KWCKqrAAQe0JGJHYp5.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="B5" class="comedy dev"><image alt="The Full Monty" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/xkMiZv2FPrhIAtxvEcN1jAbkHRY.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="B6" class="action dev"><image alt="The Transporter" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/v3QIFUWgtVN4wejVuDZowuyJ20W.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="B7" class="action dev"><image alt="Dunkirk" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/ebSnODDg9lbsMIaWg2uAbjn7TO5.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="B8" class="drama dev"><image alt="Starred Up" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/lxtC4YgNIOJEIj3ktZPULe0P6Ak.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="B9" class="animated tom"><image alt="Redline" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/yUkH0y9OsY7J08Dvfzi1P0di559.jpg" onmouseover="reveal(this.alt)" /></td>
+</tr>
+<tr>
+<td id="C1" class="comedy tom"><image alt="Airplane!" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/7Q3efxd3AF1vQjlSxnlerSA7RzN.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="C2" class="comedy tom senna"><image alt="Monty Python and the Holy Grail" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/hWx1ANiWEWWyzKPN0us35HCGnhQ.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="C3" class="animated tom"><image alt="Fantastic Mr. Fox" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/njbTizADSZg4PqeyJdDzZGooikv.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="C4" class="comedy tom"><image alt="Kung Fu Hustle" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/exbyTbrvRUDKN2mcNEuVor4VFQW.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="C5" class="animated tom"><image alt="In This Corner of the World" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/9Z4H4M2F8OQTB04YC1Opds8MFBb.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="C6" class="comedy tom"><image alt="The Blues Brothers" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/3DiSrcYELCLkwnjl9EZp2pkKGep.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="C7" class="scifi tom"><image alt="Arrival" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/x2FJsf1ElAgr63Y3PNPtJrcmpoe.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="C8" class="fantasy curt"><image alt="Thor: Ragnarok" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/rzRwTcFvttcN1ZpX2xv4j3tSdJu.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="C9" class="scifi curt"><image alt="Starship Troopers" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/cxCmv23O7p3hyHwqoktHYkZcGsY.jpg" onmouseover="reveal(this.alt)" /></td>
+</tr>
+<tr>
+<td id="D1" class="fantasy curt"><image alt="LOTR - Two Towers" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/5VTN0pR8gcqV3EPUHHfMGnJYN9L.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="D2" class="adventure curt"><image alt="The Last Samurai" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/lsasOSgYI85EHygtT5SvcxtZVYT.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="D3" class="crime curt"><image alt="Léon: The Professional" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/wHqGb8J6tXBVwjqWooGMtNEjs2A.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="D4" class="animated curt"><image alt="Kung Fu Panda" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/wWt4JYXTg5Wr3xBW2phBrMKgp3x.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="D5" class="animated curt"><image alt="The Iron Giant" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/bMr9Ir2hCFu2R72pjCA43uRMT4r.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="D6" class="animated curt"><image alt="Pokémon: The First Movie" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/3m1kyUksL3vf4anbYMbLUWXTb3W.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="D7" class="action sam"><image alt="Man on Fire" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/v8H6dPqXhHWW137ubxqD4HdHTib.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="D8" class="comedy sam thyz"><image alt="The Grand Budapest Hotel" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/eWdyYQreja6JGCzqHWXpWHDrrPo.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="D9" class="crime sam jj"><image alt="Fight Club" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg" onmouseover="reveal(this.alt)" /></td>
+</tr>
+<tr>
+<td id="E1" class="comedy sam thyz"><image alt="In Bruges" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/jMiBBqk72VRo1Y39x2ZbbenEU3a.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="E2" class="comedy jj"><image alt="Dodgeball" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/peHkoE4xe4uXyilavpKLHQG0J61.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="E3" class="drama sam will"><image alt="Children of Men" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/k9IAS4TehZFcKi4HVByxZNPfqex.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="E4" class="crime sam"><image alt="The Departed" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/kWWAt2FMRbqLFFy8o5R4Zr8cMAb.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="E5" class="crime will"><image alt="Taxi Driver" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/ekstpH614fwDX8DUln1a2Opz0N8.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="E6" class="horror will"><image alt="The Descent" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/mxFPI4KYBk5ri9cPteIS8jiDFgj.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="E7" class="horror will"><image alt="Bone Tomahawk" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/rbznBH54z1sAWZx6EKZvK1E3syd.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="E8" class="adventure will"><image alt="Jeremiah Johnson" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/tFiA48c0pqDAv34r9TB4OVGntZz.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="E9" class="comedy will"><image alt="Kontroll" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/aDfRQXOicnTVzRMpiMf9mU5tDXJ.jpg" onmouseover="reveal(this.alt)" /></td>
+</tr>
+<tr>
+<td id="F1" class="animated will"><image alt="Angel's Egg" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/dRUB7sDcedqatDfyuRqyQulmW97.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="F2" class="scifi will"><image alt="Primer" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/xEoq2WmDzpzxhkHEsmOYOg6BPg6.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="F3" class="thriller will"><image alt="Nightcrawler" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/j9HrX8f7GbZQm1BrBiR40uFQZSb.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="F4" class="comedy dom"><image alt="500 Days of Summer" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/f9mbM0YMLpYemcWx6o2WeiYQLDP.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="F5" class="animated dom"><image alt="Up" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/eAdO0qa9m0NFSVLZ26PvCwmPlsr.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="F6" class="comedy dom liam"><image alt="Superbad" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/ek8e8txUyUwd2BNqj6lFEerJfbq.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="F7" class="comedy dom"><image alt="Pineapple Express" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/6E50WjeOYjDZg9HXgPjYdGtY2jG.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="F8" class="comedy dom"><image alt="Shaun of the Dead" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/13vOO3DtEG0OYEbgcvVS6XimoIP.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="F9" class="scifi dom"><image alt="War of the Worlds" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/6Biy7R9LfumYshur3YKhpj56MpB.jpg" onmouseover="reveal(this.alt)" /></td>
+</tr>
+<tr>
+<td id="G1" class="drama dom"><image alt="Almost Famous" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/3rrkyLYbgLj84AYvjhdcJot4JPx.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="G2" class="comedy dom"><image alt="Juno" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/jNIn2tVhpvFD6P9IojldI3mNYcn.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="G3" class="drama dom"><image alt="American History X" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/c2gsmSQ2Cqv8zosqKOCwRS0GFBS.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="G4" class="comedy josh"><image alt="Me, Myself & Irene" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/rvRrcbLbpn7UJGRH1JupgHOeJFq.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="G5" class="action josh"><image alt="Dredd" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/wLx65gtGVnUFCxceHWGszcruCZj.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="G6" class="action josh"><image alt="Captain America: The Winter Soldier" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/tVFRpFw3xTedgPGqxW0AOI8Qhh0.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="G7" class="comedy josh"><image alt="21 Jump Street" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/8v3Sqv9UcIUC4ebmpKWROqPBINZ.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="G8" class="animated josh"><image alt="Hercules" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/hdOS8bvta2DmDF8NHcgKWQDx0OX.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="G9" class="action josh"><image alt="The Expendables" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/tDynwDj3pvexrEQ8wb0uy8EdcGQ.jpg" onmouseover="reveal(this.alt)" /></td>
+</tr>
+<tr>
+<td id="H1" class="comedy josh"><image alt="Role Models" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/ki79dSjh6Rr51xrsz4dT04UGxSU.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="H2" class="crime josh"><image alt="From Dusk Till Dawn" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/kwhlLAlxIHLSbwOukBQkDJK7NGA.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="H3" class="action josh"><image alt="Commando" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/ollPAAAgZ7euU8VisfqU3cuXhZ6.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="H4" class="comedy liam jj"><image alt="Hot Fuzz" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/zPib4ukTSdXvHP9pxGkFCe34f3y.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="H5" class="thriller liam"><image alt="Shutter Island" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/kve20tXwUZpu4GUX8l6X7Z4jmL6.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="H6" class="thriller liam"><image alt="The Prestige" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/gcphM7ZLxS5HPeCZgjZobfz907x.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="H7" class="comedy liam"><image alt="The Gentlemen" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/jtrhTYB7xSrJxR1vusu99nvnZ1g.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="H8" class="drama liam"><image alt="Full Metal Jacket" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/kMKyx1k8hWWscYFnPbnxxN4Eqo4.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="H9" class="crime liam"><image alt="Ocean's Eleven" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/hQQCdZrsHtZyR6NbKH2YyCqd2fR.jpg" onmouseover="reveal(this.alt)" /></td>
+</tr>
+<tr>
+<td id="I1" class="drama liam"><image alt="Training Day" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/sEQansIwI6SfNSpop3N0EBZayWk.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="I2" class="action liam"><image alt="The Dark Knight" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/qJ2tW6WMUDux911r6m7haRef0WH.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="I3" class="comedy liam"><image alt="The Truman Show" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/e5EMJEQnWkWb8G6sTMkN91qiqUz.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="I4" class="comedy jurak"><image alt="Ferris Bueller's Day Off" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/9LTQNCvoLsKXP0LtaKAaYVtRaQL.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="I5" class="scifi jurak"><image alt="Back to the Future Part II" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/hQq8xZe5uLjFzSBt4LanNP7SQjl.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="I6" class="adventure jurak"><image alt="The Mummy" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/yhIsVvcUm7QxzLfT6HW2wLf5ajY.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="I7" class="thriller jurak"><image alt="American Psycho" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/3ddHhfMlZHZCefHDeaP8FzSoH4Y.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="I8" class="comedy jurak"><image alt="Naked Gun" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/m0jCuotD5USCscYJwxymbtS0tc2.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="I9" class="action jurak"><image alt="John Wick: Chapter 3 - Parabellum" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/fZPSd91yGE9fCcCe6OoQr6E3Bev.jpg" onmouseover="reveal(this.alt)" /></td>
+</tr>
+<tr>
+<td id="J1" class="fantasy jurak thyz"><image alt="Pan's Labyrinth" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/iZTgxn14z9MwbVqq8nnxG4kc1n5.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="J2" class="drama jurak"><image alt="Kabhi Khushi Kabhie Gham" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/lRl7wrJmkOzMTDVYFSIpUcsIjPQ.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="J3" class="thriller jurak"><image alt="Memento" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/yuNs09hvpHVU1cBTCAk9zxsL2oW.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="J4" class="fantasy thyz senna"><image alt="LOTR - Fellowship of the Ring" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/6oom5QYQ2yQTMJIbnvbkBL9cHo6.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="J5" class="comedy thyz"><image alt="What We Do in the Shadows" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/32QNWU2RoB7El5m2cjo3TnmvUxJ.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="J6" class="adventure thyz"><image alt="The Good, The Bad & The Ugly" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/mxdjCeoPTy6IUd99nTB6kjiRiZI.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="J7" class="animated thyz"><image alt="Howl's Moving Castle" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/TkTPELv4kC3u1lkloush8skOjE.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="J8" class="action thyz"><image alt="Mad Max: Fury Road" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/8tZYtuWezp8JbcsvHYO0O46tFbo.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="J9" class="scifi thyz"><image alt="Blade Runner" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/63N9uy8nd9j7Eog2axPQ8lbr3Wj.jpg" onmouseover="reveal(this.alt)" /></td>
+</tr>
+<tr>
+<td id="K1" class="drama senna"><image alt="The Green Mile" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/velWPhVMQeQKcxggNEU8YmIo52R.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="K2" class="drama senna"><image alt="Parasite" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="K3" class="scifi senna"><image alt="The Matrix" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="K4" class="drama senna"><image alt="The Shawshank Redemption" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="K5" class="animated senna"><image alt="Finding Nemo" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/eHuGQ10FUzK1mdOY69wF5pGgEf5.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="K6" class="thriller senna"><image alt="Inglorious Basterds" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/7sfbEnaARXDDhKm0CZ7D7uc2sbo.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="K7" class="animated jj"><image alt="A Silent Voice" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/tuFaWiqX0TXoWu7DGNcmX3UW7sT.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="K8" class="action jj"><image alt="John Wick" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/fZPSd91yGE9fCcCe6OoQr6E3Bev.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="K9" class="animated jj"><image alt="Weathering For You" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/qgrk7r1fV4IjuoeiGS5HOhXNdLJ.jpg" onmouseover="reveal(this.alt)" /></td>
+</tr>
+<tr>
+<td id="L1" class="crime jj"><image alt="Pulp Fiction" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/d5iIlFn5s0ImszYzBPb8JPIfbXD.jpg" onmouseover="reveal(this.alt)" /></td>
+</tr>
+</table>
+</div>
+
+</div>
+</body>
+
+<script type="text/javascript">
+
+var arrMovies = [];
+
+$( document ).ready(function() {
+
+try {
+var json_str = getCookie('bestmovies');
+arrMovies = JSON.parse(json_str);
+}catch(ex) {
+console.log("failed to get movies cookie: " + ex.toString());
+}
+    
+loadCheckedMovies();
+	
+$(document).find('td').each (function() {
+    $(this).on("click", function(){  
+	   toggleMovie($(this).attr("id"))
+    });
+});
+	
+});	
+
+
+function toggleMovie(ID) {
+
+ if (arrMovies.includes(ID) ) { //uncheck
+  
+  for( var i = 0; i < arrMovies.length; i++){     
+        if ( arrMovies[i] === ID) {     
+            arrMovies.splice(i, 1); 
+			document.getElementById(ID).style.border = "2px solid black"	
+			document.getElementById(ID).childNodes[0].classList.remove("watched");			
+        }    
+    }
+	
+ 
+ } else { // check
+  
+ arrMovies.push(ID);
+ document.getElementById(ID).style.border = "2px solid lightgreen"
+ document.getElementById(ID).childNodes[0].classList.add("listened");
+  
+ }
+ 
+updateMovieCount();
+
+}
+
+function loadCheckedMovies() {
+
+for( var i = 0; i < arrMovies.length; i++){    
+document.getElementById(arrMovies[i]).style.border = "2px solid lightgreen" 
+document.getElementById(arrMovies[i]).childNodes[0].classList.add("listened");
+
+updateMovieCount();
+
+}
+
+}
+
+function updateMovieCount() {
+
+var json_str = JSON.stringify(arrMovies);
+createCookie('bestmovies', json_str);
+var percent = (100 * arrMovies.length) / 100; //todo update
+percent = percent.toFixed(2);
+
+if (percent > 19.99) { document.getElementById("spoon").style.visibility = "" } else { document.getElementById("spoon").style.visibility = "hidden" };
+if (percent > 39.99) { document.getElementById("bronze").style.visibility = "" } else { document.getElementById("bronze").style.visibility = "hidden" };
+if (percent > 59.99) { document.getElementById("silver").style.visibility = "" } else { document.getElementById("silver").style.visibility = "hidden" };
+if (percent > 79.99) { document.getElementById("gold").style.visibility = "" } else { document.getElementById("gold").style.visibility = "hidden" };
+
+$("#pWatchCount").text("You have watched " + arrMovies.length + "/100 movies!");
+
+}
+
+function reveal(strData) {
+
+document.getElementById("hInfo").innerText = strData;
+
+}
+
+function random(unwatched) {
+
+	var imgs = document.getElementsByTagName("img");	
+    var imgSrcs = [];
+    for (var i = 0; i < imgs.length; i++) {
+		if (!imgs[i].classList.contains("award")) {
+		if (unwatched == true) {
+			if (imgs[i].classList.contains("listened")) {				
+			} else {
+				imgSrcs.push(imgs[i].alt);
+			}
+		} else {
+			imgSrcs.push(imgs[i].alt);
+		}    
+		}		    
+    }
+    
+	if (imgSrcs.length == 0) {
+		document.getElementById("pRandom").innerText = "You should go outside now!";
+	} else {
+		document.getElementById("pRandom").innerText = "You should watch " + random_item(imgSrcs) + "!";
+	}	
+}
+
+function random_item(items)
+{  
+return items[Math.floor(Math.random()*items.length)];     
+}
+
+function createCookie(name, value, days) {
+    var expires;
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toGMTString();
+    }
+    else {
+        expires = "";
+    }
+    document.cookie = name + "=" + value + expires + "; path=/";
+}
+
+function getCookie(c_name) {
+    if (document.cookie.length > 0) {
+        c_start = document.cookie.indexOf(c_name + "=");
+        if (c_start != -1) {
+            c_start = c_start + c_name.length + 1;
+            c_end = document.cookie.indexOf(";", c_start);
+            if (c_end == -1) {
+                c_end = document.cookie.length;
+            }
+            return unescape(document.cookie.substring(c_start, c_end));
+        }
+    }
+    return "";
+}
+
+
+function highlight(txt) {
+txt = txt.substring(0, txt.length - 1);
+alb = txt.split("You should watch ")[1]
+var allImages = document.getElementsByTagName("img");
+    for (var i = 0, len = allImages.length; i < len; ++i) {
+        if (allImages[i].alt == alb) {		
+            allImages[i].style.transform = 'rotate(' + 180 + 'deg)';
+        }
+    }
+}
+
+function unhighlight(txt) {
+txt = txt.substring(0, txt.length - 1);
+alb = txt.split("You should watch ")[1]
+var allImages = document.getElementsByTagName("img");
+    for (var i = 0, len = allImages.length; i < len; ++i) {
+        if (allImages[i].alt == alb) {		
+            allImages[i].style.transform = 'rotate(' + 0 + 'deg)';
+        }
+    }
+}
+
+function showAward(award) {
+switch(award) {
+case "spoon":
+	$("#pAward").text("Spoon: listened to 20% of all movies");
+    break;
+  case "bronze":
+	$("#pAward").text("Bronze: listened to 40% of all movies");
+    break;
+	case "silver":
+	$("#pAward").text("Silver: listened to 60% of all movies");
+    break;
+	case "gold":
+	$("#pAward").text("Gold: listened to 80% of all movies");
+    break;
+}
+}
+
+function hideAward() {
+$("#pAward").html("&nbsp;");
+}
+
+function filter(genre) {
+switch(genre) {
+  case "all":
+    var tds = document.getElementsByTagName("td");
+	for (var i = 0; i < tds.length; i++) {
+	if (!tds[i].classList.contains("guide")) {
+	 tds[i].style.visibility = "";
+	 }
+    }
+	var btns = document.getElementsByTagName("button");
+	for (var i = 0; i < btns.length; i++) {
+	 btns[i].style.color = "white";
+    }
+    break;
+case "none":	
+    var tds = document.getElementsByTagName("td");
+	for (var i = 0; i < tds.length; i++) {
+	if (!tds[i].classList.contains("guide")) {
+		 tds[i].style.visibility = "hidden";
+	}
+    }
+		var btns = document.getElementsByClassName("genrebtn");
+	for (var i = 0; i < btns.length; i++) {
+	 btns[i].style.color = "red";
+    }
+    break;
+ default:
+	
+	var btn = document.getElementById("btn" + genre);
+	if (btn.style.color == "white") {
+	btn.style.color = "red";
+	} else {
+	btn.style.color = "white";
+	}
+    var tds = document.getElementsByClassName(genre);
+	for (var i = 0; i < tds.length; i++) {
+	if (!tds[i].classList.contains("guide")) {
+	if (tds[i].style.visibility == "hidden") {
+	tds[i].style.visibility = "";
+	} else {
+	tds[i].style.visibility = "hidden";
+	}	
+	}	
+    }      
+}
+}
+
+
+</script>
+
+</html>
