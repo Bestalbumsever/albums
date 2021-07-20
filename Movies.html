@@ -306,7 +306,7 @@ float:right;
 <td id="L9" class="scifi ben"><image alt="The Empire Strikes Back" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/7BuH8itoSrLExs2YZSsM01Qk2no.jpg" onmouseover="reveal(this.alt)" /></td>
 </tr>
 <tr>
-<td id="L1" class="crime jj"><image alt="Pulp Fiction" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/d5iIlFn5s0ImszYzBPb8JPIfbXD.jpg" onmouseover="reveal(this.alt)" /></td>
+<td id="M1" class="crime jj"><image alt="Pulp Fiction" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/d5iIlFn5s0ImszYzBPb8JPIfbXD.jpg" onmouseover="reveal(this.alt)" /></td>
 </tr>
 </table>
 </div>
@@ -504,7 +504,7 @@ switch(genre) {
     var tds = document.getElementsByTagName("td");
 	for (var i = 0; i < tds.length; i++) {
 	if (!tds[i].classList.contains("guide")) {
-	 tds[i].style.visibility = "";
+	 tds[i].style.display = "block";
 	 }
     }
 	var btns = document.getElementsByTagName("button");
@@ -516,7 +516,7 @@ case "none":
     var tds = document.getElementsByTagName("td");
 	for (var i = 0; i < tds.length; i++) {
 	if (!tds[i].classList.contains("guide")) {
-		 tds[i].style.visibility = "hidden";
+		 tds[i].style.display = "none";
 	}
     }
 		var btns = document.getElementsByClassName("genrebtn");
@@ -535,10 +535,10 @@ case "none":
     var tds = document.getElementsByClassName(genre);
 	for (var i = 0; i < tds.length; i++) {
 	if (!tds[i].classList.contains("guide")) {
-	if (tds[i].style.visibility == "hidden") {
-	tds[i].style.visibility = "";
+	if (tds[i].style.display == "none") {
+	tds[i].style.display = "block";
 	} else {
-	tds[i].style.visibility = "hidden";
+	tds[i].style.display = "none";
 	}	
 	}	
     }      
