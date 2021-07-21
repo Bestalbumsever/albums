@@ -504,12 +504,17 @@ function random(unwatched) {
 			} else {
 			var genre = getGenre(imgs[i].parentNode.classList)
 			var person = getPeople(imgs[i].parentNode.classList)
+			if (document.getElementById("btn"+genre).style.color != "red") {
 			imgSrcs.push(imgs[i].alt + " (" + genre + ", chosen by " + person + ")");
+			}
+			
 			}
 		} else {
 			var genre = getGenre(imgs[i].parentNode.classList)
 			var person = getPeople(imgs[i].parentNode.classList)
+			if (document.getElementById("btn"+genre).style.color != "red") {
 			imgSrcs.push(imgs[i].alt + " (" + genre + ", chosen by " + person + ")");
+			}
 		}    
 		}		    
     }
