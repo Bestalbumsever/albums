@@ -482,7 +482,7 @@ var strPeople = "";
 var strGenre = "";
 for (i=0;i<strClass.length;i++){
 
-if (strClass[i] != "movie" && strClass[i] != "action" && strClass[i] != "adventure" && strClass[i] != "animated" && strClass[i] != "crime" && strClass[i] != "fantasy" && strClass[i] != "scifi" && strClass[i] != "thriller" && strClass[i] != "drama" && strClass[i] != "horror" && strClass[i] != "comedy" && strClass[i] != "documentary") {
+if (strClass[i] != "movie" && strClass[i] != "action" && strClass[i] != "western" && strClass[i] != "animated" && strClass[i] != "crime" && strClass[i] != "fantasy" && strClass[i] != "scifi" && strClass[i] != "thriller" && strClass[i] != "drama" && strClass[i] != "horror" && strClass[i] != "comedy" && strClass[i] != "documentary") {
 strPeople += strClass[i] + ", "
 } else {
 strGenre = strClass[i]
@@ -557,7 +557,7 @@ function getCookie(c_name) {
 function getGenre(strClass) {
 var strGenre = "";
 for (i=0;i<strClass.length;i++){
-if (strClass[i] == "action" || strClass[i] == "adventure" || strClass[i] == "animated" || strClass[i] == "crime" || strClass[i] == "fantasy" || strClass[i] == "scifi" || strClass[i] == "thriller" || strClass[i] == "drama" || strClass[i] == "horror" || strClass[i] == "comedy" || strClass[i] == "documentary") {
+if (strClass[i] == "action" || strClass[i] == "western" || strClass[i] == "animated" || strClass[i] == "crime" || strClass[i] == "fantasy" || strClass[i] == "scifi" || strClass[i] == "thriller" || strClass[i] == "drama" || strClass[i] == "horror" || strClass[i] == "comedy" || strClass[i] == "documentary") {
 strGenre = strClass[i]
 }
 
@@ -568,7 +568,7 @@ return strGenre;
 function getPeople(strClass) {
 var strPeople = "";
 for (i=0;i<strClass.length;i++){
-if (strClass[i] != "movie" && strClass[i] != "action" && strClass[i] != "adventure" && strClass[i] != "animated" && strClass[i] != "crime" && strClass[i] != "fantasy" && strClass[i] != "scifi" && strClass[i] != "thriller" && strClass[i] != "drama" && strClass[i] != "horror" && strClass[i] != "comedy" && strClass[i] != "documentary") {
+if (strClass[i] != "movie" && strClass[i] != "action" && strClass[i] != "western" && strClass[i] != "animated" && strClass[i] != "crime" && strClass[i] != "fantasy" && strClass[i] != "scifi" && strClass[i] != "thriller" && strClass[i] != "drama" && strClass[i] != "horror" && strClass[i] != "comedy" && strClass[i] != "documentary") {
 strPeople += strClass[i] + ", "
 } else {
 }
