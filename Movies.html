@@ -22,9 +22,7 @@ width:85%;
 display:inline-block;
 float:left;
 }
-#hInfo {
-text-align:center;
-}
+
 
 button {
 font-family:courier;
@@ -179,7 +177,7 @@ float:right;
 </div>
 
 <div id="divInfo" style="height:100px;">
-<h3 id="hInfo" style="color:white; font-family: courier;"></h3>
+
 </div>
 
 <p>Genres</p>
@@ -398,6 +396,7 @@ float:right;
 <script type="text/javascript">
 
 var arrMovies = [];
+var arrFilters = [];
 
 $( document ).ready(function() {
 
@@ -458,6 +457,7 @@ updateMovieCount();
 
 }
 
+
 function updateMovieCount() {
 
 var json_str = JSON.stringify(arrMovies);
@@ -476,14 +476,17 @@ $("#pWatchCount").text("You have watched " + arrMovies.length + "/147 movies!");
 
 function reveal(strAlt, strClass) {
 var strPeople = "";
+var strGenre = "";
 for (i=0;i<strClass.length;i++){
 
 if (strClass[i] != "movie" && strClass[i] != "action" && strClass[i] != "adventure" && strClass[i] != "animated" && strClass[i] != "crime" && strClass[i] != "fantasy" && strClass[i] != "scifi" && strClass[i] != "thriller" && strClass[i] != "drama" && strClass[i] != "horror" && strClass[i] != "comedy" && strClass[i] != "documentary") {
 strPeople += strClass[i] + ", "
+} else {
+strGenre = strClass[i]
 }
 }
 strPeople = strPeople.substring(0, strPeople.length - 2)
-document.getElementById("hInfo").innerText = strAlt + " (chosen by " + strPeople + ")";
+document.getElementById("divInfo").innerHTML = "<h3 style='color:white; font-family: courier; text-align:center;'>" + strAlt + "</h3><h4 style='color:white; font-family: courier; text-align:center; font-weight:normal !important;'>" + strGenre + ", chosen by " + strPeople + "</h4>";
 
 }
 
@@ -503,6 +506,8 @@ function random(unwatched) {
 		}    
 		}		    
     }
+	
+	
     
 	if (imgSrcs.length == 0) {
 		document.getElementById("pRandom").innerText = "You should go outside now!";
@@ -613,6 +618,16 @@ case "none":
 	for (var i = 0; i < btns.length; i++) {
 	 btns[i].style.color = "red";
     }
+	 var tds = document.getElementsByClassName("movie");
+	for (var i = 0; i < tds.length; i++) {
+	if (!tds[i].classList.contains("guide")) {
+		 tds[i].style.display = "none";
+	}
+    }
+		var btns = document.getElementsByClassName("personbtn");
+	for (var i = 0; i < btns.length; i++) {
+	 btns[i].style.color = "red";
+    }
     break;
  default:
 	
@@ -660,6 +675,16 @@ case "none":
 	for (var i = 0; i < btns.length; i++) {
 	 btns[i].style.color = "red";
     }
+	 var tds = document.getElementsByClassName("movie");
+	for (var i = 0; i < tds.length; i++) {
+	if (!tds[i].classList.contains("guide")) {
+		 tds[i].style.display = "none";
+	}
+    }
+		var btns = document.getElementsByClassName("genrebtn");
+	for (var i = 0; i < btns.length; i++) {
+	 btns[i].style.color = "red";
+    }
     break;
  default:
 	
@@ -690,7 +715,7 @@ function backup(func) {
     dummy.select();
     document.execCommand("copy");
     document.body.removeChild(dummy);
-	$("#hInfo").text("Album cookie copied to clipboard");
+	$("#divInfo").html("<p>Album cookie copied to clipboard</p>");
  } else {
  var albs = prompt("Paste your cookie value", "");
  if (albs != null) {
