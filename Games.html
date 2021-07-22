@@ -498,16 +498,37 @@ $("#pAward").html("&nbsp;");
 function filter(genre) {
     switch (genre) {
         case "all":
-            var tds = document.getElementsByClassName("game");
-            for (var i = 0; i < tds.length; i++) {
-
-                tds[i].style.display = "inline-block";
-
-            }
-            var btns = document.getElementsByClassName("genrebtn");
+		
+		 var btns = document.getElementsByClassName("genrebtn");
             for (var i = 0; i < btns.length; i++) {
                 btns[i].style.color = "white";
             }
+		
+            var tds = document.getElementsByClassName("game");
+            for (var i = 0; i < tds.length; i++) {
+
+                
+if (document.getElementById("btn" + tds[i].dataset.platform).style.color == "white" && document.getElementById("btn" + tds[i].dataset.genre).style.color == "white") {
+    var ppl = tds[i].dataset.people;
+    var pplsplit = ppl.split(" ")
+    var boolpplok = false;
+    for (x = 0; x < pplsplit.length; x++) {
+        if (document.getElementById("btn" + pplsplit[x]).style.color == "white") {
+            boolpplok = true;
+        }
+    }
+    if (boolpplok == true) {
+        tds[i].style.display = "inline-block";
+		
+    } else {
+        tds[i].style.display = "none";
+    }
+} else {
+    tds[i].style.display = "none";
+}
+            }
+			
+           
             break;
         case "none":
             var tds = document.getElementsByClassName("game");
@@ -532,10 +553,10 @@ function filter(genre) {
                 btn.style.color = "white";
             }
             var tds = document.querySelectorAll('[data-genre=' + genre + ']');
+			
+			
              for (var i = 0; i < tds.length; i++) {
-
 if (document.getElementById("btn" + tds[i].dataset.platform).style.color == "white" && document.getElementById("btn" + tds[i].dataset.genre).style.color == "white") {
-
     var ppl = tds[i].dataset.people;
     var pplsplit = ppl.split(" ")
     var boolpplok = false;
@@ -553,22 +574,42 @@ if (document.getElementById("btn" + tds[i].dataset.platform).style.color == "whi
     tds[i].style.display = "none";
 }
 }
+
+
     }
 }
 
 function filterperson(person) {
     switch (person) {
         case "all":
-            var tds = document.getElementsByClassName("game");
-            for (var i = 0; i < tds.length; i++) {
-
-                tds[i].style.display = "inline-block";
-
-            }
-            var btns = document.getElementsByClassName("personbtn");
+		var btns = document.getElementsByClassName("personbtn");
             for (var i = 0; i < btns.length; i++) {
                 btns[i].style.color = "white";
             }
+            var tds = document.getElementsByClassName("game");
+            for (var i = 0; i < tds.length; i++) {
+
+                
+if (document.getElementById("btn" + tds[i].dataset.platform).style.color == "white" && document.getElementById("btn" + tds[i].dataset.genre).style.color == "white") {
+    var ppl = tds[i].dataset.people;
+    var pplsplit = ppl.split(" ")
+    var boolpplok = false;
+    for (x = 0; x < pplsplit.length; x++) {
+        if (document.getElementById("btn" + pplsplit[x]).style.color == "white") {
+            boolpplok = true;
+        }
+    }
+    if (boolpplok == true) {
+        tds[i].style.display = "inline-block";
+		
+    } else {
+        tds[i].style.display = "none";
+    }
+} else {
+    tds[i].style.display = "none";
+}
+            }
+            
             break;
         case "none":
             var tds = document.getElementsByClassName("game");
@@ -627,16 +668,34 @@ if (document.getElementById("btn" + tds[i].dataset.platform).style.color == "whi
 function filterplatform(platform) {
     switch (platform) {
         case "all":
-            var tds = document.getElementsByClassName("game");
-            for (var i = 0; i < tds.length; i++) {
-
-                tds[i].style.display = "inline-block";
-
-            }
-            var btns = document.getElementsByClassName("platformbtn");
+		var btns = document.getElementsByClassName("platformbtn");
             for (var i = 0; i < btns.length; i++) {
                 btns[i].style.color = "white";
             }
+            var tds = document.getElementsByClassName("game");
+            for (var i = 0; i < tds.length; i++) {
+
+                
+if (document.getElementById("btn" + tds[i].dataset.platform).style.color == "white" && document.getElementById("btn" + tds[i].dataset.genre).style.color == "white") {
+    var ppl = tds[i].dataset.people;
+    var pplsplit = ppl.split(" ")
+    var boolpplok = false;
+    for (x = 0; x < pplsplit.length; x++) {
+        if (document.getElementById("btn" + pplsplit[x]).style.color == "white") {
+            boolpplok = true;
+        }
+    }
+    if (boolpplok == true) {
+        tds[i].style.display = "inline-block";
+		
+    } else {
+        tds[i].style.display = "none";
+    }
+} else {
+    tds[i].style.display = "none";
+}
+            }
+            
             break;
         case "none":
             var tds = document.getElementsByClassName("game");
