@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+img {
+width: 100%;
+height:100%;
+}
+body {
+background-color: black;
+}
+#divTable {
+width:70%;
+display:inline-block;
+overflow:hidden;
+float:right;
+}
+#divInfo {
+margin-left: 5%;
+width:85%;
+display:inline-block;
+float:left;
+}
+
+#divBackup {
+width: 100%;
+display:inline-block;
+margin-left: 1%;
+bottom:0;
+}
+#divBackup button {
+float:left;
+margin-left:4%;
+margin-bottom:5px;
+}
+button {
+font-family:courier;
+background:none;
+color: white;
+margin-left: 40%;
+width:20%;
+border: 1px solid white;
+}
+#divLeft {
+width: 25%;
+display:inline-block;
+margin-left: 1%;
+position: absolute;
+bottom:0;
+top:0;
+overflow-y: auto;
+overflow-x: hidden;
+}
+#divLeft p {
+color: white;
+font-family: courier;
+width: 85%;
+margin-left: 5%;
+
+}
+#divLeft li {
+color: white;
+font-family: courier;
+width: 85%;
+margin-left: 5%;
+
+}
+#btnRandom, #btnRandomUnplayed {
+float:left;
+width: 85%;
+margin-left:5%;
+margin-bottom: 5px;
+}
+
+#divFilters {
+width: 100%;
+display:inline-block;
+margin-left: 1%;
+bottom:0;
+top:0;
+}
+#divFilters button {
+float:left;
+margin-left:4%;
+margin-bottom:5px;
+}
+#divPeople {
+width: 100%;
+display:inline-block;
+margin-left: 1%;
+bottom:0;
+top:0;
+}
+#divPeople button {
+float:left;
+margin-left:4%;
+margin-bottom:5px;
+}
+#divPlatform {
+width: 100%;
+display:inline-block;
+margin-left: 1%;
+bottom:0;
+top:0;
+}
+#divPlatform button {
+float:left;
+margin-left:4%;
+margin-bottom:5px;
+}
+#pAward {
+font-size:12px;
+}
+.genrebtn {
+height: 40px;
+}
+.personbtn {
+height: 40px;
+}
+.platformbtn {
+height: 40px;
+}
+#divTable div {
+padding:0px !important;
+margin:0px !important;
+border:2px solid black;
+width:90px !important;
+height:120px !important;
+max-width:90px !important;
+max-height:120px !important;
+display:inline-block;
+}
+#divTable div img {
+	display:block;
+}
+table {
+table-layout: fixed;
+}
+#divTable {
+                margin:4px, 4px;
+                padding:4px;
+              height: 100vh;
+                overflow-x: hidden;
+                overflow-y: auto;
+                text-align:justify;
+				width:70%;
+display:inline-block;
+float:right;
+            }
+			/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+</style>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+
+<div id="divMain">
+
+<div id="divLeft">
+
+<div>
+
+<p id="pplayCount">You have played 0/9 games!</p> <!--updateme-->
+
+<img class="award" id="spoon" style=" width:25px; height:25px; margin-left:5%; margin-bottom:2%; visibility: hidden;" src="img/spoon.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
+<img class="award" id="bronze" style=" width:25px; height:25px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="img/bronze.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
+<img class="award" id="silver" style=" width:25px; height:25px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="img/silver.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
+<img class="award" id="gold" style=" width:25px; height:25px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="img/gold.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
+<div style="height:40px">
+<p id="pAward">&nbsp;‎</p>
+</div>
+
+</div>
+
+<button id="btnRandom" onclick="random(false)">Random</button>
+<button id="btnRandomUnplayed" onclick="random(true)">Random Unplayed</button>
+
+<div style="height:100px">
+<p id="pRandom" onmouseover="highlight(this.textContent)" onmouseout="unhighlight(this.textContent)"></p>
+</div>
+
+<div id="divInfo" style="height:100px;">
+
+</div>
+
+<p>Genres</p>
+
+<div id="divFilters">
+	<button id="btnShowAll" style="width:41%; color:white;" onclick="filter('all')" >Show All</button>
+	<button id="btnHideAll" style="width:40%; color:white;" onclick="filter('none')">Hide All</button>
+	<button id="btnAction" class="genrebtn" style="width:41%; color:white;" onclick="filter('Action')">Action</button>
+	<button id="btnAdventure" class="genrebtn" style="width:40%; color:white;" onclick="filter('Adventure')">Adventure</button>	
+	<button id="btnFPS" class="genrebtn" style="width:41%; color:white;" onclick="filter('FPS')">FPS</button>
+	<button id="btnRPG" class="genrebtn" style="width:40%; color:white;" onclick="filter('RPG')">RPG</button>
+	<button id="btnRTS" class="genrebtn" style="width:41%; color:white;" onclick="filter('RTS')" >RTS</button>
+	<button id="btnTPS" class="genrebtn" style="width:40%; color:white;" onclick="filter('TPS')" >TPS</button>
+	<button id="btnPlatformer" class="genrebtn" style="width:41%; color:white;" onclick="filter('Platformer')">Platformer</button>
+	<button id="btnPuzzle" class="genrebtn" style="width:40%; color:white;" onclick="filter('Puzzle')" >Puzzle</button>
+	<button id="btnFighter" class="genrebtn" style="width:41%; color:white;" onclick="filter('Fighter')" >Fighter</button>
+	<button id="btnSports" class="genrebtn" style="width:40%; color:white;" onclick="filter('Sports')" >Sports</button>
+</div>
+
+<p>Platform</p>
+
+<div id="divPlatform">
+<button id="btnShowAll" style="width:41%; color:white;" onclick="filterplatform('all')" >Show All</button>
+	<button id="btnHideAll" style="width:40%; color:white;" onclick="filterplatform('none')">Hide All</button>
+	<button id="btnMultiplatform" class="platformbtn" style="width:41%; color:white;" onclick="filterplatform('Multiplatform')">Multiplatform</button>
+	<button id="btnPC" class="platformbtn" style="width:40%; color:white;" onclick="filterplatform('PC')">PC</button>
+	<button id="btnPlaystation" class="platformbtn" style="width:41%; color:white;" onclick="filterplatform('Playstation')">Playstation</button>
+	<button id="btnXBox" class="platformbtn" style="width:40%; color:white;" onclick="filterplatform('XBox')">Xbox</button>
+	<button id="btnNintendo" class="platformbtn" style="width:41%; color:white;" onclick="filterplatform('Nintendo')">Nintendo</button>
+	<button id="btnOther" class="platformbtn" style="width:40%; color:white;" onclick="filterplatform('Other')">Other</button>
+</div>
+
+<p>People</p>
+
+<div id="divPeople">
+	<button id="btnShowAll" style="width:41%; color:white;" onclick="filterperson('all')" >Show All</button>
+	<button id="btnHideAll" style="width:40%; color:white;" onclick="filterperson('none')">Hide All</button>
+	<button id="btnMickey" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Mickey')">Mickey</button>
+	<button id="btnTom" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Tom')">Tom</button>	
+	<button id="btnJJ" class="personbtn" style="width:41%; color:white;" onclick="filterperson('JJ')">JJ</button>
+	<button id="btnSenna" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Senna')">Senna</button>
+	<button id="btnSam" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Sam')" >Sam</button>
+	<button id="btnCurt" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Curt')" >Curt</button>
+	<button id="btnBen" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Ben')">Ben</button>
+	<button id="btnDev" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Dev')" >Dev</button>
+	<button id="btnThyz" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Thyz')" >Thyz</button>
+	<button id="btnWill" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Will')" >Will</button>
+	<button id="btnDom" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Dom')" >Dom</button>
+	<button id="btnJosh" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Josh')" >Josh</button>
+	<button id="btnLiam" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Liam')" >Liam</button>
+	<button id="btnJurak" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Jurak')" >Jurak</button>
+	<button id="btnJon" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Jon')" >Jon</button>
+		<button id="btnOli" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Oli')" >Oli</button>
+		<button id="btnEdie" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Edie')" >Edie</button>
+		<button id="btnRy" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Ry')" >Ry</button>
+		<button id="btnArron" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Arron')" >Arron</button>
+		<button id="btnMike" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Mike')" >Mike</button>
+</div>
+
+<p>Backup</p>
+
+<div id="divBackup">
+	<button id="btnSave" style="width:41%; color:white; font-size:12px; " onclick="backup('save')">Backup Checks</button>
+	<button id="btnLoad" style="width:40%; color:white; font-size:12px; " onclick="backup('load')">Import Checks</button>
+</div>
+
+
+<div style="bottom:50px; position:absolute; z-index:0;">
+</div>
+</div>
+
+<div id="divTable">
+
+<!-- <div id="1" class="game" data-genre="platformer" data-platform="Playstation" data-people=""><image alt="" src="" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)" /></div> -->
+<div id="1" class="game" data-genre="Platformer" data-platform="Playstation" data-people="Ben"><image alt="Spyro 2" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1u2f.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)" /></div>
+<div id="2" class="game" data-genre="Platformer" data-platform="Playstation" data-people="Ben"><image alt="Crash Bandicoot 2" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1tzd.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)" /></div>
+<div id="3" class="game" data-genre="Platformer" data-platform="Playstation" data-people="Ben"><image alt="Ratchet & Clank 2" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1oyn.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)" /></div>
+<div id="4" class="game" data-genre="RPG" data-platform="PC" data-people="Ben"><image alt="World of Warcraft" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co2l7z.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)" /></div>
+<div id="5" class="game" data-genre="Sports" data-platform="Multiplatform" data-people="Ben"><image alt="Tony Hawk's Pro Skater 3" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co2nj3.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)" /></div>
+<div id="6" class="game" data-genre="Adventure" data-platform="Nintendo" data-people="Ben"><image alt="Zelda: Oracle of Seasons" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co2tw0.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)" /></div>
+<div id="7" class="game" data-genre="Action" data-platform="PC" data-people="Ben"><image alt="The Binding of Isaac: Rebirth" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1lbm.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)" /></div>
+<div id="8" class="game" data-genre="Action" data-platform="Playstation" data-people="Ben"><image alt="GTA: Vice City" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co2lbb.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)" /></div>
+<div id="9" class="game" data-genre="Adventure" data-platform="Multiplatform" data-people="Ben"><image alt="Batman: Arkham City" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1voh.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)" /></div>
+
+
+</div>
+
+</div>
+</body>
+
+<script type="text/javascript">
+
+var arrgames = [];
+var arrFilters = [];
+
+$( document ).ready(function() {
+
+try {
+var json_str = getCookie('bestgames');
+arrgames = JSON.parse(json_str);
+}catch(ex) {
+console.log("failed to get games cookie: " + ex.toString());
+}
+    
+loadCheckedgames();
+
+getPopular();
+	
+$(document).find('#divTable div').each (function() {
+    $(this).on("click", function(){  
+	   togglegame($(this).attr("id"))
+    });
+});
+	
+});	
+
+
+function togglegame(ID) {
+
+ if (arrgames.includes(ID) ) { //uncheck
+  
+  for( var i = 0; i < arrgames.length; i++){     
+        if ( arrgames[i] === ID) {     
+            arrgames.splice(i, 1); 
+			document.getElementById(ID).style.border = "2px solid black"	
+			document.getElementById(ID).childNodes[0].classList.remove("played");			
+        }    
+    }
+	
+ 
+ } else { // check
+  
+ arrgames.push(ID);
+ document.getElementById(ID).style.border = "2px solid lightgreen"
+ document.getElementById(ID).childNodes[0].classList.add("played");
+  
+ }
+ 
+updategameCount();
+
+}
+
+function loadCheckedgames() {
+
+for( var i = 0; i < arrgames.length; i++){    
+document.getElementById(arrgames[i]).style.border = "2px solid lightgreen" 
+document.getElementById(arrgames[i]).childNodes[0].classList.add("played");
+
+updategameCount();
+
+}
+
+}
+
+
+function updategameCount() {
+
+var json_str = JSON.stringify(arrgames);
+createCookie('bestgames', json_str);
+var percent = (100 * arrgames.length) / 9; // updateme
+percent = percent.toFixed(2);
+
+if (percent > 19.99) { document.getElementById("spoon").style.visibility = "" } else { document.getElementById("spoon").style.visibility = "hidden" };
+if (percent > 39.99) { document.getElementById("bronze").style.visibility = "" } else { document.getElementById("bronze").style.visibility = "hidden" };
+if (percent > 59.99) { document.getElementById("silver").style.visibility = "" } else { document.getElementById("silver").style.visibility = "hidden" };
+if (percent > 79.99) { document.getElementById("gold").style.visibility = "" } else { document.getElementById("gold").style.visibility = "hidden" };
+
+$("#pplayCount").text("You have played " + arrgames.length + "/9 games!"); //updateme
+
+}
+//reveal(this.alt, this.dataset.genre, this.dataset.platform, this.dataset.people)"
+function reveal(alt, genre, platform, people) {
+
+people = people.replaceAll(" ", ", ")
+document.getElementById("divInfo").innerHTML = "<h3 style='color:white; font-family: courier; text-align:center;'>" + alt + "</h3><h4 style='color:white; font-family: courier; text-align:center; font-weight:normal !important;'>" + platform +  " " + genre + ", chosen by " + people + "</h4>";
+
+}
+
+function random(unplayed) {
+
+	var imgs = document.getElementsByTagName("img");	
+    var imgSrcs = [];
+    for (var i = 0; i < imgs.length; i++) {
+		if (!imgs[i].classList.contains("award")) {
+		if (unplayed == true) {
+			if (imgs[i].classList.contains("played")) {				
+			} else {
+			var genre = imgs[i].parentNode.dataset.genre
+			var person = imgs[i].parentNode.dataset.people
+			var platform = imgs[i].parentNode.dataset.platform
+			if (document.getElementById("btn"+genre).style.color != "red") {
+			imgSrcs.push(imgs[i].alt + " (" + platform + " " + genre + ", chosen by " + person + ")");
+			}
+			
+			}
+		} else {
+			var genre = imgs[i].parentNode.dataset.genre
+			var person = imgs[i].parentNode.dataset.people
+			var platform = imgs[i].parentNode.dataset.platform
+			if (document.getElementById("btn"+genre).style.color != "red") {
+			imgSrcs.push(imgs[i].alt + " (" + platform + " " + genre + ", chosen by " + person + ")");
+			}
+		}    
+		}		    
+    }
+	    
+	if (imgSrcs.length == 0) {
+		document.getElementById("pRandom").innerText = "You should go outside now!";
+	} else {
+		document.getElementById("pRandom").innerText = "You should play " + random_item(imgSrcs);
+	}	
+}
+
+function random_item(items)
+{  
+return items[Math.floor(Math.random()*items.length)];     
+}
+
+function createCookie(name, value, days) {
+    var expires;
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toGMTString();
+    }
+    else {
+        expires = "";
+    }
+    document.cookie = name + "=" + value + expires + "; path=/";
+}
+
+function getCookie(c_name) {
+    if (document.cookie.length > 0) {
+        c_start = document.cookie.indexOf(c_name + "=");
+        if (c_start != -1) {
+            c_start = c_start + c_name.length + 1;
+            c_end = document.cookie.indexOf(";", c_start);
+            if (c_end == -1) {
+                c_end = document.cookie.length;
+            }
+            return unescape(document.cookie.substring(c_start, c_end));
+        }
+    }
+    return "";
+}
+
+
+function highlight(txt) {
+txt = txt.substring(0, txt.length - 1);
+alb = txt.split("You should play ")[1]
+var allImages = document.getElementsByTagName("img");
+    for (var i = 0, len = allImages.length; i < len; ++i) {
+        if (allImages[i].alt == alb) {		
+            allImages[i].style.transform = 'rotate(' + 180 + 'deg)';
+        }
+    }
+}
+
+function unhighlight(txt) {
+txt = txt.substring(0, txt.length - 1);
+alb = txt.split("You should play ")[1]
+var allImages = document.getElementsByTagName("img");
+    for (var i = 0, len = allImages.length; i < len; ++i) {
+        if (allImages[i].alt == alb) {		
+            allImages[i].style.transform = 'rotate(' + 0 + 'deg)';
+        }
+    }
+}
+
+function showAward(award) {
+switch(award) {
+case "spoon":
+	$("#pAward").text("Spoon: played 20% of all games");
+    break;
+  case "bronze":
+	$("#pAward").text("Bronze: played 40% of all games");
+    break;
+	case "silver":
+	$("#pAward").text("Silver: played 60% of all games");
+    break;
+	case "gold":
+	$("#pAward").text("Gold: played 80% of all games");
+    break;
+}
+}
+
+function hideAward() {
+$("#pAward").html("&nbsp;");
+}
+
+function filter(genre) {
+switch(genre) {
+  case "all":
+    var tds = document.getElementsByClassName("game");
+	for (var i = 0; i < tds.length; i++) {
+	if (!tds[i].classList.contains("guide")) {
+	 tds[i].style.display = "inline-block";
+	 }
+    }
+	var btns = document.getElementsByTagName("button");
+	for (var i = 0; i < btns.length; i++) {
+	 btns[i].style.color = "white";
+    }
+    break;
+case "none":	
+    var tds = document.getElementsByClassName("game");
+	for (var i = 0; i < tds.length; i++) {
+	if (!tds[i].classList.contains("guide")) {
+		 tds[i].style.display = "none";
+	}
+    }
+		var btns = document.getElementsByClassName("genrebtn");
+	for (var i = 0; i < btns.length; i++) {
+	 btns[i].style.color = "red";
+    }
+    
+		var btns = document.getElementsByClassName("personbtn");
+	for (var i = 0; i < btns.length; i++) {
+	 btns[i].style.color = "red";
+    }
+		var btns = document.getElementsByClassName("platformbtn");
+	for (var i = 0; i < btns.length; i++) {
+	 btns[i].style.color = "red";
+    }
+    break;
+ default:
+	
+	var btn = document.getElementById("btn" + genre);
+	if (btn.style.color == "white") {
+	btn.style.color = "red";
+	} else {
+	btn.style.color = "white";
+	}
+      var tds = document.querySelectorAll('[data-genre=' + genre + ']');
+	for (var i = 0; i < tds.length; i++) {
+	if (!tds[i].classList.contains("guide")) {
+	if (tds[i].style.display == "none") {
+	tds[i].style.display = "inline-block";
+	} else {
+	tds[i].style.display = "none";
+	}	
+	}	
+    }      
+}
+}
+
+function filterperson(person) {
+switch(person) {
+  case "all":
+    var tds = document.getElementsByClassName("game");
+	for (var i = 0; i < tds.length; i++) {
+	if (!tds[i].classList.contains("guide")) {
+	 tds[i].style.display = "inline-block";
+	 }
+    }
+	var btns = document.getElementsByTagName("button");
+	for (var i = 0; i < btns.length; i++) {
+	 btns[i].style.color = "white";
+    }
+    break;
+case "none":	
+    var tds = document.getElementsByClassName("game");
+	for (var i = 0; i < tds.length; i++) {
+	if (!tds[i].classList.contains("guide")) {
+		 tds[i].style.display = "none";
+	}
+    }
+		var btns = document.getElementsByClassName("genrebtn");
+	for (var i = 0; i < btns.length; i++) {
+	 btns[i].style.color = "red";
+    }	
+    
+		var btns = document.getElementsByClassName("personbtn");
+	for (var i = 0; i < btns.length; i++) {
+	 btns[i].style.color = "red";
+    }
+		var btns = document.getElementsByClassName("platformbtn");
+	for (var i = 0; i < btns.length; i++) {
+	 btns[i].style.color = "red";
+    }
+	
+    break;
+ default:
+	
+	var btn = document.getElementById("btn" + person);
+	if (btn.style.color == "white") {
+	btn.style.color = "red";
+	} else {
+	btn.style.color = "white";
+	}
+	
+  // var tds = document.querySelectorAll('[data-people=' + person + ']');
+   var tds = document.getElementsByClassName("game");
+  
+	for (var i = 0; i < tds.length; i++) {
+	if (!tds[i].classList.contains("guide")) {
+	
+	if (tds[i].dataset.people.indexOf(person) > -1) {
+	if (tds[i].style.display == "none") {
+
+	tds[i].style.display = "inline-block";
+	} else {
+	tds[i].style.display = "none";
+	}
+	}
+	
+		
+	
+	}	
+    }      
+}
+}
+
+function filterplatform(platform) {
+switch(platform) {
+  case "all":
+    var tds = document.getElementsByClassName("game");
+	for (var i = 0; i < tds.length; i++) {
+	if (!tds[i].classList.contains("guide")) {
+	 tds[i].style.display = "inline-block";
+	 }
+    }
+	var btns = document.getElementsByTagName("button");
+	for (var i = 0; i < btns.length; i++) {
+	 btns[i].style.color = "white";
+    }
+    break;
+case "none":	
+    var tds = document.getElementsByClassName("game");
+	for (var i = 0; i < tds.length; i++) {
+	if (!tds[i].classList.contains("guide")) {
+		 tds[i].style.display = "none";
+	}
+    }
+		var btns = document.getElementsByClassName("genrebtn");
+	for (var i = 0; i < btns.length; i++) {
+	 btns[i].style.color = "red";
+    }	
+    
+		var btns = document.getElementsByClassName("personbtn");
+	for (var i = 0; i < btns.length; i++) {
+	 btns[i].style.color = "red";
+    }
+		var btns = document.getElementsByClassName("platformbtn");
+	for (var i = 0; i < btns.length; i++) {
+	 btns[i].style.color = "red";
+    }
+	
+    break;
+ default:
+	
+	var btn = document.getElementById("btn" + platform);
+	if (btn.style.color == "white") {
+	btn.style.color = "red";
+	} else {
+	btn.style.color = "white";
+	}
+     var tds = document.querySelectorAll('[data-platform=' + platform + ']');
+   console.log(platform)
+	for (var i = 0; i < tds.length; i++) {
+	if (!tds[i].classList.contains("guide")) {
+	if (tds[i].style.display == "none") {
+	tds[i].style.display = "inline-block";
+	} else {
+	tds[i].style.display = "none";
+	}	
+	}	
+    }      
+}
+}
+
+
+function backup(func) {
+ if (func == "save") {
+   var dummy = document.createElement("textarea");
+    document.body.appendChild(dummy);
+    dummy.value =  JSON.stringify(arrgames);
+    dummy.select();
+    document.execCommand("copy");
+    document.body.removeChild(dummy);
+	$("#divInfo").html("<p>Album cookie copied to clipboard</p>");
+ } else {
+ var albs = prompt("Paste your cookie value", "");
+ if (albs != null) {
+  arrgames = JSON.parse(albs);
+  loadCheckedgames();
+}
+ }
+}
+
+function getPopular() {
+var games = document.getElementsByClassName("game");
+var debug = "";
+for (i=0;i<games.length;i++) {
+if (games[i].classList.length == 4) {
+debug += games[i].id + ", "
+}
+}
+console.log("Popular: " + debug);
+}
+
+</script>
+
+</html>

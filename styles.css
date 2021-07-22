@@ -79,16 +79,17 @@ display:inline-block;
 margin-left: 1%;
 bottom:0;
 }
-#divFilters button {
-float:left;
-margin-left:4%;
-margin-bottom:5px;
-}
 #divBackup button {
 float:left;
 margin-left:4%;
 margin-bottom:5px;
 }
+#divFilters button {
+float:left;
+margin-left:4%;
+margin-bottom:5px;
+}
+
 #pAward {
 font-size:12px !important;
 }
