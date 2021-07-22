@@ -277,7 +277,7 @@ float:right;
 <div id="divTable">
 
 <!-- <div id="1" class="game" data-genre="platformer" data-platform="Playstation" data-people=""><image alt="" src="" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)" /></div> -->
-<div id="1" class="game" data-genre="Platformer" data-platform="Playstation" data-people="Ben"><image alt="Spyro 2" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1u2f.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)" /></div>
+<div id="1" class="game" data-genre="Platformer" data-platform="Playstation" data-people="Ben Tom"><image alt="Spyro 2" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1u2f.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)" /></div>
 <div id="2" class="game" data-genre="Platformer" data-platform="Playstation" data-people="Ben"><image alt="Crash Bandicoot 2" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1tzd.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)" /></div>
 <div id="3" class="game" data-genre="Platformer" data-platform="Playstation" data-people="Ben"><image alt="Ratchet & Clank 2" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1oyn.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)" /></div>
 <div id="4" class="game" data-genre="RPG" data-platform="PC" data-people="Ben"><image alt="World of Warcraft" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co2l7z.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)" /></div>
@@ -393,8 +393,10 @@ function random(unplayed) {
 			var genre = imgs[i].parentNode.dataset.genre
 			var person = imgs[i].parentNode.dataset.people
 			var platform = imgs[i].parentNode.dataset.platform
-			if (document.getElementById("btn"+genre).style.color != "red") {
+			if (document.getElementById("btn"+genre).style.color != "red" && document.getElementById("btn"+platform).style.color != "red" && document.getElementById("btn"+person).style.color != "red") {
+			
 			imgSrcs.push(imgs[i].alt + " (" + platform + " " + genre + ", chosen by " + person + ")");
+			
 			}
 			
 			}
@@ -402,7 +404,7 @@ function random(unplayed) {
 			var genre = imgs[i].parentNode.dataset.genre
 			var person = imgs[i].parentNode.dataset.people
 			var platform = imgs[i].parentNode.dataset.platform
-			if (document.getElementById("btn"+genre).style.color != "red") {
+			if (document.getElementById("btn"+genre).style.color != "red" && document.getElementById("btn"+platform).style.color != "red" && document.getElementById("btn"+platform).style.color != "red") {
 			imgSrcs.push(imgs[i].alt + " (" + platform + " " + genre + ", chosen by " + person + ")");
 			}
 		}    
@@ -494,184 +496,194 @@ $("#pAward").html("&nbsp;");
 }
 
 function filter(genre) {
-switch(genre) {
-  case "all":
-    var tds = document.getElementsByClassName("game");
-	for (var i = 0; i < tds.length; i++) {
-	if (!tds[i].classList.contains("guide")) {
-	 tds[i].style.display = "inline-block";
-	 }
+    switch (genre) {
+        case "all":
+            var tds = document.getElementsByClassName("game");
+            for (var i = 0; i < tds.length; i++) {
+
+                tds[i].style.display = "inline-block";
+
+            }
+            var btns = document.getElementsByClassName("genrebtn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].style.color = "white";
+            }
+            break;
+        case "none":
+            var tds = document.getElementsByClassName("game");
+            for (var i = 0; i < tds.length; i++) {
+			
+                tds[i].style.display = "none";
+            
+			}
+            var btns = document.getElementsByClassName("genrebtn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].style.color = "red";
+            }
+
+
+            break;
+        default:
+
+            var btn = document.getElementById("btn" + genre);
+            if (btn.style.color == "white") {
+                btn.style.color = "red";
+            } else {
+                btn.style.color = "white";
+            }
+            var tds = document.querySelectorAll('[data-genre=' + genre + ']');
+             for (var i = 0; i < tds.length; i++) {
+
+if (document.getElementById("btn" + tds[i].dataset.platform).style.color == "white" && document.getElementById("btn" + tds[i].dataset.genre).style.color == "white") {
+
+    var ppl = tds[i].dataset.people;
+    var pplsplit = ppl.split(" ")
+    var boolpplok = false;
+    for (x = 0; x < pplsplit.length; x++) {
+        if (document.getElementById("btn" + pplsplit[x]).style.color == "white") {
+            boolpplok = true;
+        }
     }
-	var btns = document.getElementsByTagName("button");
-	for (var i = 0; i < btns.length; i++) {
-	 btns[i].style.color = "white";
+    if (boolpplok == true) {
+        tds[i].style.display = "inline-block";
+    } else {
+        tds[i].style.display = "none";
     }
-    break;
-case "none":	
-    var tds = document.getElementsByClassName("game");
-	for (var i = 0; i < tds.length; i++) {
-	if (!tds[i].classList.contains("guide")) {
-		 tds[i].style.display = "none";
-	}
-    }
-		var btns = document.getElementsByClassName("genrebtn");
-	for (var i = 0; i < btns.length; i++) {
-	 btns[i].style.color = "red";
-    }
-    
-		var btns = document.getElementsByClassName("personbtn");
-	for (var i = 0; i < btns.length; i++) {
-	 btns[i].style.color = "red";
-    }
-		var btns = document.getElementsByClassName("platformbtn");
-	for (var i = 0; i < btns.length; i++) {
-	 btns[i].style.color = "red";
-    }
-    break;
- default:
-	
-	var btn = document.getElementById("btn" + genre);
-	if (btn.style.color == "white") {
-	btn.style.color = "red";
-	} else {
-	btn.style.color = "white";
-	}
-      var tds = document.querySelectorAll('[data-genre=' + genre + ']');
-	for (var i = 0; i < tds.length; i++) {
-	if (!tds[i].classList.contains("guide")) {
-	if (tds[i].style.display == "none") {
-	tds[i].style.display = "inline-block";
-	} else {
-	tds[i].style.display = "none";
-	}	
-	}	
-    }      
+} else {
+    tds[i].style.display = "none";
 }
+}
+    }
 }
 
 function filterperson(person) {
-switch(person) {
-  case "all":
-    var tds = document.getElementsByClassName("game");
-	for (var i = 0; i < tds.length; i++) {
-	if (!tds[i].classList.contains("guide")) {
-	 tds[i].style.display = "inline-block";
-	 }
-    }
-	var btns = document.getElementsByTagName("button");
-	for (var i = 0; i < btns.length; i++) {
-	 btns[i].style.color = "white";
-    }
-    break;
-case "none":	
-    var tds = document.getElementsByClassName("game");
-	for (var i = 0; i < tds.length; i++) {
-	if (!tds[i].classList.contains("guide")) {
-		 tds[i].style.display = "none";
-	}
-    }
-		var btns = document.getElementsByClassName("genrebtn");
-	for (var i = 0; i < btns.length; i++) {
-	 btns[i].style.color = "red";
-    }	
-    
-		var btns = document.getElementsByClassName("personbtn");
-	for (var i = 0; i < btns.length; i++) {
-	 btns[i].style.color = "red";
-    }
-		var btns = document.getElementsByClassName("platformbtn");
-	for (var i = 0; i < btns.length; i++) {
-	 btns[i].style.color = "red";
-    }
-	
-    break;
- default:
-	
-	var btn = document.getElementById("btn" + person);
-	if (btn.style.color == "white") {
-	btn.style.color = "red";
-	} else {
-	btn.style.color = "white";
-	}
-	
-  // var tds = document.querySelectorAll('[data-people=' + person + ']');
-   var tds = document.getElementsByClassName("game");
-  
-	for (var i = 0; i < tds.length; i++) {
-	if (!tds[i].classList.contains("guide")) {
-	
-	if (tds[i].dataset.people.indexOf(person) > -1) {
-	if (tds[i].style.display == "none") {
+    switch (person) {
+        case "all":
+            var tds = document.getElementsByClassName("game");
+            for (var i = 0; i < tds.length; i++) {
 
-	tds[i].style.display = "inline-block";
-	} else {
-	tds[i].style.display = "none";
-	}
-	}
-	
-		
-	
-	}	
-    }      
+                tds[i].style.display = "inline-block";
+
+            }
+            var btns = document.getElementsByClassName("personbtn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].style.color = "white";
+            }
+            break;
+        case "none":
+            var tds = document.getElementsByClassName("game");
+            for (var i = 0; i < tds.length; i++) {
+
+                tds[i].style.display = "none";
+
+            }
+
+
+            var btns = document.getElementsByClassName("personbtn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].style.color = "red";
+            }
+
+
+            break;
+        default:
+
+            var btn = document.getElementById("btn" + person);
+            if (btn.style.color == "white") {
+                btn.style.color = "red";
+            } else {
+                btn.style.color = "white";
+            }
+
+           //  var tds = document.querySelectorAll('[data-people=' + person + ']');
+           var tds = document.getElementsByClassName("game");
+
+            for (var i = 0; i < tds.length; i++) {
+
+if (document.getElementById("btn" + tds[i].dataset.platform).style.color == "white" && document.getElementById("btn" + tds[i].dataset.genre).style.color == "white") {
+
+    var ppl = tds[i].dataset.people;
+    var pplsplit = ppl.split(" ")
+    var boolpplok = false;
+    for (x = 0; x < pplsplit.length; x++) {
+        if (document.getElementById("btn" + pplsplit[x]).style.color == "white") {
+            boolpplok = true;
+        }
+    }
+    if (boolpplok == true) {
+        tds[i].style.display = "inline-block";
+    } else {
+        tds[i].style.display = "none";
+    }
+} else {
+    tds[i].style.display = "none";
 }
+}
+			
+			
+    }
 }
 
 function filterplatform(platform) {
-switch(platform) {
-  case "all":
-    var tds = document.getElementsByClassName("game");
-	for (var i = 0; i < tds.length; i++) {
-	if (!tds[i].classList.contains("guide")) {
-	 tds[i].style.display = "inline-block";
-	 }
+    switch (platform) {
+        case "all":
+            var tds = document.getElementsByClassName("game");
+            for (var i = 0; i < tds.length; i++) {
+
+                tds[i].style.display = "inline-block";
+
+            }
+            var btns = document.getElementsByClassName("platformbtn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].style.color = "white";
+            }
+            break;
+        case "none":
+            var tds = document.getElementsByClassName("game");
+            for (var i = 0; i < tds.length; i++) {
+
+                tds[i].style.display = "none";
+
+            }
+
+            var btns = document.getElementsByClassName("platformbtn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].style.color = "red";
+            }
+
+            break;
+        default:
+
+            var btn = document.getElementById("btn" + platform);
+            if (btn.style.color == "white") {
+                btn.style.color = "red";
+            } else {
+                btn.style.color = "white";
+            }
+            var tds = document.querySelectorAll('[data-platform=' + platform + ']');
+            console.log(platform)
+            for (var i = 0; i < tds.length; i++) {
+
+if (document.getElementById("btn" + tds[i].dataset.platform).style.color == "white" && document.getElementById("btn" + tds[i].dataset.genre).style.color == "white") {
+
+    var ppl = tds[i].dataset.people;
+    var pplsplit = ppl.split(" ")
+    var boolpplok = false;
+    for (x = 0; x < pplsplit.length; x++) {
+        if (document.getElementById("btn" + pplsplit[x]).style.color == "white") {
+            boolpplok = true;
+        }
     }
-	var btns = document.getElementsByTagName("button");
-	for (var i = 0; i < btns.length; i++) {
-	 btns[i].style.color = "white";
+    if (boolpplok == true) {
+        tds[i].style.display = "inline-block";
+    } else {
+        tds[i].style.display = "none";
     }
-    break;
-case "none":	
-    var tds = document.getElementsByClassName("game");
-	for (var i = 0; i < tds.length; i++) {
-	if (!tds[i].classList.contains("guide")) {
-		 tds[i].style.display = "none";
-	}
-    }
-		var btns = document.getElementsByClassName("genrebtn");
-	for (var i = 0; i < btns.length; i++) {
-	 btns[i].style.color = "red";
-    }	
-    
-		var btns = document.getElementsByClassName("personbtn");
-	for (var i = 0; i < btns.length; i++) {
-	 btns[i].style.color = "red";
-    }
-		var btns = document.getElementsByClassName("platformbtn");
-	for (var i = 0; i < btns.length; i++) {
-	 btns[i].style.color = "red";
-    }
-	
-    break;
- default:
-	
-	var btn = document.getElementById("btn" + platform);
-	if (btn.style.color == "white") {
-	btn.style.color = "red";
-	} else {
-	btn.style.color = "white";
-	}
-     var tds = document.querySelectorAll('[data-platform=' + platform + ']');
-   console.log(platform)
-	for (var i = 0; i < tds.length; i++) {
-	if (!tds[i].classList.contains("guide")) {
-	if (tds[i].style.display == "none") {
-	tds[i].style.display = "inline-block";
-	} else {
-	tds[i].style.display = "none";
-	}	
-	}	
-    }      
+} else {
+    tds[i].style.display = "none";
 }
+}
+    }
 }
 
 

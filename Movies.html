@@ -93,6 +93,17 @@ font-size:12px;
 .genrebtn {
 height: 40px;
 }
+#divBackup {
+width: 100%;
+display:inline-block;
+margin-left: 1%;
+bottom:0;
+}
+#divBackup button {
+float:left;
+margin-left:4%;
+margin-bottom:5px;
+}
 .personbtn {
 height: 40px;
 }
@@ -642,11 +653,11 @@ switch(genre) {
   case "all":
     var tds = document.getElementsByClassName("movie");
 	for (var i = 0; i < tds.length; i++) {
-	if (!tds[i].classList.contains("guide")) {
+	
 	 tds[i].style.display = "inline-block";
-	 }
+	 
     }
-	var btns = document.getElementsByTagName("button");
+	var btns = document.getElementsByClassName("genrebtn");
 	for (var i = 0; i < btns.length; i++) {
 	 btns[i].style.color = "white";
     }
@@ -654,24 +665,15 @@ switch(genre) {
 case "none":	
     var tds = document.getElementsByClassName("movie");
 	for (var i = 0; i < tds.length; i++) {
-	if (!tds[i].classList.contains("guide")) {
+
 		 tds[i].style.display = "none";
-	}
+	
     }
 		var btns = document.getElementsByClassName("genrebtn");
 	for (var i = 0; i < btns.length; i++) {
 	 btns[i].style.color = "red";
     }
-	 var tds = document.getElementsByClassName("movie");
-	for (var i = 0; i < tds.length; i++) {
-	if (!tds[i].classList.contains("guide")) {
-		 tds[i].style.display = "none";
-	}
-    }
-		var btns = document.getElementsByClassName("personbtn");
-	for (var i = 0; i < btns.length; i++) {
-	 btns[i].style.color = "red";
-    }
+	 
     break;
  default:
 	
@@ -683,13 +685,13 @@ case "none":
 	}
     var tds = document.getElementsByClassName(genre);
 	for (var i = 0; i < tds.length; i++) {
-	if (!tds[i].classList.contains("guide")) {
+	
 	if (tds[i].style.display == "none") {
 	tds[i].style.display = "inline-block";
 	} else {
 	tds[i].style.display = "none";
 	}	
-	}	
+	
     }      
 }
 }
@@ -699,11 +701,11 @@ switch(person) {
   case "all":
     var tds = document.getElementsByClassName("movie");
 	for (var i = 0; i < tds.length; i++) {
-	if (!tds[i].classList.contains("guide")) {
+	
 	 tds[i].style.display = "inline-block";
-	 }
+	 
     }
-	var btns = document.getElementsByTagName("button");
+	var btns = document.getElementsByClassName("personbtn");
 	for (var i = 0; i < btns.length; i++) {
 	 btns[i].style.color = "white";
     }
@@ -711,24 +713,15 @@ switch(person) {
 case "none":	
     var tds = document.getElementsByClassName("movie");
 	for (var i = 0; i < tds.length; i++) {
-	if (!tds[i].classList.contains("guide")) {
+
 		 tds[i].style.display = "none";
-	}
+	
     }
 		var btns = document.getElementsByClassName("personbtn");
 	for (var i = 0; i < btns.length; i++) {
 	 btns[i].style.color = "red";
     }
-	 var tds = document.getElementsByClassName("movie");
-	for (var i = 0; i < tds.length; i++) {
-	if (!tds[i].classList.contains("guide")) {
-		 tds[i].style.display = "none";
-	}
-    }
-		var btns = document.getElementsByClassName("genrebtn");
-	for (var i = 0; i < btns.length; i++) {
-	 btns[i].style.color = "red";
-    }
+	
     break;
  default:
 	
@@ -740,13 +733,13 @@ case "none":
 	}
     var tds = document.getElementsByClassName(person);
 	for (var i = 0; i < tds.length; i++) {
-	if (!tds[i].classList.contains("guide")) {
+	
 	if (tds[i].style.display == "none") {
 	tds[i].style.display = "inline-block";
 	} else {
 	tds[i].style.display = "none";
 	}	
-	}	
+	
     }      
 }
 }
