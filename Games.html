@@ -541,7 +541,8 @@ function random(unplayed) {
 			var genre = imgs[i].parentNode.dataset.genre
 			var person = imgs[i].parentNode.dataset.people
 			var platform = imgs[i].parentNode.dataset.platform
-			if (document.getElementById("btn"+genre).style.color != "red" && document.getElementById("btn"+platform).style.color != "red" && document.getElementById("btn"+person).style.color != "red") {
+		
+			if (document.getElementById("btn"+genre).style.color != "red" && document.getElementById("btn"+platform).style.color != "red") {
 			
 			imgSrcs.push(imgs[i].alt + " (" + platform + " " + genre + ", chosen by " + person + ")");
 			
@@ -552,7 +553,7 @@ function random(unplayed) {
 			var genre = imgs[i].parentNode.dataset.genre
 			var person = imgs[i].parentNode.dataset.people
 			var platform = imgs[i].parentNode.dataset.platform
-			if (document.getElementById("btn"+genre).style.color != "red" && document.getElementById("btn"+platform).style.color != "red" && document.getElementById("btn"+platform).style.color != "red") {
+			if (document.getElementById("btn"+genre).style.color != "red" && document.getElementById("btn"+platform).style.color != "red") {
 			imgSrcs.push(imgs[i].alt + " (" + platform + " " + genre + ", chosen by " + person + ")");
 			}
 		}    
