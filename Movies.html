@@ -38,7 +38,7 @@ display:inline-block;
 margin-left: 1%;
 position: absolute;
 bottom:0;
-top:0;
+top:37px;
 overflow-y: auto;
 overflow-x: hidden;
 }
@@ -126,7 +126,7 @@ table-layout: fixed;
 #divTable {
                 margin:4px, 4px;
                 padding:4px;
-              height: 100vh;
+              height:  95vh;
                 overflow-x: hidden;
                 overflow-y: auto;
                 text-align:justify;
@@ -153,6 +153,32 @@ float:right;
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+#divBar {
+width:100%;
+height:20px;
+background-color:black;
+top:0;
+border-bottom: 1px solid white;
+}
+#divBar p {
+color:white;
+font-family:courier;
+display:inline;
+margin-left:1%;
+text-align:center;
+font-weight:bold;
+}
+#divBar a {
+color:white;
+font-family:courier;
+display:inline;
+text-decoration:none;
+align-items: center;
+justify-content: center;
+}
+#divBar a:hover {
+text-decoration:underline
+}
 </style>
 <script
   src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -161,6 +187,19 @@ float:right;
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
+
+<div id="divBar">
+<img src="favicon.ico" style="width:15px;height:15px;">
+<p>The best things ever // </p>
+<a href='https://bestalbumsever.github.io/albums/'>Music</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href='https://bestalbumsever.github.io/albums/Movies.html'>Movies</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href='https://bestalbumsever.github.io/albums/Games.html'>Games</a>
+
+
+</div>
+
 
 <div id="divMain">
 

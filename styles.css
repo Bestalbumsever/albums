@@ -45,7 +45,7 @@ display:inline-block;
 margin-left: 1%;
 position: absolute;
 bottom:0;
-top:0;
+top:36px;
 }
 #divLeft p {
 color: white;
@@ -109,4 +109,30 @@ width:5px;
 }
 a {
 	color:white;
+}
+#divBar {
+width:100%;
+height:20px;
+background-color:black;
+top:0;
+border-bottom: 1px solid white;
+}
+#divBar p {
+color:white;
+font-family:courier;
+display:inline;
+margin-left:1%;
+text-align:center;
+font-weight:bold;
+}
+#divBar a {
+color:white;
+font-family:courier;
+display:inline;
+text-decoration:none;
+align-items: center;
+justify-content: center;
+}
+#divBar a:hover {
+text-decoration:underline
 }
