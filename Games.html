@@ -229,7 +229,7 @@ float:right;
 	<button id="btnMultiplatform" class="platformbtn" style="width:41%; color:white;" onclick="filterplatform('Multiplatform')">Multiplatform</button>
 	<button id="btnPC" class="platformbtn" style="width:40%; color:white;" onclick="filterplatform('PC')">PC</button>
 	<button id="btnPlaystation" class="platformbtn" style="width:41%; color:white;" onclick="filterplatform('Playstation')">Playstation</button>
-	<button id="btnXBox" class="platformbtn" style="width:40%; color:white;" onclick="filterplatform('XBox')">Xbox</button>
+	<button id="btnXbox" class="platformbtn" style="width:40%; color:white;" onclick="filterplatform('Xbox')">Xbox</button>
 	<button id="btnNintendo" class="platformbtn" style="width:41%; color:white;" onclick="filterplatform('Nintendo')">Nintendo</button>
 	<button id="btnOther" class="platformbtn" style="width:40%; color:white;" onclick="filterplatform('Other')">Other</button>
 </div>
@@ -249,11 +249,9 @@ float:right;
 	<button id="btnDev" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Dev')" >Dev</button>
 	<button id="btnThyz" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Thyz')" >Thyz</button>
 	<button id="btnWill" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Will')" >Will</button>
-	<button id="btnDom" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Dom')" >Dom</button>
-	<button id="btnJosh" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Josh')" >Josh</button>
-	<button id="btnLiam" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Liam')" >Liam</button>
-	<button id="btnJurak" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Jurak')" >Jurak</button>
-	<button id="btnJon" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Jon')" >Jon</button>
+
+	<button id="btnJurak" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Jurak')" >Jurak</button>
+
 		<button id="btnOli" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Oli')" >Oli</button>
 		<button id="btnEdie" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Edie')" >Edie</button>
 		<button id="btnRy" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Ry')" >Ry</button>
@@ -261,6 +259,8 @@ float:right;
 		<button id="btnMike" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Mike')" >Mike</button>
 		<button id="btnCL" class="personbtn" style="width:41%; color:white;" onclick="filterperson('CL')" >CL</button>
 		<button id="btnSteph" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Steph')" >Steph</button>
+		<button id="btnReiss" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Reiss')" >Reiss</button>
+		<button id="btnStu" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Stu')" >Stu</button>
 </div>
 
 <p>Backup</p>
@@ -678,11 +678,13 @@ function filter(genre) {
 
                 
 if (document.getElementById("btn" + tds[i].dataset.platform).style.color == "white" && document.getElementById("btn" + tds[i].dataset.genre).style.color == "white") {
+
     var ppl = tds[i].dataset.people;
     var pplsplit = ppl.split(" ")
     var boolpplok = false;
     for (x = 0; x < pplsplit.length; x++) {
         if (document.getElementById("btn" + pplsplit[x]).style.color == "white") {
+		
             boolpplok = true;
         }
     }
