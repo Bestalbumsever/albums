@@ -1,6 +1,24 @@
-<script src="http://html2canvas.hertzen.com/dist/html2canvas.min.js">
+<!DOCTYPE html>
+<head>
+<style>
+.game {
+padding:0px !important;
+margin:0px !important;
+border:2px solid black;
+width:135px !important;
+height:180px !important;
+max-width:135px !important;
+max-height:180px !important;
+display:inline-block;
+}
+</style>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
 
-<div style="position:absolute; left:0; width: 25%; height: 500px;">
+<body>
+
+<div style="position:absolute; left:0; width: 25%; height: 500px; left:25px;">
 
 <p>For games <a href='https://www.igdb.com/search?type=1&q=' target="_blank">click here</a> and search</p>
 <p>Right click the game image > "Copy Image Address"</p>
@@ -17,20 +35,30 @@
 9: <input type="text" id="9" style="width: 300px;" /><br />
 <br />
 <input type="button" value="Go" onclick="generate()" />
+<br />
+<p id="pFeedback"></p>
+<input id="btnCopy" style="display:none;" type="button" value="Copy" onclick="copy()" />
+
+<p id="step2" style="display:none;">Thanks, now screenshot the 3x3 to post to media, I tried image converters and holy shit can i not be bothered</p>
 
 </div>
 
 
 
-<div style="position:absolute; right:0; width: 70%; height: 500px;">
+<div id="result" style="position:absolute; right:35%; width: 35%; height: 500px;">
 
+<div id="resultpng" style="position:absolute; right:0; width: 35%; height: 500px;">
 
 
 </div>
 
 <script type="text/javascript">
 
+
+
 function generate() {
+
+try {
 
 var x1 = document.getElementById("1").value
 var x2 = document.getElementById("2").value
@@ -42,10 +70,60 @@ var x7 = document.getElementById("7").value
 var x8 = document.getElementById("8").value
 var x9 = document.getElementById("9").value
 
+var basehtml = '<div id="X" class="game" data-genre="" data-platform="" data-people="" ><image style="display:block; max-width:100%;max-height:100%;" alt="" src="$ALT$" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)" /></div>'
+var itemhtml;
+var bightml = '<div style="background-color:black; width:418px;">'
+itemhtml = basehtml.replace('$ALT$', x1)
+bightml += itemhtml;
+itemhtml = basehtml.replace('$ALT$', x2)
+bightml += itemhtml;
+itemhtml = basehtml.replace('$ALT$', x3)
+bightml += itemhtml;
+itemhtml = basehtml.replace('$ALT$', x4)
+bightml += itemhtml;
+itemhtml = basehtml.replace('$ALT$', x5)
+bightml += itemhtml;
+itemhtml = basehtml.replace('$ALT$', x6)
+bightml += itemhtml;
+itemhtml = basehtml.replace('$ALT$', x7)
+bightml += itemhtml;
+itemhtml = basehtml.replace('$ALT$', x8)
+bightml += itemhtml;
+itemhtml = basehtml.replace('$ALT$', x9)
+bightml += itemhtml;
+bightml += '</div>'
+
+document.getElementById('result').innerHTML = bightml;
+
+document.getElementById('pFeedback').innerText = "Good job, now click this button to copy HTML to clipboard and send it to Ben on Discord:";
+document.getElementById('btnCopy').style.display="block"
+
+}catch(ex) {
+
+document.getElementById('pFeedback').innerText = "You broke it: " + ex.toString();
+
+}
 
 
 
 }
 
+function copy() {
+ var dummy = document.createElement("textarea");
+    document.body.appendChild(dummy);
+    dummy.value =  document.getElementById('result').innerHTML
+    dummy.select();
+    document.execCommand("copy");
+    document.body.removeChild(dummy);
+	document.getElementById('step2').style.display="block"
+	document.getElementById('btnSave').style.display="block"
+}
+
+
+
 
 </script>
+
+
+</body>
+</html>
