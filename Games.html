@@ -182,7 +182,7 @@ float:right;
 
 <div>
 
-<p id="pplayCount">You have played 0/9 games!</p> <!--updateme-->
+<p id="pplayCount">You have played 0/64 games!</p> <!--updateme-->
 
 <img class="award" id="spoon" style=" width:25px; height:25px; margin-left:5%; margin-bottom:2%; visibility: hidden;" src="img/spoon.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
 <img class="award" id="bronze" style=" width:25px; height:25px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="img/bronze.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
@@ -215,11 +215,10 @@ float:right;
 	<button id="btnFPS" class="genrebtn" style="width:41%; color:white;" onclick="filter('FPS')">FPS</button>
 	<button id="btnRPG" class="genrebtn" style="width:40%; color:white;" onclick="filter('RPG')">RPG</button>
 	<button id="btnStrategy" class="genrebtn" style="width:41%; color:white;" onclick="filter('Strategy')" >Strategy</button>
-	<button id="btnTPS" class="genrebtn" style="width:40%; color:white;" onclick="filter('TPS')" >TPS</button>
+	<button id="btnSports" class="genrebtn" style="width:40%; color:white;" onclick="filter('Sports')" >Sports</button>
 	<button id="btnPlatformer" class="genrebtn" style="width:41%; color:white;" onclick="filter('Platformer')">Platformer</button>
 	<button id="btnPuzzle" class="genrebtn" style="width:40%; color:white;" onclick="filter('Puzzle')" >Puzzle</button>
 	<button id="btnFighter" class="genrebtn" style="width:41%; color:white;" onclick="filter('Fighter')" >Fighter</button>
-	<button id="btnSports" class="genrebtn" style="width:40%; color:white;" onclick="filter('Sports')" >Sports</button>
 </div>
 
 <p>Platform</p>
@@ -295,7 +294,7 @@ float:right;
 <div id="1" class="game" data-genre="Platformer" data-platform="Playstation" data-people="Ben"><image alt="Spyro 2" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1u2f.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)" /></div>
 <div id="2" class="game" data-genre="Platformer" data-platform="Playstation" data-people="Ben"><image alt="Crash Bandicoot 2" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1tzd.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)" /></div>
 <div id="3" class="game" data-genre="Platformer" data-platform="Playstation" data-people="Ben"><image alt="Ratchet & Clank 2" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1oyn.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)" /></div>
-<div id="4" class="game" data-genre="RPG" data-platform="PC" data-people="Ben Sam"><image alt="World of Warcraft" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co2l7z.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)" /></div>
+<div id="4" class="game" data-genre="RPG" data-platform="PC" data-people="Ben Sam Thyz Curt"><image alt="World of Warcraft" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co2l7z.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)" /></div>
 <div id="5" class="game" data-genre="Sports" data-platform="Multiplatform" data-people="Ben"><image alt="Tony Hawk's Pro Skater 3" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co2nj3.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)" /></div>
 <div id="6" class="game" data-genre="Adventure" data-platform="Nintendo" data-people="Ben"><image alt="Zelda: Oracle of Seasons" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co2tw0.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)" /></div>
 <div id="7" class="game" data-genre="Action" data-platform="PC" data-people="Ben"><image alt="The Binding of Isaac: Rebirth" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1lbm.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)" /></div>
@@ -305,11 +304,11 @@ float:right;
 <div id="10" class="game" data-genre="FPS" data-platform="Multiplatform" data-people="Dev"><img alt="Call of Duty 4: Modern Warfare" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1wko.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
 <div id="11" class="game" data-genre="RPG" data-platform="PC" data-people="Dev Will"><img alt="Runescape" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1mo1.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
 <div id="12" class="game" data-genre="Action" data-platform="Playstation" data-people="Dev"><img alt="GTA: San Andreas" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co2lb9.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
-<div id="13" class="game" data-genre="RPG" data-platform="Nintendo" data-people="Dev"><img alt="Pokémon Crystal" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co2s5x.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
+<div id="13" class="game" data-genre="RPG" data-platform="Nintendo" data-people="Dev Curt"><img alt="Pokémon Crystal" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co2s5x.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
 <div id="14" class="game" data-genre="FPS" data-platform="Multiplatform" data-people="Dev"><img alt="Call of Duty: Modern Warfare 2" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co3cwt.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
 <div id="15" class="game" data-genre="FPS" data-platform="Multiplatform" data-people="Dev"><img alt="Overwatch" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co22sz.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
 <div id="16" class="game" data-genre="FPS" data-platform="Playstation" data-people="Dev"><img alt="Killzone" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co2men.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
-<div id="17" class="game" data-genre="Fighter" data-platform="Nintendo" data-people="Dev"><img alt="Super Smash Bros. Melee" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co21yv.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
+<div id="17" class="game" data-genre="Fighter" data-platform="Nintendo" data-people="Dev Thyz"><img alt="Super Smash Bros. Melee" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co21yv.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
 <div id="18" class="game" data-genre="RPG" data-platform="PC" data-people="Dev"><img alt="Baldur's Gate" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co20gb.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
 
 <div id="19" class="game" data-genre="FPS" data-platform="Multiplatform" data-people="Sam"><img alt="Warhammer: Vermintide 2" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co20u8.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
@@ -329,6 +328,41 @@ float:right;
 <div id="32" class="game" data-genre="RPG" data-platform="PC" data-people="Will"><img alt="Lisa" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1odr.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
 <div id="33" class="game" data-genre="Platformer" data-platform="Playstation" data-people="Will"><img alt="Jak & Daxter" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1w7q.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
 <div id="34" class="game" data-genre="RPG" data-platform="PC" data-people="Will"><img alt="Planescape: Torment" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co3ggb.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
+
+<div id="35" class="game" data-genre="Puzzle" data-platform="Multiplatform" data-people="Thyz"><img alt="Portal 2" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1rs4.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
+<div id="36" class="game" data-genre="Adventure" data-platform="Nintendo" data-people="Thyz"><img alt="Zelda: Wind Waker" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1nqu.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
+<div id="37" class="game" data-genre="Adventure" data-platform="Playstation" data-people="Thyz"><img alt="The Last of Us" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1r7f.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
+<div id="38" class="game" data-genre="RPG" data-platform="Nintendo" data-people="Thyz"><img alt="Pokémon Silver" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co2s5w.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
+<div id="39" class="game" data-genre="FPS" data-platform="Multiplatform" data-people="Thyz Mike"><img alt="Half-Life 2" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1nmw.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
+<div id="40" class="game" data-genre="FPS" data-platform="Multiplatform" data-people="Thyz"><img alt="Bioshock" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co2mli.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
+<div id="41" class="game" data-genre="Adventure" data-platform="Playstation" data-people="Thyz"><img alt="Journey" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1q8q.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
+
+<div id="42" class="game" data-genre="FPS" data-platform="PC" data-people="Mike"><img alt="Counter-Strike Global Offensive" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1vce.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
+<div id="43" class="game" data-genre="Platformer" data-platform="Multiplatform" data-people="Mike"><img alt="Hollow Knight" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1rgi.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
+<div id="44" class="game" data-genre="Adventure" data-platform="Nintendo" data-people="Mike"><img alt="Zelda: Breath of the Wild" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1vcp.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
+<div id="45" class="game" data-genre="RPG" data-platform="Nintendo" data-people="Mike"><img alt="Pokémon Sapphire" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1zhp.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
+<div id="46" class="game" data-genre="Adventure" data-platform="Multiplatform" data-people="Mike"><img alt="Minecraft" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co2jin.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
+<div id="47" class="game" data-genre="Adventure" data-platform="PC" data-people="Mike Curt"><img alt="Subnautica" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1iqw.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
+<div id="48" class="game" data-genre="FPS" data-platform="PC" data-people="Mike"><img alt="Day of Defeat" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co2o9j.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
+<div id="49" class="game" data-genre="Sports" data-platform="Nintendo" data-people="Mike"><img alt="Mario Kart DS" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co214h.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
+
+<div id="50" class="game" data-genre="RPG" data-platform="Multiplatform" data-people="Curt"><img alt="Mass Effect" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1x7o.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
+<div id="51" class="game" data-genre="Strategy" data-platform="Playstation" data-people="Curt"><img alt="Kessen 2" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1ow8.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
+<div id="52" class="game" data-genre="Action" data-platform="Multiplatform" data-people="Curt"><img alt="LOTR: The Two Towers" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co20od.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
+<div id="53" class="game" data-genre="Adventure" data-platform="Nintendo" data-people="Curt"><img alt="Animal Crossing: Wild World" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1od0.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
+<div id="54" class="game" data-genre="RPG" data-platform="Multiplatform" data-people="Curt"><img alt="The Elder Scrolls IV: Oblivion" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1tc8.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
+<div id="55" class="game" data-genre="Strategy" data-platform="PC" data-people="Curt"><img alt="Kerbal Space Program" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co26n5.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
+
+<div id="56" class="game" data-genre="Action" data-platform="Multiplatform" data-people="Edie"><img alt="Resident Evil 4" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co2wk8.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
+<div id="57" class="game" data-genre="Adventure" data-platform="Multiplatform" data-people="Edie"><img alt="Silent Hill: Homecoming" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co2vyn.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
+<div id="58" class="game" data-genre="RPG" data-platform="PC" data-people="Edie"><img alt="Disco Elysium" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1sfj.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
+<div id="59" class="game" data-genre="RPG" data-platform="Multiplatform" data-people="Edie"><img alt="The Outer Worlds" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co2eew.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
+<div id="60" class="game" data-genre="RPG" data-platform="Multiplatform" data-people="Edie"><img alt="Fallout: New Vegas" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1u60.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
+<div id="61" class="game" data-genre="Adventure" data-platform="Multiplatform" data-people="Edie"><img alt="Inside" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co2fca.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
+<div id="62" class="game" data-genre="Adventure" data-platform="Multiplatform" data-people="Edie"><img alt="Limbo" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1qrs.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
+<div id="63" class="game" data-genre="Adventure" data-platform="Multiplatform" data-people="Edie"><img alt="Gris" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1qv5.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
+<div id="64" class="game" data-genre="Adventure" data-platform="Multiplatform" data-people="Edie"><img alt="Little Nightmares" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1rdi.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
+
 
 </div>
 
@@ -404,7 +438,7 @@ function updategameCount() {
 
 var json_str = JSON.stringify(arrgames);
 createCookie('bestgames', json_str);
-var percent = (100 * arrgames.length) / 9; // updateme
+var percent = (100 * arrgames.length) / 64; // updateme
 percent = percent.toFixed(2);
 
 if (percent > 19.99) { document.getElementById("spoon").style.visibility = "" } else { document.getElementById("spoon").style.visibility = "hidden" };
@@ -412,7 +446,7 @@ if (percent > 39.99) { document.getElementById("bronze").style.visibility = "" }
 if (percent > 59.99) { document.getElementById("silver").style.visibility = "" } else { document.getElementById("silver").style.visibility = "hidden" };
 if (percent > 79.99) { document.getElementById("gold").style.visibility = "" } else { document.getElementById("gold").style.visibility = "hidden" };
 
-$("#pplayCount").text("You have played " + arrgames.length + "/9 games!"); //updateme
+$("#pplayCount").text("You have played " + arrgames.length + "/64 games!"); //updateme
 
 }
 //reveal(this.alt, this.dataset.genre, this.dataset.platform, this.dataset.people)"
