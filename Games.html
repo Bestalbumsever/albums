@@ -196,7 +196,7 @@ text-decoration:underline
   src="https://code.jquery.com/jquery-3.6.0.min.js"
   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
   crossorigin="anonymous"></script>
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link class="logo" rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
 
@@ -596,7 +596,7 @@ function random(unplayed) {
 	var imgs = document.getElementsByTagName("img");	
     var imgSrcs = [];
     for (var i = 0; i < imgs.length; i++) {
-		if (!imgs[i].classList.contains("award")) {
+		if (!imgs[i].classList.contains("award") && !imgs[i].classList.contains("logo")) {
 		if (unplayed == true) {
 			if (imgs[i].classList.contains("played")) {				
 			} else {

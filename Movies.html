@@ -189,7 +189,7 @@ text-decoration:underline
 <body>
 
 <div id="divBar">
-<img src="favicon.ico" style="width:15px;height:15px;">
+<img class="logo" src="favicon.ico" style="width:15px;height:15px;">
 <p>The best things ever // </p>
 <a href='https://bestalbumsever.github.io/albums/'>Music</a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -557,12 +557,14 @@ function random(unwatched) {
 	var imgs = document.getElementsByTagName("img");	
     var imgSrcs = [];
     for (var i = 0; i < imgs.length; i++) {
-		if (!imgs[i].classList.contains("award")) {
+	
+		if (!imgs[i].classList.contains("award") && !imgs[i].classList.contains("logo")) {
 		if (unwatched == true) {
 			if (imgs[i].classList.contains("watched")) {				
 			} else {
 			var genre = getGenre(imgs[i].parentNode.classList)
 			var person = getPeople(imgs[i].parentNode.classList)
+			
 			if (document.getElementById("btn"+genre).style.color != "red") {
 			imgSrcs.push(imgs[i].alt + " (" + genre + ", chosen by " + person + ")");
 			}
