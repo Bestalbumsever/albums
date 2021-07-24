@@ -218,7 +218,7 @@ text-decoration:underline
 
 <div>
 
-<p id="pplayCount">You have played 0/155 games!</p> <!--updateme-->
+<p id="pplayCount">You have played 0/162 games!</p> <!--updateme-->
 
 <img class="award" id="spoon" style=" width:25px; height:25px; margin-left:5%; margin-bottom:2%; visibility: hidden;" src="img/spoon.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
 <img class="award" id="bronze" style=" width:25px; height:25px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="img/bronze.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
@@ -494,8 +494,8 @@ text-decoration:underline
 <div id="158" class="game" data-genre="RPG" data-platform="Playstation" data-people="Josh"><img alt="Final Fantasy VIII" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co2z7d.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
 <div id="159" class="game" data-genre="RPG" data-platform="Playstation" data-people="Josh"><img alt="Digimon World 3" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co2o2u.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
 <div id="160" class="game" data-genre="RPG" data-platform="Playstation" data-people="Josh"><img alt="Dragon Quest VIII" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1x9z.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
-<div id="171" class="game" data-genre="RPG" data-platform="Multiplatform" data-people="Josh"><img alt="Tales of Symphonia" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1peo.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
-<div id="172" class="game" data-genre="RPG" data-platform="Multiplatform" data-people="Josh"><img alt="Knights of the Old Republic" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1tmz.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
+<div id="161" class="game" data-genre="RPG" data-platform="Multiplatform" data-people="Josh"><img alt="Tales of Symphonia" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1peo.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
+<div id="162" class="game" data-genre="RPG" data-platform="Multiplatform" data-people="Josh"><img alt="Knights of the Old Republic" src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1tmz.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.platform, this.parentNode.dataset.people)"></div>
 
 
 </div>
@@ -572,7 +572,7 @@ function updategameCount() {
 
 var json_str = JSON.stringify(arrgames);
 createCookie('bestgames', json_str);
-var percent = (100 * arrgames.length) / 155; // updateme
+var percent = (100 * arrgames.length) / 162; // updateme
 percent = percent.toFixed(2);
 
 if (percent > 19.99) { document.getElementById("spoon").style.visibility = "" } else { document.getElementById("spoon").style.visibility = "hidden" };
@@ -580,7 +580,7 @@ if (percent > 39.99) { document.getElementById("bronze").style.visibility = "" }
 if (percent > 59.99) { document.getElementById("silver").style.visibility = "" } else { document.getElementById("silver").style.visibility = "hidden" };
 if (percent > 79.99) { document.getElementById("gold").style.visibility = "" } else { document.getElementById("gold").style.visibility = "hidden" };
 
-$("#pplayCount").text("You have played " + arrgames.length + "/155 games!"); //updateme
+$("#pplayCount").text("You have played " + arrgames.length + "/162 games!"); //updateme
 
 }
 //reveal(this.alt, this.dataset.genre, this.dataset.platform, this.dataset.people)"
