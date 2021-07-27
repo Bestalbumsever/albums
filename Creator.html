@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <head>
 <style>
+.show {
+padding:0px !important;
+margin:0px !important;
+border:2px solid black;
+width:94px !important;
+height:141px !important;
+max-width:94px !important;
+max-height:141px !important;
+display:inline-block;
+
+}
 .game {
 padding:0px !important;
 margin:0px !important;
@@ -10,6 +21,20 @@ height:180px !important;
 max-width:135px !important;
 max-height:180px !important;
 display:inline-block;
+
+}
+label, input {
+display:inline-block;
+}
+input {
+margin-top:2px;
+}
+td {
+border: 1px solid grey;
+padding:5px;
+}
+p {
+font-family: calibri;
 }
 </style>
 <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
@@ -18,39 +43,71 @@ display:inline-block;
 
 <body>
 
-<div style="position:absolute; left:0; width: 25%; height: 500px; left:25px;">
+<div style="position:absolute; left:0; width: 35%; height: 500px; left:25px;">
 
+<p>Hello!</p>
+1. Type Your Name: <input type="text" id="name" /><br />
 <p>For games <a href='https://www.igdb.com/search?type=1&q=' target="_blank">click here</a> and search</p>
-<p>Right click the game image > "Copy Image Address"</p>
-<p>Paste 9 into boxes below and click Go</p>
+<p>For TV <a href='https://www.themoviedb.org/search/tv?query=&language=en-GB' target="_blank">click here</a> and search</p>
+<p>Right click the image > "Copy Image Address"</p>
+<p>2. Paste 9 into "image" boxes below, label titles and click Go</p>
 
-1: <input type="text" id="1" style="width: 300px;" /><br />
-2: <input type="text" id="2" style="width: 300px;" /><br />
-3: <input type="text" id="3" style="width: 300px;" /><br />
-4: <input type="text" id="4" style="width: 300px;" /><br />
-5: <input type="text" id="5" style="width: 300px;" /><br />
-6: <input type="text" id="6" style="width: 300px;" /><br />
-7: <input type="text" id="7" style="width: 300px;" /><br />
-8: <input type="text" id="8" style="width: 300px;" /><br />
-9: <input type="text" id="9" style="width: 300px;" /><br />
+<table>
+<tr><td>
+Title: <input type="text" id="y1" style="width: 200px;" /><br />
+URL: <input type="text" id="1" style="width: 200px;" />
+</td></tr>
+<tr><td>
+Title: <input type="text" id="y2" style="width: 200px;" /><br />
+URL: <input type="text" id="2" style="width: 200px;" />
+</td></tr>
+<tr><td>
+Title: <input type="text" id="y3" style="width: 200px;" /><br />
+URL: <input type="text" id="3" style="width: 200px;" />
+</td></tr>
+<tr><td>
+Title: <input type="text" id="y4" style="width: 200px;" /><br />
+URL: <input type="text" id="4" style="width: 200px;" />
+</td></tr>
+<tr><td>
+Title: <input type="text" id="y5" style="width: 200px;" /><br />
+URL: <input type="text" id="5" style="width: 200px;" />
+</td></tr>
+<tr><td>
+Title: <input type="text" id="y6" style="width: 200px;" /><br />
+URL: <input type="text" id="6" style="width: 200px;" />
+</td></tr>
+<tr><td>
+Title: <input type="text" id="y7" style="width: 200px;" /><br />
+URL: <input type="text" id="7" style="width: 200px;" />
+</td></tr>
+<tr><td>
+Title: <input type="text" id="y8" style="width: 200px;" /><br />
+URL: <input type="text" id="8" style="width: 200px;" />
+</td></tr>
+<tr><td>
+Title: <input type="text" id="y9" style="width: 200px;" /><br />
+URL: <input type="text" id="9" style="width: 200px;" />
+</td></tr>
+</table>
+
 <br />
 <input type="button" value="Go" onclick="generate()" />
 <br />
 <p id="pFeedback"></p>
 <input id="btnCopy" style="display:none;" type="button" value="Copy" onclick="copy()" />
 
-<p id="step2" style="display:none;">Thanks, now screenshot the 3x3 to post to media, I tried image converters and holy shit can i not be bothered</p>
+<p id="step2" style="display:none;">4. Thanks, now screenshot the 3x3 to post to media, I tried image converters and holy shit can i not be bothered</p>
 
 </div>
 
 
 
-<div id="result" style="position:absolute; right:35%; width: 35%; height: 500px;">
-
-<div id="resultpng" style="position:absolute; right:0; width: 35%; height: 500px;">
-
+<div id="result" style="position:absolute; right:30%; width: 25%; height: 500px;">
 
 </div>
+
+<div id="resultben" style="visibility:hidden;"></div>
 
 <script type="text/javascript">
 
@@ -70,32 +127,87 @@ var x7 = document.getElementById("7").value
 var x8 = document.getElementById("8").value
 var x9 = document.getElementById("9").value
 
-var basehtml = '<div id="X" class="game" data-genre="" data-platform="" data-people="" ><image style="display:block; max-width:100%;max-height:100%;" alt="" src="$ALT$" /></div>'
+var y1 = document.getElementById("y1").value
+var y2 = document.getElementById("y2").value
+var y3 = document.getElementById("y3").value
+var y4 = document.getElementById("y4").value
+var y5 = document.getElementById("y5").value
+var y6 = document.getElementById("y6").value
+var y7 = document.getElementById("y7").value
+var y8 = document.getElementById("y8").value
+var y9 = document.getElementById("y9").value
+
+var name = document.getElementById("name").value
+
+var bightml = '';
+var basehtml = '';
+var benhtml = '';
+var benbightml = '';
+
+if (x1.indexOf("moviedb") > -1) { // we doing tv
+
+document.getElementById("result").style.height = "427px;"
+bightml = '<div style="background-color:black; width:296px;">'
+benhtml = '<div id="$NUM$" class="show" data-type="" data-people="$NAME$"><image alt="$SHOW$" src="$ALT$" /></div>'
+basehtml = '<div id="X" class="show" data-type="" data-people="" ><image style="display:block; max-width:100%;max-height:100%;" alt="" src="$ALT$" /></div>'
+
+} else {
+
+document.getElementById("result").style.height = "500px;"
+bightml = '<div style="background-color:black; width:418px;">'
+basehtml = '<div id="X" class="game" data-genre="" data-platform="" data-people="" ><image style="display:block; max-width:100%;max-height:100%;" alt="" src="$ALT$" /></div>'
+benhtml = '<div id="X" class="game" data-genre="" data-platform="" data-people="" ><image style="display:block; max-width:100%;max-height:100%;" alt="" src="$ALT$" /></div>'
+
+}
+
+
 var itemhtml;
-var bightml = '<div style="background-color:black; width:418px;">'
-itemhtml = basehtml.replace('$ALT$', x1)
+var itemhtmlben;
+
+itemhtml = basehtml.replace('$ALT$', x1).replace("$NAME$", name).replace("$SHOW$", y1).replace("$NUM$", "1")
+itemhtmlben = benhtml.replace('$ALT$', x1).replace("$NAME$", name).replace("$SHOW$", y1).replace("$NUM$", "1")
 bightml += itemhtml;
-itemhtml = basehtml.replace('$ALT$', x2)
+benbightml += itemhtmlben;
+itemhtml = basehtml.replace('$ALT$', x2).replace("$NAME$", name).replace("$SHOW$", y2).replace("$NUM$", "2")
+itemhtmlben = benhtml.replace('$ALT$', x2).replace("$NAME$", name).replace("$SHOW$", y2).replace("$NUM$", "2")
+
 bightml += itemhtml;
-itemhtml = basehtml.replace('$ALT$', x3)
+benbightml += itemhtmlben;
+itemhtml = basehtml.replace('$ALT$', x3).replace("$NAME$", name).replace("$SHOW$", y3).replace("$NUM$", "3")
+itemhtmlben = benhtml.replace('$ALT$', x3).replace("$NAME$", name).replace("$SHOW$", y3).replace("$NUM$", "3")
 bightml += itemhtml;
-itemhtml = basehtml.replace('$ALT$', x4)
+benbightml += itemhtmlben;
+itemhtml = basehtml.replace('$ALT$', x4).replace("$NAME$", name).replace("$SHOW$", y4).replace("$NUM$", "4")
+itemhtmlben = benhtml.replace('$ALT$', x4).replace("$NAME$", name).replace("$SHOW$", y4).replace("$NUM$", "4")
 bightml += itemhtml;
-itemhtml = basehtml.replace('$ALT$', x5)
+benbightml += itemhtmlben;
+itemhtml = basehtml.replace('$ALT$', x5).replace("$NAME$", name).replace("$SHOW$", y5).replace("$NUM$", "5")
+itemhtmlben = benhtml.replace('$ALT$', x5).replace("$NAME$", name).replace("$SHOW$", y5).replace("$NUM$", "5")
 bightml += itemhtml;
-itemhtml = basehtml.replace('$ALT$', x6)
+benbightml += itemhtmlben;
+itemhtml = basehtml.replace('$ALT$', x6).replace("$NAME$", name).replace("$SHOW$", y6).replace("$NUM$", "6")
+itemhtmlben = benhtml.replace('$ALT$', x6).replace("$NAME$", name).replace("$SHOW$", y6).replace("$NUM$", "6")
 bightml += itemhtml;
-itemhtml = basehtml.replace('$ALT$', x7)
+benbightml += itemhtmlben;
+itemhtml = basehtml.replace('$ALT$', x7).replace("$NAME$", name).replace("$SHOW$", y7).replace("$NUM$", "7")
+itemhtmlben = benhtml.replace('$ALT$', x7).replace("$NAME$", name).replace("$SHOW$", y7).replace("$NUM$", "7")
 bightml += itemhtml;
-itemhtml = basehtml.replace('$ALT$', x8)
+benbightml += itemhtmlben;
+itemhtml = basehtml.replace('$ALT$', x8).replace("$NAME$", name).replace("$SHOW$", y8).replace("$NUM$", "8")
+itemhtmlben = benhtml.replace('$ALT$', x8).replace("$NAME$", name).replace("$SHOW$", y8).replace("$NUM$", "8")
 bightml += itemhtml;
-itemhtml = basehtml.replace('$ALT$', x9)
+benbightml += itemhtmlben;
+itemhtml = basehtml.replace('$ALT$', x9).replace("$NAME$", name).replace("$SHOW$", y9).replace("$NUM$", "9")
+itemhtmlben = benhtml.replace('$ALT$', x9).replace("$NAME$", name).replace("$SHOW$", y9).replace("$NUM$", "9")
 bightml += itemhtml;
+benbightml += itemhtmlben;
 bightml += '</div>'
+benbightml += '</div>'
 
 document.getElementById('result').innerHTML = bightml;
+document.getElementById('resultben').innerHTML = benbightml;
 
-document.getElementById('pFeedback').innerText = "Good job, now click this button to copy HTML to clipboard and send it to Ben on Discord:";
+document.getElementById('pFeedback').innerText = "3. Good job, now click this button to copy HTML to clipboard and send it to Ben on Discord:";
 document.getElementById('btnCopy').style.display="block"
 
 }catch(ex) {
@@ -111,12 +223,12 @@ document.getElementById('pFeedback').innerText = "You broke it: " + ex.toString(
 function copy() {
  var dummy = document.createElement("textarea");
     document.body.appendChild(dummy);
-    dummy.value =  document.getElementById('result').innerHTML
+    dummy.value =  document.getElementById('resultben').innerHTML
     dummy.select();
     document.execCommand("copy");
     document.body.removeChild(dummy);
 	document.getElementById('step2').style.display="block"
-	document.getElementById('btnSave').style.display="block"
+	
 }
 
 
