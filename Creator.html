@@ -148,7 +148,7 @@ if (x1.indexOf("moviedb") > -1) { // we doing tv
 
 document.getElementById("result").style.height = "427px;"
 bightml = '<div style="background-color:black; width:296px;">'
-benhtml = '<div id="$NUM$" class="show" data-type="" data-people="$NAME$"><image alt="$SHOW$" src="$ALT$" /></div>'
+benhtml = '<div id="$NUM$" class="show" data-type="" data-people="$NAME$"><image alt="$SHOW$" src="$ALT$"  onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)" /></div>'
 basehtml = '<div id="X" class="show" data-type="" data-people="" ><image style="display:block; max-width:100%;max-height:100%;" alt="" src="$ALT$" /></div>'
 
 } else {
