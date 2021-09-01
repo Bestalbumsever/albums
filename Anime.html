@@ -240,7 +240,7 @@ text-decoration:underline
 	<button id="btnSenna" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Senna')">Senna</button>
 	<button id="btnSam" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Sam')" >Sam</button>
 	<button id="btnCurt" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Curt')" >Curt</button>
-	<button id="btnBen" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Ben')">Ben</button>
+	<button id="btnIsaac" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Isaac')">Isaac</button>
 	<button id="btnDev" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Dev')" >Dev</button>
 	<button id="btnThyz" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Thyz')" >Thyz</button>
 	<button id="btnWill" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Will')" >Will</button>
@@ -458,23 +458,20 @@ function random(unwatched) {
 		if (unwatched == true) {
 			if (imgs[i].classList.contains("watched")) {				
 			} else {
-			var genre = imgs[i].parentNode.dataset.type
+	
 			var person = imgs[i].parentNode.dataset.people
 	
-			if (document.getElementById("btn"+genre).style.color != "red") {
-			
 			imgSrcs.push(imgs[i].alt + " (" + genre + ", chosen by " + person + ")");
 			
-			}
+			
 			
 			}
 		} else {
-			var genre = imgs[i].parentNode.dataset.type
+		
 			var person = imgs[i].parentNode.dataset.people
 		
-			if (document.getElementById("btn"+genre).style.color != "red") {
 			imgSrcs.push(imgs[i].alt + " (" + genre + ", chosen by " + person + ")");
-			}
+			
 		}    
 		}		    
     }
@@ -576,7 +573,7 @@ function filter(genre) {
             for (var i = 0; i < tds.length; i++) {
 
                 
-if (document.getElementById("btn" + tds[i].dataset.type).style.color == "white") {
+
 
     var ppl = tds[i].dataset.people;
     var pplsplit = ppl.split(" ")
@@ -593,9 +590,7 @@ if (document.getElementById("btn" + tds[i].dataset.type).style.color == "white")
     } else {
         tds[i].style.display = "none";
     }
-} else {
-    tds[i].style.display = "none";
-}
+
             }
 			
            
@@ -626,7 +621,7 @@ if (document.getElementById("btn" + tds[i].dataset.type).style.color == "white")
 			
 			
              for (var i = 0; i < tds.length; i++) {
-if (document.getElementById("btn" + tds[i].dataset.type).style.color == "white") {
+
     var ppl = tds[i].dataset.people;
     var pplsplit = ppl.split(" ")
     var boolpplok = false;
@@ -640,9 +635,7 @@ if (document.getElementById("btn" + tds[i].dataset.type).style.color == "white")
     } else {
         tds[i].style.display = "none";
     }
-} else {
-    tds[i].style.display = "none";
-}
+
 }
 
 
@@ -659,8 +652,7 @@ function filterperson(person) {
             var tds = document.getElementsByClassName("show");
             for (var i = 0; i < tds.length; i++) {
 
-                
-if (document.getElementById("btn" + tds[i].dataset.type).style.color == "white") {
+ 
     var ppl = tds[i].dataset.people;
     var pplsplit = ppl.split(" ")
     var boolpplok = false;
@@ -675,9 +667,7 @@ if (document.getElementById("btn" + tds[i].dataset.type).style.color == "white")
     } else {
         tds[i].style.display = "none";
     }
-} else {
-    tds[i].style.display = "none";
-}
+
             }
             
             break;
@@ -711,7 +701,6 @@ if (document.getElementById("btn" + tds[i].dataset.type).style.color == "white")
 
             for (var i = 0; i < tds.length; i++) {
 
-if (document.getElementById("btn" + tds[i].dataset.type).style.color == "white") {
 
     var ppl = tds[i].dataset.people;
     var pplsplit = ppl.split(" ")
@@ -726,9 +715,7 @@ if (document.getElementById("btn" + tds[i].dataset.type).style.color == "white")
     } else {
         tds[i].style.display = "none";
     }
-} else {
-    tds[i].style.display = "none";
-}
+
 }
 			
 			
