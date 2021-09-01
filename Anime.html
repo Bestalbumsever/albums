@@ -305,7 +305,7 @@ $( document ).ready(function() {
 
 
 try {
-var json_str = getCookie('bestshows');
+var json_str = getCookie('bestanime');
 arrshows = JSON.parse(json_str);
 }catch(ex) {
 console.log("failed to get shows cookie: " + ex.toString());
@@ -365,7 +365,7 @@ updateshowCount();
 function updateshowCount() {
 
 var json_str = JSON.stringify(arrshows);
-createCookie('bestshows', json_str);
+createCookie('bestanime', json_str);
 var percent = (100 * arrshows.length) / 114; // updateme
 percent = percent.toFixed(2);
 
