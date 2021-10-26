@@ -407,11 +407,11 @@ text-decoration:underline
 
 <div id="87" class="show" data-type="Comedy" data-people="Ry"><img alt="Father Ted" src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/zq3W23WnuKWAkk34Axx3hv3HduU.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
 <div id="88" class="show" data-type="Drama" data-people="Ry"><img alt="Psych" src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/fDI15gTVbtW5Sbv5QenqecRxWKJ.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="89" class="show" data-type="Scifi" data-people="Ry"><img alt="Altered Carbon" src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/95IsiH4p5937YXQHaOS2W2dWYOG.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="89" class="show" data-type="Fantasy" data-people="Ry"><img alt="Altered Carbon" src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/95IsiH4p5937YXQHaOS2W2dWYOG.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
 <div id="90" class="show" data-type="Drama" data-people="Ry"><img alt="Running Man" src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/2Wmmu1MkqxJ48J7aySET9EKEjXz.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
 
 <div id="91" class="show" data-type="Comedy" data-people="JJ"><img alt="Bo' Selecta" src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/fGWYALZ4yi6lVX4WbCFVzYjstog.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="92" class="show" data-type="Scifi" data-people="JJ"><img alt="Buffy the Vampire Slayer" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/41jsOEYsh9lJBc6AZqGpR1ETpx5.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="92" class="show" data-type="Fantasy" data-people="JJ"><img alt="Buffy the Vampire Slayer" src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2/41jsOEYsh9lJBc6AZqGpR1ETpx5.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
 
 <div id="93" class="show" data-type="Drama" data-people="Stu"><img alt="Suits" src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/vQiryp6LioFxQThywxbC6TuoDjy.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
 
@@ -434,7 +434,7 @@ text-decoration:underline
 <div id="107" class="show" data-type="Comedy" data-people="Liam"><img alt="Impractical Jokers" src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/oHibdUuae99sJ6U94y8El6v8jSG.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
 
 <div id="108" class="show" data-type="Drama" data-people="Jon"><img alt="The Shadow Line" src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/9G7UpF8yXFq3DyGCm4gpFEZIHTb.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="109" class="show" data-tyipe="Reality" data-people="Jon"><img alt="The Power of Nightmares" src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/tCzglFkgrkX5t7nLpvIgOJ3KCO7.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="109" class="show" data-type="Reality" data-people="Jon"><img alt="The Power of Nightmares" src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/tCzglFkgrkX5t7nLpvIgOJ3KCO7.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
 <div id="110" class="show" data-type="Drama" data-people="Jon"><img alt="War & Peace" src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/8kBNl6W1g9YhsgtQtFsen6GwwIb.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
 <div id="111" class="show" data-type="Reality" data-people="Jon"><img alt="Newswipe" src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/eXZLaXTUHn4468Itu5yA6KtcbT6.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
 <div id="112" class="show" data-type="Drama" data-people="Jon"><img alt="Justified" src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/kbE3VHOUWWpaE7k7WmReqJYqyh1.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
@@ -539,14 +539,16 @@ function random(unwatched) {
 
 	var imgs = document.getElementsByTagName("img");	
     var imgSrcs = [];
+	
     for (var i = 0; i < imgs.length; i++) {
+	
 		if (!imgs[i].classList.contains("award") && !imgs[i].classList.contains("logo")) {
 		if (unwatched == true) {
 			if (imgs[i].classList.contains("watched")) {				
 			} else {
 			var genre = imgs[i].parentNode.dataset.type
 			var person = imgs[i].parentNode.dataset.people
-	
+
 			if (document.getElementById("btn"+genre).style.color != "red") {
 			
 			imgSrcs.push(imgs[i].alt + " (" + genre + ", chosen by " + person + ")");
