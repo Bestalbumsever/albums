@@ -210,7 +210,7 @@ text-decoration:underline
 
 <div>
 
-<p id="preadCount">You have read 0/43 books!</p> <!--updateme-->
+<p id="preadCount">You have read 0/53 books!</p> <!--updateme-->
 
 <img class="award" id="spoon" style=" width:25px; height:25px; margin-left:5%; margin-bottom:2%; visibility: hidden;" src="img/spoon.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
 <img class="award" id="bronze" style=" width:25px; height:25px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="img/bronze.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
@@ -358,6 +358,16 @@ text-decoration:underline
 <div id="43" class="book" data-type="novel" data-people="Senna"><img alt="The Left Hand of Darkness" src="https://m.media-amazon.com/images/I/41DzNPR3TVL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
 <div id="44" class="book" data-type="novel" data-people="Senna"><img alt="All Systems Red" src="https://m.media-amazon.com/images/I/41iUgxBgtjL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
 
+<div id="45" class="book" data-type="novel" data-people="Edie"><img alt="Brave New World" src="https://m.media-amazon.com/images/I/41-n-3hZMeL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="46" class="book" data-type="novel" data-people="Edie"><img alt="Tender is the Flesh" src="https://m.media-amazon.com/images/I/415Y0Lwf5RL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="47" class="book" data-type="novel" data-people="Edie"><img alt="Restricted Fantasies" src="https://m.media-amazon.com/images/I/51+mQttByZL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="48" class="book" data-type="novel" data-people="Edie"><img alt="100 Months" src="https://m.media-amazon.com/images/I/51mJwisa1hL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="49" class="book" data-type="novel" data-people="Edie"><img alt="Wuthering Heights" src="https://m.media-amazon.com/images/I/41OzBDrobML._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="50" class="book" data-type="novel" data-people="Edie"><img alt="The Sandman: Book of Dreams" src="https://m.media-amazon.com/images/I/51MFmiwxQrL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="51" class="book" data-type="novel" data-people="Edie"><img alt="Where the Wild Things Are" src="https://m.media-amazon.com/images/I/61zGOvBSgAL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="52" class="book" data-type="novel" data-people="Edie"><img alt="Abarat" src="https://m.media-amazon.com/images/I/61JbkP9hzpL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="53" class="book" data-type="novel" data-people="Edie"><img alt="The Handmaid's Tale" src="https://m.media-amazon.com/images/I/4167n959yuS._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+
 </div>
 
 </div>
@@ -433,7 +443,7 @@ function updatebookCount() {
 
 var json_str = JSON.stringify(arrBooks);
 createCookie('bestbook', json_str);
-var percent = (100 * arrBooks.length) / 43; // updateme
+var percent = (100 * arrBooks.length) / 53; // updateme
 percent = percent.toFixed(2);
 
 if (percent > 19.99) { document.getElementById("spoon").style.visibility = "" } else { document.getElementById("spoon").style.visibility = "hidden" };
@@ -441,7 +451,7 @@ if (percent > 39.99) { document.getElementById("bronze").style.visibility = "" }
 if (percent > 59.99) { document.getElementById("silver").style.visibility = "" } else { document.getElementById("silver").style.visibility = "hidden" };
 if (percent > 79.99) { document.getElementById("gold").style.visibility = "" } else { document.getElementById("gold").style.visibility = "hidden" };
 
-$("#preadCount").text("You have read " + arrBooks.length + "/43 books!"); //updateme
+$("#preadCount").text("You have read " + arrBooks.length + "/53 books!"); //updateme
 
 }
 //reveal(this.alt, this.dataset.type, this.dataset.platform, this.dataset.people)"
