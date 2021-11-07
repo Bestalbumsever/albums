@@ -210,7 +210,7 @@ text-decoration:underline
 
 <div>
 
-<p id="preadCount">You have read 0/18 books!</p> <!--updateme-->
+<p id="preadCount">You have read 0/43 books!</p> <!--updateme-->
 
 <img class="award" id="spoon" style=" width:25px; height:25px; margin-left:5%; margin-bottom:2%; visibility: hidden;" src="img/spoon.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
 <img class="award" id="bronze" style=" width:25px; height:25px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="img/bronze.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
@@ -233,11 +233,25 @@ text-decoration:underline
 
 </div>
 
+<p>Type</p>
+
+<div id="divFilters">
+	<button id="btnShowAll" style="width:41%; color:white;" onclick="filter('all')" >Show All</button>
+	<button id="btnHideAll" style="width:40%; color:white;" onclick="filter('none')">Hide All</button>
+	<button id="btnnovel" class="genrebtn" style="width:41%; color:white;" onclick="filter('novel')">Novel</button>
+	<button id="btnseries" class="genrebtn" style="width:40%; color:white;" onclick="filter('series')">Series</button>	
+	<button id="btncomic" class="genrebtn" style="width:41%; color:white;" onclick="filter('comic')">Comic</button>
+	<button id="btnmanga" class="genrebtn" style="width:40%; color:white;" onclick="filter('manga')">Manga</button>
+<button id="btnother" class="genrebtn" style="width:41%; color:white;" onclick="filter('other')">Other</button>
+
+</div>
+
 <p>People</p>
 
 <div id="divPeople">
 	<button id="btnShowAll" style="width:41%; color:white;" onclick="filterperson('all')" >Show All</button>
-	<button id="btnHideAll" style="width:40%; color:white;" onclick="filterperson('none')">Hide All</button>
+	<button id="btnHideAll" style="width:40%; color:white;" onclick="filterperson('none')">Hide All</button>#
+		
 	<button id="btnMickey" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Mickey')">Mickey</button>
 	<button id="btnTom" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Tom')">Tom</button>	
 	<button id="btnJJ" class="personbtn" style="width:41%; color:white;" onclick="filterperson('JJ')">JJ</button>
@@ -246,7 +260,7 @@ text-decoration:underline
 	<button id="btnCurt" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Curt')" >Curt</button>
 	<button id="btnIsaac" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Isaac')">Isaac</button>
 	<button id="btnDev" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Dev')" >Dev</button>
-	<button id="btnThyz" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Thijs')" >Thijs</button>
+	<button id="btnThijs" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Thijs')" >Thijs</button>
 	<button id="btnWill" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Will')" >Will</button>
 	<button id="btnJurak" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Jurak')" >Jurak</button>
 		<button id="btnOli" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Oli')" >Oli</button>
@@ -264,6 +278,7 @@ text-decoration:underline
 		<button id="btnDom" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Dom')" >Dom</button>
 			<button id="btnJon" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Jon')" >Jon</button>
 					<button id="btnLiam" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Liam')" >Liam</button>
+					<button id="btnBen" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Ben')">Ben</button>
 </div>
 
 <p>Backup</p>
@@ -293,45 +308,54 @@ text-decoration:underline
 <div id="9" class="book" data-type="" data-people=""><img alt="" src="" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
 
 -->
-<div id="2" class="book" data-type="" data-people="Ben Thijs"><img alt="The Dark Tower (Series)" src="https://covers.openlibrary.org/b/olid/OL9624437M-M.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="1" class="book" data-type="" data-people="Ben"><img alt="IT" src="https://upload.wikimedia.org/wikipedia/en/7/78/It_%28Stephen_King_novel_-_cover_art%29.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="2" class="book" data-type="series" data-people="Ben Thijs"><img alt="The Dark Tower (series)" src="https://covers.openlibrary.org/b/olid/OL9624437M-M.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="1" class="book" data-type="novel" data-people="Ben"><img alt="IT" src="https://upload.wikimedia.org/wikipedia/en/7/78/It_%28Stephen_King_novel_-_cover_art%29.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
 
-<div id="3" class="book" data-type="" data-people="Ben"><img alt="The Stand" src="https://upload.wikimedia.org/wikipedia/en/thumb/9/96/The_Stand_cover.jpg/220px-The_Stand_cover.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="4" class="book" data-type="" data-people="Ben"><img alt="Battle Royale (Series)" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1487149738l/34312126.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="5" class="book" data-type="" data-people="Ben"><img alt="Fear &amp; Loathing in Las Vegas" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1442917129l/23452961._SY475_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="6" class="book" data-type="" data-people="Ben"><img alt="Popcorn" src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/BenElton_Popcorn.jpg/220px-BenElton_Popcorn.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="7" class="book" data-type="" data-people="Ben"><img alt="Fight Club" src="https://images-na.ssl-images-amazon.com/images/I/71+QN4jdJPL.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="8" class="book" data-type="" data-people="Ben"><img alt="A Congregation of Jackals" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1481033657l/32849232.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="9" class="book" data-type="" data-people="Ben"><img alt="The Dark Knight Returns" src="https://images-na.ssl-images-amazon.com/images/I/61H8BOtqAbL.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="3" class="book" data-type="novel" data-people="Ben"><img alt="The Stand" src="https://upload.wikimedia.org/wikipedia/en/thumb/9/96/The_Stand_cover.jpg/220px-The_Stand_cover.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="4" class="book" data-type="manga" data-people="Ben"><img alt="Battle Royale (series)" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1487149738l/34312126.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="5" class="book" data-type="novel" data-people="Ben"><img alt="Fear &amp; Loathing in Las Vegas" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1442917129l/23452961._SY475_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="6" class="book" data-type="novel" data-people="Ben"><img alt="Popcorn" src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/BenElton_Popcorn.jpg/220px-BenElton_Popcorn.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="7" class="book" data-type="novel" data-people="Ben"><img alt="Fight Club" src="https://images-na.ssl-images-amazon.com/images/I/71+QN4jdJPL.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="8" class="book" data-type="novel" data-people="Ben"><img alt="A Congregation of Jackals" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1481033657l/32849232.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="9" class="book" data-type="comic" data-people="Ben"><img alt="The Dark Knight Returns" src="https://images-na.ssl-images-amazon.com/images/I/61H8BOtqAbL.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
 
-<div id="10" class="book" data-type="" data-people="JJ"><img alt="Maleficium" src="https://m.media-amazon.com/images/I/515mfd1Yb5L._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="11" class="book" data-type="" data-people="JJ"><img alt="The Hobbit" src="https://m.media-amazon.com/images/I/51uLvJlKpNL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="12" class="book" data-type="" data-people="JJ"><img alt="Gerald's Game" src="https://m.media-amazon.com/images/I/51Zo9V0ZC2L._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="13" class="book" data-type="" data-people="JJ"><img alt="His Dark Materials Trilogy" src="https://m.media-amazon.com/images/I/41HJyf7pANL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="14" class="book" data-type="" data-people="JJ"><img alt="Lord of the Rings Trilogy" src="https://m.media-amazon.com/images/I/41d18SvR0FL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="15" class="book" data-type="" data-people="JJ"><img alt="Pokemon Adventures" src="https://m.media-amazon.com/images/I/61du2-8G6bL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="16" class="book" data-type="" data-people="JJ"><img alt="Romeo and Juliet" src="https://m.media-amazon.com/images/I/51n97vsmHlL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="17" class="book" data-type="" data-people="JJ"><img alt="Macbeth" src="https://m.media-amazon.com/images/I/51NmobtO9QL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="18" class="book" data-type="" data-people="JJ"><img alt="The Beach" src="https://m.media-amazon.com/images/I/51N3uKepqEL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="10" class="book" data-type="comic" data-people="JJ"><img alt="Maleficium" src="https://m.media-amazon.com/images/I/515mfd1Yb5L._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="11" class="book" data-type="novel" data-people="JJ"><img alt="The Hobbit" src="https://m.media-amazon.com/images/I/51uLvJlKpNL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="12" class="book" data-type="novel" data-people="JJ"><img alt="Gerald's Game" src="https://m.media-amazon.com/images/I/51Zo9V0ZC2L._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="13" class="book" data-type="series" data-people="JJ"><img alt="His Dark Materials Trilogy" src="https://upload.wikimedia.org/wikipedia/en/thumb/e/e3/HisDarkMaterials1stEdition.jpg/220px-HisDarkMaterials1stEdition.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="14" class="book" data-type="series" data-people="JJ"><img alt="Lord of the Rings Trilogy" src="https://images-na.ssl-images-amazon.com/images/I/71v4v2E4oJL.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="15" class="book" data-type="manga" data-people="JJ"><img alt="Pokemon Adventures" src="https://images-na.ssl-images-amazon.com/images/I/81oVMXwmAvL.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="16" class="book" data-type="other" data-people="JJ"><img alt="Romeo and Juliet" src="https://m.media-amazon.com/images/I/51n97vsmHlL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="17" class="book" data-type="other" data-people="JJ"><img alt="Macbeth" src="https://m.media-amazon.com/images/I/51NmobtO9QL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="18" class="book" data-type="novel" data-people="JJ"><img alt="The Beach" src="https://m.media-amazon.com/images/I/51N3uKepqEL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
 
-<div id="19" class="book" data-type="" data-people="Will"><img alt="Blame!" src="https://cdn.myanimelist.net/images/manga/1/174389.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="20" class="book" data-type="" data-people="Will"><img alt="Fire Punch" src="https://cdn.myanimelist.net/images/manga/2/180430.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="21" class="book" data-type="" data-people="Will"><img alt="Konjiki no Gash" src="https://cdn.myanimelist.net/images/manga/3/172209.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="22" class="book" data-type="" data-people="Will"><img alt="Kokou no Hito" src="https://cdn.myanimelist.net/images/manga/5/96223.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="23" class="book" data-type="" data-people="Will"><img alt="Hunter x Hunter" src="https://cdn.myanimelist.net/images/manga/2/192445.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="24" class="book" data-type="" data-people="Will"><img alt="Spirit Circle" src="https://cdn.myanimelist.net/images/manga/2/161198.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="25" class="book" data-type="" data-people="Will"><img alt="Saikyou Densetsu Kurosawa" src="https://cdn.myanimelist.net/images/manga/4/31742.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="26" class="book" data-type="" data-people="Will"><img alt="Yotsuba&amp;!" src="https://cdn.myanimelist.net/images/manga/3/57369.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="27" class="book" data-type="" data-people="Will"><img alt="Angel Densetsu" src="https://cdn.myanimelist.net/images/manga/2/164490.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="19" class="book" data-type="manga" data-people="Will"><img alt="Blame!" src="https://cdn.myanimelist.net/images/manga/1/174389.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="20" class="book" data-type="manga" data-people="Will"><img alt="Fire Punch" src="https://cdn.myanimelist.net/images/manga/2/180430.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="21" class="book" data-type="manga" data-people="Will"><img alt="Konjiki no Gash" src="https://cdn.myanimelist.net/images/manga/3/172209.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="22" class="book" data-type="manga" data-people="Will"><img alt="Kokou no Hito" src="https://cdn.myanimelist.net/images/manga/5/96223.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="23" class="book" data-type="manga" data-people="Will"><img alt="Hunter x Hunter" src="https://cdn.myanimelist.net/images/manga/2/192445.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="24" class="book" data-type="manga" data-people="Will"><img alt="Spirit Circle" src="https://cdn.myanimelist.net/images/manga/2/161198.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="25" class="book" data-type="manga" data-people="Will"><img alt="Saikyou Densetsu Kurosawa" src="https://cdn.myanimelist.net/images/manga/4/31742.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="26" class="book" data-type="manga" data-people="Will"><img alt="Yotsuba&amp;!" src="https://cdn.myanimelist.net/images/manga/3/57369.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="27" class="book" data-type="manga" data-people="Will"><img alt="Angel Densetsu" src="https://cdn.myanimelist.net/images/manga/2/164490.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
 
-<div id="28" class="book" data-type="" data-people="Thijs"><img alt="The First Law (Series)" src="https://m.media-amazon.com/images/I/51Vi8Ml99IL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="29" class="book" data-type="" data-people="Thijs"><img alt="The Great Leveller collection (Series)" src="https://m.media-amazon.com/images/I/61JSNrrFmQL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="30" class="book" data-type="" data-people="Thijs"><img alt="The Age of Madness (Series)" src="https://m.media-amazon.com/images/I/51+MvVuc3jL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="31" class="book" data-type="" data-people="Thijs"><img alt="The Stormlight Archive (Series)" src="https://m.media-amazon.com/images/I/61e8Q6T6acL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="32" class="book" data-type="" data-people="Thijs"><img alt="The Priory of the Orange Tree" src="https://m.media-amazon.com/images/I/510YSx9l-cL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="33" class="book" data-type="" data-people="Thijs"><img alt="Watchmen" src="https://m.media-amazon.com/images/I/41iflHapv3L._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="34" class="book" data-type="" data-people="Thijs"><img alt="The Book Thief" src="https://m.media-amazon.com/images/I/51C8Tg0TCaL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="35" class="book" data-type="" data-people="Thijs"><img alt="Gentleman Bastards (Series)" src="https://m.media-amazon.com/images/I/61MmMrMJksL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="28" class="book" data-type="series" data-people="Thijs"><img alt="The First Law (series)" src="https://images-na.ssl-images-amazon.com/images/I/91KcoX5BslL.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="29" class="book" data-type="series" data-people="Thijs"><img alt="The Great Leveller collection (series)" src="https://i0.wp.com/joeabercrombie.com/wp-content/uploads/2015/12/the-great-leveller-UK-hb.jpg?resize=424%2C650&ssl=1" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="30" class="book" data-type="series" data-people="Thijs"><img alt="The Age of Madness (series)" src="https://m.media-amazon.com/images/I/51+MvVuc3jL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="31" class="book" data-type="series" data-people="Thijs"><img alt="The Stormlight Archive (series)" src="https://cdn.shopify.com/s/files/1/0338/4872/1545/products/71Ytr2_N-cL_700x700.jpg?v=1601105137" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="32" class="book" data-type="novel" data-people="Thijs"><img alt="The Priory of the Orange Tree" src="https://m.media-amazon.com/images/I/510YSx9l-cL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="33" class="book" data-type="comic" data-people="Thijs"><img alt="Watchmen" src="https://m.media-amazon.com/images/I/41iflHapv3L._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="34" class="book" data-type="novel" data-people="Thijs"><img alt="The Book Thief" src="https://m.media-amazon.com/images/I/51C8Tg0TCaL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="35" class="book" data-type="series" data-people="Thijs"><img alt="Gentleman Bastards (series)" src="https://m.media-amazon.com/images/I/61MmMrMJksL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+
+<div id="36" class="book" data-type="novel" data-people="Senna"><img alt="The Traitor Baru Cormorant" src="https://images.isbndb.com/covers/07/39/9780765380739.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="37" class="book" data-type="novel" data-people="Senna"><img alt="Children of Time" src="https://m.media-amazon.com/images/I/51glJgVC1IL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="38" class="book" data-type="novel" data-people="Senna"><img alt="The Dispossessed" src="https://m.media-amazon.com/images/I/51nsexOTZeL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="39" class="book" data-type="novel" data-people="Senna"><img alt="Gideon the Ninth" src="https://m.media-amazon.com/images/I/412PSZfs4FL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="40" class="book" data-type="series" data-people="Senna"><img alt="The Broken Earth Trilogy" src="https://i.imgur.com/lChidHF.png" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="41" class="book" data-type="novel" data-people="Senna"><img alt="The Wisdom of Crowds" src="https://m.media-amazon.com/images/I/41iCV6Xkv+L._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="42" class="book" data-type="novel" data-people="Senna"><img alt="The Bonehunters" src="https://m.media-amazon.com/images/I/41-STwGTTNL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="43" class="book" data-type="novel" data-people="Senna"><img alt="The Left Hand of Darkness" src="https://m.media-amazon.com/images/I/41DzNPR3TVL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div><div id="X" class="book" data-type="" data-people="Senna"><img alt="All Systems Red" src="https://m.media-amazon.com/images/I/41iUgxBgtjL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
 
 </div>
 
@@ -408,7 +432,7 @@ function updatebookCount() {
 
 var json_str = JSON.stringify(arrBooks);
 createCookie('bestbook', json_str);
-var percent = (100 * arrBooks.length) / 18; // updateme
+var percent = (100 * arrBooks.length) / 43; // updateme
 percent = percent.toFixed(2);
 
 if (percent > 19.99) { document.getElementById("spoon").style.visibility = "" } else { document.getElementById("spoon").style.visibility = "hidden" };
@@ -416,7 +440,7 @@ if (percent > 39.99) { document.getElementById("bronze").style.visibility = "" }
 if (percent > 59.99) { document.getElementById("silver").style.visibility = "" } else { document.getElementById("silver").style.visibility = "hidden" };
 if (percent > 79.99) { document.getElementById("gold").style.visibility = "" } else { document.getElementById("gold").style.visibility = "hidden" };
 
-$("#preadCount").text("You have read " + arrBooks.length + "/18 books!"); //updateme
+$("#preadCount").text("You have read " + arrBooks.length + "/43 books!"); //updateme
 
 }
 //reveal(this.alt, this.dataset.type, this.dataset.platform, this.dataset.people)"
@@ -604,6 +628,7 @@ function filter(genre) {
     var pplsplit = ppl.split(" ")
     var boolpplok = false;
     for (x = 0; x < pplsplit.length; x++) {
+	
         if (document.getElementById("btn" + pplsplit[x]).style.color == "white") {
             boolpplok = true;
         }
