@@ -355,7 +355,8 @@ text-decoration:underline
 <div id="40" class="book" data-type="series" data-people="Senna"><img alt="The Broken Earth Trilogy" src="https://i.imgur.com/lChidHF.png" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
 <div id="41" class="book" data-type="novel" data-people="Senna"><img alt="The Wisdom of Crowds" src="https://m.media-amazon.com/images/I/41iCV6Xkv+L._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
 <div id="42" class="book" data-type="novel" data-people="Senna"><img alt="The Bonehunters" src="https://m.media-amazon.com/images/I/41-STwGTTNL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="43" class="book" data-type="novel" data-people="Senna"><img alt="The Left Hand of Darkness" src="https://m.media-amazon.com/images/I/41DzNPR3TVL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div><div id="X" class="book" data-type="" data-people="Senna"><img alt="All Systems Red" src="https://m.media-amazon.com/images/I/41iUgxBgtjL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="43" class="book" data-type="novel" data-people="Senna"><img alt="The Left Hand of Darkness" src="https://m.media-amazon.com/images/I/41DzNPR3TVL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="44" class="book" data-type="novel" data-people="Senna"><img alt="All Systems Red" src="https://m.media-amazon.com/images/I/41iUgxBgtjL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
 
 </div>
 
@@ -572,9 +573,11 @@ function filter(genre) {
             }
 		
             var tds = document.getElementsByClassName("book");
+			
             for (var i = 0; i < tds.length; i++) {
 
                 
+			
 if (document.getElementById("btn" + tds[i].dataset.type).style.color == "white") {
 
     var ppl = tds[i].dataset.people;
