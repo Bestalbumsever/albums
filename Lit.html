@@ -481,7 +481,7 @@ function random(unread) {
 	if (imgSrcs.length == 0) {
 		document.getElementById("pRandom").innerText = "You should go outside now!";
 	} else {
-		document.getElementById("pRandom").innerText = "You should watch " + random_item(imgSrcs);
+		document.getElementById("pRandom").innerText = "You should read " + random_item(imgSrcs);
 	}	
 }
 
@@ -575,7 +575,7 @@ function filter(genre) {
             for (var i = 0; i < tds.length; i++) {
 
                 
-
+if (document.getElementById("btn" + tds[i].dataset.type).style.color == "white") {
 
     var ppl = tds[i].dataset.people;
     var pplsplit = ppl.split(" ")
@@ -592,7 +592,9 @@ function filter(genre) {
     } else {
         tds[i].style.display = "none";
     }
-
+} else {
+    tds[i].style.display = "none";
+}
             }
 			
            
@@ -623,12 +625,11 @@ function filter(genre) {
 			
 			
              for (var i = 0; i < tds.length; i++) {
-
+if (document.getElementById("btn" + tds[i].dataset.type).style.color == "white") {
     var ppl = tds[i].dataset.people;
     var pplsplit = ppl.split(" ")
     var boolpplok = false;
     for (x = 0; x < pplsplit.length; x++) {
-	
         if (document.getElementById("btn" + pplsplit[x]).style.color == "white") {
             boolpplok = true;
         }
@@ -638,7 +639,9 @@ function filter(genre) {
     } else {
         tds[i].style.display = "none";
     }
-
+} else {
+    tds[i].style.display = "none";
+}
 }
 
 
@@ -652,7 +655,7 @@ function filterperson(person) {
             for (var i = 0; i < btns.length; i++) {
                 btns[i].style.color = "white";
             }
-            var tds = document.getElementsByClassName("show");
+            var tds = document.getElementsByClassName("book");
             for (var i = 0; i < tds.length; i++) {
 
  
@@ -675,7 +678,7 @@ function filterperson(person) {
             
             break;
         case "none":
-            var tds = document.getElementsByClassName("show");
+            var tds = document.getElementsByClassName("book");
             for (var i = 0; i < tds.length; i++) {
 
                 tds[i].style.display = "none";
@@ -700,7 +703,7 @@ function filterperson(person) {
             }
 
            //  var tds = document.querySelectorAll('[data-people=' + person + ']');
-           var tds = document.getElementsByClassName("show");
+           var tds = document.getElementsByClassName("book");
 
             for (var i = 0; i < tds.length; i++) {
 
@@ -745,7 +748,7 @@ function backup(func) {
 }
 
 function getPopular() {
-var books = document.getElementsByClassName("show");
+var books = document.getElementsByClassName("book");
 var debug = "";
 for (i=0;i<books.length;i++) {
 if (books[i].classList.length > 2) {
