@@ -44,11 +44,14 @@ font-family: calibri;
 <body>
 
 <div style="position:absolute; left:0; width: 35%; height: 500px; left:25px;">
-
-<p>Hello! Please follow <b>all 4 steps</b> to help Ben make the new page</p>
+<p>Hello! It's time to get <i>lit</i></p>
+<p>Please follow <b>all 4 steps</b> to help Ben make the new page</p>
 1. <b>Type Your Name</b>: <input type="text" id="name" /><br />
-<p>For anime <a href='https://www.themoviedb.org/search/tv?query=&language=en-GB' target="_blank">click here</a> and search</p>
-<p>Right click the image > "Copy Image Address"</p>
+<p>For books and some comic runs <a href='https://isbnsearch.org/' target="_blank">click here</a></p>
+<p>Alternative source <a href='https://openlibrary.org/' target="_blank">click here</a></p>
+<p>For manga <a href='https://myanimelist.net/' target="_blank">click here</a></p>
+<p>Everything you can't find just use Google damn it, horizontal rectangle images</p>
+<p>For all of them: right click the image > "Copy Image Address"</p>
 <p><b>2. Enter 9 titles and their image links below</b></p>
 
 <table>
@@ -143,21 +146,12 @@ var basehtml = '';
 var benhtml = '';
 var benbightml = '';
 
-if (x1.indexOf("moviedb") > -1) { // we doing tv
 
 document.getElementById("result").style.height = "427px;"
-bightml = '<div style="background-color:black; width:296px;">'
-benhtml = '<div id="$NUM$" class="show" data-type="" data-people="$NAME$"><image alt="$SHOW$" src="$ALT$"  onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)" /></div>'
-basehtml = '<div id="X" class="show" data-type="" data-people="" ><image style="display:block; max-width:100%;max-height:100%;" alt="" src="$ALT$" /></div>'
+bightml = '<div style="background-color:black; width:294px;">'
+basehtml = '<div id="X" class="book" style="margin:2px;display:inline-block;width:94px; max-width:94px;height:141px;max-height:141px;" data-type="" data-people="" ><image style="display:block; width:94px; max-width:94px;height:141px;max-height:141px;" alt="" src="$ALT$" /></div>'
+benhtml = '<div id="X" class="book" data-type="" data-people="$NAME$" ><image alt="$SHOW$" src="$ALT$"  onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)" /></div>'
 
-} else {
-
-document.getElementById("result").style.height = "500px;"
-bightml = '<div style="background-color:black; width:418px;">'
-basehtml = '<div id="X" class="game" data-genre="" data-platform="" data-people="" ><image style="display:block; max-width:100%;max-height:100%;" alt="" src="$ALT$" /></div>'
-benhtml = '<div id="X" class="game" data-genre="" data-platform="" data-people="" ><image style="display:block; max-width:100%;max-height:100%;" alt="" src="$ALT$" /></div>'
-
-}
 
 
 var itemhtml;
