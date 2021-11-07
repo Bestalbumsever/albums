@@ -210,7 +210,7 @@ text-decoration:underline
 
 <div>
 
-<p id="preadCount">You have read 0/? books!</p> <!--updateme-->
+<p id="preadCount">You have read 0/18 books!</p> <!--updateme-->
 
 <img class="award" id="spoon" style=" width:25px; height:25px; margin-left:5%; margin-bottom:2%; visibility: hidden;" src="img/spoon.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
 <img class="award" id="bronze" style=" width:25px; height:25px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="img/bronze.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
@@ -389,7 +389,7 @@ function updatebookCount() {
 
 var json_str = JSON.stringify(arrBooks);
 createCookie('bestbook', json_str);
-var percent = (100 * arrBooks.length) / 78; // updateme
+var percent = (100 * arrBooks.length) / 18; // updateme
 percent = percent.toFixed(2);
 
 if (percent > 19.99) { document.getElementById("spoon").style.visibility = "" } else { document.getElementById("spoon").style.visibility = "hidden" };
@@ -397,7 +397,7 @@ if (percent > 39.99) { document.getElementById("bronze").style.visibility = "" }
 if (percent > 59.99) { document.getElementById("silver").style.visibility = "" } else { document.getElementById("silver").style.visibility = "hidden" };
 if (percent > 79.99) { document.getElementById("gold").style.visibility = "" } else { document.getElementById("gold").style.visibility = "hidden" };
 
-$("#preadCount").text("You have read " + arrBooks.length + "/78 books!"); //updateme
+$("#preadCount").text("You have read " + arrBooks.length + "/18 books!"); //updateme
 
 }
 //reveal(this.alt, this.dataset.type, this.dataset.platform, this.dataset.people)"
