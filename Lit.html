@@ -210,7 +210,7 @@ text-decoration:underline
 
 <div>
 
-<p id="preadCount">You have read 0/60 books!</p> <!--updateme-->
+<p id="preadCount">You have read 0/69 books! LOL</p> <!--updateme-->
 
 <img class="award" id="spoon" style=" width:25px; height:25px; margin-left:5%; margin-bottom:2%; visibility: hidden;" src="img/spoon.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
 <img class="award" id="bronze" style=" width:25px; height:25px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="img/bronze.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
@@ -379,6 +379,16 @@ text-decoration:underline
 <div id="59" class="book" data-type="novel" data-people="Aaron"><img alt="East of Eden" src="https://m.media-amazon.com/images/I/51bArZUMnjL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
 <div id="60" class="book" data-type="novel" data-people="Aaron"><img alt="Men at Arms" src="https://productimages.worldofbooks.com/0552140287.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
 
+<div id="61" class="book" data-type="novel" data-people="Tom"><img alt="Blindsight" src="https://m.media-amazon.com/images/I/41Q83M90aPL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="62" class="book" data-type="novel" data-people="Tom"><img alt="Dune" src="https://m.media-amazon.com/images/I/41yAdpcoZkL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="63" class="book" data-type="other" data-people="Tom"><img alt="A Practical Guide to Evil" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQjUfisRCbER-eMXQLMqq70v5_YFZbZ5m1wQ&amp;usqp=CAU" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="64" class="book" data-type="series" data-people="Tom"><img alt="Mortal Engines Quartet (Series)" src="https://upload.wikimedia.org/wikipedia/en/thumb/d/dd/Hungrycitychronicles.jpg/220px-Hungrycitychronicles.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="65" class="book" data-type="novel" data-people="Tom"><img alt="Against a Dark Background" src="https://images.isbndb.com/covers/17/93/9781857231793.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="66" class="book" data-type="novel" data-people="Tom"><img alt="Surface Detail" src="https://m.media-amazon.com/images/I/51yju3q8WXL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="67" class="book" data-type="novel" data-people="Tom"><img alt="The Dispossessed" src="https://m.media-amazon.com/images/I/51nsexOTZeL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="68" class="book" data-type="other" data-people="Tom"><img alt="Wonderful Life" src="https://m.media-amazon.com/images/I/51rpv9a7+bL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="69" class="book" data-type="novel" data-people="Tom"><img alt="Slaughterhouse Five" src="https://m.media-amazon.com/images/I/41hW0wB6VmL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+
 </div>
 
 </div>
@@ -454,7 +464,7 @@ function updatebookCount() {
 
 var json_str = JSON.stringify(arrBooks);
 createCookie('bestbook', json_str);
-var percent = (100 * arrBooks.length) / 60; // updateme
+var percent = (100 * arrBooks.length) / 69; // updateme
 percent = percent.toFixed(2);
 
 if (percent > 19.99) { document.getElementById("spoon").style.visibility = "" } else { document.getElementById("spoon").style.visibility = "hidden" };
@@ -462,7 +472,7 @@ if (percent > 39.99) { document.getElementById("bronze").style.visibility = "" }
 if (percent > 59.99) { document.getElementById("silver").style.visibility = "" } else { document.getElementById("silver").style.visibility = "hidden" };
 if (percent > 79.99) { document.getElementById("gold").style.visibility = "" } else { document.getElementById("gold").style.visibility = "hidden" };
 
-$("#preadCount").text("You have read " + arrBooks.length + "/60 books!"); //updateme
+$("#preadCount").text("You have read " + arrBooks.length + "/69 books! LOL"); //updateme
 
 }
 //reveal(this.alt, this.dataset.type, this.dataset.platform, this.dataset.people)"
