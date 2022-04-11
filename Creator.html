@@ -44,52 +44,62 @@ font-family: calibri;
 <body>
 
 <div style="position:absolute; left:0; width: 35%; height: 500px; left:25px;">
-<p>Hello! It's time to get <i>lit</i></p>
+<p>Hello! We're making 3x3s <i>right meow</i></p>
+<img src="img/jurcat.png" style="width: 300px; height; 250px;">
 <p>Please follow <b>all 4 steps</b> to help Ben make the new page</p>
-1. <b>Type Your Name</b>: <input type="text" id="name" /><br />
-<p>For books and some comic runs <a href='https://isbnsearch.org/' target="_blank">click here</a></p>
-<p>Alternative source <a href='https://openlibrary.org/' target="_blank">click here</a></p>
-<p>For manga <a href='https://myanimelist.net/' target="_blank">click here</a></p>
-<p>Everything you can't find just use Google damn it, horizontal rectangle images</p>
-<p>For all of them: right click the image > "Copy Image Address"</p>
-<p><b>2. Enter 9 titles and their image links below</b></p>
+<p><b>1. Type Your Name</b>: <input type="text" id="name" /></p>
+
+<p><b>2. Go to <a target="_blank" href="https://xsaardo.github.io/Album-Art-Collage-Creator/">this much better website</a> and make your collage, 3x3</b></p>
+
+<p><b>3. Enter 9 albums (Artist - Name) and to be really helpful give them a rough genre</b></p>
+
+<p><b>4. For URL, right click the album image on the other site and click "Copy Image Address"</b></p>
 
 <table>
 <tr><td>
-Title: <input type="text" id="y1" style="width: 200px;" /><br />
-URL: <input type="text" id="1" style="width: 200px;" />
+Album: <input type="text" id="y1" style="width: 200px;" /><br />
+URL: <input type="text" id="1" style="width: 200px;" /><br />
+Genre: <input type="text" id="x1" style="width: 200px;" />
 </td></tr>
 <tr><td>
-Title: <input type="text" id="y2" style="width: 200px;" /><br />
-URL: <input type="text" id="2" style="width: 200px;" />
+Album: <input type="text" id="y2" style="width: 200px;" /><br />
+URL: <input type="text" id="2" style="width: 200px;" /><br />
+Genre: <input type="text" id="x2" style="width: 200px;" />
 </td></tr>
 <tr><td>
-Title: <input type="text" id="y3" style="width: 200px;" /><br />
-URL: <input type="text" id="3" style="width: 200px;" />
+Album: <input type="text" id="y3" style="width: 200px;" /><br />
+URL: <input type="text" id="3" style="width: 200px;" /><br />
+Genre: <input type="text" id="x3" style="width: 200px;" />
 </td></tr>
 <tr><td>
-Title: <input type="text" id="y4" style="width: 200px;" /><br />
-URL: <input type="text" id="4" style="width: 200px;" />
+Album: <input type="text" id="y4" style="width: 200px;" /><br />
+URL: <input type="text" id="4" style="width: 200px;" /><br />
+Genre: <input type="text" id="x4" style="width: 200px;" />
 </td></tr>
 <tr><td>
-Title: <input type="text" id="y5" style="width: 200px;" /><br />
-URL: <input type="text" id="5" style="width: 200px;" />
+Album: <input type="text" id="y5" style="width: 200px;" /><br />
+URL: <input type="text" id="5" style="width: 200px;" /><br />
+Genre: <input type="text" id="x5" style="width: 200px;" />
 </td></tr>
 <tr><td>
-Title: <input type="text" id="y6" style="width: 200px;" /><br />
-URL: <input type="text" id="6" style="width: 200px;" />
+Album: <input type="text" id="y6" style="width: 200px;" /><br />
+URL: <input type="text" id="6" style="width: 200px;" /><br />
+Genre: <input type="text" id="x6" style="width: 200px;" />
 </td></tr>
 <tr><td>
-Title: <input type="text" id="y7" style="width: 200px;" /><br />
-URL: <input type="text" id="7" style="width: 200px;" />
+Album: <input type="text" id="y7" style="width: 200px;" /><br />
+URL: <input type="text" id="7" style="width: 200px;" /><br />
+Genre: <input type="text" id="x7" style="width: 200px;" />
 </td></tr>
 <tr><td>
-Title: <input type="text" id="y8" style="width: 200px;" /><br />
-URL: <input type="text" id="8" style="width: 200px;" />
+Album: <input type="text" id="y8" style="width: 200px;" /><br />
+URL: <input type="text" id="8" style="width: 200px;" /><br />
+Genre: <input type="text" id="x8" style="width: 200px;" />
 </td></tr>
 <tr><td>
-Title: <input type="text" id="y9" style="width: 200px;" /><br />
-URL: <input type="text" id="9" style="width: 200px;" />
+Album: <input type="text" id="y9" style="width: 200px;" /><br />
+URL: <input type="text" id="9" style="width: 200px;" /><br />
+Genre: <input type="text" id="x9" style="width: 200px;" />
 </td></tr>
 </table>
 
@@ -99,7 +109,7 @@ URL: <input type="text" id="9" style="width: 200px;" />
 <p id="pFeedback"></p>
 <input id="btnCopy" style="display:none;" type="button" value="Copy" onclick="copy()" />
 
-<p id="step2" style="display:none;">4. Thanks, now screenshot the 3x3 to post to media, I tried image converters and holy shit can i not be bothered</p>
+<p id="step2" style="display:none;"><b>4. Screenshot from either site and post in Discord</b></p>
 
 </div>
 
@@ -139,6 +149,18 @@ var y7 = document.getElementById("y7").value
 var y8 = document.getElementById("y8").value
 var y9 = document.getElementById("y9").value
 
+var z1 = document.getElementById("x1").value
+var z2 = document.getElementById("x2").value
+var z3 = document.getElementById("x3").value
+var z4 = document.getElementById("x4").value
+var z5 = document.getElementById("x5").value
+var z6 = document.getElementById("x6").value
+var z7 = document.getElementById("x7").value
+var z8 = document.getElementById("x8").value
+var z9 = document.getElementById("x9").value
+
+
+
 var name = document.getElementById("name").value
 
 var bightml = '';
@@ -148,50 +170,47 @@ var benbightml = '';
 
 
 document.getElementById("result").style.height = "412px;"
-bightml = '<div style="background-color:black; width:294px;">'
-basehtml = '<div id="X" class="book" style="margin:2px;display:inline-block;width:94px; max-width:94px;height:141px;max-height:141px;" data-type="" data-people="" ><image style="display:block; width:94px; max-width:94px;height:141px;max-height:141px;" alt="" src="$ALT$" /></div>'
-benhtml = '<div id="X" class="book" data-type="" data-people="$NAME$" ><image alt="$SHOW$" src="$ALT$"  onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)" /></div>'
-
-
+bightml = '<div style="background-color:black; width:239px;">'
+basehtml = '<div id="X" class="album" style="margin:2px;display:inline-block;width:75px; max-width:75px;height:75px;max-height:75px;" data-genre="" data-people="" ><image style="display:block; width:75px; max-width:75px;height:75px;max-height:75px;" alt="" src="$ALT$" /></div>'
+benhtml = '<div id="X" class="album" data-genre="$GENRE$" data-people="$NAME$" ><image alt="$SHOW$" src="$ALT$"  onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)" /></div>'
 
 var itemhtml;
 var itemhtmlben;
 
 itemhtml = basehtml.replace('$ALT$', x1).replace("$NAME$", name).replace("$SHOW$", y1).replace("$NUM$", "1")
-itemhtmlben = benhtml.replace('$ALT$', x1).replace("$NAME$", name).replace("$SHOW$", y1).replace("$NUM$", "1")
+itemhtmlben = benhtml.replace('$ALT$', x1).replace("$NAME$", name).replace("$SHOW$", y1).replace("$NUM$", "1").replace("$GENRE$", z1);
 bightml += itemhtml;
 benbightml += itemhtmlben;
 itemhtml = basehtml.replace('$ALT$', x2).replace("$NAME$", name).replace("$SHOW$", y2).replace("$NUM$", "2")
-itemhtmlben = benhtml.replace('$ALT$', x2).replace("$NAME$", name).replace("$SHOW$", y2).replace("$NUM$", "2")
-
+itemhtmlben = benhtml.replace('$ALT$', x2).replace("$NAME$", name).replace("$SHOW$", y2).replace("$NUM$", "2").replace("$GENRE$", z2);
 bightml += itemhtml;
 benbightml += itemhtmlben;
 itemhtml = basehtml.replace('$ALT$', x3).replace("$NAME$", name).replace("$SHOW$", y3).replace("$NUM$", "3")
-itemhtmlben = benhtml.replace('$ALT$', x3).replace("$NAME$", name).replace("$SHOW$", y3).replace("$NUM$", "3")
+itemhtmlben = benhtml.replace('$ALT$', x3).replace("$NAME$", name).replace("$SHOW$", y3).replace("$NUM$", "3").replace("$GENRE$", z3);
 bightml += itemhtml;
 benbightml += itemhtmlben;
 itemhtml = basehtml.replace('$ALT$', x4).replace("$NAME$", name).replace("$SHOW$", y4).replace("$NUM$", "4")
-itemhtmlben = benhtml.replace('$ALT$', x4).replace("$NAME$", name).replace("$SHOW$", y4).replace("$NUM$", "4")
+itemhtmlben = benhtml.replace('$ALT$', x4).replace("$NAME$", name).replace("$SHOW$", y4).replace("$NUM$", "4").replace("$GENRE$", z4);
 bightml += itemhtml;
 benbightml += itemhtmlben;
 itemhtml = basehtml.replace('$ALT$', x5).replace("$NAME$", name).replace("$SHOW$", y5).replace("$NUM$", "5")
-itemhtmlben = benhtml.replace('$ALT$', x5).replace("$NAME$", name).replace("$SHOW$", y5).replace("$NUM$", "5")
+itemhtmlben = benhtml.replace('$ALT$', x5).replace("$NAME$", name).replace("$SHOW$", y5).replace("$NUM$", "5").replace("$GENRE$", z5);
 bightml += itemhtml;
 benbightml += itemhtmlben;
 itemhtml = basehtml.replace('$ALT$', x6).replace("$NAME$", name).replace("$SHOW$", y6).replace("$NUM$", "6")
-itemhtmlben = benhtml.replace('$ALT$', x6).replace("$NAME$", name).replace("$SHOW$", y6).replace("$NUM$", "6")
+itemhtmlben = benhtml.replace('$ALT$', x6).replace("$NAME$", name).replace("$SHOW$", y6).replace("$NUM$", "6").replace("$GENRE$", z6);
 bightml += itemhtml;
 benbightml += itemhtmlben;
 itemhtml = basehtml.replace('$ALT$', x7).replace("$NAME$", name).replace("$SHOW$", y7).replace("$NUM$", "7")
-itemhtmlben = benhtml.replace('$ALT$', x7).replace("$NAME$", name).replace("$SHOW$", y7).replace("$NUM$", "7")
+itemhtmlben = benhtml.replace('$ALT$', x7).replace("$NAME$", name).replace("$SHOW$", y7).replace("$NUM$", "7").replace("$GENRE$", z7);
 bightml += itemhtml;
 benbightml += itemhtmlben;
 itemhtml = basehtml.replace('$ALT$', x8).replace("$NAME$", name).replace("$SHOW$", y8).replace("$NUM$", "8")
-itemhtmlben = benhtml.replace('$ALT$', x8).replace("$NAME$", name).replace("$SHOW$", y8).replace("$NUM$", "8")
+itemhtmlben = benhtml.replace('$ALT$', x8).replace("$NAME$", name).replace("$SHOW$", y8).replace("$NUM$", "8").replace("$GENRE$", z8);
 bightml += itemhtml;
 benbightml += itemhtmlben;
 itemhtml = basehtml.replace('$ALT$', x9).replace("$NAME$", name).replace("$SHOW$", y9).replace("$NUM$", "9")
-itemhtmlben = benhtml.replace('$ALT$', x9).replace("$NAME$", name).replace("$SHOW$", y9).replace("$NUM$", "9")
+itemhtmlben = benhtml.replace('$ALT$', x9).replace("$NAME$", name).replace("$SHOW$", y9).replace("$NUM$", "9").replace("$GENRE$", z9);
 bightml += itemhtml;
 benbightml += itemhtmlben;
 bightml += '</div>'
@@ -200,7 +219,7 @@ benbightml += '</div>'
 document.getElementById('result').innerHTML = bightml;
 document.getElementById('resultben').innerHTML = benbightml;
 
-document.getElementById('pFeedback').innerHTML = "3. Good job, now click this button to copy HTML to clipboard, paste it into <a href='https://pastebin.com/' target='_blank'>https://pastebin.com/</a> and send Ben the link";
+document.getElementById('pFeedback').innerHTML = "<b>4. Good job, now click this button to copy HTML to clipboard, paste it into <a href='https://pastebin.com/' target='_blank'>https://pastebin.com/</a> and send Ben the link</b>";
 document.getElementById('btnCopy').style.display="block"
 
 }catch(ex) {

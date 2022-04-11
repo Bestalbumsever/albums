@@ -117,10 +117,10 @@ height: 40px;
 padding:0px !important;
 margin:0px !important;
 border:2px solid black;
-width:94px !important;
-height:141px !important;
-max-width:94px !important;
-max-height:141px !important;
+width:75px !important;
+height:75px !important;
+max-width:75px !important;
+max-height:75px !important;
 display:inline-block;
 }
 #divTable div img {
@@ -305,21 +305,20 @@ text-decoration:underline
 
 <!--
 
-<div id="1" class="album" data-genre="" data-people=""><img alt="" src="" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="2" class="album" data-genre="" data-people=""><img alt="" src="" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="3" class="album" data-genre="" data-people=""><img alt="" src="" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="4" class="album" data-genre="" data-people=""><img alt="" src="" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="5" class="album" data-genre="" data-people=""><img alt="" src="" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="6" class="album" data-genre="" data-people=""><img alt="" src="" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="7" class="album" data-genre="" data-people=""><img alt="" src="" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="8" class="album" data-genre="" data-people=""><img alt="" src="" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="9" class="album" data-genre="" data-people=""><img alt="" src="" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
+<div id="1" class="album" data-genre="" data-people=""><img alt="" src="" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="2" class="album" data-genre="" data-people=""><img alt="" src="" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="3" class="album" data-genre="" data-people=""><img alt="" src="" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="4" class="album" data-genre="" data-people=""><img alt="" src="" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="5" class="album" data-genre="" data-people=""><img alt="" src="" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="6" class="album" data-genre="" data-people=""><img alt="" src="" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="7" class="album" data-genre="" data-people=""><img alt="" src="" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="8" class="album" data-genre="" data-people=""><img alt="" src="" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="9" class="album" data-genre="" data-people=""><img alt="" src="" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
 
 -->
-<div id="2" class="album" data-genre="rap" data-people="Ben Thijs"><img alt="Justin Bieber - Justice" src="https://upload.wikimedia.org/wikipedia/en/0/08/Justin_Bieber_-_Justice.png" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="14" class="album" data-genre="rock" data-people="JJ Jon"><img alt="Justin Bieber - Justice 2" src="https://images-na.ssl-images-amazon.com/images/I/71v4v2E4oJL.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-<div id="45" class="album" data-genre="downer" data-people="Edie Aaron"><img alt="Justin Bieber - Justice 3" src="https://m.media-amazon.com/images/I/41-n-3hZMeL._SL160_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.type, this.parentNode.dataset.people)"></div>
-
+<div id="2" class="album" data-genre="rap" data-people="Ben Thijs"><img alt="Justin Bieber - Justice" src="https://upload.wikimedia.org/wikipedia/en/0/08/Justin_Bieber_-_Justice.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="14" class="album" data-genre="rock" data-people="JJ Jon"><img alt="Justin Bieber - Justice 2" src="https://upload.wikimedia.org/wikipedia/en/0/08/Justin_Bieber_-_Justice.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="45" class="album" data-genre="downer" data-people="Edie Aaron"><img alt="Justin Bieber - Justice 3" src="https://upload.wikimedia.org/wikipedia/en/0/08/Justin_Bieber_-_Justice.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
 
 </div>
 
@@ -331,7 +330,7 @@ text-decoration:underline
 var arralbums = [];
 var arrFilters = [];
 
-$( document ).listenedy(function() {
+$( document ).ready(function() {
 
 
 try {
@@ -407,7 +406,7 @@ if (percent > 79.99) { document.getElementById("gold").style.visibility = "" } e
 $("#plistenedCount").text("You have listened to " + arralbums.length + "/3 albums!"); //updateme
 
 }
-//reveal(this.alt, this.dataset.type, this.dataset.platform, this.dataset.people)"
+//reveal(this.alt, this.dataset.genre, this.dataset.platform, this.dataset.people)"
 function reveal(alt, genre, people) {
 
 people = people.replaceAll(" ", ", ")
@@ -541,7 +540,7 @@ function filter(genre) {
 
                 
 			
-if (document.getElementById("btn" + tds[i].dataset.type).style.color == "white") {
+if (document.getElementById("btn" + tds[i].dataset.genre).style.color == "white") {
 
     var ppl = tds[i].dataset.people;
     var pplsplit = ppl.split(" ")
@@ -591,7 +590,7 @@ if (document.getElementById("btn" + tds[i].dataset.type).style.color == "white")
 			
 			
              for (var i = 0; i < tds.length; i++) {
-if (document.getElementById("btn" + tds[i].dataset.type).style.color == "white") {
+if (document.getElementById("btn" + tds[i].dataset.genre).style.color == "white") {
     var ppl = tds[i].dataset.people;
     var pplsplit = ppl.split(" ")
     var boolpplok = false;
