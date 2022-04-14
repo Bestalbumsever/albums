@@ -381,7 +381,7 @@ text-decoration:underline
 <div id="55" class="album" data-genre="punk" data-people="Senna"><img alt="Pat the Bunny - Probably Nothing, Possibly Everything" src="https://lastfm.freetls.fastly.net/i/u/174s/028209a8310b42d57a07e6a7f7dfc9de.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
 <div id="56" class="album" data-genre="pop" data-people="Senna"><img alt="Reol - No Title-" src="https://lastfm.freetls.fastly.net/i/u/174s/6be0abdb841c5123dea87c7ba1705f33.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
 <div id="57" class="album" data-genre="punk" data-people="Senna"><img alt="Days n Daze - Show Me the Blueprints" src="https://lastfm.freetls.fastly.net/i/u/174s/a80d145ab7f478bc82ffbc5c256a1148.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
-<div id="58" class="album" data-genre="pop" data-people="Senna"><img alt="MARINA - Electra Heart (Deluxe)" src="https://lastfm.freetls.fastly.net/i/u/174s/726cd5d722886758f79eddac6c3249d8.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="58" class="album" data-genre="pop" data-people="Senna"><img alt="Marina and the Diamonds - Electra Heart (Deluxe)" src="https://lastfm.freetls.fastly.net/i/u/174s/726cd5d722886758f79eddac6c3249d8.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
 <div id="59" class="album" data-genre="rap" data-people="Senna"><img alt="The Uncluded - Hokey Fright (Deluxe Version)" src="https://lastfm.freetls.fastly.net/i/u/174s/35101db109dc470c86941dc889f92400.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
 <div id="60" class="album" data-genre="punk" data-people="Senna"><img alt="Onsind - Dissatisfactions" src="https://lastfm.freetls.fastly.net/i/u/174s/f24ce0e5d76f4f608250afb2976123cf.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
 <div id="61" class="album" data-genre="pop" data-people="Senna"><img alt="Poppy - Am I A Girl?" src="https://lastfm.freetls.fastly.net/i/u/174s/000bb38a007a410a4951ba1d044f60a2.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
@@ -512,7 +512,7 @@ function random(unlistened) {
 	if (imgSrcs.length == 0) {
 		document.getElementById("pRandom").innerText = "You should go outside now!";
 	} else {
-		document.getElementById("pRandom").innerText = "You should listen to " + random_item(imgSrcs);
+		document.getElementById("pRandom").innerText = "You should listen to " + random_item(imgSrcs) + "!";
 	}	
 }
 
@@ -553,9 +553,10 @@ function getCookie(c_name) {
 function highlight(txt) {
 txt = txt.substring(0, txt.length - 1);
 alb = txt.split("You should listen to ")[1]
+var splt2 = alb.split(" (chosen")[0]
 var allImages = document.getElementsByTagName("img");
     for (var i = 0, len = allImages.length; i < len; ++i) {
-        if (allImages[i].alt == alb) {		
+        if (allImages[i].alt == splt2) {		
             allImages[i].style.transform = 'rotate(' + 180 + 'deg)';
         }
     }
@@ -564,9 +565,10 @@ var allImages = document.getElementsByTagName("img");
 function unhighlight(txt) {
 txt = txt.substring(0, txt.length - 1);
 alb = txt.split("You should listen to ")[1]
+var splt2 = alb.split(" (chosen")[0]
 var allImages = document.getElementsByTagName("img");
     for (var i = 0, len = allImages.length; i < len; ++i) {
-        if (allImages[i].alt == alb) {		
+        if (allImages[i].alt == splt2) {		
             allImages[i].style.transform = 'rotate(' + 0 + 'deg)';
         }
     }
