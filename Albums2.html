@@ -212,7 +212,7 @@ text-decoration:underline
 
 <div>
 
-<p id="plistenedCount">You have listened to 0/18 albums!</p> <!--updateme-->
+<p id="plistenedCount">You have listened to 0/27 albums!</p> <!--updateme-->
 
 <img class="award" id="spoon" style=" width:25px; height:25px; margin-left:5%; margin-bottom:2%; visibility: hidden;" src="img/spoon.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
 <img class="award" id="bronze" style=" width:25px; height:25px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="img/bronze.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
@@ -338,6 +338,16 @@ text-decoration:underline
 <div id="17" class="album" data-genre="uppers" data-people="Will"><img alt="Ed Harrison - Neotokyo OST" src="https://lastfm.freetls.fastly.net/i/u/174s/9bad65a618054eaf91a225559d4f15f3.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
 <div id="18" class="album" data-genre="uppers" data-people="Will"><img alt="Clark Powell - Namesake" src="https://lastfm.freetls.fastly.net/i/u/174s/23a671ac06774db6868af1eda1ddeca0.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
 
+<div id="19" class="album" data-genre="metal" data-people="Dev"><img alt="Architects - All our gods have abandoned us" src="https://lastfm.freetls.fastly.net/i/u/174s/80044f5ba97744588d16ad3d6958d961.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="20" class="album" data-genre="metal" data-people="Dev"><img alt="Enter shikari - Take to the skies" src="https://lastfm.freetls.fastly.net/i/u/174s/5d2155a39f5548ef610f6af18a6fabbc.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="21" class="album" data-genre="punk" data-people="Dev"><img alt="Paramore - Riot" src="https://lastfm.freetls.fastly.net/i/u/174s/b7a4b3000d0c431fbce299986ac51c48.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="22" class="album" data-genre="metal" data-people="Dev"><img alt="The amity affiliction - Chasing ghosts" src="https://lastfm.freetls.fastly.net/i/u/174s/aa33a2f00de04ad3a1053762353c5677.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="23" class="album" data-genre="uppers" data-people="Dev"><img alt="Hybrid minds - Elements " src="https://lastfm.freetls.fastly.net/i/u/174s/29fbb69e1748b2a70129d0d0698594b8.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="24" class="album" data-genre="uppers" data-people="Dev"><img alt="Sub Focus - Reworks " src="https://lastfm.freetls.fastly.net/i/u/174s/8a3766447e527bd298c0a5eb696f853d.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="25" class="album" data-genre="metal" data-people="Dev"><img alt="Linkin park - Hybrid theory" src="https://lastfm.freetls.fastly.net/i/u/174s/b88840f7d608082a85588b2efbbd2d21.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="26" class="album" data-genre="rock" data-people="Dev"><img alt="Blink 182 - Enema of the state" src="https://lastfm.freetls.fastly.net/i/u/174s/9f84a1b9b2634750bdd014c2bb646d96.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="27" class="album" data-genre="metal" data-people="Dev"><img alt="Killswitch engage - End of heartache" src="https://lastfm.freetls.fastly.net/i/u/174s/9c01f7b338af4b99b989ec779cf1dca6.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+
 
 </div>
 
@@ -414,7 +424,7 @@ function updatealbumCount() {
 
 var json_str = JSON.stringify(arralbums);
 createCookie('bestalbum2', json_str);
-var percent = (100 * arralbums.length) / 18; // updateme
+var percent = (100 * arralbums.length) / 27; // updateme
 percent = percent.toFixed(2);
 
 if (percent > 19.99) { document.getElementById("spoon").style.visibility = "" } else { document.getElementById("spoon").style.visibility = "hidden" };
@@ -422,7 +432,7 @@ if (percent > 39.99) { document.getElementById("bronze").style.visibility = "" }
 if (percent > 59.99) { document.getElementById("silver").style.visibility = "" } else { document.getElementById("silver").style.visibility = "hidden" };
 if (percent > 79.99) { document.getElementById("gold").style.visibility = "" } else { document.getElementById("gold").style.visibility = "hidden" };
 
-$("#plistenedCount").text("You have listened to " + arralbums.length + "/18 albums!"); //updateme
+$("#plistenedCount").text("You have listened to " + arralbums.length + "/27 albums!"); //updateme
 
 }
 //reveal(this.alt, this.dataset.genre, this.dataset.platform, this.dataset.people)"
