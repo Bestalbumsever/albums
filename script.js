@@ -31,8 +31,10 @@ console.log("failed to get album cookie: " + ex.toString());
 }
     
 loadCheckedAlbums();
-	
-$(document).find('td').each (function() {
+
+
+
+	$(document).find('td').each (function() {
     $(this).on("click", function(){  
 	   toggleAlbum($(this).attr("id"))
     });
@@ -471,4 +473,16 @@ function backup(func) {
 
 function hideAward() {
 $("#pAward").html("&nbsp;");
+}
+
+function funcAll() {
+ var allImages = document.getElementsByTagName("img");
+    var images = [];
+    for (var i = 0, len = allImages.length; i < len; ++i) {
+       // if (allImages[i].alt == alt) {
+           // images.push(allImages[i]);
+       // }
+	   console.log(allImages[i].alt)
+    }
+
 }
