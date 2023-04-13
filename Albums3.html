@@ -214,7 +214,7 @@ text-decoration:underline
 
 <div>
 
-<p id="plistenedCount">You have listened to 0/? albums!</p> <!--updateme-->
+<p id="plistenedCount">You have listened to 0/9 albums!</p> <!--updateme-->
 
 <img class="award" id="spoon" style=" width:25px; height:25px; margin-left:5%; margin-bottom:2%; visibility: hidden;" src="img/spoon.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
 <img class="award" id="bronze" style=" width:25px; height:25px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="img/bronze.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
@@ -320,7 +320,7 @@ text-decoration:underline
 -->
 <!--rap, rock, upper, downer, hardrock, metal, ost, pop, punk, indie, other-->
 
-<!--<div id="1" class="album" data-people="Ben"><img alt="Tool - Fear Inoculum" src="https://lastfm.freetls.fastly.net/i/u/174s/2f0f02152c04a29dfd2dd2027ee64ba4.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="1" class="album" data-people="Ben"><img alt="Tool - Fear Inoculum" src="https://lastfm.freetls.fastly.net/i/u/174s/2f0f02152c04a29dfd2dd2027ee64ba4.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
 <div id="2" class="album" data-people="Ben"><img alt="Tool - Undertow" src="https://lastfm.freetls.fastly.net/i/u/174s/c61a9abc345a125c536b26bfdc601a88.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
 <div id="3" class="album" data-people="Ben"><img alt="City & Colour - Sometimes" src="https://lastfm.freetls.fastly.net/i/u/174s/a0086377663e4be6bbccf9e34a06ff76.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
 <div id="4" class="album" data-people="Ben"><img alt="Jimmy Eat World - Bleed American" src="https://lastfm.freetls.fastly.net/i/u/174s/5f6bed4795106f6a5ace9295accf4493.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
@@ -328,8 +328,7 @@ text-decoration:underline
 <div id="6" class="album" data-people="Ben"><img alt="Big K.R.I.T - 4eva Is a Mighty Long Time (Volume 1)" src="https://lastfm.freetls.fastly.net/i/u/174s/ceb2982a2dfc2b308a79ab0347d022ec.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
 <div id="7" class="album" data-people="Ben"><img alt="Porcupine Tree - Fear of a Blank Planet" src="https://lastfm.freetls.fastly.net/i/u/174s/2c3c098793ab40d7b076dd2f9903d814.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
 <div id="8" class="album" data-people="Ben"><img alt="Pink Floyd - Wish Your Were Here" src="https://lastfm.freetls.fastly.net/i/u/174s/394cfbc6b2a74766a4364778c641ca51.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
-<div id="9" class="album" data-people="Ben"><img alt="Deftones - Diamond Eyes" src="https://lastfm.freetls.fastly.net/i/u/174s/858efffdf737c869e754c2f4dbe89f4c.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>-->
-
+<div id="9" class="album" data-people="Ben"><img alt="Deftones - Diamond Eyes" src="https://lastfm.freetls.fastly.net/i/u/174s/858efffdf737c869e754c2f4dbe89f4c.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
 
 
 </div>
@@ -409,7 +408,7 @@ function updatealbumCount() {
 
 var json_str = JSON.stringify(arralbums);
 createCookie('bestalbum2', json_str);
-var percent = (100 * arralbums.length) / ?; // updateme
+var percent = (100 * arralbums.length) / 9; // updateme
 percent = percent.toFixed(2);
 
 if (percent > 19.99) { document.getElementById("spoon").style.visibility = "" } else { document.getElementById("spoon").style.visibility = "hidden" };
@@ -417,7 +416,7 @@ if (percent > 39.99) { document.getElementById("bronze").style.visibility = "" }
 if (percent > 59.99) { document.getElementById("silver").style.visibility = "" } else { document.getElementById("silver").style.visibility = "hidden" };
 if (percent > 79.99) { document.getElementById("gold").style.visibility = "" } else { document.getElementById("gold").style.visibility = "hidden" };
 
-$("#plistenedCount").text("You have listened to " + arralbums.length + "/? albums!"); //updateme
+$("#plistenedCount").text("You have listened to " + arralbums.length + "/9 albums!"); //updateme
 
 }
 //reveal(this.alt, this.dataset.genre, this.dataset.platform, this.dataset.people)"
