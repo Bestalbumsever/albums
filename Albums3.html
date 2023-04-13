@@ -214,7 +214,7 @@ text-decoration:underline
 
 <div>
 
-<p id="plistenedCount">You have listened to 0/45 albums!</p> <!--updateme-->
+<p id="plistenedCount">You have listened to 0/73 albums!</p> <!--updateme-->
 
 <img class="award" id="spoon" style=" width:25px; height:25px; margin-left:5%; margin-bottom:2%; visibility: hidden;" src="img/spoon.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
 <img class="award" id="bronze" style=" width:25px; height:25px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="img/bronze.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
@@ -383,6 +383,15 @@ text-decoration:underline
 <div id="63" class="album" data-people="JJ"><img alt="Power Rangers Redux" src="https://lastfm.freetls.fastly.net/i/u/174s/6b9d46852aa7d6553540f7fe0c2545ce.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
 <div id="64" class="album" data-people="JJ"><img alt="Pokemon 2.B.A. Master" src="https://lastfm.freetls.fastly.net/i/u/174s/c446c21b1d2f42e19617fad67a6afaf8.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
 
+<div id="65" class="album" data-people="Curt"><img alt="Tatsuro Yamashita - Ride On Time" src="https://upload.wikimedia.org/wikipedia/en/5/5c/Ride_on_Time_%28Single_cover%29.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="66" class="album" data-people="Curt"><img alt="Black Magick SS - Burning Bridges" src="https://i.ytimg.com/vi/kenlUi7uiPw/hqdefault.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="67" class="album" data-people="Curt"><img alt="Senses Fail - Let It Enfold You" src="https://www.diversevinyl.com/wp-content/uploads/2022/04/senses-fail.jpeg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="68" class="album" data-people="Curt"><img alt="James Blunt - Back to Bedlam" src="https://m.media-amazon.com/images/I/81fujsKUvtL._AC_SL1428_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="69" class="album" data-people="Curt"><img alt="Meatloaf - Bat Out of Hell" src="https://upload.wikimedia.org/wikipedia/en/thumb/0/00/Bat_out_of_Hell.jpg/220px-Bat_out_of_Hell.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="70" class="album" data-people="Curt"><img alt="The Mechanisms - The Bifrost Incident" src="https://static.wikia.nocookie.net/the_mechanisms/images/9/97/TBI_Cover.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="71" class="album" data-people="Curt"><img alt="Dawn of The Maya - Colossal" src="https://f4.bcbits.com/img/a0193085031_10.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="72" class="album" data-people="Curt"><img alt="The Darkness - Permission To Land" src="https://upload.wikimedia.org/wikipedia/en/8/89/TheDarkness-albums-PermissionToLand.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="73" class="album" data-people="Curt"><img alt="Dragonforce - Inhuman Rampage" src="https://upload.wikimedia.org/wikipedia/en/a/a3/Df-inhuman-cover250.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
 
 </div>
 
@@ -461,7 +470,7 @@ function updatealbumCount() {
 
 var json_str = JSON.stringify(arralbums);
 createCookie('bestalbum3', json_str);
-var percent = (100 * arralbums.length) / 45; // updateme
+var percent = (100 * arralbums.length) / 73; // updateme
 percent = percent.toFixed(2);
 
 if (percent > 19.99) { document.getElementById("spoon").style.visibility = "" } else { document.getElementById("spoon").style.visibility = "hidden" };
@@ -469,7 +478,7 @@ if (percent > 39.99) { document.getElementById("bronze").style.visibility = "" }
 if (percent > 59.99) { document.getElementById("silver").style.visibility = "" } else { document.getElementById("silver").style.visibility = "hidden" };
 if (percent > 79.99) { document.getElementById("gold").style.visibility = "" } else { document.getElementById("gold").style.visibility = "hidden" };
 
-$("#plistenedCount").text("You have listened to " + arralbums.length + "/45 albums!"); //updateme
+$("#plistenedCount").text("You have listened to " + arralbums.length + "/73 albums!"); //updateme
 
 }
 //reveal(this.alt, this.dataset.genre, this.dataset.platform, this.dataset.people)"
