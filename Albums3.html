@@ -214,7 +214,7 @@ text-decoration:underline
 
 <div>
 
-<p id="plistenedCount">You have listened to 0/91 albums!</p> <!--updateme-->
+<p id="plistenedCount">You have listened to 0/99 albums!</p> <!--updateme-->
 
 <img class="award" id="spoon" style=" width:25px; height:25px; margin-left:5%; margin-bottom:2%; visibility: hidden;" src="img/spoon.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
 <img class="award" id="bronze" style=" width:25px; height:25px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="img/bronze.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
@@ -414,6 +414,16 @@ text-decoration:underline
 <div id="90" class="album" data-people="Sarah"><img alt="Allie X - Super Sunset" src="https://lastfm.freetls.fastly.net/i/u/174s/24aba7ec495db3d820d0a4c395fa9381.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
 <div id="91" class="album" data-people="Sarah"><img alt="Jeff Rosenstock - We Cool?" src="https://lastfm.freetls.fastly.net/i/u/174s/248f0f82efa0147e59c9fd6f32916075.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
 
+<div id="92" class="album" data-people="Ry"><img alt="Nyu - Flux" src="https://i.scdn.co/image/ab67616d00001e026fff903e67744dc1fc1bb302" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="93" class="album" data-people="Ry"><img alt="Polyphia - Remember that you will die" src="https://lastfm.freetls.fastly.net/i/u/174s/f0ead0191f22b03730dc413857dff535.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="94" class="album" data-people="Ry"><img alt="Jay Prince - Wonder" src="https://lastfm.freetls.fastly.net/i/u/174s/ca1465137cf991f139362298748091ef.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="95" class="album" data-people="Ry"><img alt="John Mayer - Continuum" src="https://lastfm.freetls.fastly.net/i/u/174s/05676789499d4822b68b851b1d059ef5.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="96" class="album" data-people="Ry"><img alt="Owl Vision - Downlord" src="https://lastfm.freetls.fastly.net/i/u/174s/4a34b2346cf4129698372a8eb05efb9a.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="97" class="album" data-people="Ry"><img alt="Ruben Wan - Chapter one: guitar" src="https://i.scdn.co/image/ab67616d0000b273128c51684b8eefb7ee926dd0" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="98" class="album" data-people="Ry"><img alt="Bill withers - Just as I am" src="https://upload.wikimedia.org/wikipedia/en/2/2a/Withers-justasiamcoverart.JPG" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="99" class="album" data-people="Ry"><img alt="Urbandawn - Gothenburg cluster" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBg2qYopNvV7OPIN5nqJJaZc-za13X0uj9fTlgiRF42fK5GXtfyYAabJQd-ohUPlI0Pfk&usqp=CAU" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="46" class="album" data-people="Ry"><img alt="Mobb deep - The infamous" src="https://lastfm.freetls.fastly.net/i/u/174s/25c92211a1744a4d8a2d7854dd1d5fae.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+
 
 </div>
 
@@ -492,7 +502,7 @@ function updatealbumCount() {
 
 var json_str = JSON.stringify(arralbums);
 createCookie('bestalbum3', json_str);
-var percent = (100 * arralbums.length) / 91; // updateme
+var percent = (100 * arralbums.length) / 99; // updateme
 percent = percent.toFixed(2);
 
 if (percent > 19.99) { document.getElementById("spoon").style.visibility = "" } else { document.getElementById("spoon").style.visibility = "hidden" };
@@ -500,7 +510,7 @@ if (percent > 39.99) { document.getElementById("bronze").style.visibility = "" }
 if (percent > 59.99) { document.getElementById("silver").style.visibility = "" } else { document.getElementById("silver").style.visibility = "hidden" };
 if (percent > 79.99) { document.getElementById("gold").style.visibility = "" } else { document.getElementById("gold").style.visibility = "hidden" };
 
-$("#plistenedCount").text("You have listened to " + arralbums.length + "/91 albums!"); //updateme
+$("#plistenedCount").text("You have listened to " + arralbums.length + "/99 albums!"); //updateme
 
 }
 //reveal(this.alt, this.dataset.genre, this.dataset.platform, this.dataset.people)"
