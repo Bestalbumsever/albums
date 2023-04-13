@@ -214,7 +214,7 @@ text-decoration:underline
 
 <div>
 
-<p id="plistenedCount">You have listened to 0/82 albums!</p> <!--updateme-->
+<p id="plistenedCount">You have listened to 0/91 albums!</p> <!--updateme-->
 
 <img class="award" id="spoon" style=" width:25px; height:25px; margin-left:5%; margin-bottom:2%; visibility: hidden;" src="img/spoon.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
 <img class="award" id="bronze" style=" width:25px; height:25px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="img/bronze.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
@@ -289,6 +289,7 @@ text-decoration:underline
 			<button id="btnJon" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Jon')" >Jon</button>
 					<button id="btnLiam" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Liam')" >Liam</button>
 					<button id="btnBen" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Ben')">Ben</button>
+					<button id="btnSarah" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Sarah')" >Sarah</button>
 </div>
 
 <p>Backup</p>
@@ -403,6 +404,17 @@ text-decoration:underline
 <div id="81" class="album" data-people="Dev"><img alt="Polaris - The Mortal Coil" src="https://lastfm.freetls.fastly.net/i/u/174s/602b098bf6bbf0aafce24e41fe3f3431.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
 <div id="82" class="album" data-people="Dev"><img alt="Bullet for My Valentine - The Poison" src="https://lastfm.freetls.fastly.net/i/u/174s/91136e05c4064d699064bff81a6e5c79.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
 
+<div id="83" class="album" data-people="Sarah"><img alt="SOPHIE - product" src="https://lastfm.freetls.fastly.net/i/u/174s/564d9bea5bb533071e757d0b116af2f6.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="84" class="album" data-people="Sarah"><img alt="Metric - Art of Doubt" src="https://lastfm.freetls.fastly.net/i/u/174s/f2311fcf5b72a6cf906238ae8616aaa8.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="85" class="album" data-people="Sarah"><img alt="Fugazi - 13 Songs" src="https://lastfm.freetls.fastly.net/i/u/174s/a2e51d47e0122d174fa17734d46e96e7.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="86" class="album" data-people="Sarah"><img alt="Minutemen - Double Nickels on the Dime" src="https://lastfm.freetls.fastly.net/i/u/174s/8879f81513ea2f1bc32e2f493f1eaa7f.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="87" class="album" data-people="Sarah"><img alt="Janelle Monae - Dirty Computer" src="https://lastfm.freetls.fastly.net/i/u/174s/dfd047b47d9d585b33422ce62b0a50bc.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="88" class="album" data-people="Sarah"><img alt="Violent Femmes - Violent Femmes" src="https://lastfm.freetls.fastly.net/i/u/174s/c558edf7f14c1a58279e35f6e094e9b0.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="89" class="album" data-people="Sarah"><img alt="The Kinks - Village Green Preservation Society" src="https://lastfm.freetls.fastly.net/i/u/174s/03d769e3f3bf0d2dbb56b773b6c15a6f.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="90" class="album" data-people="Sarah"><img alt="Allie X - Super Sunset" src="https://lastfm.freetls.fastly.net/i/u/174s/24aba7ec495db3d820d0a4c395fa9381.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="91" class="album" data-people="Sarah"><img alt="Jeff Rosenstock - We Cool?" src="https://lastfm.freetls.fastly.net/i/u/174s/248f0f82efa0147e59c9fd6f32916075.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+
+
 </div>
 
 </div>
@@ -480,7 +492,7 @@ function updatealbumCount() {
 
 var json_str = JSON.stringify(arralbums);
 createCookie('bestalbum3', json_str);
-var percent = (100 * arralbums.length) / 82; // updateme
+var percent = (100 * arralbums.length) / 91; // updateme
 percent = percent.toFixed(2);
 
 if (percent > 19.99) { document.getElementById("spoon").style.visibility = "" } else { document.getElementById("spoon").style.visibility = "hidden" };
@@ -488,7 +500,7 @@ if (percent > 39.99) { document.getElementById("bronze").style.visibility = "" }
 if (percent > 59.99) { document.getElementById("silver").style.visibility = "" } else { document.getElementById("silver").style.visibility = "hidden" };
 if (percent > 79.99) { document.getElementById("gold").style.visibility = "" } else { document.getElementById("gold").style.visibility = "hidden" };
 
-$("#plistenedCount").text("You have listened to " + arralbums.length + "/82 albums!"); //updateme
+$("#plistenedCount").text("You have listened to " + arralbums.length + "/91 albums!"); //updateme
 
 }
 //reveal(this.alt, this.dataset.genre, this.dataset.platform, this.dataset.people)"
