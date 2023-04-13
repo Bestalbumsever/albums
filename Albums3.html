@@ -377,7 +377,7 @@ $( document ).ready(function() {
 
 
 try {
-var json_str = getCookie('bestalbum2');
+var json_str = getCookie('bestalbum3');
 arralbums = JSON.parse(json_str);
 }catch(ex) {
 console.log("failed to get album cookie: " + ex.toString());
@@ -439,7 +439,7 @@ updatealbumCount();
 function updatealbumCount() {
 
 var json_str = JSON.stringify(arralbums);
-createCookie('bestalbum2', json_str);
+createCookie('bestalbum3', json_str);
 var percent = (100 * arralbums.length) / 45; // updateme
 percent = percent.toFixed(2);
 
