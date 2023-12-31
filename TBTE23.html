@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+img {
+
+}
+body {
+background-color: black;
+}
+
+button {
+font-family:courier;
+background:none;
+color: white;
+margin-left: 40%;
+width:20%;
+border: 1px solid white;
+}
+
+
+#divTable div img {
+	display:block;
+}
+table {
+table-layout: fixed;
+}
+#divTable {
+                margin-left:2.5px;
+				margin-right:2.5px;
+                padding:4px;
+              height:  95vh;
+                overflow-x: hidden;
+                overflow-y: auto;
+                text-align:justify;
+				width:95%;
+display:inline-block;
+float:right;
+            }
+			/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+#divBar {
+width:100%;
+height:25px;
+background-color:black;
+top:0;
+border-bottom: 1px solid white;
+}
+#divBar p {
+color:white;
+font-family:courier;
+display:inline;
+margin-left:1%;
+text-align:center;
+font-weight:bold;
+}
+#divBar a{
+color:white;
+font-family:courier;
+display:inline;
+text-decoration:none;
+align-items: center;
+justify-content: center;
+}
+#divBar a:hover {
+text-decoration:underline
+}
+.item {
+
+}
+.music img {
+
+}
+.music {
+background-color: #333333;
+}
+
+body {
+background-color:black;
+color:white;
+font-family:courier;
+}
+.t1 {
+
+}
+#divTable {
+width:100%;
+display:inline-block;
+overflow:hidden;
+}
+#t2 {
+padding:0px !important;
+margin:0px !important;
+border:2px solid black;
+width:92px !important;
+height:130px !important;
+max-width:92px !important;
+max-height:130px !important;
+display:inline-block;
+}
+#div0 {
+height:400px;
+margin-bottom:5px;
+}
+#div1 {
+height:345px;
+margin-bottom:5px;
+}
+
+#div3 img {
+height: 224px
+}
+
+div {
+margin:2px;
+}
+#divMain {
+width:1438px;
+margin-left:auto;
+margin-right:auto;
+}
+
+
+#divText {
+position:fixed;
+width:100%;
+height:75px;
+bottom:0px;
+background-color:black;
+}
+
+
+</style>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+
+<div id="divMain">
+
+<p style="font-size:72px; margin-bottom: 0px; color:white;text-align:center;">TBTE<b>23</b></p>
+<p style="margin-bottom: 0px; color:white;text-align:center;">The best things ever 2023</p>
+<p style="text-align:center;"></p>
+
+
+<div id="div0">
+<image class="jj ben tom senna curt dev clem" alt="Baldur's Gate 3" src="img/bg3.png" style="float:left;"  onmouseover="reveal(this.alt, this.classList)" />
+</div>
+
+<div id="div1">
+<image class="babolol mickey ben aaron clem" alt="Barbie" src="img/barbie.png" style="float:left;"  onmouseover="reveal(this.alt, this.classList)" />
+<image class="jj babolol mike mickey ben" style="margin-left:6px;" alt="Oppenheimer" src="img/oppenheimer.png"  style="margin-right:1px;" onmouseover="reveal(this.alt, this.classList)" />
+<image class="mike tom jurak ben aaron" alt="The Bear S2" style="float:right;" src="img/thebear.png"  style="margin-right:1px;" onmouseover="reveal(this.alt, this.classList)" />
+</div>
+
+<div id="div2">
+<image class="jj mickey ben clem" style="margin-right:3px;" alt="Spider-Man: Across the Spider-verse" src="img/spiderverse.png" onmouseover="reveal(this.alt, this.classList)" />
+<image class="tom mickey curt ben" style="margin-right:3px;" alt="Dungeons & Dragons: Honor Among Thieves" src="img/dnd.png" onmouseover="reveal(this.alt, this.classList)" />
+<image class="jurak ben dev clem" style="float:right;" alt="Saltburn" src="img/saltburn.png" onmouseover="reveal(this.alt, this.classList)" />
+</div>
+
+<div id="div3">
+<image class="mike senna clem" alt="The Last of Us" src="img/tlou.png" onmouseover="reveal(this.alt, this.classList)" />
+<image class="babolol mike ben" alt="JPEGMAFIA & Danny Brown- SCARING THE HOES" src="img/hoes.png" onmouseover="reveal(this.alt, this.classList)" />
+<image class="mike ben jurak" alt="The Legend of Zelda: Tears of the Kingdom" src="img/zelda.png" onmouseover="reveal(this.alt, this.classList)" />
+<image class="tom senna jon" alt="Mechabellum" src="img/mach.png" onmouseover="reveal(this.alt, this.classList)" />
+<image class="ben tom mickey" alt="Cyberpunk 2077: Phantom Liberty" src="img/cp.png" onmouseover="reveal(this.alt, this.classList)" />
+</div>
+
+<div id="div4">
+<image class="ben mike" alt="Talk To Me" src="img/talk.png" onmouseover="reveal(this.alt, this.classList)" />
+<image class="ben jurak" alt="John Wick Chapter 4" src="img/wick.png" onmouseover="reveal(this.alt, this.classList)" />
+<image class="mike aaron" alt="Paramore - This Is Why" src="img/paramore.png" onmouseover="reveal(this.alt, this.classList)" />
+<image class="mike ben" alt="100 gecs - 10,000 gecs" src="img/gecs.png" onmouseover="reveal(this.alt, this.classList)" />
+<image class="ben mike" alt="Jessie Ware - That! Feels Good!" src="img/ware.png" onmouseover="reveal(this.alt, this.classList)" />
+</div>
+
+<div id="div5">
+<image class="senna jurak" alt="Halls of Torment" src="img/halls.png" onmouseover="reveal(this.alt, this.classList)" />
+<image class="ben tom" alt="Dave the Diver" src="img/dave.png" onmouseover="reveal(this.alt, this.classList)" />
+<image class="jurak mike" alt="They Cloned Tyrone" src="img/tyrone.png" onmouseover="reveal(this.alt, this.classList)" />
+<image class="ben jurak" alt="Super Mario Wonder" src="img/mario.png" onmouseover="reveal(this.alt, this.classList)" />
+<image class="mickey curt" alt="Armored Core VI: Fires of Rubicon" src="img/ac6.png" onmouseover="reveal(this.alt, this.classList)" />
+</div>
+
+<div id="div6">
+<image class="mike jon" alt="Beef" src="img/beef.png" onmouseover="reveal(this.alt, this.classList)" />
+<image class="ben tom" alt="Invincible S2" src="img/invincible.png" onmouseover="reveal(this.alt, this.classList)" />
+<image class="ben mickey" alt="Hogwarts Legacy" src="img/hogwarts.png" onmouseover="reveal(this.alt, this.classList)" />
+<image class="ben jurak" alt="Scavenger's Reign" src="img/scav.png" onmouseover="reveal(this.alt, this.classList)" />
+<image class="mickey curt" alt="Jeff Rosenstock - Hellmode" src="img/hellmode.png" onmouseover="reveal(this.alt, this.classList)" />
+</div>
+
+<br>
+
+<p style="width:100%; text-align: center; font-size: 24px;;">other things we liked</p>
+
+<div style="width:48%; height:900px; display:inline-block; float:left; ">
+
+<u>JJ</u>
+<ul>
+<li>Attack on Titan The Final Season: The Final Chapters</li>
+<li>Vinland Saga Season 2</li>
+<li>LINK CLICK Season 2</li>
+<li>Rick & Morty Season 7</li>
+<li>Demon Slayer: Kimetsu no Yaiba Season 4</li>
+<li>Guardians of the Galaxy Volume 3</li>
+<li>Castlevania: Nocturne</li>
+<li>Chikoi the Maid - Leaving Reality</li>
+<li>Chikoi the Maid - Unknown & Untitled Album</li>
+<li>Chikoi the Maid - Insertion</li>
+<li>Compllege - Nadir</li>
+<li>Compllege - Human Being Were Led to This Light</li>
+<li>Compllege - C-Experiment</li>
+<li>usedcvnt - ultraviolet</li>
+<li>Grizzly Cogs - Baluchon</li>
+<li>Beast in Black - Dark Connection</li>
+<li>Chained Echoes</li>
+</ul>
+
+<u>Babolol</u>
+<ul>
+<li>Scott Pilgrim Takes Off</li>
+<li>a great chaos - ken carson</li>
+<li>Counter-Strike 2</li>
+</ul>
+
+<u>Mike</u>
+<ul>
+<li>Blue Eye Samurai</li>
+<li>Rye Lane</li>
+<li>Sampha - Lahai</li>
+<li>Olivia Rodrigo - GUTS</li>
+<li>Caroline Polachek - Desire, I Want To Turn Into You</li>
+<li>PinkPantheress - Heaven knows</li>
+<li>Genesis Owusu - STRUGGLER</li>
+</ul>
+
+<u>Tom</u>
+<ul>
+<li>The Creator</li>
+<li>Jain - The Fool</li>
+<li>Ixion OST</li>
+<li>ixion</li>
+<li>dredge</li>
+<li>Robo Quest</li>
+<li>Beneath Oresa</li>
+<li>Against the Storm</li>
+<li>Time Wasters</li>
+</ul>
+
+<u>Mickey</u>
+<ul>
+<li>Missing</li>
+<li>Elemental</li>
+<li>Creed 3</li>
+<li>Assassin's Creed Mirage</li>
+</ul>
+
+<u>Jurak</u>
+<ul>
+<li>Shrinking</li>
+<li>jury duty</li>
+<li>Skip and Loafer</li>
+<li>Insomniacs After School</li>
+<li>NO THANK YOU - Little Simz</li>
+<li>World of Hassle - Alan Palomo</li>
+<li>Volcano - Jungle</li>
+<li>Lethal Company</li>
+</ul>
+
+
+
+
+
+</div>
+
+<div style="width:48%; height:900px; display:inline-block; float:right; ">
+<u>Jon</u>
+<ul>
+<li>reacher</li>
+<li>The Wonderful Story of Henry Sugar</li>
+<li>Poison</li>
+<li>Wednesday</li>
+<li>Napoleon</li>
+<li>WWII: From the front lines</li>
+<li>All quiet on the western front</li>
+<li>Inside job</li>
+<li>The National - first two pages of frankenstein</li>
+<li>The National - Laugh track</li>
+<li>lancer</li>
+<li>last train home </li>
+</ul>
+
+<u>Clem</u>
+<ul>
+<li>past lives</li>
+<li>asteroid city</li>
+</ul>
+
+<u>Senna</u>
+<ul>
+<li>age of wonders 5</li>
+<li>backpack battles demo</li>
+</ul>
+
+<u>Aaron</u>
+<ul>
+<li>Boygenius - The record</li>
+<li>Pigs Pigs Pigs Pigs PIgs Pigs Pigs - Land of the Sleeper</li>
+<li>Fires in the Distance - Air Not Meant For Us</li>
+<li>Wednesday - Rat Saw God</li>
+<li>Gaz Coombes - Turn the Car Around</li>
+<li>Torche - It Never Began</li>
+<li>Crime in Stero - House & Trance</li>
+<li>The Hope Conspiracy - Confusion/Chaos/Misery</li>
+<li>One Step Closer - Songs for the Willow</li>
+<li>Blood bowl 3</li>
+</ul>
+
+<u>Curt</u>
+<ul>
+<li>Baki Hanma Season 3</li>
+<li>Firienholt - White Frost and Elder Blood</li>
+<li>only up!</li>
+</ul>
+
+<u>Ben</u>
+<ul>
+<li>Killers of the flower moon</li>
+<li>Blackberry</li>
+<li>Young Fathers - Heavy Heavy</li>
+<li>Sufjan Stevens - Javelin</li>
+<li>ANOHNI and the Johnsons - My Back Was a Bridge for you to Cross</li>
+<li>Lana Del Rey - Did you know that there's a tunnel under Ocean Blvd</li>
+<li>Hi-Fi Rush</li>
+<li>Pizza Tower</li>
+<li>Spider-Man 2</li>
+<li>Alan Wake 2</li>
+</ul>
+
+<br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br>
+
+</div>
+
+
+</div>
+
+<div id="divText">
+<p id="pName" style="text-align:center;"></p>
+<p id="pBy" style="text-align:center;"></p>
+</div>
+
+</body>
+
+<script type="text/javascript">
+
+var arrThings = [];
+var arrFilters = [];
+
+$( document ).ready(function() {
+
+try {
+var json_str = getCookie('best2022');
+arrThings = JSON.parse(json_str);
+}catch(ex) {
+console.log("failed to get things cookie: " + ex.toString());
+}
+    
+loadCheckedThings();
+
+getPopular();
+	
+$(document).find('#divTable div').each (function() {
+    $(this).on("click", function(){  
+	   toggleThing($(this).attr("id"))
+    });
+});
+	
+});	
+
+
+function toggleThing(ID) {
+
+ if (arrThings.includes(ID) ) { //uncheck
+  
+  for( var i = 0; i < arrThings.length; i++){     
+        if ( arrThings[i] === ID) {     
+            arrThings.splice(i, 1); 
+			document.getElementById(ID).style.border = "2px solid black"	
+			document.getElementById(ID).childNodes[0].classList.remove("done");			
+        }    
+    }
+	
+ 
+ } else { // check
+  
+ arrThings.push(ID);
+ document.getElementById(ID).style.border = "2px solid lightgreen"
+ document.getElementById(ID).childNodes[0].classList.add("done");
+  
+ }
+ 
+updateThingCount();
+
+}
+
+function loadCheckedThings() {
+
+for( var i = 0; i < arrThings.length; i++){    
+document.getElementById(arrThings[i]).style.border = "2px solid lightgreen" 
+document.getElementById(arrThings[i]).childNodes[0].classList.add("done");
+
+updateThingCount();
+
+}
+
+}
+
+
+function updateThingCount() {
+
+var json_str = JSON.stringify(arrThings);
+createCookie('best2022', json_str);
+var percent = (100 * arrThings.length) / 154; //todo update
+percent = percent.toFixed(2);
+
+if (percent > 19.99) { document.getElementById("spoon").style.visibility = "" } else { document.getElementById("spoon").style.visibility = "hidden" };
+if (percent > 39.99) { document.getElementById("bronze").style.visibility = "" } else { document.getElementById("bronze").style.visibility = "hidden" };
+if (percent > 59.99) { document.getElementById("silver").style.visibility = "" } else { document.getElementById("silver").style.visibility = "hidden" };
+if (percent > 79.99) { document.getElementById("gold").style.visibility = "" } else { document.getElementById("gold").style.visibility = "hidden" };
+
+$("#pThingCount").text("You have experienced " + arrMovies.length + "/154 things!");
+
+}
+
+function reveal(strAlt, strClass) {
+var strPeople = "";
+var strType = "";
+for (i=0;i<strClass.length;i++){
+
+if (strClass[i] != "movie" && strClass[i] != "game" && strClass[i] != "music") {
+strPeople += strClass[i] + ", "
+} else {
+strType = strClass[i]
+if (strType == "movie") {
+strType = "movie/TV"
+}
+}
+}
+strPeople = strPeople.substring(0, strPeople.length - 2)
+document.getElementById("pName").innerText = strAlt 
+document.getElementById("pBy").innerText = strPeople 
+}
+
+function random(undone) {
+
+	var imgs = document.getElementsByTagName("img");	
+    var imgSrcs = [];
+    for (var i = 0; i < imgs.length; i++) {
+	
+		if (!imgs[i].classList.contains("award") && !imgs[i].classList.contains("logo")) {
+		if (undone == true) {
+			if (imgs[i].classList.contains("done")) {				
+			} else {
+			var type = getType(imgs[i].parentNode.classList)
+			var person = getPeople(imgs[i].parentNode.classList)			
+			if (document.getElementById("btn"+type).style.color != "red") {
+			imgSrcs.push(imgs[i].alt + " (" + type + ", chosen by " + person + ")");
+			}
+			
+			}
+		} else {
+			var type = getType(imgs[i].parentNode.classList)
+			var person = getPeople(imgs[i].parentNode.classList)
+			if (document.getElementById("btn"+type).style.color != "red") {
+			imgSrcs.push(imgs[i].alt + " (" + type + ", chosen by " + person + ")");
+			}
+		}    
+		}		    
+    }
+	    
+	if (imgSrcs.length == 0) {
+		document.getElementById("pRandom").innerText = "You should go outside now!";
+	} else {
+		document.getElementById("pRandom").innerText = "You should experience " + random_item(imgSrcs);
+	}	
+}
+
+function random_item(items)
+{  
+return items[Math.floor(Math.random()*items.length)];     
+}
+
+function createCookie(name, value, days) {
+    var expires;
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toGMTString();
+    }
+    else {
+        expires = "";
+    }
+    document.cookie = name + "=" + value + expires + "; path=/";
+}
+
+function getCookie(c_name) {
+    if (document.cookie.length > 0) {
+        c_start = document.cookie.indexOf(c_name + "=");
+        if (c_start != -1) {
+            c_start = c_start + c_name.length + 1;
+            c_end = document.cookie.indexOf(";", c_start);
+            if (c_end == -1) {
+                c_end = document.cookie.length;
+            }
+            return unescape(document.cookie.substring(c_start, c_end));
+        }
+    }
+    return "";
+}
+
+function getType(strClass) {
+var strType = "";
+for (i=0;i<strClass.length;i++){
+if (strClass[i] == "movie" || strClass[i] == "game" || strClass[i] == "music") {
+strType = strClass[i]
+}
+
+}
+return strType;
+}
+
+function getPeople(strClass) {
+var strPeople = "";
+for (i=0;i<strClass.length;i++){
+if (strClass[i] != "movie" && strClass[i] != "game" &&  strClass[i] != "music") {
+strPeople += strClass[i] + ", "
+} else {
+}
+
+
+}
+strPeople = strPeople.substring(0, strPeople.length - 2)
+return strPeople;
+}
+
+
+function highlight(txt) {
+txt = txt.substring(0, txt.length - 1);
+alb = txt.split("You should experience ")[1]
+var allImages = document.getElementsByTagName("img");
+    for (var i = 0, len = allImages.length; i < len; ++i) {
+        if (allImages[i].alt == alb) {		
+            allImages[i].style.transform = 'rotate(' + 180 + 'deg)';
+        }
+    }
+}
+
+function unhighlight(txt) {
+txt = txt.substring(0, txt.length - 1);
+alb = txt.split("You should experience ")[1]
+var allImages = document.getElementsByTagName("img");
+    for (var i = 0, len = allImages.length; i < len; ++i) {
+        if (allImages[i].alt == alb) {		
+            allImages[i].style.transform = 'rotate(' + 0 + 'deg)';
+        }
+    }
+}
+
+function showAward(award) {
+switch(award) {
+case "spoon":
+	$("#pAward").text("Spoon: experienced 20% of all things");
+    break;
+  case "bronze":
+	$("#pAward").text("Bronze: experienced 40% of all things");
+    break;
+	case "silver":
+	$("#pAward").text("Silver: experienced 60% of all things");
+    break;
+	case "gold":
+	$("#pAward").text("Gold: experienced 80% of all things");
+    break;
+}
+}
+
+function hideAward() {
+$("#pAward").html("&nbsp;");
+}
+
+function filter(type) {
+switch(type) {
+  case "all":
+    var tds = document.getElementsByClassName("movie music game");
+	for (var i = 0; i < tds.length; i++) {
+	
+	 tds[i].style.display = "inline-block";
+	 
+    }
+	var btns = document.getElementsByClassName("typebtn");
+	for (var i = 0; i < btns.length; i++) {
+	 btns[i].style.color = "white";
+    }
+    break;
+case "none":	
+    var tds = document.getElementsByClassName("movie music game");
+	for (var i = 0; i < tds.length; i++) {
+
+		 tds[i].style.display = "none";
+	
+    }
+		var btns = document.getElementsByClassName("typebtn");
+	for (var i = 0; i < btns.length; i++) {
+	 btns[i].style.color = "red";
+    }
+	 
+    break;
+ default:
+	
+	var btn = document.getElementById("btn" + type);
+	if (btn.style.color == "white") {
+	btn.style.color = "red";
+	} else {
+	btn.style.color = "white";
+	}
+    var tds = document.getElementsByClassName(type);
+	for (var i = 0; i < tds.length; i++) {
+	
+	if (tds[i].style.display == "none") {
+	tds[i].style.display = "inline-block";
+	} else {
+	tds[i].style.display = "none";
+	}	
+	
+    }      
+}
+}
+
+function filterperson(person) {
+switch(person) {
+  case "all":
+    var tds = document.getElementsByClassName("movie music game");
+	for (var i = 0; i < tds.length; i++) {
+	
+	 tds[i].style.display = "inline-block";
+	 
+    }
+	var btns = document.getElementsByClassName("personbtn");
+	for (var i = 0; i < btns.length; i++) {
+	 btns[i].style.color = "white";
+    }
+    break;
+case "none":	
+    var tds = document.getElementsByClassName("movie music game");
+	for (var i = 0; i < tds.length; i++) {
+
+		 tds[i].style.display = "none";
+	
+    }
+		var btns = document.getElementsByClassName("personbtn");
+	for (var i = 0; i < btns.length; i++) {
+	 btns[i].style.color = "red";
+    }
+	
+    break;
+ default:
+	
+	var btn = document.getElementById("btn" + person);
+	if (btn.style.color == "white") {
+	btn.style.color = "red";
+	} else {
+	btn.style.color = "white";
+	}
+    var tds = document.getElementsByClassName(person);
+	for (var i = 0; i < tds.length; i++) {
+	
+	if (tds[i].style.display == "none") {
+	tds[i].style.display = "inline-block";
+	} else {
+	tds[i].style.display = "none";
+	}	
+	
+    }      
+}
+}
+
+function backup(func) {
+ if (func == "save") {
+   var dummy = document.createElement("textarea");
+    document.body.appendChild(dummy);
+    dummy.value =  JSON.stringify(arrMovies);
+    dummy.select();
+    document.execCommand("copy");
+    document.body.removeChild(dummy);
+	$("#divInfo").html("<p>TBTE22 cookie copied to clipboard</p>");
+ } else {
+ var albs = prompt("Paste your cookie value", "");
+ if (albs != null) {
+  arrMovies = JSON.parse(albs);
+  loadCheckedMovies();
+}
+ }
+}
+
+function getPopular() {
+var movies = document.getElementsByClassName("movie music game");
+var debug = "";
+for (i=0;i<movies.length;i++) {
+if (movies[i].classList.length == 4) {
+debug += movies[i].id + ", "
+}
+}
+console.log("Popular: " + debug);
+}
+
+</script>
+
+</html>
