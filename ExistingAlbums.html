@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+img {
+width: 100%;
+height:100%;
+}
+body {
+background-color: black;
+}
+#divTable {
+width:70%;
+display:inline-block;
+float:right;
+margin:4px, 4px;
+                padding:4px;
+              height: 94vh;
+                overflow-x: hidden;
+                overflow-y: auto;
+                text-align:justify;
+			
+}
+#divInfo {
+margin-left: 5%;
+width:85%;
+display:inline-block;
+float:left;
+}
+
+#divBackup {
+width: 100%;
+display:inline-block;
+margin-left: 1%;
+bottom:0;
+}
+#divBackup button {
+float:left;
+margin-left:4%;
+margin-bottom:5px;
+}
+button {
+font-family:courier;
+background:none;
+color: white;
+margin-left: 40%;
+width:20%;
+border: 1px solid white;
+}
+#divLeft {
+width: 25%;
+display:inline-block;
+margin-left: 1%;
+position: absolute;
+bottom:0;
+top:37px;
+overflow-y: auto;
+overflow-x: hidden;
+}
+p {
+color: white;
+font-family: courier;
+width: 85%;
+margin-left: 5%;
+
+}
+#divLeft li {
+color: white;
+font-family: courier;
+width: 85%;
+margin-left: 5%;
+
+}
+#btnRandom, #btnRandomUnlistened {
+float:left;
+width: 85%;
+margin-left:5%;
+margin-bottom: 5px;
+}
+
+#divFilters {
+width: 100%;
+display:inline-block;
+margin-left: 1%;
+bottom:0;
+top:0;
+}
+#divFilters button {
+float:left;
+margin-left:4%;
+margin-bottom:5px;
+}
+#divPeople {
+width: 100%;
+display:inline-block;
+margin-left: 1%;
+bottom:0;
+top:0;
+}
+#divPeople button {
+float:left;
+margin-left:4%;
+margin-bottom:5px;
+}
+#pAward {
+font-size:12px;
+}
+.genrebtn {
+height: 40px;
+}
+.personbtn {
+height: 40px;
+}
+
+#divTable div {
+padding:0px !important;
+margin:0px !important;
+border:2px solid black;
+width:75px !important;
+height:75px !important;
+max-width:75px !important;
+max-height:75px !important;
+display:inline-block;
+}
+#divTable div img {
+	display:block;
+}
+table {
+table-layout: fixed;
+}
+
+			/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+#divBar {
+width:100%;
+height:25px;
+background-color:black;
+top:0;
+border-bottom: 1px solid white;
+
+}
+#divBar p {
+color:white;
+font-family:courier;
+display:inline;
+margin-left:1%;
+text-align:center;
+font-weight:bold;
+}
+#divBar a {
+color:white;
+font-family:courier;
+display:inline;
+text-decoration:none;
+align-items: center;
+justify-content: center;
+}
+#divBar a:hover {
+text-decoration:underline
+}
+
+</style>
+</head>
+<body>
+
+<p id="list">0edit - 0edit<br>36 Crazyfists - A Snow Capped Romance<br>65daysofstatic - One Time for All Time<br>A Day to Remember - Homesick<br>A Perfect Circle - Emotive<br>A Perfect Circle - Mer de Noms<br>A Perfect Circle - Thirteenth Step<br>A Tribe Called Quest - People’s Instinctive Travels and the Paths of Rhythm<br>A Tribe Called Quest - The Low End Theory<br>AC/DC - Back in Black<br>AFI - Art of Drowning<br>AJJ - Good Luck Everybody<br>Ace Combat 7- Original Soundtrack<br>Against All Logic - 2012-2017<br>Aim to Head - Messiah<br>Alanis Morissette - Jagged Little Pill<br>Alexisonfire - Watch Out!<br>Alice in Chains - Dirt<br>Alice in Chains - Jar of Flies<br>Aliceband - Aliceband<br>Alkaline Trio - From Here to the Infirmary<br>Alkaline trio - Good mourning<br>Allie X - Super Sunset<br>Animals As Leaders - Parrhesia<br>Animals As Leaders - The Madness Of Many<br>Anthology - Alien Ant Farm<br>Aphex Twin - Drukqs<br>Aphex Twin - Richard D. James Album<br>Aphex Twin - Selected Ambient Works Vol.1<br>Apocalyptica - 7th Symphony<br>Arch Enemy - Will To Power<br>Architects - All our gods have abandoned us<br>Architects - Daybreaker<br>Architects - Hollow Crown<br>Architects - Holy Hell<br>Architects - Ruin<br>Arctic Monkeys - Favourite Worst Nightmare<br>Arctic Monkeys - Whatever People Say I Am, That's What I'm Not<br>Arven - Black is the Colour<br>Asian Kung-Fu Generation - Fanclub<br>At the Drive In - Relationship of Command<br>Atreyu - Suicide Notes and Butterfly Kisses<br>Audioslave - Audioslave<br>Ayreon - 01011001<br>Azealia Banks - Broke with Expensive Taste<br>BROCKHAMPTON - SATURATION<br>Balance &amp; Composure - Things We Think We're Missing<br>Balthazar - Sand<br>Being As An Ocean - How We Both Wonderously Perish<br>Ben Howard - Noonday Dream<br>Benjamin Clementine - I tell a fly<br>Berlin Calling - Paul Kalkbrenner<br>Big K.R.I.T - 4eva Is a Mighty Long Time (Volume 1)<br>Bill withers - Just as I am<br>Billy Talent - Billy Talent<br>Billy Talent - Billy Talent II<br>Binary Star - Masters of the Universe<br>Birdy - Birdy<br>Black Dresses - Peaceful as Hell<br>Black Magick SS - Burning Bridges<br>Black Rebel Motorcycle Club - B.R.M.C.<br>Black Rebel Motorcycle Club - Howl<br>Blackmill - Miracle<br>Blind Guardian - A Night at the Opera<br>Blink 182 - Enema of the State<br>Blink 182 - Enema of the state<br>Blur - Think Tank<br>Boards of Canada - Music has the Right to Children<br>Bombay Bicycle Club - I Had the Blues But I Shook Them Loose<br>Boom Boom Satellites - On<br>Borislav Slavov - DOS:2 Soundtrack<br>Brand New - Deja Entendu<br>Brand New - The Devil and God Are Raging Inside Me<br>Bright Eyes - I'm Wide Awake It's Morning<br>Brothers of Metal - Emblas Saga<br>Bullet for My Valentine - The Poison<br>Burial - Untrue<br>Bury Tomorrow - Portraits<br>Bury Tomorrow - The Union of Crowns<br>Cage The Elephant - Melophobia<br>Car Bomb - Meta<br>Carpenter Brut - The Trilogy<br>Casey - Where I Go When I Am Sleeping<br>Cave In - Heavy Pendulum<br>Celldweller - Celldweller<br>Chance the Rapper - Acid Rap<br>Charles Bradley - Victim of Love<br>Chase &amp; Status - More Than Alot<br>Chase &amp; Status - No More Idols<br>Childish Gambino - Awaken, My Love!<br>Childish Gambino - Because The Internet<br>Children of Bodom - Hate Crew Deathroll<br>Children of bodom - Follow the reaper<br>Chloe x Halle - Ungodly Hour<br>Citizen - As You Please<br>City &amp; Colour - Sometimes<br>Clark Powell - Namesake<br>Coheed &amp; Cambria - Unheavenly Creatures<br>Coheed and Cambria - In Keeping Secrets Of Silent Earth: 3<br>Comeback Kid - Wake the Dead<br>Corbin - Mourn<br>Crime in Stereo - The Troubled Stateside<br>DANGER, 太鼓 (Taiko)<br>DJ Fresh - Kryptonite<br>Daft Punk - Alive 2007<br>Daft Punk - Discovery<br>Dance With the Dead - B Sides<br>Dance with the Dead - The Shape<br>Danny Brown - XXX<br>David Bowie - Station to Station<br>David Bowie - Ziggy Stardust<br>David Guetta - Nothing But The Beat<br>Dawn of The Maya - Colossal<br>Days N' Daze - Rogue Taxidermy<br>Days n Daze - Show Me the Blueprints<br>De La Soul - Three Feet High and Rising<br>De-Evolution - The Upbeats<br>Dead Kennedys - Fresh Fruit for Rotting Vegetables<br>Dead Kennedys - In God We Trust, Inc.<br>Dead Kennedys - Plastic Surgery Disasters<br>Deaf Havana - Fools &amp; Worthless Liars<br>Deafheaven - Infinite Granite<br>Dean Lewis - A Place We Knew<br>Death Cab for Cutie - Asphalt Meadows<br>Death Grips - Bottomless Pit<br>Death Grips - Exmilitary<br>Death Grips - The Money Store<br>Deathbrain - fantasy noises &amp; perfect delusions<br>Deathstars - Termination Bliss<br>Defeater - Endless Days &amp; Sleepless Nights<br>Defiance, Ohio - The Great Depression<br>Deftones - Diamond Eyes<br>Deftones - White Pony<br>Delta Sleep - Ghost City<br>Delta Sleep - Twin Galaxies<br>Delta Sleep- Spring Island<br>Denzel Curry - Ta1300<br>Devil Sold His Soul - Loss<br>Devildriver - The Last Kind Words<br>Devin Townsend - Empath<br>Diablo Swing Orchestra - Pandora's Piñata<br>Dinosaur Jr - Farm<br>Dizzee Rascal - Boy in da Corner<br>Dragonforce - Inhuman Rampage<br>Drake - Nothing Was the Same<br>Dream theater - Systematic chaos<br>Duke Deuce - MEMPHIS MASSACRE III<br>E.L.O. - Out of the Blue<br>Ed Harrison - Neotokyo OST<br>El Tigr3 - The Beast Within<br>Electric Callboy - Tekkno<br>Electrocution 250 - Electric Cartoon Music From Hell<br>Eliza Rickman - O, You Sinners<br>Elysion - Silent Scream<br>Emancipator - Soon It Will Be Cold Enough<br>Eminem - The Marshall Mathers LP<br>Ensiferum - Victory Songs<br>Enter Shikari - Common Dreads<br>Enter Shikari - Take to the Skies<br>Enter Shikari - Take to the Skies<br>Enter Shikari- A Flash Flood of Colour<br>Enter shikari - Take to the skies<br>Evanescence - Fallen<br>F.O.O.L - Mercenary<br>Fatboy Slim - You've come a long way, Baby<br>Fiddlehead - Between the Richness<br>Fightstar - Grand Unification<br>Fleetwood Mac - Rumours<br>Floex - Zorya<br>Foals - Antidotes<br>Foo Fighters - Echoes, Silence, Patience &amp; Grace<br>Foo Fighters - The Colour and the Shape<br>Foo Fighters - There Is Nothing Left to Lose<br>Frank Carter &amp; The Rattlesnakes - Modern Ruin<br>Frank Ocean - Channel Orange<br>Fugazi - 13 Songs<br>Funeral for a Friend - Casually Dressed and Deep in Conversation<br>Fury Weekend - Retro Rangers <br>Future Islands - Singles<br>Galactikraken - Starship Velociraptor<br>Gang Starr - Full Clip: A Decade of Gang Starr<br>Ghost Orchestra - Night Walks<br>Gil Scott-Heron and Jamie xx - We're New Here<br>Glitch Mob - Drink the Sea Part 2<br>Gloryhammer - Legends from Beyond the Galactic Terrorvortex<br>Gnarls Barkley - St. Elsewhere<br>Gorillaz - Cracker Island<br>Gorillaz - Demon Days (Deluxe Edition)<br>Green Day - American Idiot<br>Guns N' Roses - Appetite for Destruction<br>Guts - Paradise For All<br>Haikyuu!! - Original Soundtrack<br>Harley Poe - Satan, Sex and No Regrets<br>Helix - Crystal Lake<br>Hideki Naganuma -	Ollie King OST<br>High Contrast - Tough Guys Don't Dance<br>Hopesfall - The Satellite Years<br>Hot Water Music - A Flight and A Crash<br>Hybrid - I Choose Noise<br>Hybrid minds - Elements <br>I Am Legion (Noisia &amp; Foreign Beggars) -  I Am Legion<br>Idiot Pilot - Strange We Should Meet Here<br>Iglu &amp; Hartly - &amp; Then Boom<br>Igorrr - Nostril<br>In Flames - Colony<br>In Flames - Come Clarity<br>Incubus - S.C.I.E.N.C.E.<br>Interpol - Turn on the Bright Lights<br>Iron Maiden - Fear of the Dark<br>Iron Maiden - Seventh Son of a Seventh Son<br>Iron Maiden - The Number of the Beast<br>Isis - Panopticon<br>J. Cole - Cole World: The Sideline Story<br>J. Cole - Friday Night Lights<br>JPEGMAFIA - LP!<br>James Blunt - Back to Bedlam<br>Jamie XX - In Colour<br>Janelle Monae - Dirty Computer<br>Jay Prince - Wonder<br>Jay-Z - The Black Album<br>Jeff Buckley - Grace<br>Jeff Rosenstock - We Cool?<br>Jeff Wayne - War of the Worlds<br>Jessie Ware - What's Your Pleasure?<br>Jimmy Eat World - Bleed American<br>Jimmy Eat World - Futures<br>John Mayer - Continuum<br>John Mayer - Where the Light is (Live in L.A.)<br>John Talabot - Fin<br>Joy Division - Unknown Pleasures<br>Judas Priest - Painkiller<br>Julie Fowlis - Mar a Tha Mo Chridhe<br>Jurassic 5 - Jurassic 5<br>Justice - Cross<br>Kali Uchis - Isolation<br>Kamelot - Ghost Opera<br>Kamelot - Haven<br>Kamelot - The Black Halo<br>Kano - Home Sweet Home<br>Kanye West - 808s &amp; Heartbreak<br>Kanye West - Graduation<br>Kanye West - My Beautiful Dark Twisted Fantasy<br>Kanye West - The College Dropout<br>Kaskade - Strobelite Seduction<br>Katy B - On a Mission<br>Kaytranada - 99.9%<br>Kaytranada - Bubba<br>Keane - Perfect Symmetry<br>Kendrick Lamar - DAMN.<br>Kendrick Lamar - Good Kid, m.A.A.d City<br>Kendrick Lamar - Mr Morale &amp; the Big Steppers<br>Kendrick Lamar - Section.80<br>Kendrick Lamar - To Pimp a Butterfly<br>Kettel - Myam James Part 1<br>Kevin Penkin - Made in Abyss OST<br>Kid Cudi - Man on the Moon<br>Killswitch engage - End of heartache<br>King Gizzard &amp; The Lizard Wizard - Polygondwanaland<br>King Krule - Man Alive!<br>Korn - Issues<br>LCD Soundsystem - Sound of Silver<br>LICK - Dark Vibe Order<br>Lacuna Coil - Comalies<br>Lacuna Coil - Karmacode<br>Lady Gaga - Born this way<br>Lamb of God - Sacrament<br>Lana Del Ray - Norman Fucking Rockwell<br>Le Matos - Join Us<br>Limp Bizkit - Significant Other<br>Limp Bizkit - Significant Other<br>Linkin Park - Hybrid Theory<br>Linkin Park - Hybrid Theory (EP)<br>Linkin Park - Meteora<br>Linkin park - Hybrid theory<br>Little Dragon - Ritual Union<br>Little Simz - Sometimes I Might Be Introvert<br>Lorn - Vessel<br>Lostprophets - Start Something<br>Louis Cole - Quality Over Opinion<br>Lupe Fiasco - Food &amp; Liquor<br>M.I.A - Kala<br>MIA - Arular<br>Mac Miller - Blue Slide Park<br>Mac Miller - Swimming<br>Machine Girl - WLFGRL<br>Machine Head - The Blackening<br>Madvillain - Madvillainy<br>Make Them Suffer - How to Survive a Funeral<br>Marina and the Diamonds - Electra Heart (Deluxe)<br>Masayoshi Takanaka - ALONE<br>Masayoshi Takanaka - Insatiable High<br>Massive Attack - Mezzanine<br>Mastodon - Emperor of Sand<br>Max Richter - The Blue Notebooks<br>Maximo Park - Our Earthly Pleasures<br>Meatloaf - Bat Out of Hell<br>Meshuggah - Koloss<br>Metallica - Metallica (The Black Album)<br>Metric - Art of Doubt<br>Michael Jackson - Bad<br>Michael Manring - Soliloquy<br>Microwave - Much Love<br>Misanthrop - Analog<br>Mobb Deep - The Infamous<br>Mobb deep - The infamous<br>Moderat - II<br>Mogwai - The Hawk is Howling<br>Mohican sun - Purple world<br>Monster Magnet - Dopes to Infinity<br>Mos Def &amp; Talib KWeli - Black Star<br>Mr.Kitty - Ephemeral<br>Muse - Black Holes &amp; Revelations<br>Nanahoshi Orchestra - MONSTER BEERGARDEN<br>Nas - Illmatic<br>Nathan Salsburg - Affirmed<br>Neon Indian - Vega Intl. Night School<br>Nero - Welcome Reality<br>Neutral Milk Hotel - In the Aeroplane Over the Sea<br>New Found Glory - Catalyst<br>New Young Pony Club - Fantastic Playroom<br>Nightwish - Dark Passion Play<br>Nine Inch Nails - The Downward Spiral<br>Nirvana - Nevermind<br>No Doubt - Tragic Kingdom<br>Noisia - Outer Edges<br>Nothing - The Great Dismal<br>Notorious B.I.G. - Ready to Die<br>Nujabes - Metaphorical Music<br>Nujabes - Modal Soul<br>Nyu - Flux<br>OFWGKTA - The OF Tape Vol. 2<br>Oceans Ate Alaska - Hikari<br>Of Monsters &amp; Men - My Head Is An Animal<br>Ogre You Asshole - Ogre You Asshole<br>One true god - Singles<br>Onsind - Dissatisfactions<br>Opeth - Ghost Reveries<br>Outkast - Stankonia<br>Owl Vision - Downlord<br>PJ Harvey - Stories From The City, Stories From The Sea<br>Pain - Dancing With The Dead<br>Pain - Nothing remains the same<br>Papa roach - Infest<br>Paramore - Riot!<br>Pat the Bunny - Probably Nothing, Possibly Everything<br>Paul Simon - Graceland<br>Pearl Jam - Ten<br>Pendulum - Hold Your Colour<br>Pendulum - Immersion<br>Pendulum - In Silico<br>Perfume Genius - Put Your Back N 2 It<br>Persona 5 - Original Soundtrack<br>Pinback - Summer in Abaddon<br>Pink Floyd - Wish Your Were Here<br>Plan B - Who Needs Actions When You Got Words<br>Playboy Manbaby - Don't Let It Be<br>Pokemon 2.B.A. Master<br>Polaris - The Mortal Coil<br>Polyphia - Remember that you will die<br>Poppy - Am I A Girl?<br>Porcupine Tree - Fear of a Blank Planet<br>Portishead - Dummy<br>Power Rangers Redux<br>Pretty lights - Taking up your precious time<br>Primus - Pork Soda<br>Prodigy - Music for the Jilted Generation<br>Pusha T - My Name Is My Name<br>Queens of the Stone Age - Songs for the Deaf<br>RTRN II JUNGLE - Chase &amp; Status<br>Radiohead - Amnesiac<br>Radiohead - Hail to the Thief<br>Radiohead - In Rainbows<br>Radiohead - Kid A<br>Radiohead - OK Computer<br>Rage Against The Machine - Rage Against The Machine<br>Rage Against the Machine - The Battle of Los Angeles<br>Rakim - The Master<br>Rammstein - Rammstein<br>Red Hot Chilli Peppers - Stadium Arcadium<br>Red Sparowes - At the Soundless Dawn<br>Redman - Muddy Waters<br>Reol - No Title-<br>Rise Against - Appeal to Reason<br>Rjd2 - Deadringer<br>Ronald jenkees - Disorganized fun<br>Roots Rock Riot - Skindred<br>Ruben Wan - Chapter one: guitar<br>Run the Jewels - RTJ3<br>Runescape - Original Soundtrack<br>Rush - A Farewell to Kings<br>SBTRKT - SBTRKT<br>SOPHIE - product<br>Savant - Protos<br>Savant - Protos<br>Savant - Vario<br>Scorpions - Comeblack<br>Seether - Disclaimer II<br>Senses Fail - Let It Enfold You<br>Sewerslvt - Draining Love Story<br>Sewerslvt - Draining Love Story<br>Silversun Pickups - Carnavas<br>Simon &amp; Garfunkel - Wednesday Morning, 3 AM<br>Simon Swerwer - Songs of Saltfork<br>Slightly Stoopid - Closer to the Sun<br>Slipknot - Slipknot<br>Slowthai - UGLY<br>Smashing Pumpkins - Siamese Dream<br>Snoop Dogg - The Last Meal<br>Solatrus - Prospit &amp; Derse<br>Sonata Arctica - Ecliptica<br>Sonic Syndicate - Only Inhuman<br>Soutaiseiriron - Hi-Fi Anatomia<br>Spiritbox - Eternal Blue<br>Steal this Album! - System of a Down<br>Steely Dan - Alive in America<br>Streetlight Manifesto - The Hands That Thieve<br>Stromae - Racine Carrée<br>Sub Focus - Reworks <br>Sub Focus - Torus<br>Sublime - 40 oz. to Freedom<br>Sublime - Sublime<br>Sundara Karma - Youth is Only Ever Fun in Retrospect<br>Sunmi - Singles<br>System of a Down - Hypnotize<br>System of a Down - Mesmerize<br>System of a Down - Toxicity<br>Sōtaisei Riron - Chiffonism<br>Talking Heads - Stop Making Sense<br>Tally Hall - Good &amp; Evil<br>Tame Impala - Currents<br>Tame Impala - The Slow Rush<br>Tatsuro Yamashita - Ride On Time<br>Taylor Swift - Evermore<br>Taylor Swift - Red<br>Tech N9ne - Something Else<br>The Arcs - Electrophonic Chronic<br>The Beatles - Magical Mystery Tour<br>The Birthday Massacre - Walking With Strangers<br>The Chemical Brothers - We Are The Night<br>The Cramps - ...Off the Bone<br>The Cranberries - Everybody Else Is Doing It, So Why Can't We?<br>The Cure - Disintegration<br>The Cure - Disintegration (Remastered)<br>The Darkness - Permission To Land<br>The Dillinger Escape Plan - One Of Us Is The Killer<br>The Flashbulb - Arboreal<br>The Fratellis - Costello Music<br>The Killers - Hot Fuss<br>The Kinks - Village Green Preservation Society<br>The Mars Volta -  De-Loused in the Comatorium<br>The Mechanisms - The Bifrost Incident<br>The National - First two pages of Frankenstein<br>The National - High Violet<br>The Paper Chase - God Bless Your Black Heart<br>The Paper Chase - Now You Are One Of Us<br>The Paper Chase - Someday This Could All Be Yours, Volume I<br>The Prodigy - Fat of the Land<br>The Prodigy - Invaders Must Die<br>The Protomen - Act II<br>The Roots - Undun<br>The Streets - Original Pirate Material<br>The Sword - Warp Riders<br>The Uncluded - Hokey Fright (Deluxe Version)<br>The Used - In love and death<br>The Weeknd - Trilogy<br>The Wombats - Beautiful People Will Ruin Your Life<br>The Wonder Years - No Closer To Heaven<br>The all star sessions - Roadrunner united<br>The amity affiliction - Chasing ghosts<br>Third Party - Hope<br>Thom Yorke - Eraser<br>Thornhill - The Dark Pool<br>Thousand Foot Krutch - The End Is Where We Begin<br>Thrice - The Artist in the Ambulance<br>Tool - 10,000 Days<br>Tool - Aenima<br>Tool - Fear Inoculum<br>Tool - Lateralus<br>Tool - Lateralus<br>Tool - Undertow<br>Travis Scott - Rodeo<br>Turnstile - Glow On<br>Two Door Cinema Club - Tourist History<br>Tycho - Awake<br>Tycho - Dive<br>Tyler, the Creator - Flower Boy<br>Tyler, the Creator - Igor<br>Underoath - Define the Great Line<br>Unkle - Psyence Fiction<br>Urbandawn - Gothenburg cluster<br>Usher - Confessions<br>Various Artists - Dorohedoro Official Soundtrack (NOT the anime's OST)<br>Vince Staples - Big Fish Theory<br>Violent Femmes - Violent Femmes<br>Vulfpeck - The Beautiful Game<br>Wednesday Campanella - Zipangu<br>Weezer - Blue Album<br>Wingnut Dishwasher Union - Fuck Every Cop (Who Ever Did His Job)<br>Wintersun - Wintersun<br>Wisconsin Death Trip - Static-X<br>Wisp - NRTHNDR<br>Xandria - Theater of Dimensions<br>YEAR OF THE OX - YOX EP<br>Yellowcard - Lights and Sounds<br>You Me At Six - Take Off Your Colours<br>Zeal &amp; Ardor - Devil is Fine<br>Zwan - Jesus I/Mary Star of the Sea<br>deadmau5 - Random Album Title<br>letlive. - Fake History<br>Весна Весна - Перемены настроения<br>Молчат Дома - Этажи</p>
+</body>
+</html>
+
