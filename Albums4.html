@@ -220,7 +220,7 @@ text-decoration:underline
 
 <div>
 
-<p id="plistenedCount">You have listened to 0/134 albums!</p> <!--updateme-->
+<p id="plistenedCount">You have listened to 0/141 albums!</p> <!--updateme-->
 
 <img class="award" id="spoon" style=" width:25px; height:25px; margin-left:5%; margin-bottom:2%; visibility: hidden;" src="img/spoon.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
 <img class="award" id="bronze" style=" width:25px; height:25px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="img/bronze.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
@@ -478,6 +478,14 @@ text-decoration:underline
 <div id="133" class="album" data-people="Noora"><img alt="Breaking Benjamin - Phobia" src="https://lastfm.freetls.fastly.net/i/u/174s/2e5b0bc8cf774381c37c150f159e58c4.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
 <div id="134" class="album" data-people="Noora"><img alt="Pain - Coming Home" src="https://lastfm.freetls.fastly.net/i/u/174s/c0c577ffbd24407e1fce4c8b4381d0fe.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
 
+<div id="135" class="album" data-people="Tom"><img alt="Kensuke Ushio - Ping Pong the Animation OST" src="https://lastfm.freetls.fastly.net/i/u/174s/4b77b11b4aa121282975edf413bbd7cd.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="136" class="album" data-people="Tom"><img alt="Bat For Lashes - Two Suns" src="https://lastfm.freetls.fastly.net/i/u/174s/6ab6bebd416442f084dacedb9d2dcfb9.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="137" class="album" data-people="Tom"><img alt="Crystal Castles - Crystal Castles" src="https://lastfm.freetls.fastly.net/i/u/174s/7096b4c2d2d9cc84bd3d919c552ca47d.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="138" class="album" data-people="Tom"><img alt="Prefuse 73 - One Word Extinguisher" src="https://lastfm.freetls.fastly.net/i/u/174s/ae9be6e7921f437285f2710f14357e0b.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="139" class="album" data-people="Tom"><img alt="Goreshit - With All My Heart" src="https://lastfm.freetls.fastly.net/i/u/174s/a4c76f159f6b130299fd5b1ec97fbf76.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="140" class="album" data-people="Tom"><img alt="The Midnight - Kids" src="https://lastfm.freetls.fastly.net/i/u/174s/271fe787620fe27994ff66616d529e1f.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="141" class="album" data-people="Tom"><img alt="Renard - All of Life's Mystery" src="https://lastfm.freetls.fastly.net/i/u/174s/77e0820e1ec54a2d98f089caf6f8ec41.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+
 </div>
 
 </div>
@@ -555,7 +563,7 @@ function updatealbumCount() {
 
 var json_str = JSON.stringify(arralbums);
 createCookie('bestalbum3', json_str);
-var percent = (100 * arralbums.length) / 134; // updateme
+var percent = (100 * arralbums.length) / 141; // updateme
 percent = percent.toFixed(2);
 
 if (percent > 19.99) { document.getElementById("spoon").style.visibility = "" } else { document.getElementById("spoon").style.visibility = "hidden" };
@@ -563,7 +571,7 @@ if (percent > 39.99) { document.getElementById("bronze").style.visibility = "" }
 if (percent > 59.99) { document.getElementById("silver").style.visibility = "" } else { document.getElementById("silver").style.visibility = "hidden" };
 if (percent > 79.99) { document.getElementById("gold").style.visibility = "" } else { document.getElementById("gold").style.visibility = "hidden" };
 
-$("#plistenedCount").text("You have listened to " + arralbums.length + "/134 albums!"); //updateme
+$("#plistenedCount").text("You have listened to " + arralbums.length + "/141 albums!"); //updateme
 
 }
 //reveal(this.alt, this.dataset.genre, this.dataset.platform, this.dataset.people)"
