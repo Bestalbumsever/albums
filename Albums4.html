@@ -220,7 +220,7 @@ text-decoration:underline
 
 <div>
 
-<p id="plistenedCount">You have listened to 0/45 albums!</p> <!--updateme-->
+<p id="plistenedCount">You have listened to 0/54 albums!</p> <!--updateme-->
 
 <img class="award" id="spoon" style=" width:25px; height:25px; margin-left:5%; margin-bottom:2%; visibility: hidden;" src="img/spoon.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
 <img class="award" id="bronze" style=" width:25px; height:25px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="img/bronze.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
@@ -277,7 +277,7 @@ text-decoration:underline
 	<button id="btnIsaac" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Isaac')">Isaac</button>
 	<button id="btnDev" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Dev')" >Dev</button>
 	<button id="btnThijs" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Thijs')" >Thijs</button>
-	<button id="btnWill" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Will')" >Will</button>
+	<button id="btnCallum" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Callum')" >Callum</button>
 	<button id="btnJurak" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Jurak')" >Jurak</button>
 		<button id="btnOli" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Oli')" >Oli</button>
 		<button id="btnEdie" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Edie')" >Edie</button>
@@ -378,6 +378,16 @@ text-decoration:underline
 <div id="44" class="album" data-people="JJ"><img alt="Mew - Frengers" src="https://lastfm.freetls.fastly.net/i/u/174s/372d9534544a4f56ae6fda12bb4c05ba.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
 <div id="45" class="album" data-people="JJ"><img alt="usedcvnt - ultraviolet" src="https://lastfm.freetls.fastly.net/i/u/174s/86edc46b15defcfa73d46e961a36f213.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
 
+<div id="46" class="album" data-people="Callum"><img alt="Schoolboy Q - Habits & Contradictions" src="https://lastfm.freetls.fastly.net/i/u/174s/f7453419f786f8a7a2c323c82c05c14a.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="47" class="album" data-people="Callum"><img alt="Schoolboy Q - Blank Face" src="https://lastfm.freetls.fastly.net/i/u/174s/4874c9a812265918d9b4ebf74ec8ae12.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="48" class="album" data-people="Callum"><img alt="Schoolboy Q - Oxymoron" src="https://lastfm.freetls.fastly.net/i/u/174s/25d1691ccbb84a72ca46bf248b7624ca.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="49" class="album" data-people="Callum"><img alt="JID - DiCaprio 2" src="https://lastfm.freetls.fastly.net/i/u/174s/a2fc20be310f4668fc32bb5c920b2ae9.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="50" class="album" data-people="Callum"><img alt="Dreamville - Revenge of the Dreamers 3" src="https://lastfm.freetls.fastly.net/i/u/174s/b2abce08a0e2b1064fb075a43c12e2ea.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="51" class="album" data-people="Callum"><img alt="Knucks - Alpha Place" src="https://lastfm.freetls.fastly.net/i/u/174s/3d2407a97ef287dec19e7e015ca256bb.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="52" class="album" data-people="Callum"><img alt="Denzel Curry - ZUU" src="https://lastfm.freetls.fastly.net/i/u/174s/d1db1c166f66f1c7f8f266a21467fb2f.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="53" class="album" data-people="Callum"><img alt="Rocks FOE - RELX Pt. 3" src="https://lastfm.freetls.fastly.net/i/u/174s/b7f5e7142d4a8694d182e64e48e84185.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="54" class="album" data-people="Callum"><img alt="Masego - Loose Thoughts" src="https://lastfm.freetls.fastly.net/i/u/174s/7141a0c8e96e90b1c4d2a6088e4b101c.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+
 </div>
 
 </div>
@@ -455,7 +465,7 @@ function updatealbumCount() {
 
 var json_str = JSON.stringify(arralbums);
 createCookie('bestalbum3', json_str);
-var percent = (100 * arralbums.length) / 45; // updateme
+var percent = (100 * arralbums.length) / 54; // updateme
 percent = percent.toFixed(2);
 
 if (percent > 19.99) { document.getElementById("spoon").style.visibility = "" } else { document.getElementById("spoon").style.visibility = "hidden" };
@@ -463,7 +473,7 @@ if (percent > 39.99) { document.getElementById("bronze").style.visibility = "" }
 if (percent > 59.99) { document.getElementById("silver").style.visibility = "" } else { document.getElementById("silver").style.visibility = "hidden" };
 if (percent > 79.99) { document.getElementById("gold").style.visibility = "" } else { document.getElementById("gold").style.visibility = "hidden" };
 
-$("#plistenedCount").text("You have listened to " + arralbums.length + "/45 albums!"); //updateme
+$("#plistenedCount").text("You have listened to " + arralbums.length + "/54 albums!"); //updateme
 
 }
 //reveal(this.alt, this.dataset.genre, this.dataset.platform, this.dataset.people)"
