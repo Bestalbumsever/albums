@@ -220,7 +220,7 @@ text-decoration:underline
 
 <div>
 
-<p id="plistenedCount">You have listened to 0/150 albums!</p> <!--updateme-->
+<p id="plistenedCount">You have listened to 0/160 albums!</p> <!--updateme-->
 
 <img class="award" id="spoon" style=" width:25px; height:25px; margin-left:5%; margin-bottom:2%; visibility: hidden;" src="img/spoon.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
 <img class="award" id="bronze" style=" width:25px; height:25px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="img/bronze.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
@@ -496,6 +496,17 @@ text-decoration:underline
 <div id="149" class="album" data-people="Curt"><img alt="Beast in Black - From Hell With Love" src="https://i.scdn.co/image/ab67616d0000b273086fd08b0a9e09401a634902" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
 <div id="150" class="album" data-people="Curt"><img alt="James Blunt - Some Kind of Trouble" src="https://m.media-amazon.com/images/I/71nKspucsOL._UF894,1000_QL80_.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
 
+<div id="151" class="album" data-people="Dave"><img alt="Drab Majesty - Modern Mirror" src="https://upload.wikimedia.org/wikipedia/en/6/60/Modern_Mirror.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="152" class="album" data-people="Dave"><img alt="The Cranberries - Everyone else is doing it so why can't we?" src="https://upload.wikimedia.org/wikipedia/en/d/dc/Everybody_else_is_doing_it_so_why_can%27t_we_%28album_cover%29.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="153" class="album" data-people="Dave"><img alt="Moe shop - Moe Moe" src="https://f4.bcbits.com/img/a4162111118_16.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="154" class="album" data-people="Dave"><img alt="Gunship - Unicorn" src="https://f4.bcbits.com/img/a0858585450_16.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="155" class="album" data-people="Dave"><img alt="Priest - New Flesh" src="https://priestnexus.com/____impro/1/onewebmedia/Discography/New_Flesh.jpg?etag=%22276a3-646a1fc9%22&sourceContentType=image%2Fjpeg&ignoreAspectRatio&resize=252,252" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="156" class="album" data-people="Dave"><img alt="Pale Waves - My Mind Makes Noises" src="https://upload.wikimedia.org/wikipedia/en/7/78/Pale_Waves_-_My_Mind_Makes_Noises_%28HMV%29.png?20180929210500" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="157" class="album" data-people="Dave"><img alt="Fiona Apple - Extrodinary Machine" src="https://upload.wikimedia.org/wikipedia/en/e/ed/Extraordinary_Machine.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="158" class="album" data-people="Dave"><img alt="Garbage - Version 2.0" src="https://upload.wikimedia.org/wikipedia/en/3/34/Garbage_-_Version_2.0.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="159" class="album" data-people="Dave"><img alt="Portishead - Dummy" src="https://upload.wikimedia.org/wikipedia/en/6/6b/Portishead_-_Dummy.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="160" class="album" data-people="Dave"><img alt="The Prodigy - Experience" src="https://upload.wikimedia.org/wikipedia/en/2/27/TheProdigyExperience.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+
 </div>
 
 </div>
@@ -573,7 +584,7 @@ function updatealbumCount() {
 
 var json_str = JSON.stringify(arralbums);
 createCookie('bestalbum3', json_str);
-var percent = (100 * arralbums.length) / 150; // updateme
+var percent = (100 * arralbums.length) / 160; // updateme
 percent = percent.toFixed(2);
 
 if (percent > 19.99) { document.getElementById("spoon").style.visibility = "" } else { document.getElementById("spoon").style.visibility = "hidden" };
@@ -581,7 +592,7 @@ if (percent > 39.99) { document.getElementById("bronze").style.visibility = "" }
 if (percent > 59.99) { document.getElementById("silver").style.visibility = "" } else { document.getElementById("silver").style.visibility = "hidden" };
 if (percent > 79.99) { document.getElementById("gold").style.visibility = "" } else { document.getElementById("gold").style.visibility = "hidden" };
 
-$("#plistenedCount").text("You have listened to " + arralbums.length + "/150 albums!"); //updateme
+$("#plistenedCount").text("You have listened to " + arralbums.length + "/160 albums!"); //updateme
 
 }
 //reveal(this.alt, this.dataset.genre, this.dataset.platform, this.dataset.people)"
