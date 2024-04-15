@@ -220,7 +220,7 @@ text-decoration:underline
 
 <div>
 
-<p id="plistenedCount">You have listened to 0/159 albums!</p> <!--updateme-->
+<p id="plistenedCount">You have listened to 0/168 albums!</p> <!--updateme-->
 
 <img class="award" id="spoon" style=" width:25px; height:25px; margin-left:5%; margin-bottom:2%; visibility: hidden;" src="img/spoon.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
 <img class="award" id="bronze" style=" width:25px; height:25px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="img/bronze.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
@@ -498,6 +498,16 @@ text-decoration:underline
 <div id="158" class="album" data-people="Dave"><img alt="Garbage - Version 2.0" src="https://upload.wikimedia.org/wikipedia/en/3/34/Garbage_-_Version_2.0.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
 <div id="159" class="album" data-people="Dave"><img alt="The Prodigy - Experience" src="https://upload.wikimedia.org/wikipedia/en/2/27/TheProdigyExperience.jpg" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
 
+<div id="160" class="album" data-people="Edie"><img alt="Florist - Florist" src="https://lastfm.freetls.fastly.net/i/u/174s/abebd2a7c1cfa113700105c385712694.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="161" class="album" data-people="Edie"><img alt="Mitski - Bury Me At Makeout Creek" src="https://lastfm.freetls.fastly.net/i/u/174s/48b1e85daff0afa738996e8f7737f1ef.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="162" class="album" data-people="Edie"><img alt="Cults - Cults" src="https://lastfm.freetls.fastly.net/i/u/174s/46fa2217eebb4fd5cf6dfb37a193e5ff.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="163" class="album" data-people="Edie"><img alt="Black Dresses - WASTEISOLATION" src="https://lastfm.freetls.fastly.net/i/u/174s/879a4513ba84fdb19f5e19affa55c5ca.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="164" class="album" data-people="Edie"><img alt="Dead Poet Society - -!-" src="https://lastfm.freetls.fastly.net/i/u/174s/dbb6792a9520ba855e9d63fbc993e0fd.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="165" class="album" data-people="Edie"><img alt="Florist - If Blue Could be Happiness" src="https://lastfm.freetls.fastly.net/i/u/174s/1952e2558f359a2ae98c347e993f720b.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="166" class="album" data-people="Edie"><img alt="Flower Face - The Shark in your Water" src="https://lastfm.freetls.fastly.net/i/u/174s/942208acef08ae08ef91027d34e33d16.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="167" class="album" data-people="Edie"><img alt="Elita - Dysania" src="https://lastfm.freetls.fastly.net/i/u/174s/aac1bda8f013c8cec30db82dbfd062d5.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="168" class="album" data-people="Edie"><img alt="The Paper Chase - Someday This Could All Be Yours" src="https://lastfm.freetls.fastly.net/i/u/174s/af2d6d483dee4ae2bdc3e9a076349681.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+
 </div>
 
 </div>
@@ -575,7 +585,7 @@ function updatealbumCount() {
 
 var json_str = JSON.stringify(arralbums);
 createCookie('bestalbum3', json_str);
-var percent = (100 * arralbums.length) / 159; // updateme
+var percent = (100 * arralbums.length) / 168; // updateme
 percent = percent.toFixed(2);
 
 if (percent > 19.99) { document.getElementById("spoon").style.visibility = "" } else { document.getElementById("spoon").style.visibility = "hidden" };
@@ -583,7 +593,7 @@ if (percent > 39.99) { document.getElementById("bronze").style.visibility = "" }
 if (percent > 59.99) { document.getElementById("silver").style.visibility = "" } else { document.getElementById("silver").style.visibility = "hidden" };
 if (percent > 79.99) { document.getElementById("gold").style.visibility = "" } else { document.getElementById("gold").style.visibility = "hidden" };
 
-$("#plistenedCount").text("You have listened to " + arralbums.length + "/159 albums!"); //updateme
+$("#plistenedCount").text("You have listened to " + arralbums.length + "/168 albums!"); //updateme
 
 }
 //reveal(this.alt, this.dataset.genre, this.dataset.platform, this.dataset.people)"
