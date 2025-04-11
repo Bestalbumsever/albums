@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+img {
+width: 100%;
+height:100%;
+}
+body {
+background-color: black;
+}
+#divTable {
+width:70%;
+display:inline-block;
+float:right;
+margin:4px, 4px;
+                padding:4px;
+              height: 94vh;
+                overflow-x: hidden;
+                overflow-y: auto;
+                text-align:justify;
+			
+}
+#divInfo {
+margin-left: 5%;
+width:85%;
+display:inline-block;
+float:left;
+}
+
+#divBackup {
+width: 100%;
+display:inline-block;
+margin-left: 1%;
+bottom:0;
+}
+#divBackup button {
+float:left;
+margin-left:4%;
+margin-bottom:5px;
+}
+button {
+font-family:courier;
+background:none;
+color: white;
+margin-left: 40%;
+width:20%;
+border: 1px solid white;
+}
+#divLeft {
+width: 25%;
+display:inline-block;
+margin-left: 1%;
+position: absolute;
+bottom:0;
+top:37px;
+overflow-y: auto;
+overflow-x: hidden;
+}
+#divLeft p {
+color: white;
+font-family: courier;
+width: 85%;
+margin-left: 5%;
+
+}
+#divLeft li {
+color: white;
+font-family: courier;
+width: 85%;
+margin-left: 5%;
+
+}
+#btnRandom, #btnRandomUnlistened {
+float:left;
+width: 85%;
+margin-left:5%;
+margin-bottom: 5px;
+}
+
+#divFilters {
+width: 100%;
+display:inline-block;
+margin-left: 1%;
+bottom:0;
+top:0;
+}
+#divFilters button {
+float:left;
+margin-left:4%;
+margin-bottom:5px;
+}
+#divPeople {
+width: 100%;
+display:inline-block;
+margin-left: 1%;
+bottom:0;
+top:0;
+}
+#divPeople button {
+float:left;
+margin-left:4%;
+margin-bottom:5px;
+}
+#pAward {
+font-size:12px;
+}
+.genrebtn {
+height: 40px;
+}
+.personbtn {
+height: 40px;
+}
+
+#divTable div {
+padding:0px !important;
+margin:0px !important;
+border:2px solid black;
+width:75px !important;
+height:75px !important;
+max-width:75px !important;
+max-height:75px !important;
+display:inline-block;
+}
+#divTable div img {
+	display:block;
+}
+table {
+table-layout: fixed;
+}
+
+			/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+#divBar {
+width:100%;
+height:25px;
+background-color:black;
+top:0;
+border-bottom: 1px solid white;
+
+}
+#divBar p {
+color:white;
+font-family:courier;
+display:inline;
+margin-left:1%;
+text-align:center;
+font-weight:bold;
+}
+#divBar a {
+color:white;
+font-family:courier;
+display:inline;
+text-decoration:none;
+align-items: center;
+justify-content: center;
+}
+#divBar a:hover {
+text-decoration:underline
+}
+
+</style>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+
+<div id="divBar">
+<img class="logo" src="favicon.ico" style="width:15px;height:15px;">
+<p>The best things ever // </p>
+<a href='https://bestalbumsever.github.io/albums/'>Music 1</a>
+&nbsp;&nbsp;
+<a href='https://bestalbumsever.github.io/albums/Albums2.html'>Music 2</a>
+&nbsp;&nbsp;
+<a href='https://bestalbumsever.github.io/albums/Albums3.html'>Music 3</a>
+&nbsp;&nbsp;
+<a href='https://bestalbumsever.github.io/albums/Albums4.html'>Music 4</a>
+&nbsp;&nbsp;
+<a href='https://bestalbumsever.github.io/albums/Albums5.html'>Music 5</a>
+&nbsp;&nbsp;
+<a href='https://bestalbumsever.github.io/albums/Movies.html'>Movies</a>
+&nbsp;&nbsp;
+<a href='https://bestalbumsever.github.io/albums/Games.html'>Games</a>
+&nbsp;&nbsp;
+<a href='https://bestalbumsever.github.io/albums/TV.html'>TV</a>
+&nbsp;&nbsp;
+<a href='https://bestalbumsever.github.io/albums/Anime.html'>Anime</a>
+&nbsp;&nbsp;
+<a href='https://bestalbumsever.github.io/albums/Lit.html'>Lit</a>
+<p> // </p>
+<a href='https://bestalbumsever.github.io/albums/TBTE22.html'>2022</a>
+&nbsp;&nbsp;
+<a href='https://bestalbumsever.github.io/albums/TBTE23.html'>2023</a>
+&nbsp;&nbsp;
+<a href='https://bestalbumsever.github.io/albums/TBTE24.html'>2024</a>
+</div>
+
+</div>
+
+<div id="divMain">
+
+<div id="divLeft">
+
+<div>
+
+<p id="plistenedCount">You have listened to 0/1 albums!</p> <!--updateme-->
+
+<img class="award" id="spoon" style=" width:25px; height:25px; margin-left:5%; margin-bottom:2%; visibility: hidden;" src="img/spoon.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
+<img class="award" id="bronze" style=" width:25px; height:25px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="img/bronze.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
+<img class="award" id="silver" style=" width:25px; height:25px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="img/silver.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
+<img class="award" id="gold" style=" width:25px; height:25px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="img/gold.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
+<div style="height:40px">
+<p id="pAward">&nbsp;‎</p>
+</div>
+
+</div>
+
+<button id="btnRandom" onclick="random(false)">Random</button>
+<button id="btnRandomUnlistened" onclick="random(true)">Random Unlistened</button>
+
+<div style="height:100px">
+<p id="pRandom" onmouseover="highlight(this.textContent)" onmouseout="unhighlight(this.textContent)"></p>
+</div>
+
+<div id="divInfo" style="height:100px;">
+
+</div>
+
+
+<!--<div id="divFilters">
+	<button id="btnShowAll" style="width:41%; color:white;" onclick="filter('all')" >Show All</button>
+	<button id="btnHideAll" style="width:40%; color:white;" onclick="filter('none')">Hide All</button>	
+		<button id="btnrap" class="genrebtn" style="width:41%; color:white;" onclick="filter('rap')">Hip-Hop & RNB</button>
+	<button id="btnrock" class="genrebtn" style="width:40%; color:white;" onclick="filter('rock')">Rock</button>	
+	<button id="btnupper" class="genrebtn" style="width:41%; color:white;" onclick="filter('upper')">Electronic Uppers</button>
+	<button id="btndowner" class="genrebtn" style="width:40%; color:white;" onclick="filter('downer')">Electronic Downers</button>
+	<button id="btnhardrock" class="genrebtn" style="width:41%; color:white;" onclick="filter('hardrock')">Hard Rock</button>
+	<button id="btnmetal" class="genrebtn" style="width:40%; color:white;" onclick="filter('metal')">Metal</button>
+	<button id="btnost" class="genrebtn" style="width:41%; color:white;" onclick="filter('ost')">OST</button>
+	<button id="btnpop" class="genrebtn" style="width:40%; color:white;" onclick="filter('pop')">Pop</button>
+	<button id="btnpunk" class="genrebtn" style="width:41%; color:white;" onclick="filter('punk')">Punk & Ska</button>
+	<button id="btnindie" class="genrebtn" style="width:40%; color:white;" onclick="filter('indie')">Indie & Alternative</button>
+<button id="btnother" class="genrebtn" style="width:41%; color:white;" onclick="filter('other')">Other</button>
+
+</div>-->
+
+<p>People</p>
+
+<div id="divPeople">
+	<button id="btnShowAll" style="width:41%; color:white;" onclick="filterperson('all')" >Show All</button>
+	<button id="btnHideAll" style="width:40%; color:white;" onclick="filterperson('none')">Hide All</button>#
+		
+	<button id="btnTom" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Tom')">Tom</button>	
+	<button id="btnJJ" class="personbtn" style="width:40%; color:white;" onclick="filterperson('JJ')">JJ</button>
+	<button id="btnSenna" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Senna')">Senna</button>
+	<button id="btnSam" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Sam')" >Sam</button>
+	<button id="btnCurt" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Curt')" >Curt</button>
+	<button id="btnDev" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Dev')" >Dev</button>
+	<button id="btnThijs" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Thijs')" >Thijs</button>
+	<button id="btnCallum" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Callum')" >Callum</button>
+	<button id="btnJurak" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Jurak')" >Jurak</button>
+		<button id="btnOli" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Oli')" >Oli</button>
+		<button id="btnRy" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Ry')" >Ry</button>
+		<button id="btnAaron" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Aaron')" >Aaron</button>
+		<button id="btnMike" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Mike')" >Mike</button>
+		<button id="btnNoora" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Noora')" >Noora</button>
+		<button id="btnJosh" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Josh')" >Josh</button>
+		<button id="btnDom" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Dom')" >Dom</button>
+			<button id="btnJon" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Jon')" >Jon</button>
+					<button id="btnLiam" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Liam')" >Liam</button>
+					<button id="btnBen" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Ben')">Ben</button>
+					<button id="btnSarah" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Sarah')" >Sarah</button>
+					<button id="btnDave" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Dave')" >Dave</button>	
+					<button id="btnEdie" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Edie')" >Edie</button>	
+					<button id="btnJosh" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Josh')" >Josh</button>	
+</div>
+
+<p>Backup</p>
+
+<div id="divBackup">
+	<button id="btnSave" style="width:41%; color:white; font-size:12px; " onclick="backup('save')">Backup Checks</button>
+	<button id="btnLoad" style="width:40%; color:white; font-size:12px; " onclick="backup('load')">Import Checks</button>
+</div>
+
+
+<div style="bottom:50px; position:absolute; z-index:0;">
+</div>
+</div>
+
+<div id="divTable">
+
+<!--
+
+<div id="1" class="album" data-people=""><img alt="" src="" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="1" class="album" data-people=""><img alt="" src="" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="1" class="album" data-people=""><img alt="" src="" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="1" class="album" data-people=""><img alt="" src="" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="1" class="album" data-people=""><img alt="" src="" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="1" class="album" data-people=""><img alt="" src="" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="1" class="album" data-people=""><img alt="" src="" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="1" class="album" data-people=""><img alt="" src="" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="1" class="album" data-people=""><img alt="" src="" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+
+-->
+<!--rap, rock, upper, downer, hardrock, metal, ost, pop, punk, indie, other-->
+
+
+</div>
+
+</div>
+</body>
+
+<script type="text/javascript">
+
+var arralbums = [];
+var arrFilters = [];
+
+$( document ).ready(function() {
+
+
+try {
+var json_str = getCookie('bestalbum5');
+arralbums = JSON.parse(json_str);
+}catch(ex) {
+console.log("failed to get album cookie: " + ex.toString());
+}
+    
+	funcAll();
+	
+loadCheckedalbums();
+
+getPopular();
+	
+$(document).find('#divTable div').each (function() {
+    $(this).on("click", function(){  
+	   togglealbum($(this).attr("id"))
+    });
+});
+	
+});	
+
+
+function togglealbum(ID) {
+
+ if (arralbums.includes(ID) ) { //uncheck
+  
+  for( var i = 0; i < arralbums.length; i++){     
+        if ( arralbums[i] === ID) {     
+            arralbums.splice(i, 1); 
+			document.getElementById(ID).style.border = "2px solid black"	
+			document.getElementById(ID).childNodes[0].classList.remove("listened");			
+        }    
+    }
+	
+ 
+ } else { // check
+  
+ arralbums.push(ID);
+ document.getElementById(ID).style.border = "2px solid lightgreen"
+ document.getElementById(ID).childNodes[0].classList.add("listened");
+  
+ }
+ 
+updatealbumCount();
+
+}
+
+function loadCheckedalbums() {
+
+for( var i = 0; i < arralbums.length; i++){    
+document.getElementById(arralbums[i]).style.border = "2px solid lightgreen" 
+document.getElementById(arralbums[i]).childNodes[0].classList.add("listened");
+
+updatealbumCount();
+
+}
+
+}
+
+
+function updatealbumCount() {
+
+var json_str = JSON.stringify(arralbums);
+createCookie('bestalbum5', json_str);
+var percent = (100 * arralbums.length) / 1; // updateme
+percent = percent.toFixed(2);
+
+if (percent > 19.99) { document.getElementById("spoon").style.visibility = "" } else { document.getElementById("spoon").style.visibility = "hidden" };
+if (percent > 39.99) { document.getElementById("bronze").style.visibility = "" } else { document.getElementById("bronze").style.visibility = "hidden" };
+if (percent > 59.99) { document.getElementById("silver").style.visibility = "" } else { document.getElementById("silver").style.visibility = "hidden" };
+if (percent > 79.99) { document.getElementById("gold").style.visibility = "" } else { document.getElementById("gold").style.visibility = "hidden" };
+
+$("#plistenedCount").text("You have listened to " + arralbums.length + "/1 albums!"); //updateme
+
+}
+//reveal(this.alt, this.dataset.genre, this.dataset.platform, this.dataset.people)"
+function reveal(alt, genre, people) {
+
+people = people.replaceAll(" ", ", ")
+document.getElementById("divInfo").innerHTML = "<h3 style='color:white; font-family: courier; text-align:center;'>" + alt + "</h3><h4 style='color:white; font-family: courier; text-align:center; font-weight:normal !important;'>chosen by " + people + "</h4>";
+
+}
+
+function random(unlistened) {
+
+	var imgs = document.getElementsByTagName("img");	
+    var imgSrcs = [];
+    for (var i = 0; i < imgs.length; i++) {
+		if (!imgs[i].classList.contains("award") && !imgs[i].classList.contains("logo")) {
+		if (unlistened == true) {
+			if (imgs[i].classList.contains("listened")) {				
+			} else {
+	
+			var person = imgs[i].parentNode.dataset.people
+	
+			imgSrcs.push(imgs[i].alt + " (chosen by " + person + ")");
+			
+			
+			
+			}
+		} else {
+		
+			var person = imgs[i].parentNode.dataset.people
+		
+			imgSrcs.push(imgs[i].alt + " (chosen by " + person + ")");
+			
+		}    
+		}		    
+    }
+	    
+	if (imgSrcs.length == 0) {
+		document.getElementById("pRandom").innerText = "You should go outside now!";
+	} else {
+		document.getElementById("pRandom").innerText = "You should listen to " + random_item(imgSrcs) + "!";
+	}	
+}
+
+function random_item(items)
+{  
+return items[Math.floor(Math.random()*items.length)];     
+}
+
+function createCookie(name, value, days) {
+    var expires;
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toGMTString();
+    }
+    else {
+        expires = "";
+    }
+    document.cookie = name + "=" + value + expires + "; path=/";
+}
+
+function getCookie(c_name) {
+    if (document.cookie.length > 0) {
+        c_start = document.cookie.indexOf(c_name + "=");
+        if (c_start != -1) {
+            c_start = c_start + c_name.length + 1;
+            c_end = document.cookie.indexOf(";", c_start);
+            if (c_end == -1) {
+                c_end = document.cookie.length;
+            }
+            return unescape(document.cookie.substring(c_start, c_end));
+        }
+    }
+    return "";
+}
+
+
+function highlight(txt) {
+txt = txt.substring(0, txt.length - 1);
+alb = txt.split("You should listen to ")[1]
+var splt2 = alb.split(" (chosen")[0]
+var allImages = document.getElementsByTagName("img");
+    for (var i = 0, len = allImages.length; i < len; ++i) {
+        if (allImages[i].alt == splt2) {		
+            allImages[i].style.transform = 'rotate(' + 180 + 'deg)';
+        }
+    }
+}
+
+function unhighlight(txt) {
+txt = txt.substring(0, txt.length - 1);
+alb = txt.split("You should listen to ")[1]
+var splt2 = alb.split(" (chosen")[0]
+var allImages = document.getElementsByTagName("img");
+    for (var i = 0, len = allImages.length; i < len; ++i) {
+        if (allImages[i].alt == splt2) {		
+            allImages[i].style.transform = 'rotate(' + 0 + 'deg)';
+        }
+    }
+}
+
+function showAward(award) {
+switch(award) {
+case "spoon":
+	$("#pAward").text("Spoon: listened to 20% of all albums");
+    break;
+  case "bronze":
+	$("#pAward").text("Bronze: listened to 40% of all albums");
+    break;
+	case "silver":
+	$("#pAward").text("Silver: listened to 60% of all albums");
+    break;
+	case "gold":
+	$("#pAward").text("Gold: listened to 80% of all albums");
+    break;
+}
+}
+
+function hideAward() {
+$("#pAward").html("&nbsp;");
+}
+
+function filter(genre) {
+    switch (genre) {
+        case "all":
+		
+		 var btns = document.getElementsByClassName("genrebtn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].style.color = "white";
+            }
+		
+            var tds = document.getElementsByClassName("album");
+			
+            for (var i = 0; i < tds.length; i++) {
+
+                
+			
+if (document.getElementById("btn" + tds[i].dataset.genre).style.color == "white") {
+
+    var ppl = tds[i].dataset.people;
+    var pplsplit = ppl.split(" ")
+    var boolpplok = false;
+    for (x = 0; x < pplsplit.length; x++) {
+        if (document.getElementById("btn" + pplsplit[x]).style.color == "white") {
+		
+            boolpplok = true;
+        }
+    }
+    if (boolpplok == true) {
+        tds[i].style.display = "inline-block";
+		
+    } else {
+        tds[i].style.display = "none";
+    }
+} else {
+    tds[i].style.display = "none";
+}
+            }
+			
+           
+            break;
+        case "none":
+            var tds = document.getElementsByClassName("album");
+            for (var i = 0; i < tds.length; i++) {
+			
+                tds[i].style.display = "none";
+            
+			}
+            var btns = document.getElementsByClassName("genrebtn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].style.color = "red";
+            }
+
+
+            break;
+        default:
+
+            var btn = document.getElementById("btn" + genre);
+            if (btn.style.color == "white") {
+                btn.style.color = "red";
+            } else {
+                btn.style.color = "white";
+            }
+            var tds = document.querySelectorAll('[data-genre=' + genre + ']');
+			
+			
+             for (var i = 0; i < tds.length; i++) {
+if (document.getElementById("btn" + tds[i].dataset.genre).style.color == "white") {
+    var ppl = tds[i].dataset.people;
+    var pplsplit = ppl.split(" ")
+    var boolpplok = false;
+    for (x = 0; x < pplsplit.length; x++) {
+        if (document.getElementById("btn" + pplsplit[x]).style.color == "white") {
+            boolpplok = true;
+        }
+    }
+    if (boolpplok == true) {
+        tds[i].style.display = "inline-block";
+    } else {
+        tds[i].style.display = "none";
+    }
+} else {
+    tds[i].style.display = "none";
+}
+}
+
+
+    }
+}
+
+function filterperson(person) {
+    switch (person) {
+        case "all":
+		var btns = document.getElementsByClassName("personbtn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].style.color = "white";
+            }
+            var tds = document.getElementsByClassName("album");
+            for (var i = 0; i < tds.length; i++) {
+
+ 
+    var ppl = tds[i].dataset.people;
+    var pplsplit = ppl.split(" ")
+    var boolpplok = false;
+    for (x = 0; x < pplsplit.length; x++) {
+        if (document.getElementById("btn" + pplsplit[x]).style.color == "white") {
+            boolpplok = true;
+        }
+    }
+    if (boolpplok == true) {
+        tds[i].style.display = "inline-block";
+		
+    } else {
+        tds[i].style.display = "none";
+    }
+
+            }
+            
+            break;
+        case "none":
+            var tds = document.getElementsByClassName("album");
+            for (var i = 0; i < tds.length; i++) {
+
+                tds[i].style.display = "none";
+
+            }
+
+
+            var btns = document.getElementsByClassName("personbtn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].style.color = "red";
+            }
+
+
+            break;
+        default:
+
+            var btn = document.getElementById("btn" + person);
+            if (btn.style.color == "white") {
+                btn.style.color = "red";
+            } else {
+                btn.style.color = "white";
+            }
+
+           //  var tds = document.querySelectorAll('[data-people=' + person + ']');
+           var tds = document.getElementsByClassName("album");
+
+            for (var i = 0; i < tds.length; i++) {
+
+
+    var ppl = tds[i].dataset.people;
+    var pplsplit = ppl.split(" ")
+    var boolpplok = false;
+    for (x = 0; x < pplsplit.length; x++) {
+        if (document.getElementById("btn" + pplsplit[x]).style.color == "white") {
+            boolpplok = true;
+        }
+    }
+    if (boolpplok == true) {
+        tds[i].style.display = "inline-block";
+    } else {
+        tds[i].style.display = "none";
+    }
+
+}
+			
+			
+    }
+}
+
+
+function backup(func) {
+ if (func == "save") {
+   var dummy = document.createElement("textarea");
+    document.body.appendChild(dummy);
+    dummy.value =  JSON.stringify(arralbums);
+    dummy.select();
+    document.execCommand("copy");
+    document.body.removeChild(dummy);
+	$("#divInfo").html("<p>album cookie copied to clipboard</p>");
+ } else {
+ var albs = prompt("Paste your cookie value", "");
+ if (albs != null) {
+  arralbums = JSON.parse(albs);
+  loadCheckedalbums();
+}
+ }
+}
+
+function getPopular() {
+var albums = document.getElementsByClassName("album");
+var debug = "";
+for (i=0;i<albums.length;i++) {
+if (albums[i].classList.length > 2) {
+debug += albums[i].id + ", "
+}
+}
+console.log("Popular: " + debug);
+}
+
+function funcAll() {
+ var allImages = document.getElementsByTagName("img");
+    var images = [];
+    for (var i = 0, len = allImages.length; i < len; ++i) {
+       // if (allImages[i].alt == alt) {
+           // images.push(allImages[i]);
+       // }
+	   console.log(allImages[i].src)
+    }
+
+}
+
+</script>
+
+</html>
