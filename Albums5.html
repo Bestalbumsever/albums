@@ -224,7 +224,7 @@ text-decoration:underline
 
 <div>
 
-<p id="plistenedCount">You have listened to 0/81 albums!</p> <!--updateme-->
+<p id="plistenedCount">You have listened to 0/90 albums!</p> <!--updateme-->
 
 <img class="award" id="spoon" style=" width:25px; height:25px; margin-left:5%; margin-bottom:2%; visibility: hidden;" src="img/spoon.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
 <img class="award" id="bronze" style=" width:25px; height:25px; margin-left:2%; margin-bottom:2%; visibility: hidden;" src="img/bronze.png" onmouseover="showAward(this.id)" onmouseout="hideAward()" />
@@ -275,6 +275,7 @@ text-decoration:underline
 	<button id="btnJJ" class="personbtn" style="width:40%; color:white;" onclick="filterperson('JJ')">JJ</button>
 	<button id="btnSenna" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Senna')">Senna</button>
 	<button id="btnSam" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Sam')" >Sam</button>
+	<button id="btnDutchSam" class="personbtn" style="width:40%; color:white;" onclick="filterperson('DutchSam')" >Sam</button>
 	<button id="btnCurt" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Curt')" >Curt</button>
 	<button id="btnDev" class="personbtn" style="width:40%; color:white;" onclick="filterperson('Dev')" >Dev</button>
 	<button id="btnThijs" class="personbtn" style="width:41%; color:white;" onclick="filterperson('Thijs')" >Thijs</button>
@@ -415,6 +416,15 @@ text-decoration:underline
 <div id="80" class="album" data-people="Josh"><img alt="Glass Beams  -  Mahal" src="https://lastfm.freetls.fastly.net/i/u/174s/c82867a4f26b24f7f80622c23703a01b.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
 <div id="81" class="album" data-people="Josh"><img alt="Jet Set Radio Future Soundtrack" src="https://lastfm.freetls.fastly.net/i/u/174s/fac8c9829358589e06c924bb365ff7f4.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
 
+<div id="82" class="album" data-people="Sam"><img alt="Exit Eden - Femmes Fatales" src="https://lastfm.freetls.fastly.net/i/u/174s/19f734f54ad358e33c52a8998139eae7.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="83" class="album" data-people="Sam"><img alt="Unleash The Archers - Apex" src="https://lastfm.freetls.fastly.net/i/u/174s/59113c8600c2dd1301f331d2c7c01876.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="84" class="album" data-people="Sam"><img alt="Alter Bridge - One Day Remains" src="https://lastfm.freetls.fastly.net/i/u/174s/010ed909133046cb81f6a539033e9dfd.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="85" class="album" data-people="Sam"><img alt="We Are The Fallen - Tear The World Down" src="https://lastfm.freetls.fastly.net/i/u/174s/6ff836034c7b45799f7a5bd0fcc5237f.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="86" class="album" data-people="Sam"><img alt="Coheed and Cambria - From Fear Through The Eyes Of Madness" src="https://lastfm.freetls.fastly.net/i/u/174s/e926d981bf0640e0885b9d0736a49524.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="87" class="album" data-people="Sam"><img alt="Davichi - MYSTIC BALLAD Pt. 2" src="https://lastfm.freetls.fastly.net/i/u/174s/ec6262a4b8fa441bc4b75781cd27fac6.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="88" class="album" data-people="Sam"><img alt="NXCRE, The Villains - ENDLESS" src="https://lastfm.freetls.fastly.net/i/u/174s/9e908ba9337326bc3f57df0daac437ef.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="89" class="album" data-people="Sam"><img alt="Stephen Schwartz - Broadway Wicked" src="https://lastfm.freetls.fastly.net/i/u/174s/8888042cee64f41d67f0ca28259dc602.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
+<div id="90" class="album" data-people="Sam"><img alt="Stephen Schwartz - Movie Wicked" src="https://lastfm.freetls.fastly.net/i/u/174s/f97056f224688d07bf2cbcd4fdeeaf74.png" onmouseover="reveal(this.alt, this.parentNode.dataset.genre, this.parentNode.dataset.people)"></div>
 
 
 
@@ -495,7 +505,7 @@ function updatealbumCount() {
 
 var json_str = JSON.stringify(arralbums);
 createCookie('bestalbum5', json_str);
-var percent = (100 * arralbums.length) / 81; // updateme
+var percent = (100 * arralbums.length) / 90; // updateme
 percent = percent.toFixed(2);
 
 if (percent > 19.99) { document.getElementById("spoon").style.visibility = "" } else { document.getElementById("spoon").style.visibility = "hidden" };
@@ -503,7 +513,7 @@ if (percent > 39.99) { document.getElementById("bronze").style.visibility = "" }
 if (percent > 59.99) { document.getElementById("silver").style.visibility = "" } else { document.getElementById("silver").style.visibility = "hidden" };
 if (percent > 79.99) { document.getElementById("gold").style.visibility = "" } else { document.getElementById("gold").style.visibility = "hidden" };
 
-$("#plistenedCount").text("You have listened to " + arralbums.length + "/81 albums!"); //updateme
+$("#plistenedCount").text("You have listened to " + arralbums.length + "/90 albums!"); //updateme
 
 }
 //reveal(this.alt, this.dataset.genre, this.dataset.platform, this.dataset.people)"
